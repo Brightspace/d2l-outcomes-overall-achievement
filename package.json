@@ -1,0 +1,28 @@
+{
+  "name": "d2l-outcomes-overall-achievement",
+  "version": "1.0.0",
+  "description": "A collection of components related to outcomes COA (Course Overall Achievement)",
+  "scripts": {
+    "lang:build": "lang-build -es \"\t\" -c langtools/config.json",
+    "lang:copy": "lang-copy -svc langtools/config.json",
+    "lint": "eslint src build/lang",
+    "start": "es-dev-server --node-resolve --dedupe --watch --open"
+  },
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@brightspace-ui/core": "^1.47.0",
+    "lit-element": "^2.3.1",
+    "siren-sdk": "github:BrightspaceHypermediaComponents/siren-sdk"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "babel-eslint": "^10.1.0",
+    "d2l-polymer-langtools": "^1.4.0",
+    "es-dev-server": "^1.54.0",
+    "eslint": "^7.1.0",
+    "eslint-config-brightspace": "^0.8.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-sort-class-members": "^1.7.0"
+  }
+}
