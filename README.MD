@@ -5,7 +5,6 @@ A collection of components related to outcomes COA (Course Overall Achievement)
 ## Prerequisites
 
 - NPM (Installs with [NodeJS](https://nodejs.org))
-- polymer-cli npm package (`npm i -g polymer-cli`)
 
 ## Setup
 
