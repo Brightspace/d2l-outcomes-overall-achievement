@@ -13,7 +13,7 @@
   "dependencies": {
     "@brightspace-ui/core": "^1.47.0",
     "lit-element": "^2.3.1",
-    "siren-sdk": "github:BrightspaceHypermediaComponents/siren-sdk"
+    "siren-sdk": "BrightspaceHypermediaComponents/siren-sdk#semver:^1"
   },
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.3",
