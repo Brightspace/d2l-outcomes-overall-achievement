@@ -62,6 +62,11 @@ class StackedBar extends EntityMixinLit(LitElement) {
 					border-bottom: 1px solid var(--d2l-color-gypsum);
 				}
 
+				#summary li .count {
+					flex-shrink: 0;
+					margin-left: 8px;
+				}
+
 				@media (pointer: fine) {
 					#graph-container:focus,
 					#graph-container:hover {
@@ -212,7 +217,7 @@ class StackedBar extends EntityMixinLit(LitElement) {
 		return html`
 			<li>
 				<span>${levelData.name}:</span>
-				<span>${this._getLevelCountText(levelData)}</span>
+				<span class="count">${this._getLevelCountText(levelData)}</span>
 			</li>
 		`;
 	}
