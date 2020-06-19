@@ -1,0 +1,28 @@
+{
+    "class": [
+        "level-of-achievement"
+    ],
+    "rel": [
+        "item"
+    ],
+    "properties": {
+        "color": "#ffe599",
+        "levelId": "level1",
+        "name": "Level 2",
+        "sortOrder": 200
+    },
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/levels/level1.json"
+        },
+        {
+            "rel": [
+                "achievement-scale"
+            ],
+            "href": "/data/loa/scale0.json"
+        }
+    ]
+}
