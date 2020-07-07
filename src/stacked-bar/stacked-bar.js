@@ -10,8 +10,8 @@ class StackedBar extends EntityMixinLit(LitElement) {
 	static get properties() {
 		return {
 			compact: { type: Boolean },
-			_histData: { type: Array },
-			_totalCount: { type: Number }
+			_histData: { attribute: false },
+			_totalCount: { attribute: false }
 		};
 	}
 

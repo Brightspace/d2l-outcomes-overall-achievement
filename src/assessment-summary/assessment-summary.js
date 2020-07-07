@@ -10,7 +10,7 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
-			_totalCount: { type: Number }
+			_totalCount: { attribute: false }
 		};
 	}
 
