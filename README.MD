@@ -17,6 +17,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 ## Components
 
 - [Assessment Summary](#assessment-summary)
+- [Diamond](#diamond)
 - [Stacked Bar](#stacked-bar)
 
 ### Assessment Summary<a name="assessment-summary"></a>
@@ -31,6 +32,22 @@ To view component demos, run `npm start`. A page should be launched with links t
 
 - `href` - Hypermedia URL for a collection entity of `user-progress-outcome-activities`
 - `token` - Auth token
+
+### Diamond<a name="diamond"></a>
+
+#### Usage
+
+```html
+<d2l-coa-diamond color="" edge-width="" width=""></d2l-coa-diamond>
+```
+
+#### Attributes
+
+Requires either `edge-width` or `width` attribute to be provided, but not both (`edge-width` supercedes `width`).
+
+- `color` - The fill color of the diamond
+- `edge-width` - Used to size the diamond by the length of a single edge (number of pixels)
+- `width` - Used to size the diamond by its overall container width (number of pixels)
 
 ### Stacked Bar<a name="stacked-bar"></a>
 

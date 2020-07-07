@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+		<script type="module">
+			import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
+			import '../src/diamond/diamond.js';
+		</script>
+	</head>
+	<body unresolved>
+		<d2l-demo-page page-title="d2l-coa-diamond demo">
+			<h2>Size by Edge Width</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-diamond edge-width="18" color="#8CBC6C"></d2l-coa-diamond>
+			</d2l-demo-snippet>
+
+			<h2>Size by Container Width</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-diamond width="18" color="#FFD966"></d2l-coa-diamond>
+			</d2l-demo-snippet>
+		</d2l-demo-page>
+	</body>
+</html>
