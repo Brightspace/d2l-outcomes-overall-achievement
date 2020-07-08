@@ -86,7 +86,7 @@
             "rel": [
                 "https://user-progress.api.brightspace.com/rels/feedback"
             ],
-            "href": "unused"
+            "href": "/data/demonstrations/dem1/feedback.json"
         }
     ]
 }
