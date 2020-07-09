@@ -1,17 +1,17 @@
 import { LitElement, html, css } from 'lit-element';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { heading4Styles, bodySmallStyles} from '@brightspace-ui/core/components/typography/styles';
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityEntity } from '../entities/OutcomeActivityEntity';
-import '@brightspace-ui/core/components/colors/colors.js';
-import '@brightspace-ui/core/components/icons/icon.js';
-import '@brightspace-ui/core/components/icons/icon-custom.js';
-import '@brightspace-ui/core/components/more-less/more-less.js';
-import '@brightspace-ui/core/components/typography/typography.js';
-import '../diamond/diamond.js';
-
-const quoteImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICA8ZGVmcz4NCiAgICA8cGF0aCBpZD0iYSIgZD0iTTAgMGgyNHYyNEgweiIvPg0KICA8L2RlZnM+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xIC0xKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+DQogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+DQogICAgPC9tYXNrPg0KICAgIDxwYXRoIGQ9Ik02IDIyLjY2N0E0LjY2NyA0LjY2NyAwIDAgMCAxMC42NjcgMThjMC0xLjIyNy0uNTU5LTIuNS0xLjMzNC0zLjMzM0M4LjQ4MSAxMy43NSA3LjM1IDEzLjMzMyA2IDEzLjMzM2MtLjQxMSAwIDEuMzMzLTYuNjY2IDMtOSAxLjY2Ny0yLjMzMyAxLjMzMy0zIC4zMzMtM0M4IDEuMzMzIDUuMjUzIDQuNTg2IDQgNy4yNTUgMS43NzMgMTIgMS4zMzMgMTUuMzkyIDEuMzMzIDE4QTQuNjY3IDQuNjY3IDAgMCAwIDYgMjIuNjY3ek0xOCAyMi42NjdBNC42NjcgNC42NjcgMCAwIDAgMjIuNjY3IDE4YzAtMS4yMjctLjU1OS0yLjUtMS4zMzQtMy4zMzMtLjg1Mi0uOTE3LTEuOTgzLTEuMzM0LTMuMzMzLTEuMzM0LS40MTEgMCAxLjMzMy02LjY2NiAzLTkgMS42NjctMi4zMzMgMS4zMzMtMyAuMzMzLTMtMS4zMzMgMC00LjA4IDMuMjUzLTUuMzMzIDUuOTIyQzEzLjc3MyAxMiAxMy4zMzMgMTUuMzkyIDEzLjMzMyAxOEE0LjY2NyA0LjY2NyAwIDAgMCAxOCAyMi42Njd6IiBmaWxsPSIjRDNEOUUzIiBtYXNrPSJ1cmwoI2IpIi8+DQogIDwvZz4NCjwvc3ZnPg==';
+import '@brightspace-ui/core/components/colors/colors';
+import '@brightspace-ui/core/components/icons/icon';
+import '@brightspace-ui/core/components/icons/icon-custom';
+import '@brightspace-ui/core/components/more-less/more-less';
+import '@brightspace-ui/core/components/typography/typography';
+import '../diamond/diamond';
+import '../custom-icons/quote';
 
 class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() {
@@ -31,97 +31,106 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get styles() {
 		return [
 			css`
-                #activity-name {
-                    margin: 0;
-                    margin-right: 12px;
-                    display: inline-block;
-                }
+				#activity-name {
+					margin: 0;
+					display: inline-block;
+				}
 
-                #card {
-                    width: 100%;
+				#card {
+					width: 100%;
 					display: flex;
 					flex-direction: column;
-                    border: 1px solid var(--d2l-color-gypsum);
-                    border-radius: 4px;
-                    box-sizing: border-box;
+					border: 1px solid var(--d2l-color-gypsum);
+					border-radius: 4px;
+					box-sizing: border-box;
 					padding: 18px 24px 24px;
 					color: var(--d2l-color-ferrite);
-                    background-color: var(--d2l-color-white);
-                    margin-bottom: 12px;
-                }
+					background-color: var(--d2l-color-white);
+					margin-bottom: 12px;
+				}
 
-                #card-header {
-                    align-items: flex-start;
-                    display: flex;
-                    margin-bottom: 12px;
-                }
+				#card-header {
+					align-items: flex-start;
+					display: flex;
+					margin-bottom: 12px;
+				}
 
-                #card-info {
-                    display: flex;
-                    flex-direction: column;
-                    margin-left: 12px;
-                }
+				#card-info {
+					display: flex;
+					flex-direction: column;
+					margin: 0px 12px;
+				}
 
-                #date {
-                    margin: 0px;
-                    margin-top: 12px;
-                }
+				#date {
+					margin: 0px;
+					margin-top: 12px;
+				}
 
-                .feedback {
+				.feedback {
 					display: flex;
 					text-align: left;
-                    font-size: 16px;
-                    margin-left: 12px;
-                    color: var(--d2l-color-tungsten);
-                }
+					font-size: 16px;
+					margin: 0px 12px;
+					color: var(--d2l-color-tungsten);
+				}
 
-                #feedback-container {
-                    margin-left: 36px;
-                }
-                
-                .feedback-info {
-                    display: flex;
-                }
+				#feedback-container {
+					display: flex;
+				}
 
-                #header-left {
-                    display: flex;
-                    flex-grow: 1;
-                }
+				#feedback-spacer {
+					width: 36px;
+				}
+				
+				.feedback-item {
+					display: flex;
+				}
 
-                #level-name {
-                    margin-right: 12px;
-                }
+				#header-left {
+					display: flex;
+					flex-grow: 1;
+				}
 
-                #loa {
-                    display: flex;
-                
-                }
+				#loa {
+					display: flex;
+				}
 
-                #title {
-                    display: flex;
-                    align-items: center;
-                }
+				#loa-spacer {
+					width: 12px;
+				}
 
-                @media (max-width: 768px) {
-                    #card {
-                        padding-left: 12px;
-                        padding-right: 12px;
-                    }
+				#title {
+					display: flex;
+					align-items: center;
+				}
 
-                    #card-header {
-                        flex-direction: column;
-                    }
+				#visibility-icon {
+					margin: 0px 12px;
+				}
 
-                    #demo-icon {
-                        order: -1;
-                        margin-right: 12px;
-                    }
+				@media (max-width: 768px) {
+					#card {
+						padding-left: 12px;
+						padding-right: 12px;
+					}
 
-                    #loa {
-                        margin-top: 12px;
-                    }
-                }
-            `,
+					#card-header {
+						flex-direction: column;
+					}
+
+					#loa {
+						margin-top: 12px;
+					}
+
+					#loa-icon {
+						order: -2;
+					}
+
+					#loa-spacer {
+						order: -1;
+					}
+				}
+			`,
 			heading4Styles,
 			bodySmallStyles
 		];
@@ -139,28 +148,30 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		return html`
-            <div id="card">
-                <div id="card-header">
-                    <div id="header-left">
-                        <d2l-icon icon="tier2:grade"></d2l-icon> 
-                        <div id="card-info">
-                            <div id="title">
-                                <h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
-                                <div>${this._renderVisibilityIcon(this._published)}</div> 
-                            </div>
-                            <div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
-                        </div>
-                    </div>
-                    <div id="loa">
-                        <div id="level-name">${this._levelName}</div>
-                        <d2l-coa-diamond id="demo-icon" color="${this._levelColor}" edge-width="18"></d2l-coa-diamond>
-                    </div>
-                </div>
-                <div id="feedback-container">
-                    ${this._feedback.map(this._renderFeedback.bind(this))}
-                </div>
-            </div>           
-        `;
+			<div id="card">
+				<div id="card-header">
+					<div id="header-left">
+						<d2l-icon icon="tier2:grade"></d2l-icon> 
+						<div id="card-info">
+							<div id="title">
+								<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
+								<div>${this._renderVisibilityIcon(this._published)}</div> 
+							</div>
+							<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
+						</div>
+					</div>
+					<div id="loa">
+						<div id="level-name">${this._levelName}</div>
+						<div id="loa-spacer"></div>
+						<d2l-coa-diamond id="loa-icon" color="${this._levelColor}" edge-width="18"></d2l-coa-diamond>
+					</div>
+				</div>
+				<div id="feedback-container">
+					<div id="feedback-spacer"></div>
+					${this._feedback.map(this._renderFeedback.bind(this))}
+				</div>
+			</div>           
+		`;
 	}
 
 	set _entity(entity) {
@@ -203,24 +214,22 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			return null;
 		}
 
+		const feedback = feedbackData.getText() || unsafeHTML(feedbackData.getHtml()); // TODO: Is there a safe way to do HTML?
+
 		return html`
-            <div class="feedback-info">
-                <img src="${quoteImage}" height="11" width="11"></img>
-                <div class="feedback">${feedbackData.getText() || feedbackData.getHtml()}</div>
-            </div>
-        `;
+			<div class="feedback-item">
+				<d2l-icon-quote height="11" width="11"></d2l-icon-quote>
+				<div class="feedback">${feedback}</div>
+			</div>
+		`;
 	}
 
 	_renderVisibilityIcon(isPublished) {
-		if (isPublished) {
-			return html`
-                <d2l-icon icon="tier1:visibility-show"></d2l-icon>
-            `;
-		}
+		const iconType = isPublished ? 'visibility-show' : 'visibility-hide';
 
 		return html`
-            <d2l-icon icon="tier1:visibility-hide"></d2l-icon>
-        `;
+			<d2l-icon id="visibility-icon" icon="tier1:${iconType}"></d2l-icon>
+		`;
 	}
 }
 
