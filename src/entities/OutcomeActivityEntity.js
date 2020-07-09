@@ -7,6 +7,7 @@ export class OutcomeActivityEntity extends Entity {
 	getName() {
 		return this._entity && this._entity.properties && this._entity.properties.name;
 	}
+
 	onAssessedDemonstrationChanged(onChange) {
 		const assessedDemonstrations = this._getAssessedDemonstrations();
 		assessedDemonstrations.forEach((demonstration, index) => {

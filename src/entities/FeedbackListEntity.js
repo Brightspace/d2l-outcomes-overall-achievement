@@ -21,8 +21,8 @@ export class FeedbackEntity extends SelflessEntity {
 	getHtml() {
 		return this._entity && this._entity.properties && this._entity.properties.html;
 	}
+
 	getText() {
 		return this._entity && this._entity.properties && this._entity.properties.text;
 	}
-
 }

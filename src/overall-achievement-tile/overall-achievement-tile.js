@@ -4,12 +4,14 @@ import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityEntity } from '../entities/OutcomeActivityEntity';
+import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/icons/icon-custom.js';
-import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/more-less/more-less.js';
 import '@brightspace-ui/core/components/typography/typography.js';
 import '../diamond/diamond.js';
+
+const quoteImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICA8ZGVmcz4NCiAgICA8cGF0aCBpZD0iYSIgZD0iTTAgMGgyNHYyNEgweiIvPg0KICA8L2RlZnM+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xIC0xKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+DQogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+DQogICAgPC9tYXNrPg0KICAgIDxwYXRoIGQ9Ik02IDIyLjY2N0E0LjY2NyA0LjY2NyAwIDAgMCAxMC42NjcgMThjMC0xLjIyNy0uNTU5LTIuNS0xLjMzNC0zLjMzM0M4LjQ4MSAxMy43NSA3LjM1IDEzLjMzMyA2IDEzLjMzM2MtLjQxMSAwIDEuMzMzLTYuNjY2IDMtOSAxLjY2Ny0yLjMzMyAxLjMzMy0zIC4zMzMtM0M4IDEuMzMzIDUuMjUzIDQuNTg2IDQgNy4yNTUgMS43NzMgMTIgMS4zMzMgMTUuMzkyIDEuMzMzIDE4QTQuNjY3IDQuNjY3IDAgMCAwIDYgMjIuNjY3ek0xOCAyMi42NjdBNC42NjcgNC42NjcgMCAwIDAgMjIuNjY3IDE4YzAtMS4yMjctLjU1OS0yLjUtMS4zMzQtMy4zMzMtLjg1Mi0uOTE3LTEuOTgzLTEuMzM0LTMuMzMzLTEuMzM0LS40MTEgMCAxLjMzMy02LjY2NiAzLTkgMS42NjctMi4zMzMgMS4zMzMtMyAuMzMzLTMtMS4zMzMgMC00LjA4IDMuMjUzLTUuMzMzIDUuOTIyQzEzLjc3MyAxMiAxMy4zMzMgMTUuMzkyIDEzLjMzMyAxOEE0LjY2NyA0LjY2NyAwIDAgMCAxOCAyMi42Njd6IiBmaWxsPSIjRDNEOUUzIiBtYXNrPSJ1cmwoI2IpIi8+DQogIDwvZz4NCjwvc3ZnPg==';
 
 class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() {
@@ -18,29 +20,11 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
-			_activityName: {
-				attribute: false
-			},
-
-			_feedback: {
-				attribute: false
-			},
-
-			_levelName: {
-				attribute: false
-			},
-
-			_levelColor: {
-				attribute: false
-			},
-
-			_quoteImage: {
-				attribute: false
-			},
-
-			_published: {
-				attribute: false
-			}
+			_activityName: { attribute: false },
+			_feedback: { attribute: false },
+			_levelColor: { attribute: false },
+			_levelName: { attribute: false },
+			_published: { attribute: false }
 		};
 	}
 
@@ -146,12 +130,11 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	constructor() {
 		super();
 		this._setEntityType(OutcomeActivityEntity);
+
 		this._accessDate = '';
 		this._activityName = '';
-		this._levelName = '';
 		this._levelColor = '';
-		this._quoteImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICA8ZGVmcz4NCiAgICA8cGF0aCBpZD0iYSIgZD0iTTAgMGgyNHYyNEgweiIvPg0KICA8L2RlZnM+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xIC0xKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICA8bWFzayBpZD0iYiIgZmlsbD0iI2ZmZiI+DQogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+DQogICAgPC9tYXNrPg0KICAgIDxwYXRoIGQ9Ik02IDIyLjY2N0E0LjY2NyA0LjY2NyAwIDAgMCAxMC42NjcgMThjMC0xLjIyNy0uNTU5LTIuNS0xLjMzNC0zLjMzM0M4LjQ4MSAxMy43NSA3LjM1IDEzLjMzMyA2IDEzLjMzM2MtLjQxMSAwIDEuMzMzLTYuNjY2IDMtOSAxLjY2Ny0yLjMzMyAxLjMzMy0zIC4zMzMtM0M4IDEuMzMzIDUuMjUzIDQuNTg2IDQgNy4yNTUgMS43NzMgMTIgMS4zMzMgMTUuMzkyIDEuMzMzIDE4QTQuNjY3IDQuNjY3IDAgMCAwIDYgMjIuNjY3ek0xOCAyMi42NjdBNC42NjcgNC42NjcgMCAwIDAgMjIuNjY3IDE4YzAtMS4yMjctLjU1OS0yLjUtMS4zMzQtMy4zMzMtLjg1Mi0uOTE3LTEuOTgzLTEuMzM0LTMuMzMzLTEuMzM0LS40MTEgMCAxLjMzMy02LjY2NiAzLTkgMS42NjctMi4zMzMgMS4zMzMtMyAuMzMzLTMtMS4zMzMgMC00LjA4IDMuMjUzLTUuMzMzIDUuOTIyQzEzLjc3MyAxMiAxMy4zMzMgMTUuMzkyIDEzLjMzMyAxOEE0LjY2NyA0LjY2NyAwIDAgMCAxOCAyMi42Njd6IiBmaWxsPSIjRDNEOUUzIiBtYXNrPSJ1cmwoI2IpIi8+DQogIDwvZz4NCjwvc3ZnPg==';
-
+		this._levelName = '';
 	}
 
 	render() {
@@ -163,7 +146,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
                         <div id="card-info">
                             <div id="title">
                                 <h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
-                                <div>${this._isPublished(this._published)}</div> 
+                                <div>${this._renderVisibilityIcon(this._published)}</div> 
                             </div>
                             <div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
                         </div>
@@ -187,17 +170,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	_isPublished(dataPublished) {
-		if (dataPublished) {
-			return html`
-                <d2l-icon icon="tier1:visibility-show"></d2l-icon>
-            `;
-		}
-
-		return html`
-            <d2l-icon icon="tier1:visibility-hide"></d2l-icon>
-        `;
-	}
 	_onEntityChanged(entity) {
 		if (entity) {
 			let levelName, levelColor, accessDate, feedback, published;
@@ -233,12 +205,23 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		return html`
             <div class="feedback-info">
-                <img src="${this._quoteImage}" height="11" width="11"></img>
+                <img src="${quoteImage}" height="11" width="11"></img>
                 <div class="feedback">${feedbackData.getText() || feedbackData.getHtml()}</div>
             </div>
         `;
 	}
 
+	_renderVisibilityIcon(isPublished) {
+		if (isPublished) {
+			return html`
+                <d2l-icon icon="tier1:visibility-show"></d2l-icon>
+            `;
+		}
+
+		return html`
+            <d2l-icon icon="tier1:visibility-hide"></d2l-icon>
+        `;
+	}
 }
 
 customElements.define(OverallAchievementTile.is, OverallAchievementTile);

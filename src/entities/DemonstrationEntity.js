@@ -22,6 +22,7 @@ export class DemonstrationEntity extends Entity {
 	getDateAssessed() {
 		return this._entity && this._entity.properties && this._entity.properties.dateAssessed;
 	}
+
 	getDemonstratedLevel() {
 		if (!this._entity) {
 			return;
@@ -30,6 +31,7 @@ export class DemonstrationEntity extends Entity {
 		const levelEntity = this._entity.getSubEntityByClasses([DemonstratableLevelEntity.class, DemonstratableLevelEntity.classes.selected]);
 		return new DemonstratableLevelEntity(this, levelEntity);
 	}
+
 	isPublished() {
 		return this._entity.hasClass(DemonstrationEntity.classes.published);
 	}
@@ -46,7 +48,6 @@ export class DemonstrationEntity extends Entity {
 
 		return this._entity.getLinkByRel(DemonstrationEntity.links.feedback).href;
 	}
-
 }
 
 export class DemonstratableLevelEntity extends SelflessEntity {
