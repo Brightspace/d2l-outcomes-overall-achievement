@@ -4,6 +4,10 @@ import { DemonstrationEntity } from './DemonstrationEntity';
 export class OutcomeActivityEntity extends Entity {
 	static get class() { return 'user-progress-outcome-activity'; }
 
+	getName() {
+		return this._entity && this._entity.properties && this._entity.properties.name;
+	}
+
 	onAssessedDemonstrationChanged(onChange) {
 		const assessedDemonstrations = this._getAssessedDemonstrations();
 		assessedDemonstrations.forEach((demonstration, index) => {
@@ -22,4 +26,5 @@ export class OutcomeActivityEntity extends Entity {
 
 		return this._entity.getSubEntitiesByClasses([DemonstrationEntity.class, DemonstrationEntity.classes.assessed]);
 	}
+
 }

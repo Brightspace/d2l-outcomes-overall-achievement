@@ -1,7 +1,8 @@
 {
     "class": [
         "demonstration",
-        "assessed"
+        "assessed",
+        "published"
     ],
     "rel": [
         "item"
@@ -86,7 +87,7 @@
             "rel": [
                 "https://user-progress.api.brightspace.com/rels/feedback"
             ],
-            "href": "unused"
+            "href": "/data/demonstrations/dem0/feedback.json"
         }
     ]
 }

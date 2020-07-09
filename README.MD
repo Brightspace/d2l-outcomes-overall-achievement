@@ -18,6 +18,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 
 - [Assessment Summary](#assessment-summary)
 - [Diamond](#diamond)
+- [Overall Achievement Tile](#overall-achievement-tile)
 - [Stacked Bar](#stacked-bar)
 
 ### Assessment Summary<a name="assessment-summary"></a>
@@ -48,6 +49,19 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 - `color` - The fill color of the diamond
 - `edge-width` - Used to size the diamond by the length of a single edge (number of pixels)
 - `width` - Used to size the diamond by its overall container width (number of pixels)
+
+### Overall Achievement Tile<a name="overall-achievement-tile"></a>
+
+#### Usage
+
+```html
+<d2l-coa-overall-achievement-tile href="" token=""></d2l-coa-overall-achievement-tile>
+```
+
+#### Attributes
+
+- `href` - Hypermedia URL for a `user-progress-outcome-activity` entity
+- `token` - Auth token
 
 ### Stacked Bar<a name="stacked-bar"></a>
 
