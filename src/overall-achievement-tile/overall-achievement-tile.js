@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { heading4Styles, bodySmallStyles} from '@brightspace-ui/core/components/typography/styles';
+import { heading4Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
@@ -67,8 +67,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 
 				.feedback {
-					display: flex;
-					text-align: left;
 					font-size: 16px;
 					margin: 0px 12px;
 					color: var(--d2l-color-tungsten);
@@ -218,7 +216,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		return html`
 			<div class="feedback-item">
-				<d2l-icon-quote height="11" width="11"></d2l-icon-quote>
+				<d2l-icon-quote></d2l-icon-quote>
 				<div class="feedback">${feedback}</div>
 			</div>
 		`;
