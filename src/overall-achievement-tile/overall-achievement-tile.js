@@ -200,7 +200,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 	_onEntityChanged(entity) {
 		if (entity) {
-			let levelName, levelColor, activityName, accessDate, feedback, published;
+			let levelName, levelColor, accessDate, feedback, published;
 			entity.onAssessedDemonstrationChanged(demonstration => {
 				demonstration.onFeedbackChanged(feedbackList => {
 					feedback = feedbackList.getFeedback();
@@ -213,7 +213,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				published = demonstration.isPublished();
 				accessDate = demonstration.getDateAssessed();
 			});
-			activityName = entity.getName();
+			const activityName = entity.getName();
 
 			entity.subEntitiesLoaded().then(() => {
 				this._accessDate = new Date(accessDate);
