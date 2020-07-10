@@ -12,6 +12,8 @@ import '@brightspace-ui/core/components/more-less/more-less';
 import '@brightspace-ui/core/components/typography/typography';
 import '../diamond/diamond';
 import '../custom-icons/quote';
+import '../custom-icons/visibility-hide';
+import '../custom-icons/visibility-show';
 
 class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() {
@@ -223,10 +225,14 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderVisibilityIcon(isPublished) {
-		const iconType = isPublished ? 'visibility-show' : 'visibility-hide';
+		if (isPublished) {
+			return html`
+				<d2l-icon-visibility-show id="visibility-icon"></d2l-icon-visibility-show>
+			`;
+		}
 
 		return html`
-			<d2l-icon id="visibility-icon" icon="tier1:${iconType}"></d2l-icon>
+			<d2l-icon-visibility-hide id="visibility-icon"></d2l-icon-visibility-hide>
 		`;
 	}
 }
