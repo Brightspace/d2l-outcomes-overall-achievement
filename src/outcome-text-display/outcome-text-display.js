@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { heading3Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
@@ -13,7 +13,7 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return {
 			_outcomeName: { attribute: false },
 			_outcomeNotation: { attribute: false }
-		}
+		};
 	}
 
 	static get styles() {
@@ -27,8 +27,8 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		super();
 		this._setEntityType(OutcomeEntity);
 
-		this._outcomeName = "";
-		this._outcomeNotation = "";
+		this._outcomeName = '';
+		this._outcomeNotation = '';
 	}
 
 	render() {
