@@ -61,7 +61,7 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 
 #### Attributes
 
-- `href` - Hypermedia URL for a `user-progress-outcome-activity` entity
+- `href` - Hypermedia URL for a `outcome` entity
 - `token` - Auth token
 
 ### Overall Achievement Tile<a name="overall-achievement-tile"></a>
