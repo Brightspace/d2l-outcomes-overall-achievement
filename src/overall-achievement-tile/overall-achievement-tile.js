@@ -48,7 +48,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					padding: 18px 24px 24px;
 					color: var(--d2l-color-ferrite);
 					background-color: var(--d2l-color-white);
-					margin-bottom: 12px;
 				}
 
 				#card-header {

@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { heading3Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
@@ -18,6 +18,12 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get styles() {
 		return [
+			css`
+				#outcome-name {
+					margin-top: 0;
+					margin-bottom: 18px;
+				}
+			`,
 			heading3Styles,
 			bodySmallStyles
 		];
@@ -33,7 +39,7 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		return html` 
-			<div class="d2l-heading-3">${this._outcomeName}</div>
+			<div class="d2l-heading-3" id="outcome-name">${this._outcomeName}</div>
 			<div class="d2l-body-small">${this._outcomeNotation}</div>
 		`;
 	}
