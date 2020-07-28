@@ -1,0 +1,58 @@
+{
+	"class": [
+		"collection",
+		"user-progress-outcome-activities"
+	],
+	"entities": [
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/5/activities/a0.json"
+		},
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/5/activities/a1.json"
+		},
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/5/activities/a2.json"
+		},
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/5/activities/a3.json"
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/user-progress-outcomes/5/activities.json"
+		},
+		{
+			"rel": [
+				"default-achievement-scale"
+			],
+			"href": "/data/loa/3lvl.json"
+		}
+	]
+}
