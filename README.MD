@@ -91,3 +91,4 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 - `href` - Hypermedia URL for a collection entity of `user-progress-outcome-activities`
 - `token` - Auth token
 - `compact` - **[Optional]** Boolean attribute, when present graph will be displayed in "compact mode" (does not show table on mobile displays)
+- `excluded-types` - **[Optional]** JSON array of Activity types to be excluded from the graph

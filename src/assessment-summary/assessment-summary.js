@@ -5,6 +5,10 @@ import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '../stacked-bar/stacked-bar';
 
+const excludedActivityTypes = [
+	'Checkpoint'
+];
+
 class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-coa-assessment-summary'; }
 
@@ -36,7 +40,12 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	render() {
 		return html`
 			<label for="chart" class="d2l-label-text">${this.localize('headingTotalAssessments', { num: this._totalCount })}</label>
-			<d2l-coa-stacked-bar id="chart" href="${this.href}" token="${this.token}"></d2l-coa-stacked-bar>
+			<d2l-coa-stacked-bar
+				id="chart"
+				href="${this.href}"
+				token="${this.token}"
+				excluded-types=${JSON.stringify(excludedActivityTypes)}
+			></d2l-coa-stacked-bar>
         `;
 	}
 
@@ -51,6 +60,11 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (entity) {
 			const demonstrations = [];
 			entity.onActivityChanged(activity => {
+				const activityType = activity.getType();
+				if (activityType && excludedActivityTypes.includes(activityType)) {
+					return;
+				}
+
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
 					demonstrations.push(demonstratedLevel.getLevelId());
