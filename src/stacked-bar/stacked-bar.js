@@ -10,6 +10,7 @@ class StackedBar extends EntityMixinLit(LitElement) {
 	static get properties() {
 		return {
 			compact: { type: Boolean },
+			excludedTypes: { attribute: 'excluded-types', type: Array },
 			_histData: { attribute: false },
 			_totalCount: { attribute: false }
 		};
@@ -113,6 +114,7 @@ class StackedBar extends EntityMixinLit(LitElement) {
 		this._setEntityType(OutcomeActivityCollectionEntity);
 
 		this.compact = this.compact || false;
+		this.excludedTypes = this.excludedTypes || [];
 		this._histData = [];
 		this._totalCount = 0;
 	}
@@ -183,6 +185,11 @@ class StackedBar extends EntityMixinLit(LitElement) {
 		if (entity) {
 			const demonstrations = [];
 			entity.onActivityChanged(activity => {
+				const activityType = activity.getType();
+				if (activityType && this.excludedTypes.includes(activityType)) {
+					return;
+				}
+
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
 					demonstrations.push(demonstratedLevel.getLevelId());
