@@ -18,6 +18,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 
 - [Assessment Summary](#assessment-summary)
 - [Diamond](#diamond)
+- [Mini Trend](#mini-trend)
 - [Outcome Text Display](#outcome-text-display)
 - [Overall Achievement Tile](#overall-achievement-tile)
 - [Stacked Bar](#stacked-bar)
@@ -51,6 +52,19 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 - `edge-width` - Used to size the diamond by the length of a single edge (number of pixels)
 - `width` - Used to size the diamond by its overall container width (number of pixels)
 
+### Mini Trend<a name="mini-trend"></a>
+
+#### Usage
+
+```html
+<d2l-coa-mini-trend href="" token=""></d2l-coa-mini-trend>
+```
+
+#### Attributes
+
+- `href` - Hypermedia URL for an `user-progress-outcome-activity` entity
+- `token` - Auth token
+
 ### Outcome Text Display<a name="outcome-text-display"></a>
 
 #### Usage
@@ -62,7 +76,6 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 #### Attributes
 
 - `href` - Hypermedia URL for an `outcome` entity
-
 - `token` - Auth token
 
 ### Overall Achievement Tile<a name="overall-achievement-tile"></a>

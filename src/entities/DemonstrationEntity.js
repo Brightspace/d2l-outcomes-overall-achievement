@@ -2,6 +2,7 @@ import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { AchievementLevelEntity } from './AchievementLevelEntity';
 import { FeedbackListEntity } from './FeedbackListEntity';
+import { UserActivityUsageEntity } from './UserActivityUsageEntity';
 
 export class DemonstrationEntity extends Entity {
 	static get class() { return 'demonstration'; }
@@ -15,7 +16,8 @@ export class DemonstrationEntity extends Entity {
 
 	static get links() {
 		return {
-			feedback: 'https://user-progress.api.brightspace.com/rels/feedback'
+			feedback: 'https://user-progress.api.brightspace.com/rels/feedback',
+			userActivityUsage: 'https://activities.api.brightspace.com/rels/user-activity-usage'
 		};
 	}
 
@@ -29,7 +31,7 @@ export class DemonstrationEntity extends Entity {
 		}
 
 		const levelEntity = this._entity.getSubEntityByClasses([DemonstratableLevelEntity.class, DemonstratableLevelEntity.classes.selected]);
-		return new DemonstratableLevelEntity(this, levelEntity);
+		return levelEntity && new DemonstratableLevelEntity(this, levelEntity);
 	}
 
 	isPublished() {
@@ -41,12 +43,25 @@ export class DemonstrationEntity extends Entity {
 		href && this._subEntity(FeedbackListEntity, href, onChange);
 	}
 
+	onUserActivityUsageChanged(onChange) {
+		const href = this._userActivityUsageHref();
+		href && this._subEntity(UserActivityUsageEntity, href, onChange);
+	}
+
 	_feedbackHref() {
 		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.feedback)) {
 			return;
 		}
 
 		return this._entity.getLinkByRel(DemonstrationEntity.links.feedback).href;
+	}
+
+	_userActivityUsageHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.userActivityUsage)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(DemonstrationEntity.links.userActivityUsage).href;
 	}
 }
 
