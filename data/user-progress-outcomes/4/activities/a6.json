@@ -1,0 +1,18 @@
+{
+	"class": [
+		"user-progress-outcome-activity"
+	],
+	"properties": {
+		"name": "Assignment 7",
+		"type": "Checkpoint"
+	},
+	"entities": [],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/user-progress-outcomes/4/activities/a6.json"
+		}
+	]
+}

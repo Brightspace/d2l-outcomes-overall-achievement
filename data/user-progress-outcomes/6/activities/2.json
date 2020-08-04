@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Discussions",
+        "type": "Quizzing",
         "name": "Activity 3"
     },
     "entities": [

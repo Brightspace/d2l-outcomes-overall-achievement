@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "News",
+        "type": "Grades",
         "name": "Activity 15"
     },
     "entities": [

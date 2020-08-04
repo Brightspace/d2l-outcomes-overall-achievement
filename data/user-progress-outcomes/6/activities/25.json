@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Locker",
+        "type": "Surveys",
         "name": "Activity 26"
     },
     "entities": [

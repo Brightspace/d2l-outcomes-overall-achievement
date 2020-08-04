@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "LTI",
+        "type": "Quizzing",
         "name": "Activity 14"
     },
     "entities": [

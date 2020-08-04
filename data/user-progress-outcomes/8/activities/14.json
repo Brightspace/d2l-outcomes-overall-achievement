@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Locker",
+        "type": "Checkpoint",
         "name": "Activity 15"
     },
     "entities": [

@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "LTI",
+        "type": "Surveys",
         "name": "Activity 6"
     },
     "entities": [

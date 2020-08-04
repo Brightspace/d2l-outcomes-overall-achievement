@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Locker",
+        "type": "Quizzing",
         "name": "Activity 22"
     },
     "entities": [
