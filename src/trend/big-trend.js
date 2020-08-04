@@ -253,10 +253,6 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		this.scrollButtonLeft = this.renderRoot.getElementById('scroll-button-left');
 		this.scrollButtonRight = this.renderRoot.getElementById('scroll-button-right');
 
-		this.scrollContainer.addEventListener('scroll', this._onDataScrolled.bind(this));
-		this.scrollButtonLeft.addEventListener('click', this._onScrollButtonClicked.bind(this));
-		this.scrollButtonRight.addEventListener('click', this._onScrollButtonClicked.bind(this));
-
 		this.resizeObserver = new ResizeObserver(() => {
 			this._onDataScrolled();
 			this._scrollToEnd();
@@ -287,16 +283,16 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					${gridHorizontal.map(item => html`<div class="h-line" style="margin-bottom: ${item.size}px;"></div>`)}
 				</div>
 				<div id="scroll-container">
-					<div id="scroll">
+					<div id="scroll" @scroll=${this._onDataScrolled}>
 						<div id="data">
 							${trendItems.map(this._renderTrendItem, this)}
 						</div>
 					</div>
 				</div>
-				<div id="scroll-button-left" class="scroll-button hidden">
+				<div id="scroll-button-left" class="scroll-button hidden" @click=${this._onScrollButtonClicked}>
 					<d2l-icon icon="d2l-tier1:chevron-left"></d2l-icon>
 				</div>
-				<div id="scroll-button-right" class="scroll-button hidden">
+				<div id="scroll-button-right" class="scroll-button hidden" @click=${this._onScrollButtonClicked}>
 					<d2l-icon icon="d2l-tier1:chevron-right"></d2l-icon>
 				</div>
 				<div class="clear"></div>
