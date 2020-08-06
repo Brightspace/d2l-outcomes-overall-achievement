@@ -1,0 +1,29 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "Locker",
+        "name": "Activity 15"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem814.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/user-progress-outcomes/8/activities/14.json"
+        }
+    ]
+}

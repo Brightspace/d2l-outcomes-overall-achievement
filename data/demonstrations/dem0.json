@@ -81,7 +81,7 @@
             "rel": [
                 "https://activities.api.brightspace.com/rels/user-activity-usage"
             ],
-            "href": "unused"
+            "href": "/data/user-activity-usages/0.json"
         },
         {
             "rel": [

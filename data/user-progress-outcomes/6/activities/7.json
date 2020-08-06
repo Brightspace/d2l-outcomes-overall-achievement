@@ -1,0 +1,39 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "Dropbox",
+        "name": "Activity 8"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem607.json"
+        },
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem607-1.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/user-progress-outcomes/6/activities/7.json"
+        }
+    ]
+}

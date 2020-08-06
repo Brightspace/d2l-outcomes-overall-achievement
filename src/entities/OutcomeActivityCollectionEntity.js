@@ -13,7 +13,9 @@ export class OutcomeActivityCollectionEntity extends Entity {
 		const activities = this._getOutcomeActivities();
 		activities.forEach((activity, index) => {
 			const onChangeWithIndex = (a) => {
-				a.index = index;
+				if (a) {
+					a.index = index;
+				}
 				onChange(a);
 			};
 			activity && this._subEntity(OutcomeActivityEntity, activity, onChangeWithIndex);

@@ -1,0 +1,29 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "Competencies",
+        "name": "Activity 12"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem811.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/user-progress-outcomes/8/activities/11.json"
+        }
+    ]
+}

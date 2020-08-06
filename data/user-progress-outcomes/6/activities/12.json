@@ -1,0 +1,29 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "SelfAssessments",
+        "name": "Activity 13"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem612.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/user-progress-outcomes/6/activities/12.json"
+        }
+    ]
+}

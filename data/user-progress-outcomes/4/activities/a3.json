@@ -1,0 +1,29 @@
+{
+	"class": [
+		"user-progress-outcome-activity"
+	],
+	"properties": {
+		"name": "Assignment 4",
+		"type": "Dropbox"
+	},
+	"entities": [
+		{
+			"class": [
+				"demonstration",
+				"assessed"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/demonstrations/dem403.json"
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/user-progress-outcomes/4/activities/a3.json"
+		}
+	]
+}

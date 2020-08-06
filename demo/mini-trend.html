@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+		<script type="module">
+			import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
+			import '../src/trend/mini-trend.js';
+		</script>
+	</head>
+	<body unresolved>
+		<d2l-demo-page page-title="d2l-coa-mini-trend demo">
+			<h2>Nothing, not even a scale</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/2/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>No Data, 3 Levels</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/3/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>Fills Mini Trend, Multiple Attempts, Multiple Months, 2 Levels</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/4/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>Few Items, Untitled Activity, Unattempted Activity, 3 Levels</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/5/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>Many Items, Exceeds Widths of Both Trends, 4 Levels</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/6/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>Complex Dataset, 10 Levels</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/7/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+
+			<h2>20 Levels, Squished Bars</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-mini-trend
+					href="/data/user-progress-outcomes/8/activities.json"
+					token="abc123"
+				></d2l-coa-mini-trend>
+			</d2l-demo-snippet>
+		</d2l-demo-page>
+	</body>
+</html>

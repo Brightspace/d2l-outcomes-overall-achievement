@@ -1,0 +1,39 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "Discussions",
+        "name": "Activity 3"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem602.json"
+        },
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/demonstrations/dem602-1.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/user-progress-outcomes/6/activities/2.json"
+        }
+    ]
+}
