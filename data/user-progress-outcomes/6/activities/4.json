@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Grades",
+        "type": "Dropbox",
         "name": "Activity 5"
     },
     "entities": [

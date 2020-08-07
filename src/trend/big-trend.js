@@ -9,12 +9,19 @@ import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
 
 const COMPONENT_HEIGHT = 120;
+const DIAMOND_SIZE = 18;
+const DIAMOND_WIDTH = Math.sqrt(DIAMOND_SIZE * DIAMOND_SIZE / 2) * 2;
 const FOOTER_HEIGHT = 22;
 const GRID_THICKNESS = 1;
 const NOT_ASSESSED_HEIGHT = 4;
 const TOOLTIP_GAP = 8;
 const TOOLTIP_POINTER_SIZE = 8;
 const SCROLL_VIEWPORT_FRACTION = 0.5;
+
+const BarTypes = Object.freeze({
+	Bar: 'bar',
+	Diamond: 'diamond'
+});
 
 class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
@@ -52,6 +59,20 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
 				#container {
 					position: relative;
+				}
+
+				.trend-pin .diamond {
+					display: inline-block;
+					flex-shrink: 0;
+					position: relative;
+					transform: rotate(45deg);
+				}
+
+				.diamond-post {
+					display: inline-block;
+					flex-shrink: 0;
+					position: relative;
+					width: 2px;
 				}
 	
 				#grid {
@@ -133,13 +154,21 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					flex-direction: column;
 					height: var(--container-height);
 					justify-content: flex-end;
-					max-width: var(--block-max-width);
-					min-width: var(--block-min-width);
 					padding: 0px var(--block-spacing);
 					padding-bottom: calc(var(--footer-height) + var(--block-spacing));
 					position: relative;
 					top: calc(var(--footer-height) + var(--block-spacing));
 					width: 100%;
+				}
+
+				.grid-column.bar {
+					max-width: var(--block-max-width);
+					min-width: var(--block-min-width);
+				}
+
+				.grid-column.diamond {
+					max-width: ${DIAMOND_WIDTH}px;
+					min-width: ${DIAMOND_WIDTH}px;
 				}
 
 				.grid-column.section:not(:first-of-type) {
@@ -164,9 +193,11 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					width: 100%;
 				}
 
-				.trend-block {
-					/* display: flex;
-					flex-direction: column;*/
+				.trend-block,
+				.trend-pin {
+					align-items: center;
+					display: flex;
+					flex-direction: column;
 					flex-shrink: 0;
 					margin-bottom: var(--grid-thickness);
 					transition: all 0.3s ease-out;
@@ -194,7 +225,9 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 				}
 				
 				.trend-group:not(.not-assessed):hover .trend-block,
-				.trend-group:not(.not-assessed):focus .trend-block {
+				.trend-group:not(.not-assessed):focus .trend-block,
+				.trend-group:not(.not-assessed):hover .trend-pin > *,
+				.trend-group:not(.not-assessed):focus .trend-pin > * {
 					filter: brightness(120%);
 					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 				}
@@ -337,7 +370,8 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
 	_getColumnClasses(group) {
 		const classes = [
-			'grid-column'
+			'grid-column',
+			group.type
 		];
 
 		if (group.label) {
@@ -409,6 +443,11 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
 		if (!this._groupHasBlocks(group)) {
 			offset -= rowHeight - GRID_THICKNESS - NOT_ASSESSED_HEIGHT;
+		} else if (group.type === BarTypes.Diamond) {
+			const maxHeight = Math.max(group.blocks.map(block => block.height));
+			const diamondOverflow = Math.max(0, DIAMOND_WIDTH - GRID_THICKNESS - maxHeight);
+
+			offset += diamondOverflow;
 		}
 
 		return offset;
@@ -433,12 +472,29 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			const groupDate = formatDate(group.date, { format: 'MMMM d, yyyy' });
 			const groupId = formatDate(group.date, { format: 'yyyy-MM' });
 			const groupLabel = this._getGroupLabel(group);
-			const groupName = (!group.name || group.name.trim() === '') ? this.localize('untitled') : group.name;
+			let groupName = (!group.name || group.name.trim() === '') ? this.localize('untitled') : group.name;
+			const groupType = group.type;
+
+			let type;
+			switch (groupType.toLowerCase()) {
+				case 'checkpoint':
+					type = BarTypes.Diamond;
+					groupName = this.localize('labelOverallAchievement');
+					break;
+				default:
+					type = BarTypes.Bar;
+					break;
+			}
+
+			if (type === BarTypes.Diamond && groupAttempts.length === 0) {
+				return;
+			}
 
 			const groupItem = {
 				date: groupDate,
 				gridHeight: gridHeight,
-				name: groupName
+				name: groupName,
+				type
 			};
 
 			// Create vertical grid lines
@@ -530,18 +586,22 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	}
 
 	_onDataScrolled() {
+		const scroll = this.scrollContainer.scrollLeft;
 		const scrollMax = this.scrollContainer.scrollLeftMax
 			|| (this.scrollContainer.scrollWidth - this.scrollContainer.offsetWidth);
 
-		if (this.scrollContainer.scrollLeft === 0 && !this.scrollButtonLeft.classList.contains('hidden')) {
+		const leftHidden = this.scrollButtonLeft.classList.contains('hidden');
+		const rightHidden = this.scrollButtonRight.classList.contains('hidden');
+
+		if (scroll === 0 && !leftHidden) {
 			this.scrollButtonLeft.classList.add('hidden');
-		} else if (this.scrollContainer.scrollLeft !== 0 && this.scrollButtonLeft.classList.contains('hidden')) {
+		} else if (scroll !== 0 && leftHidden) {
 			this.scrollButtonLeft.classList.remove('hidden');
 		}
 
-		if (Math.abs(this.scrollContainer.scrollLeft) === scrollMax && !this.scrollButtonRight.classList.contains('hidden')) {
+		if (Math.abs(scroll) === scrollMax && !rightHidden) {
 			this.scrollButtonRight.classList.add('hidden');
-		} else if (Math.abs(this.scrollContainer.scrollLeft !== scrollMax) && this.scrollButtonRight.classList.contains('hidden')) {
+		} else if (Math.abs(scroll) !== scrollMax && rightHidden) {
 			this.scrollButtonRight.classList.remove('hidden');
 		}
 	}
@@ -605,7 +665,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		`;
 	}
 
-	_renderTrendItem(trendItem, index) {
+	_renderTrendBar(trendItem, index) {
 		const blocks = trendItem.blocks.length > 0
 			? trendItem.blocks.map(block => html`<div class="trend-block" style="height: ${block.height}px; background-color: ${block.color};"></div>`)
 			: html`<span class="trend-block" style="margin-top: calc(${trendItem.gridHeight}px - var(--not-assessed-height));"></span>`;
@@ -624,6 +684,15 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		`;
 	}
 
+	_renderTrendItem(trendItem, index) {
+		switch (trendItem.type) {
+			case BarTypes.Diamond:
+				return this._renderTrendPin(trendItem, index);
+			default:
+				return this._renderTrendBar(trendItem, index);
+		}
+	}
+
 	_renderTrendItemTooltip(trendItem, index, rowHeight) {
 		const attempts = trendItem.attempts.map(attemptGroup => {
 			return html`
@@ -639,6 +708,60 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 				<div><b>${trendItem.name}</b></div>
 				${trendItem.blocks.length > 0 ? attempts : html`<div>${this.localize('notAssessed')}</div>`}
 			</d2l-tooltip>
+		`;
+	}
+
+	_renderTrendPin(trendItem, index) {
+		let blocks;
+		if (trendItem.blocks.length > 0) {
+			const extraPoleHeight = 2;
+			const sizeDiff = DIAMOND_WIDTH - DIAMOND_SIZE;
+			const pinOffset = sizeDiff / 2;
+
+			blocks = trendItem.blocks.map(block => {
+				const diamondOverflow = Math.max(0, DIAMOND_WIDTH - GRID_THICKNESS - block.height);
+
+				const diamondStyles = [
+					`background-color:${block.color}`,
+					`height:${DIAMOND_SIZE}px`,
+					`top:${pinOffset - diamondOverflow}px`,
+					`width:${DIAMOND_SIZE}px`,
+				].join(';');
+
+				const postStyles = [
+					`height:${block.height + extraPoleHeight - DIAMOND_WIDTH + diamondOverflow}px`,
+					`background-color:${block.color}`,
+					`top:${GRID_THICKNESS + sizeDiff - extraPoleHeight - diamondOverflow}px`
+				].join(';');
+
+				return html`
+					<div class="trend-pin" style="height: ${block.height}px; min-width: ${DIAMOND_WIDTH}px">
+						<div
+							class="diamond"
+							style=${diamondStyles}
+						></div>
+						<div
+							class="diamond-post"
+							style=${postStyles}
+						></div>
+					</div>
+				`;
+			});
+		} else {
+			return null;
+		}
+
+		const label = trendItem.label
+			? html`<span class="grid-label">${trendItem.label}</span>`
+			: null;
+
+		return html`
+			<div class=${this._getColumnClasses(trendItem)}>
+				<div id=${this._getUniqueGroupId(index)} class=${this._getGroupClasses(trendItem)} tabindex="0">
+					${blocks}
+				</div>
+				${label}
+			</div>
 		`;
 	}
 

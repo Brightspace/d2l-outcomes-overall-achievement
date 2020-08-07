@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "LTI",
+        "type": "SelfAssessments",
         "name": "Activity 2"
     },
     "entities": [

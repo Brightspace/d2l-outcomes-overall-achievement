@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Dropbox",
+        "type": "QuestionCollection",
         "name": "Activity 8"
     },
     "entities": [

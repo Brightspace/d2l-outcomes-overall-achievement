@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "ePortfolio",
+        "type": "Dropbox",
         "name": "Activity 17"
     },
     "entities": [

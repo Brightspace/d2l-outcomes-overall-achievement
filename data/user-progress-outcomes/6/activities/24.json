@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Checklist",
+        "type": "Links",
         "name": "Activity 25"
     },
     "entities": [

@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "QuestionCollection",
+        "type": "LTI",
         "name": "Activity 1"
     },
     "entities": [

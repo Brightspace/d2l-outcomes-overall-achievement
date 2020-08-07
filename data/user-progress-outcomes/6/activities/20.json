@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Surveys",
+        "type": "Chat",
         "name": "Activity 21"
     },
     "entities": [

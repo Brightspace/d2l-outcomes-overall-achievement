@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "ePortfolio",
+        "type": "Checklist",
         "name": "Activity 4"
     },
     "entities": [
