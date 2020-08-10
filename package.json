@@ -14,6 +14,7 @@
     "@brightspace-ui/core": "^1.64.1",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware",
     "lit-element": "^2.3.1",
+    "s-html": "github:Brightspace/s-html",
     "siren-sdk": "BrightspaceHypermediaComponents/siren-sdk#semver:^1"
   },
   "devDependencies": {
