@@ -44,7 +44,7 @@ export class DemonstrationEntity extends Entity {
 	}
 
 	getSubmissionLinkHref() {
-		if (!this.entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.submissionLink)) {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.submissionLink)) {
 			return;
 		}
 

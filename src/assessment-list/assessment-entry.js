@@ -209,7 +209,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					</div>
 					<div>
 						<div id="feedback-spacer"></div>
-						${this._feedback.map(this._renderFeedback.bind(this))}
+						${this._feedback.map(this._renderFeedback, this)}
 					</div>
 				</button>
 			</div>		
@@ -258,6 +258,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return 'd2l-tier2:content';
 		}
 	}
+
 	_onClick(event) {
 		if (
 			!this._link ||
@@ -274,6 +275,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 		window.location = this._link;
 	}
+
 	_onEntityChanged(entity) {
 		if (entity) {
 			let attempt, feedback, levelName, levelColor;
@@ -332,7 +334,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return html`
 			<div class="feedback">
 				<d2l-icon-quote></d2l-icon-quote>
-				<div id="quote">${feedback}</div>
+				<d2l-more-less id="quote">${feedback}</d2l-more-less>
 			</div>
 		`;
 	}

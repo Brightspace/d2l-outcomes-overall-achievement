@@ -125,6 +125,12 @@
 				"https://user-progress.api.brightspace.com/rels/feedback"
 			],
 			"href": "/data/demonstrations/dem1100/feedback.json"
+		},
+		{
+			"rel": [
+				"https://user-progress.api.brightspace.com/rels/submission-link"
+			],
+			"href": "https://www.d2l.com/"
 		}
 	]
 } 

@@ -7,6 +7,10 @@ import '@brightspace-ui/core/components/typography/typography';
 import './assessment-entry';
 import './assessment-skeleton';
 
+const excludedActivityTypes = [
+	'Checkpoint'
+];
+
 export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-coa-assessment-list'; }
 
@@ -40,7 +44,7 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	render() {
 		return html `
 			<div>
-				${this._assessmentList.map(this._renderAssessmentEntry.bind(this))}
+				${this._assessmentList.map(this._renderAssessmentEntry, this)}
 			</div>
 		`;
 	}
@@ -57,15 +61,18 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			const assessmentList = [];
 			entity.onOutcomeActivitiesChanged(activities => {
 				activities.onActivityChanged(activity => {
-					const activityObject = activity;
-					activity.onAssessedDemonstrationChanged(demonstration => {
-						const assessmentEntry = {
-							date: new Date(demonstration.getDateAssessed()),
-							activity: activityObject,
-							demonstrationHref: demonstration.getSelfHref()
-						};
-						assessmentList.push(assessmentEntry);
-					});
+					const activityType = activity.getType();
+					if (activityType && !excludedActivityTypes.includes(activityType)) {
+						const activityObject = activity;
+						activity.onAssessedDemonstrationChanged(demonstration => {
+							const assessmentEntry = {
+								date: new Date(demonstration.getDateAssessed()),
+								activity: activityObject,
+								demonstrationHref: demonstration.getSelfHref()
+							};
+							assessmentList.push(assessmentEntry);
+						});
+					}
 				});
 			});
 
