@@ -16,6 +16,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 
 ## Components
 
+- [Assessment List](#assessment-list)
 - [Assessment Summary](#assessment-summary)
 - [Big Trend](#big-trend)
 - [Diamond](#diamond)
@@ -23,6 +24,22 @@ To view component demos, run `npm start`. A page should be launched with links t
 - [Outcome Text Display](#outcome-text-display)
 - [Overall Achievement Tile](#overall-achievement-tile)
 - [Stacked Bar](#stacked-bar)
+
+---
+### Assessment List<a name="assessment-list"></a>
+
+A list of all current assessments in a chronological order for a particular user/outcome/course tripplet (excluding Checkpoint activities).
+
+#### Usage
+
+```html
+<d2l-coa-assessment-list href="" token=""></d2l-coa-assessment-list>
+```
+
+#### Attributes
+
+- `href` - Hypermedia URL for a collection entity of `user-progress-outcome`
+- `token` - Auth token
 
 ---
 
