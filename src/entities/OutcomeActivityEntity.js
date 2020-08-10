@@ -4,6 +4,10 @@ import { DemonstrationEntity } from './DemonstrationEntity';
 export class OutcomeActivityEntity extends Entity {
 	static get class() { return 'user-progress-outcome-activity'; }
 
+	getActivityType() {
+		return this._entity && this._entity.properties && this._entity.properties.type;
+	}
+
 	getDueDate() {
 		return this._entity && this._entity.properties && this._entity.properties.dueDate;
 	}
@@ -18,6 +22,14 @@ export class OutcomeActivityEntity extends Entity {
 		}
 
 		return this._entity.getLinkByRel('self').href;
+	}
+
+	getSubmissionLinkHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.submissionLink)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(DemonstrationEntity.links.submissionLink).href;
 	}
 
 	getType() {
