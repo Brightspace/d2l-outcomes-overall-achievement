@@ -40,12 +40,6 @@
 				"https://user-progress.api.brightspace.com/rels/feedback"
 			],
 			"href": "unused"
-		},
-		{
-			"rel": [
-				"https://user-progress.api.brightspace.com/rels/submission-link"
-			],
-			"href": ""
 		}
 	]
 }
