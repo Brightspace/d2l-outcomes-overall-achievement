@@ -7,7 +7,7 @@ export class OutcomeActivityEntity extends Entity {
 	static get links() {
 		return {
 			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link'
-		}
+		};
 	}
 
 	getActivityType() {
