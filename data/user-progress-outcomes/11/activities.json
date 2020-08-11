@@ -1,0 +1,95 @@
+{
+	"class": [
+		"collection",
+		"user-progress-outcome-activities"
+	],
+	"entities": [
+		{
+            "class": [
+                "level-of-achievment"
+            ],
+            "rel": [
+                "item"
+			],
+			"href": "/data/levels/level10.json"
+
+        },
+        {
+            "class": [
+                "level-of-achievment"
+            ],
+            "rel": [
+                "item"
+            ],
+			"href": "/data/levels/level11.json"
+        },
+        {
+            "class": [
+                "level-of-achievment"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/levels/level12.json"
+		},
+		{
+            "class": [
+                "level-of-achievment"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/levels/level13.json"
+		},
+		{
+            "class": [
+                "level-of-achievment"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/levels/level14.json"
+        },
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/11/activities/a0.json"
+		},
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/11/activities/a1.json"
+		},
+		{
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/11/activities/a2.json"
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/user-progress-outcomes/11/activities.json"
+		},
+		{
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/scale1.json"
+        }
+	]
+} 

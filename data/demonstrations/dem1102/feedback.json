@@ -1,0 +1,36 @@
+{
+    "class": [
+        "feedback-list",
+        "collection"
+    ],
+    "entities": [
+        {
+            "class": [
+                "richtext",
+                "feedback"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "text": "",
+                "html": "Congradulation on your improvements for your second submission"
+            }
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "up",
+                "https://user-progress.api.brightspace.com/rels/outcome-activity"
+            ],
+            "href": "unused"
+        },
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/demonstrations/dem1102/feedback.json"
+        }
+    ]
+} 

@@ -17,7 +17,8 @@ export class DemonstrationEntity extends Entity {
 	static get links() {
 		return {
 			feedback: 'https://user-progress.api.brightspace.com/rels/feedback',
-			userActivityUsage: 'https://activities.api.brightspace.com/rels/user-activity-usage'
+			userActivityUsage: 'https://activities.api.brightspace.com/rels/user-activity-usage',
+			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link'
 		};
 	}
 
@@ -32,6 +33,22 @@ export class DemonstrationEntity extends Entity {
 
 		const levelEntity = this._entity.getSubEntityByClasses([DemonstratableLevelEntity.class, DemonstratableLevelEntity.classes.selected]);
 		return levelEntity && new DemonstratableLevelEntity(this, levelEntity);
+	}
+
+	getSelfHref() {
+		if (!this._entity || !this._entity.hasLinkByRel('self')) {
+			return null;
+		}
+
+		return this._entity.getLinkByRel('self').href;
+	}
+
+	getSubmissionLinkHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.submissionLink)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(DemonstrationEntity.links.submissionLink).href;
 	}
 
 	isPublished() {
