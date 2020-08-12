@@ -79,8 +79,6 @@ class StackedBar extends EntityMixinLit(LitElement) {
 					#container:not(.compact) #graph-container:hover .graph-bar {
 						animation: raise 200ms ease-in;
 						box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
-						position: relative;
-						top: -2px;
 					}
 				}
 
