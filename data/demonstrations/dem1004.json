@@ -7,7 +7,7 @@
 		"item"
 	],
 	"properties": {
-		"dateAssessed": "2019-07-30T13:54:09.710Z"
+		"dateAssessed": "2019-08-16T13:54:09.710Z"
 	},
 	"entities": [
 		{
@@ -69,8 +69,7 @@
 		},
 		{
 			"class": [
-				"demonstratable-level",
-				"selected"
+				"demonstratable-level"
 			],
 			"rel": [
 				"item"
@@ -89,7 +88,8 @@
 		},
 		{
 			"class": [
-				"demonstratable-level"
+				"demonstratable-level",
+				"selected"
 			],
 			"rel": [
 				"item"
@@ -112,19 +112,19 @@
 			"rel": [
 				"self"
 			],
-			"href": "/data/demonstrations/dem17.json"
+			"href": "/data/demonstrations/dem1004.json"
 		},
 		{
 			"rel": [
 				"https://activities.api.brightspace.com/rels/user-activity-usage"
 			],
-			"href": "unused"
+			"href": "/data/user-activity-usages/1004.json"
 		},
 		{
 			"rel": [
 				"https://user-progress.api.brightspace.com/rels/feedback"
 			],
-			"href": "unused"
+			"href": "/data/demonstrations/dem1004/feedback.json"
 		}
 	]
-}
+} 

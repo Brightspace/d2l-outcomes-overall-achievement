@@ -6,8 +6,8 @@
 		"item"
 	],
 	"properties": {
-		"name": "Assignment 12",
-		"type": "Dropbox"
+		"name": "Quiz 1",
+		"type": "Quizzing"
 	},
 	"entities": [
 		{
@@ -18,7 +18,7 @@
 			"rel": [
 				"item"
 			],
-			"href": "/data/demonstrations/dem1004.json"
+			"href": "/data/demonstrations/dem1000.json"
 		},
 		{
 			"class": [
@@ -28,7 +28,7 @@
 			"rel": [
 				"item"
 			],
-			"href": "/data/demonstrations/dem1005.json"
+			"href": "/data/demonstrations/dem1001.json"
 		}
 	],
 	"links": [
@@ -36,7 +36,7 @@
 			"rel": [
 				"self"
 			],
-			"href": "/data/user-progress-outcomes/10/activities/a12.json"
+			"href": "/data/user-progress-outcomes/10/activities/a0.json"
 		},
 		{
 			"rel": [
@@ -49,6 +49,12 @@
 				"https://user-progress.api.brightspace.com/rels/feedback"
 			],
 			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://user-progress.api.brightspace.com/rels/submission-link"
+			],
+			"href": "https://www.google.ca/"
 		}
 	]
 }

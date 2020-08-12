@@ -18,7 +18,7 @@
 			"rel": [
 				"item"
 			],
-			"href": "/data/demonstrations/dem17.json"
+			"href": "/data/demonstrations/dem1003.json"
 		}
 	],
 	"links": [
@@ -26,7 +26,7 @@
 			"rel": [
 				"self"
 			],
-			"href": "/data/user-progress-outcomes/3/activities/a11.json"
+			"href": "/data/user-progress-outcomes/10/activities/a11.json"
 		},
 		{
 			"rel": [
@@ -44,7 +44,7 @@
 			"rel": [
 				"https://user-progress.api.brightspace.com/rels/submission-link"
 			],
-			"href": "unused"
+			"href": "https://github.com/"
 		}
 	]
 }

@@ -14,7 +14,7 @@
             ],
             "properties": {
                 "text": "",
-                "html": "Good progress! You have a clear understanding on your future&nbsp;<b>Career Options</b>, click&nbsp;<a href=\"\">here</a> for more feedback"
+                "html": "The peach (Prunus persica) is a deciduous tree native to the region of Northwest China between the Tarim Basin and the north slopes of the Kunlun Mountains."
             }
         }
     ],
@@ -30,7 +30,7 @@
             "rel": [
                 "self"
             ],
-            "href": "/data/demonstrations/dem18/feedback.json"
+            "href": "/data/demonstrations/dem1003/feedback.json"
         }
     ]
 } 

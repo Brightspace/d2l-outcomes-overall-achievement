@@ -5,51 +5,23 @@
 	],
 	"entities": [
 		{
-            "class": [
-                "level-of-achievment"
-            ],
-            "rel": [
-                "item"
+			"class": [
+				"user-progress-outcome-activity"
 			],
-			"href": "/data/levels/level10.json"
-
-        },
-        {
-            "class": [
-                "level-of-achievment"
-            ],
-            "rel": [
-                "item"
-            ],
-			"href": "/data/levels/level11.json"
-        },
-        {
-            "class": [
-                "level-of-achievment"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "/data/levels/level12.json"
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/10/activities/a0.json"
 		},
 		{
-            "class": [
-                "level-of-achievment"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "/data/levels/level13.json"
+			"class": [
+				"user-progress-outcome-activity"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/user-progress-outcomes/10/activities/a1.json"
 		},
-		{
-            "class": [
-                "level-of-achievment"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "/data/levels/level14.json"
-        },
 		{
 			"class": [
 				"user-progress-outcome-activity"

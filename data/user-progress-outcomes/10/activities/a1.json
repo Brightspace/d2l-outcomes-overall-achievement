@@ -6,8 +6,8 @@
 		"item"
 	],
 	"properties": {
-		"name": "Assignment 12",
-		"type": "Dropbox"
+		"name": "Quiz 2",
+		"type": "Quizzing"
 	},
 	"entities": [
 		{
@@ -18,17 +18,7 @@
 			"rel": [
 				"item"
 			],
-			"href": "/data/demonstrations/dem1004.json"
-		},
-		{
-			"class": [
-				"demonstration",
-				"assessed"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "/data/demonstrations/dem1005.json"
+			"href": "/data/demonstrations/dem1002.json"
 		}
 	],
 	"links": [
@@ -36,7 +26,7 @@
 			"rel": [
 				"self"
 			],
-			"href": "/data/user-progress-outcomes/10/activities/a12.json"
+			"href": "/data/user-progress-outcomes/10/activities/a1.json"
 		},
 		{
 			"rel": [

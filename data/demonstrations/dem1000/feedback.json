@@ -13,8 +13,8 @@
                 "item"
             ],
             "properties": {
-                "text": "",
-                "html": "Good progress! You have a clear understanding on your future&nbsp;<b>Career Options</b>, click&nbsp;<a href=\"\">here</a> for more feedback"
+                "text": "A mango is a juicy stone fruit (drupe) produced from numerous species of tropical trees belonging to the flowering plant genus Mangifera, cultivated mostly for their edible fruit. Most of these species are found in nature as wild mangoes. The genus belongs to the cashew family Anacardiaceae.",
+                "html": ""
             }
         }
     ],
@@ -30,7 +30,7 @@
             "rel": [
                 "self"
             ],
-            "href": "/data/demonstrations/dem20/feedback.json"
+            "href": "/data/demonstrations/dem1000/feedback.json"
         }
     ]
 } 

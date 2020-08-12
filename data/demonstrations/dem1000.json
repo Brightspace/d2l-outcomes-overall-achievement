@@ -1,19 +1,19 @@
 {
 	"class": [
 		"demonstration",
-		"assessed",
-		"published"
+		"assessed"
 	],
 	"rel": [
 		"item"
 	],
 	"properties": {
-		"dateAssessed": "2020-06-09T12:51:00.623Z"
+		"dateAssessed": "2019-07-27T13:54:09.710Z"
 	},
 	"entities": [
 		{
 			"class": [
-				"demonstratable-level"
+				"demonstratable-level",
+				"selected"
 			],
 			"rel": [
 				"item"
@@ -51,8 +51,7 @@
 		},
 		{
 			"class": [
-				"demonstratable-level",
-				"selected"
+				"demonstratable-level"
 			],
 			"rel": [
 				"item"
@@ -113,19 +112,19 @@
 			"rel": [
 				"self"
 			],
-			"href": "/data/demonstrations/dem20.json"
+			"href": "/data/demonstrations/dem1000.json"
 		},
 		{
 			"rel": [
 				"https://activities.api.brightspace.com/rels/user-activity-usage"
 			],
-			"href": "unused"
+			"href": "/data/user-activity-usages/1000.json"
 		},
 		{
 			"rel": [
 				"https://user-progress.api.brightspace.com/rels/feedback"
 			],
-			"href": "/data/demonstrations/dem20/feedback.json"
+			"href": "/data/demonstrations/dem1000/feedback.json"
 		}
 	]
-}
+} 
