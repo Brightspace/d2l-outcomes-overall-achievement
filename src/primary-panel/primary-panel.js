@@ -32,7 +32,6 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				#trend-spacer {
 					height: 30px;
 				}
-
 			`,
 			heading3Styles
 		];
@@ -93,8 +92,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_onEntityChanged(entity) {
 		if (entity) {
 			let checkpointHref;
-			this._outcomeHref = entity.getOutcomeHref();
-			this._outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
+			const outcomeHref = entity.getOutcomeHref();
+			const outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
 				outcomeActivities.onActivityChanged(activity => {
 					if (activity.getActivityType() === 'Checkpoint') {
@@ -104,6 +103,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			});
 
 			entity.subEntitiesLoaded().then(() => {
+				this._outcomeHref = outcomeHref;
+				this._outcomeActivitiesHref = outcomeActivitiesHref;
 				this._checkpointHref = checkpointHref;
 			});
 		}

@@ -151,7 +151,7 @@ Tile showing details of a user's demonstration towards a particular course Outco
 
 ### Primary Panel<a name="primary-panel"></a>
 
-A panel consists of components such as Outcome Text Display, Trend, Overall Achievement Tile, Assessment Summary, and Assessment List
+A panel displaying a user's current progress toward achieving a given outcome within a given course.
 
 #### Usage
 
