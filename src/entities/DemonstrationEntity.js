@@ -77,7 +77,6 @@ export class DemonstrationEntity extends Entity {
 		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.userActivityUsage)) {
 			return;
 		}
-
 		return this._entity.getLinkByRel(DemonstrationEntity.links.userActivityUsage).href;
 	}
 }

@@ -6,6 +6,7 @@ export class OutcomeEntity extends Entity {
 	getAltNotation() {
 		return this._entity && this._entity.properties && this._entity.properties.altNotation;
 	}
+
 	getDescription() {
 		return this._entity && this._entity.properties && this._entity.properties.description;
 	}

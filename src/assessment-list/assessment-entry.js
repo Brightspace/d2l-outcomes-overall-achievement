@@ -193,7 +193,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					<div class="grow line"></div>
 				</div>
 				<div id="timeline-spacer"></div>
-				<button id="card" ?disabled="${!this._link}" @click="${this._onClick}">
+				<button id="card" class="d2l-more-less-toggle" ?disabled="${!this._link}" @click="${this._onClick}">
 					<div id="card-header">
 						<div id="header-left">
 							<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
@@ -267,7 +267,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return (
 					element instanceof HTMLElement &&
 					element.tagName === 'D2L-BUTTON-SUBTLE' &&
-					element.classList.contains('more-less-toggle')
+					element.classList.contains('d2l-more-less-toggle')
 				);
 			})
 		) {

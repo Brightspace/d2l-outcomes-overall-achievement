@@ -23,6 +23,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 - [Mini Trend](#mini-trend)
 - [Outcome Text Display](#outcome-text-display)
 - [Overall Achievement Tile](#overall-achievement-tile)
+- [Primary Panel](#primary-panel)
 - [Stacked Bar](#stacked-bar)
 
 ---
@@ -144,6 +145,23 @@ Tile showing details of a user's demonstration towards a particular course Outco
 #### Attributes
 
 - `href` - Hypermedia URL for a `user-progress-outcome-activity` entity
+- `token` - Auth token
+
+---
+
+### Primary Panel<a name="primary-panel"></a>
+
+A panel displaying a user's current progress toward achieving a given outcome within a given course.
+
+#### Usage
+
+```html
+<d2l-coa-primary-panel href="" token=""></d2l-coa-primary-panel>
+```
+
+#### Attributes
+
+- `href` - Hypermedia URL for a collection entity of `user-progress-outcome`
 - `token` - Auth token
 
 ---
