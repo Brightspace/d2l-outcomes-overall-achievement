@@ -5,17 +5,18 @@ import { heading3Styles } from '@brightspace-ui/core/components/typography/style
 import '../outcome-text-display/outcome-text-display';
 import '../overall-achievement-tile/overall-achievement-tile';
 import '../assessment-summary/assessment-summary';
-import 'd2l-outcomes-user-progress/src/evidence/evidence-list';
+import '../assessment-list/assessment-list';
+import '../trend/big-trend';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 
 class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() {
-		return "d2l-coa-primary-panel";
+		return 'd2l-coa-primary-panel';
 	}
 
 	static get properties() {
 		return {
-			_userProgressOutcomeHref: { attribute: false },
+			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
 			_checkpointHref: { attribute: false },
 		};
@@ -24,8 +25,12 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get styles() {
 		return [
 			css`
-				#evidence-list {
-					margin-top: 12px;
+				#list-spacer {
+					height: 18px;
+				}
+
+				#trend-spacer {
+					height: 30px;
 				}
 
 			`,
@@ -37,7 +42,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		super();
 		this._setEntityType(UserProgressOutcomeEntity);
 
-		this._userProgressOutcome = '';
+		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
 	}
@@ -45,26 +50,36 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	render() {
 		return html`
 			<d2l-coa-outcome-text-display 
-				href="${this._userProgressOutcomeHref}" 
+				href="${this._outcomeHref}" 
 				token="${this.token}">
 			</d2l-coa-outcome-text-display>
 
 			<div class="d2l-heading-3">Trend</div>
+
+			<d2l-coa-big-trend
+				href="${this._outcomeActivitiesHref}"
+				token="${this.token}">
+			</d2l-coa-big-trend>
+
+			<div id="trend-spacer"></div>
+
 			<d2l-coa-overall-achievement-tile 
 				href="${this._checkpointHref}" 
 				token="${this.token}">
 			</d2l-coa-overall-achievement-tile>
 
 			<div class="d2l-heading-3">Evidence</div>
-			<d2l-coa-assessment-summary 
+			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
 				token="${this.token}">
 			</d2l-coa-assessment-summary>
 			
-			<d2l-evidence-list 
-				href="/data/user-progress-outcome/upo0.json" 
+			<div id="list-spacer"></div>
+
+			<d2l-coa-assessment-list
+				href="${this.href}"
 				token="${this.token}">
-			</d2l-evidence-list>
+			</d2l-coa-assessment-list>
 		`;
 	}
 
@@ -78,19 +93,19 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_onEntityChanged(entity) {
 		if (entity) {
 			let checkpointHref;
-			this._userProgressOutcomeHref = entity._outcomeHref();
-			this._outcomeActivitiesHref = entity._outcomeActivitiesHref();
+			this._outcomeHref = entity.getOutcomeHref();
+			this._outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
 				outcomeActivities.onActivityChanged(activity => {
-					if (activity.getActivityType() == "Checkpoint") {
+					if (activity.getActivityType() === 'Checkpoint') {
 						checkpointHref = activity.getSelfHref();
 					}
-				})
-			})
+				});
+			});
 
 			entity.subEntitiesLoaded().then(() => {
 				this._checkpointHref = checkpointHref;
-			})
+			});
 		}
 	}
 }
