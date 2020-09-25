@@ -86,7 +86,8 @@ export class DemonstratableLevelEntity extends SelflessEntity {
 
 	static get classes() {
 		return {
-			selected: 'selected'
+			selected: 'selected',
+			suggested: 'suggested'
 		};
 	}
 
@@ -98,6 +99,18 @@ export class DemonstratableLevelEntity extends SelflessEntity {
 
 	getLevelId() {
 		return this._entity && this._entity.properties && this._entity.properties.levelId;
+	}
+
+	isManualOverride() {
+		return this.isSelected() && !this.isSuggested();
+	}
+
+	isSelected() {
+		return this._entity.hasClass(DemonstratableLevelEntity.classes.selected);
+	}
+
+	isSuggested() {
+		return this._entity.hasClass(DemonstratableLevelEntity.classes.suggested);
 	}
 
 	onLevelChanged(onChange) {
