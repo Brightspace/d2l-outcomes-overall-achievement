@@ -1,0 +1,28 @@
+{
+	"entities": [
+		{
+			"class": [
+				"first",
+				"name"
+			],
+			"rel": [
+				"https://api.brightspace.com/rels/first-name"
+			],
+			"properties": {
+				"name": "India"
+			}
+		},
+		{
+			"class": [
+				"last",
+				"name"
+			],
+			"rel": [
+				"https://api.brightspace.com/rels/last-name"
+			],
+			"properties": {
+				"name": "Rivas"
+			}
+		}
+	]
+}

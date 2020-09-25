@@ -3,13 +3,13 @@
         "outcome"
     ],
     "properties": {
-        "notation": "D2L.MBU.1",
-        "altNotation": "Alternate Notation of D2L.MBU.1",
+        "notation": "MCR3U.B2.5",
+        "altNotation": "",
         "label": "Standard",
         "listId": "",
-        "description": "Own the product - Familiar with the product line and know the persona of who the product is primarily built",
+		"description": "represent an exponential function with an equation, given its graph or its properties",
         "subjects": [
-            "Career Education"
+            "Functions, University Preparation"
         ],
         "source": "asn"
     },
@@ -19,13 +19,13 @@
                 "about"
             ],
             "type": "text/html",
-            "href": "http://asn.desire2learn.com/resources/S2788206"
+            "href": "http://asn.desire2learn.com/resources/S2788207"
         },
         {
             "rel": [
                 "self"
             ],
-            "href": "/data/outcomes/o2.json"
+            "href": "/data/outcomes/o7.json"
         }
     ]
 }

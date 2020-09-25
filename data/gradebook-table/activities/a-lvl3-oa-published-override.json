@@ -1,0 +1,32 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "rel": [
+        "item"
+    ],
+    "properties": {
+        "name": "Overall Achievement",
+        "type": "checkpoint-item"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/demonstrations/dem-lvl3-published-override.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl3-oa-published-override.json"
+        }
+    ]
+}

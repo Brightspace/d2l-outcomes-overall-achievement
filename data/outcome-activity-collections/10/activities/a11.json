@@ -1,0 +1,50 @@
+{
+	"class": [
+		"user-progress-outcome-activity"
+	],
+	"rel": [
+		"item"
+	],
+	"properties": {
+		"name": "Assignment 11",
+		"type": "Dropbox"
+	},
+	"entities": [
+		{
+			"class": [
+				"demonstration",
+				"assessed"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "/data/demonstrations/dem1003.json"
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/outcome-activity-collections/10/activities/a11.json"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/user-activity-usage"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://user-progress.api.brightspace.com/rels/feedback"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://user-progress.api.brightspace.com/rels/submission-link"
+			],
+			"href": "https://github.com/"
+		}
+	]
+}

@@ -1,0 +1,76 @@
+{
+    "class": [
+        "collection",
+        "user-progress-outcome-activities"
+    ],
+    "entities": [
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/0.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/1.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/3.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/4.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/5.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/10lvl.json"
+        }
+    ]
+}

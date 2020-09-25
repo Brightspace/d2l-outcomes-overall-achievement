@@ -1,0 +1,122 @@
+{
+    "class": [
+        "collection",
+        "user-progress-outcome-activities"
+    ],
+    "entities": [
+        {
+            "class": [
+                "user-progress-outcome-activity",
+                "checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2-oa-published.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl1.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl1.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl3.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-lvl2.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/gradebook-table/outcome-activity-collections/user/oac-published-lvl2.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/scale0.json"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+	"class": [
+		"collection",
+		"user-progress-outcome-activities"
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/outcome-activity-collections/3/activities.json"
+		},
+		{
+			"rel": [
+				"default-achievement-scale"
+			],
+			"href": "/data/loa/scale0.json"
+		}
+	]
+}

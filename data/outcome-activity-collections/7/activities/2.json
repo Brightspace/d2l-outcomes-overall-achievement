@@ -1,0 +1,19 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "Grades",
+        "dueDate": "2020-01-03T00:00:00.000Z",
+        "name": "Activity 3"
+    },
+    "entities": [],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/outcome-activity-collections/7/activities/2.json"
+        }
+    ]
+}

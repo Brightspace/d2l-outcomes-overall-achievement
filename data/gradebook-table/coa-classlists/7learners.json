@@ -1,0 +1,170 @@
+{
+    "class": [
+        "collection",
+        "checkpoint-user"
+    ],
+    "entities": [
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u0.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u0.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u1.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u1.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u2.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u2.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u3.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u3.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u4.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u4.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u5.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u5.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/gradebook-table/users/u6.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/gradebook-table/user-progress-outcome-collections/upoc-u6.json"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/gradebook-table/coa-classlists/7learners.json"
+        }
+    ]
+}

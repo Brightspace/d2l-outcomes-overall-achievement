@@ -1,0 +1,85 @@
+{
+    "class": [
+        "collection",
+        "user-progress-outcome-activities"
+    ],
+    "entities": [
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/gradebook-table/activities/a-unassessed-oa.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/gradebook-table/outcome-activity-collections/class/oac-noneassessed.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/scale0.json"
+        }
+    ]
+}
