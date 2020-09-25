@@ -4,14 +4,16 @@ import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityColl
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
-class StackedBar extends EntityMixinLit(LitElement) {
+export class StackedBar extends EntityMixinLit(LitElement) {
 	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	static get properties() {
 		return {
 			compact: { type: Boolean },
 			excludedTypes: { attribute: 'excluded-types', type: Array },
+			displayUnassessed: {attribute: 'display-unassessed', type: Boolean },
 			_histData: { attribute: false },
+			_assessedCount: { attribute: false },
 			_totalCount: { attribute: false }
 		};
 	}
@@ -115,6 +117,7 @@ class StackedBar extends EntityMixinLit(LitElement) {
 		this.excludedTypes = this.excludedTypes || [];
 		this._histData = [];
 		this._totalCount = 0;
+		this._assessedCount = 0;
 	}
 
 	render() {
@@ -146,7 +149,6 @@ class StackedBar extends EntityMixinLit(LitElement) {
 			};
 			return acc;
 		}, {});
-
 		demonstrations.forEach(demonstratedLevel => {
 			if (levelMap[demonstratedLevel]) {
 				levelMap[demonstratedLevel].count++;
@@ -154,7 +156,16 @@ class StackedBar extends EntityMixinLit(LitElement) {
 		});
 
 		this._histData = Object.values(levelMap);
-		this._totalCount = demonstrations.length;
+		this._assessedCount = demonstrations.length;
+		if (this.displayUnassessed) {
+			const unassessedColor = '#9ea5a9';
+			const unassessedData = {
+				color: unassessedColor,
+				count: this._totalCount - this._assessedCount,
+				name: 'Not evaluated'
+			};
+			this._histData.push(unassessedData);
+		}
 	}
 
 	set _entity(entity) {
@@ -175,7 +186,8 @@ class StackedBar extends EntityMixinLit(LitElement) {
 	}
 
 	_getLevelCountText(levelData) {
-		const percentage = Math.floor(100.0 * levelData.count / (this._totalCount || 1));
+		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
+		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
 		return `${levelData.count} (${percentage}%)`;
 	}
 
@@ -187,6 +199,7 @@ class StackedBar extends EntityMixinLit(LitElement) {
 				if (activityType && this.excludedTypes.includes(activityType)) {
 					return;
 				}
+				this._totalCount++;
 
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
