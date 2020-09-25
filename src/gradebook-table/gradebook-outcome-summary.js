@@ -2,7 +2,6 @@ import { html, css } from 'lit-element';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import { StackedBar } from '../stacked-bar/stacked-bar';
-import 'd2l-table/d2l-table.js';
 
 export class GradebookOutcomeSummary extends StackedBar {
 	static get is() { return 'd2l-coa-gradebook-outcome-summary'; }
@@ -94,7 +93,7 @@ export class GradebookOutcomeSummary extends StackedBar {
 				.tooltip-line-container {
 					justify-content: left;
 					align-items: center;
-					height: 12px;
+					height: 14px;
 				}
 
 				:host([dir="rtl"]) .tooltip-line-container {
@@ -111,8 +110,11 @@ export class GradebookOutcomeSummary extends StackedBar {
 				}				
 
 				td {
-					padding: 0px;
+					padding-bottom: 3px;
 					vertical-align: top;
+					color: white;
+					font-size: 14px;
+					line-height: 14px;
 				}
 
 				.tooltip-level-dist-table {
@@ -129,11 +131,6 @@ export class GradebookOutcomeSummary extends StackedBar {
 					margin-left: 7px;
 					margin-right: 0px;
 					text-align: right;
-				}
-
-				#tooltip {
-					position: absolute;
-					z-index: 5;
 				}
 
 				.tooltip-percent-label {
