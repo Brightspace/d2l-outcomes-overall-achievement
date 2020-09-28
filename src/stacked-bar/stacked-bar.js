@@ -1,10 +1,13 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
-export class StackedBar extends EntityMixinLit(LitElement) {
+const unassessedColor = '#9ea5a9';
+
+export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	static get properties() {
@@ -158,11 +161,10 @@ export class StackedBar extends EntityMixinLit(LitElement) {
 		this._histData = Object.values(levelMap);
 		this._assessedCount = demonstrations.length;
 		if (this.displayUnassessed) {
-			const unassessedColor = '#9ea5a9';
 			const unassessedData = {
 				color: unassessedColor,
 				count: this._totalCount - this._assessedCount,
-				name: 'Not evaluated'
+				name: this.localize('notEvaluated')
 			};
 			this._histData.push(unassessedData);
 		}

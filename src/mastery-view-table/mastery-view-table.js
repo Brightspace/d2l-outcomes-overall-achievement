@@ -2,8 +2,8 @@ import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
-import './gradebook-user-outcome.js';
-import './gradebook-outcome-summary.js';
+import './mastery-view-user-outcome-cell.js';
+import './mastery-view-outcome-header-cell.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import 'd2l-table/d2l-table.js';
@@ -15,8 +15,8 @@ import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
-class GradebookTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
-	static get is() { return 'd2l-coa-gradebook-table'; }
+class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
+	static get is() { return 'd2l-mastery-view-table'; }
 
 	static get properties() {
 		return {
@@ -133,7 +133,7 @@ class GradebookTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 
 				const outcomeData = {
-					href: outcome.getHref(),
+					href: outcome.getSelfHref(),
 					activityCollectionHref: activityCollectionHref,
 					name: outcome.getNotation(),
 					description: outcome.getDescription()
@@ -258,7 +258,7 @@ class GradebookTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			</td>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
 				<td>
-					<d2l-coa-gradebook-user-outcome
+					<d2l-mastery-view-user-outcome-cell
 						href="${outcomeData.activityCollectionHref}"
 						token="${this.token}"
 					/>
@@ -274,7 +274,7 @@ class GradebookTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 		return html`
 		<th>
-			<d2l-coa-gradebook-outcome-summary
+			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
 				outcome-name="${outcomeData.name}"
@@ -332,4 +332,4 @@ class GradebookTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 }
 
-customElements.define(GradebookTable.is, GradebookTable);
+customElements.define(MasteryViewTable.is, MasteryViewTable);

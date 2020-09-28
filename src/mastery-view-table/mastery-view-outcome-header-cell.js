@@ -3,8 +3,8 @@ import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import { StackedBar } from '../stacked-bar/stacked-bar';
 
-export class GradebookOutcomeSummary extends StackedBar {
-	static get is() { return 'd2l-coa-gradebook-outcome-summary'; }
+export class MasteryViewOutcomeHeaderCell extends StackedBar {
+	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
 
 	static get properties() {
 		return {
@@ -144,10 +144,6 @@ export class GradebookOutcomeSummary extends StackedBar {
 		];
 	}
 
-	constructor() {
-		super();
-	}
-
 	render() {
 		return html`
 		<div id="cell-content-container" tabindex="0" aria-labelledby="tooltip">
@@ -202,4 +198,4 @@ export class GradebookOutcomeSummary extends StackedBar {
 	}
 }
 
-customElements.define(GradebookOutcomeSummary.is, GradebookOutcomeSummary);
+customElements.define(MasteryViewOutcomeHeaderCell.is, MasteryViewOutcomeHeaderCell);

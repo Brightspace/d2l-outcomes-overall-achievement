@@ -9,16 +9,8 @@ export class OutcomeActivityCollectionEntity extends Entity {
 		};
 	}
 
-	getOutcomeActivities() {
-		if (!this._entity) {
-			return;
-		}
-
-		return this._entity.getSubEntitiesByClass(OutcomeActivityEntity.class);
-	}
-
 	onActivityChanged(onChange) {
-		const activities = this.getOutcomeActivities();
+		const activities = this._getOutcomeActivities();
 		activities.forEach((activity, index) => {
 			const onChangeWithIndex = (a) => {
 				if (a) {
@@ -42,4 +34,13 @@ export class OutcomeActivityCollectionEntity extends Entity {
 
 		return this._entity.getLinkByRel(OutcomeActivityCollectionEntity.links.defaultAchievementScale).href;
 	}
+
+	_getOutcomeActivities() {
+		if (!this._entity) {
+			return;
+		}
+
+		return this._entity.getSubEntitiesByClass(OutcomeActivityEntity.class);
+	}
+
 }

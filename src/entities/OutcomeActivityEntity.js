@@ -9,9 +9,6 @@ export class OutcomeActivityEntity extends Entity {
 			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link'
 		};
 	}
-	getActivityType() {
-		return this._entity && this._entity.properties && this._entity.properties.type;
-	}
 
 	getDueDate() {
 		return this._entity && this._entity.properties && this._entity.properties.dueDate;
@@ -39,11 +36,6 @@ export class OutcomeActivityEntity extends Entity {
 
 	getType() {
 		return this._entity && this._entity.properties && this._entity.properties.type;
-	}
-
-	isOverallAchievement() {
-		const type = this.getActivityType();
-		return type && type === 'checkpoint-item';
 	}
 
 	onAssessedDemonstrationChanged(onChange) {

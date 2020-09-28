@@ -27,15 +27,6 @@ class CoaUserEntity extends SelflessEntity {
 		};
 	}
 
-	getUserInfo() {
-		if (!this._entity) {
-			return;
-		}
-
-		const userEntity = this._entity.getSubEntitiesByClass(UserEntity.class);
-		return userEntity && new UserEntity(this, userEntity);
-	}
-
 	getUserProgressOutcomesHref() {
 		if (!this._entity || !this._entity.hasLinkByRel(CoaUserEntity.links.userProgressOutcomeRel)) {
 			return;

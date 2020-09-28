@@ -11,11 +11,11 @@ export class OutcomeEntity extends Entity {
 		return this._entity && this._entity.properties && this._entity.properties.description;
 	}
 
-	getHref() {
-		return this._entity && this._entity.getLinkByRel('self').href;
-	}
-
 	getNotation() {
 		return this._entity && this._entity.properties && this._entity.properties.notation;
+	}
+
+	getSelfHref() {
+		return this._entity && this._entity.getLinkByRel('self').href;
 	}
 }
