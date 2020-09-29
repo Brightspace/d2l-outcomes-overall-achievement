@@ -8,6 +8,11 @@ import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityColl
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
 
+const KEYCODES = {
+	ENTER: 13,
+	SPACE: 32
+};
+
 export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(LitElement)) {
 	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
 
@@ -21,6 +26,10 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 		return css`
 			.cell-content-container:focus {
 				outline-color: var(--d2l-color-celestine);
+			}
+
+			.cell-content-container {
+				width: 198px;
 			}
 
 			#assessment-fraction-container {
@@ -43,6 +52,10 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				line-height: 24px;
 				padding-left: 30px;
 				padding-bottom: 18px;
+			}
+
+			.cell-content-container:hover > .assessment-level-label{
+				text-decoration: underline;
 			}
 
 			:host([dir="rtl"]) .assessment-level-label {
@@ -99,8 +112,13 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			return null;
 		}
 		return html`
-
-		<div class="cell-content-container" tabindex="0" style="background-color:${data.levelColor}">
+		<div
+			class="cell-content-container"
+			tabindex="0"
+			style="background-color:${data.levelColor}"
+			@click=${() => { this._onClick(); }}
+			@keydown=${(e) => { this._onKeyDown(e); }}
+		>
 			<div id="assessment-fraction-container">
 				<span id="assessment-fraction">
 					${data.totalEvaluatedAssessments}/${data.totalAssessments}
@@ -141,19 +159,27 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 		return this.localize('tooltipUserOutcomeAssessments', 'numAssessed', totalAssessed, 'numTotal', totalActivities);
 	}
 
+	_onClick() {
+		const link = this._cellData.evalPageHref;
+		if (!link) {
+			return;
+		}
+		window.location = link;
+	}
+
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
 		}
-		let name, color, hasOverallDemonstration, overallAssessmentDate, mostRecentAssessmentDate, hasManualOverride, isPublished, isOutOfDate;
+		let name, color, hasOverallDemonstration, overallAssessmentDate, mostRecentAssessmentDate, hasManualOverride, isPublished, isOutOfDate, evalHref;
 		let assessmentCount = 0;
 		let assessmentWithDemonstrationCount = 0;
 		entity.onActivityChanged(activity => {
 			if (!activity) {
 				return;
 			}
-			//Check if the activity is a checkpoint item, then fill in appropriate information
 			if (activity.getType() === 'checkpoint-item') {
+				//Activity is an overall achievement
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					hasOverallDemonstration = true;
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
@@ -164,6 +190,9 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 						name = loa.getName();
 						color = loa.getColor();
 					});
+				});
+				activity.onUserActivityUsageChanged(activityUsage => {
+					evalHref = activityUsage.getEvalPageHref();
 				});
 			}
 			else {
@@ -196,9 +225,16 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				levelColor: color + '1A',
 				isManualOverride: hasManualOverride,
 				outdated: isOutOfDate,
-				published: isPublished
+				published: isPublished,
+				evalPageHref: evalHref
 			};
 		});
+	}
+
+	_onKeyDown(event) {
+		if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACE) {
+			this._onClick();
+		}
 	}
 }
 

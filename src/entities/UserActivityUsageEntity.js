@@ -3,6 +3,19 @@ import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 
 export class UserActivityUsageEntity extends Entity {
 	static get class() { return 'activity'; }
+	static get links() {
+		return {
+			evalPage: 'https://activities.api.brightspace.com/rels/evaluation'
+		};
+	}
+
+	getEvalPageHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(UserActivityUsageEntity.links.evalPage)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(UserActivityUsageEntity.links.evalPage).href;
+	}
 
 	getNameEntity() {
 		if (!this._entity) {
