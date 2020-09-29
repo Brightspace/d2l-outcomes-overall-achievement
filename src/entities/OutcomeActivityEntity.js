@@ -1,5 +1,6 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
 import { DemonstrationEntity } from './DemonstrationEntity';
+import { UserActivityUsageEntity } from './UserActivityUsageEntity';
 
 export class OutcomeActivityEntity extends Entity {
 	static get class() { return 'user-progress-outcome-activity'; }
@@ -7,20 +8,12 @@ export class OutcomeActivityEntity extends Entity {
 	static get links() {
 		return {
 			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link',
-			evalLink: 'eval'
+			userActivityUsage: 'https://activities.api.brightspace.com/rels/user-activity-usage'
 		};
 	}
 
 	getDueDate() {
 		return this._entity && this._entity.properties && this._entity.properties.dueDate;
-	}
-
-	getEvalPageHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(OutcomeActivityEntity.links.evalLink)) {
-			return null;
-		}
-
-		return this._entity.getLinkByRel(OutcomeActivityEntity.links.evalLink).href;
 	}
 
 	getName() {
@@ -58,11 +51,24 @@ export class OutcomeActivityEntity extends Entity {
 		});
 	}
 
+	onUserActivityUsageChanged(onChange) {
+		const href = this._userActivityUsageHref();
+		href && this._subEntity(UserActivityUsageEntity, href, onChange);
+	}
+
 	_getAssessedDemonstrations() {
 		if (!this._entity) {
 			return;
 		}
 
 		return this._entity.getSubEntitiesByClasses([DemonstrationEntity.class, DemonstrationEntity.classes.assessed]);
+	}
+
+	_userActivityUsageHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(OutcomeActivityEntity.links.userActivityUsage)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(OutcomeActivityEntity.links.userActivityUsage).href;
 	}
 }
