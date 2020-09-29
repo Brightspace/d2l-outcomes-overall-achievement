@@ -12,6 +12,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@brightspace-ui/core": "^1.64.1",
+    "d2l-table": "github:BrightspaceUI/table",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware",
     "lit-element": "^2.3.1",
     "siren-sdk": "BrightspaceHypermediaComponents/siren-sdk#semver:^1"

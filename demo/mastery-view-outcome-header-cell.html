@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+		<script type="module">
+			import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
+			import '../src/mastery-view-table/mastery-view-outcome-header-cell.js';
+			import '@brightspace-ui/core/components/colors/colors.js';
+			import 'd2l-table/d2l-table.js';
+		</script>
+	</head>
+	<body unresolved>
+		<d2l-demo-page page-title="d2l-mastery-view-outcome-header-cell demo">
+			<h3>3 levels</h3>
+            <d2l-demo-snippet>
+				<div style="width: 198px; border: 1px solid var(--d2l-table-border-color); font-size:14px; line-height:20px;">
+					<d2l-mastery-view-outcome-header-cell
+						href="/data/mastery-view-table/outcome-activity-collections/class/oac-full.json"
+						token="abc123"
+						outcome-name="D2L.MBU.0"
+						outcome-description="Students will demonstrate a clearer understanding of the career exploration process and how their own skills and interests match up to a chosen major/career path"
+						display-unassessed>
+					</d2l-mastery-view-outcome-header-cell>
+				</div>
+			</d2l-demo-snippet>
+            <h3>3 levels with unassessed items</h3>
+            <d2l-demo-snippet>
+				<div style="width: 198px; border: 1px solid var(--d2l-table-border-color); font-size:14px; line-height:20px;">
+					<d2l-mastery-view-outcome-header-cell
+						href="/data/mastery-view-table/outcome-activity-collections/class/oac-partial.json"
+						token="abc123"
+						outcome-name="D2L.MBU.1"
+						outcome-description="Own the product - Familiar with the product line and know the persona of who the product is primarily built"
+						display-unassessed>
+					</d2l-mastery-view-outcome-header-cell>
+				</div>
+            </d2l-demo-snippet>
+
+            <h3>3 levels, no assessments</h3>
+            <d2l-demo-snippet>
+				<div style="width: 198px; border: 1px solid var(--d2l-table-border-color); font-size:14px; line-height:20px;">
+					<d2l-mastery-view-outcome-header-cell
+						href="/data/mastery-view-table/outcome-activity-collections/class/oac-noneassessed.json"
+						token="abc123"
+						outcome-name="D2L.MBU.2"
+						outcome-description="Know the partnerships involved in the development of the product"
+						display-unassessed>
+					</d2l-mastery-view-outcome-header-cell>
+				</div>
+			</d2l-demo-snippet>
+        </d2l-demo-page>
+	</body>
+</html>

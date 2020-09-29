@@ -42,4 +42,5 @@ export class OutcomeActivityCollectionEntity extends Entity {
 
 		return this._entity.getSubEntitiesByClass(OutcomeActivityEntity.class);
 	}
+
 }

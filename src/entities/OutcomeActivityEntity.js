@@ -10,10 +10,6 @@ export class OutcomeActivityEntity extends Entity {
 		};
 	}
 
-	getActivityType() {
-		return this._entity && this._entity.properties && this._entity.properties.type;
-	}
-
 	getDueDate() {
 		return this._entity && this._entity.properties && this._entity.properties.dueDate;
 	}

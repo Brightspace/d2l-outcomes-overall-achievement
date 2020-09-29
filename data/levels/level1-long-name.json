@@ -1,0 +1,28 @@
+{
+    "class": [
+        "level-of-achievement"
+    ],
+    "rel": [
+        "item"
+    ],
+    "properties": {
+        "color": "#ffe599",
+        "levelId": "level1-long-name",
+        "name": "Extremely Long Level Name That Ultimately Ends Up Referring To Level 2",
+        "sortOrder": 200
+    },
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/levels/level1-long-name.json"
+        },
+        {
+            "rel": [
+                "achievement-scale"
+            ],
+            "href": "/data/loa/scale0-long-lvl1-name.json"
+        }
+    ]
+}

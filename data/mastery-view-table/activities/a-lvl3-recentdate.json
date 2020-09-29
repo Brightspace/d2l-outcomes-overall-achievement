@@ -1,0 +1,32 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "rel": [
+        "item"
+    ],
+    "properties": {
+        "name": "a3",
+        "type": "Dropbox"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/mastery-view-table/demonstrations/dem-lvl3-recentdate.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/mastery-view-table/activities/a-lvl3-recentdate.json"
+        }
+    ]
+}

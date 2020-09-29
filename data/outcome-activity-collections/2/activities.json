@@ -1,0 +1,14 @@
+{
+	"class": [
+		"collection",
+		"user-progress-outcome-activities"
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/outcome-activity-collections/2/activities.json"
+		}
+	]
+}

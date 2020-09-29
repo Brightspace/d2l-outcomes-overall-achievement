@@ -1,0 +1,31 @@
+{
+    "class": [
+        "collection",
+        "user-progress-outcome-activities"
+    ],
+    "entities": [
+        {
+            "class": [
+                "user-progress-outcome-activity"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "/data/outcome-activity-collections/1/activities/a10.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/outcome-activity-collections/1/activities.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/scale1.json"
+        }
+    ]
+}

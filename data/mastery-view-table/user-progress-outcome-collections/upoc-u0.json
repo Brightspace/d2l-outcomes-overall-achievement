@@ -1,0 +1,192 @@
+{
+	"class": [
+		"collection",
+		"user-progress-outcome-activities"
+	],
+	"entities": [
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o0.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl2.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o1.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl2.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o2.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-unassessed.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o3.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl2.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o4.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl3.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o5.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl1.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o6.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-unassessed.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"user-progress-outcome"
+			],
+			"rel": [
+				"item"
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "/data/outcomes/o7.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/outcome-activities"
+					],
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl3.json"
+				}
+			]
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
+		}
+	]
+}

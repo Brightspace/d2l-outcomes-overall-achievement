@@ -22,7 +22,7 @@
 			"rel": [
 				"https://user-progress.api.brightspace.com/rels/outcome-activities"
 			],
-			"href": "/data/user-progress-outcomes/10/activities.json"
+			"href": "/data/outcome-activity-collections/10/activities.json"
 		}
 	]
 }

@@ -1,0 +1,19 @@
+{
+	"class": [
+		"user-progress-outcome-activity"
+	],
+	"properties": {
+		"name": "Assignment 2",
+		"dueDate": "2020-01-02T00:02:00.000Z",
+		"type": "Dropbox"
+	},
+	"entities": [],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "/data/outcome-activity-collections/5/activities/a1.json"
+		}
+	]
+}
