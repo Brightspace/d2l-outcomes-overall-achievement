@@ -6,12 +6,21 @@ export class OutcomeActivityEntity extends Entity {
 
 	static get links() {
 		return {
-			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link'
+			submissionLink: 'https://user-progress.api.brightspace.com/rels/submission-link',
+			evalLink: 'eval'
 		};
 	}
 
 	getDueDate() {
 		return this._entity && this._entity.properties && this._entity.properties.dueDate;
+	}
+
+	getEvalPageHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(OutcomeActivityEntity.links.evalLink)) {
+			return null;
+		}
+
+		return this._entity.getLinkByRel(OutcomeActivityEntity.links.evalLink).href;
 	}
 
 	getName() {
