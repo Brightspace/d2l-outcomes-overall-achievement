@@ -180,7 +180,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 								userOutcomeDataLinks.push(userOutcomeData);
 							});
 							userOutcomeDataLinks.sort((left, right) => {
-								return left.outcomeHref - right.outcomeHref;
+								return left.outcomeHref.localeCompare(right.outcomeHref);
 							});
 							resolve();
 						});
@@ -203,7 +203,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		entity.subEntitiesLoaded().then(() => {
 			outcomeHeadersData.sort((left, right) => {
-				return left.href - right.href;
+				return left.href.localeCompare(right.href);
 			});
 			this._outcomeHeadersData = outcomeHeadersData;
 		});
