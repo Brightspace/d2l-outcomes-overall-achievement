@@ -30,9 +30,9 @@
         },
         {
             "rel": [
-                "eval"
+                "https://activities.api.brightspace.com/rels/user-activity-usage"
             ],
-            "href": "https://youtube.com"
+            "href": "/data/mastery-view-table/user-activity-usages/uau0.json"
         }
     ]
 }
