@@ -16,6 +16,12 @@
                 "self"
             ],
             "href": "/data/mastery-view-table/activities/a-unassessed-oa.json"
+        },
+        {
+            "rel": [
+                "eval"
+            ],
+            "href": "https://bing.com"
         }
     ]
 }

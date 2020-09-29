@@ -27,6 +27,12 @@
                 "self"
             ],
             "href": "/data/mastery-view-table/activities/a-lvl1-oa.json"
+        },
+        {
+            "rel": [
+                "eval"
+            ],
+            "href": "https://google.com"
         }
     ]
 }

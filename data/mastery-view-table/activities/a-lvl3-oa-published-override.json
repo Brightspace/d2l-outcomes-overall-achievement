@@ -27,6 +27,12 @@
                 "self"
             ],
             "href": "/data/mastery-view-table/activities/a-lvl3-oa-published-override.json"
+        },
+        {
+            "rel": [
+                "eval"
+            ],
+            "href": "https://D2L.com"
         }
     ]
 }
