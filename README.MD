@@ -20,6 +20,7 @@ To view component demos, run `npm start`. A page should be launched with links t
 - [Assessment Summary](#assessment-summary)
 - [Big Trend](#big-trend)
 - [Diamond](#diamond)
+- [Mastery View Table](#mastery-view-table)
 - [Mini Trend](#mini-trend)
 - [Outcome Text Display](#outcome-text-display)
 - [Overall Achievement Tile](#overall-achievement-tile)
@@ -95,6 +96,23 @@ Requires either `edge-width` or `width` attribute to be provided, but not both (
 - `color` - The fill color of the diamond
 - `edge-width` - Used to size the diamond by the length of a single edge (number of pixels)
 - `width` - Used to size the diamond by its overall container width (number of pixels)
+
+---
+
+### Mastery View Table<a name="mastery-view-table"></a>
+
+A table displaying the overall outcome levels of achievement of each user in the course, plus class-level outcome achievement distribution
+
+#### Usage
+
+```html
+<d2l-mastery-view-table href="" token=""></d2l-mastery-view-table>
+```
+
+#### Attributes
+
+- `href` - Hypermedia URL for a `class-overall-achievement` entity
+- `token` - Auth token
 
 ---
 
