@@ -5,6 +5,8 @@ import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import 'd2l-table/d2l-table.js';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import '../custom-icons/visibility-hide.js';
+import '../custom-icons/visibility-show.js';
 
 export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(LitElement)) {
 	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
@@ -108,9 +110,9 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			${data.isManualOverride ? html`
 				<div class="override-indicator"><b>*</b></div>
 			` : null}
-
+			
 			<div class="assessment-publish-status-img">
-				${data.published ? this._renderPublishedIcon() : this._renderNotPublishedIcon() }
+				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide>`}
 			</div>
 			${data.outdated ? html`
 				<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
@@ -151,7 +153,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				return;
 			}
 			//Check if the activity is a checkpoint item, then fill in appropriate information
-			if (activity.getType() === 'Checkpoint') {
+			if (activity.getType() === 'checkpoint-item') {
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					hasOverallDemonstration = true;
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
@@ -197,31 +199,6 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				published: isPublished
 			};
 		});
-	}
-
-	_renderNotPublishedIcon() {
-		return html`
-		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="11.9" viewBox="0 0 14 11.9">
-			<defs>
-				<clipPath id="clip-path">
-					<path id="Path_8" data-name="Path 8" d="M12.657-11.707a1,1,0,0,1,0,1.414l-9.9,9.9a1,1,0,0,1-1.414,0,1,1,0,0,1,0-1.414l9.9-9.9A1,1,0,0,1,12.657-11.707Zm-.272,3.1A3.215,3.215,0,0,1,14-6.05c0,2.209-3.134,4-7,4-.381,0-.755-.017-1.12-.051l.955-.954L7-3.05a3,3,0,0,0,3-3l-.006-.166ZM7-10.05c.382,0,.756.017,1.121.051l-.955.954L7-9.05a3,3,0,0,0-3,3l.005.166-2.39,2.39A3.215,3.215,0,0,1,0-6.05C0-8.259,3.134-10.05,7-10.05Z" fill="none" clip-rule="evenodd"/>
-				</clipPath>
-			</defs>
-			<g id="Visibility-hide-small" transform="translate(0 12)" clip-path="url(#clip-path)">
-				<path id="Path_5" data-name="Path 5" d="M12.657.293a1,1,0,0,1,0,1.414l-9.9,9.9a1,1,0,0,1-1.414-1.414l9.9-9.9A1,1,0,0,1,12.657.293Zm-.272,3.1A3.215,3.215,0,0,1,14,5.95c0,2.209-3.134,4-7,4-.381,0-.755-.017-1.12-.051l.955-.954L7,8.95a3,3,0,0,0,3-3l-.006-.166ZM7,1.95c.382,0,.756.017,1.121.051l-.955.954L7,2.95a3,3,0,0,0-3,3l.005.166-2.39,2.39A3.215,3.215,0,0,1,0,5.95C0,3.741,3.134,1.95,7,1.95Z" transform="translate(0 -12)" fill="none" stroke="#6d7376" stroke-width="4"/>
-				<path id="Path_6" data-name="Path 6" d="M0,0H14V-12H0Z" fill="none"/>
-				<path id="Path_7" data-name="Path 7" d="M-1,1H15V-13H-1Z" fill="none"/>
-			</g>
-		</svg>
-		`;
-	}
-
-	_renderPublishedIcon() {
-		return html`
-		<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11.9" viewBox="0 -2 14 11.9">
-			<path id="Visibility-show-small" d="M8,3c3.866,0,7,1.791,7,4s-3.134,4-7,4S1,9.209,1,7,4.134,3,8,3ZM8,4a3,3,0,1,0,3,3A3,3,0,0,0,8,4ZM8,6A1,1,0,1,1,7,7,1,1,0,0,1,8,6Z" transform="translate(-1 -3)" fill="#6e7376" fill-rule="evenodd"/>
-		</svg>
-		`;
 	}
 }
 
