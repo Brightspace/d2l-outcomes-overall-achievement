@@ -1,0 +1,15 @@
+{
+    "class": [
+        "collection",
+        "checkpoint-user"
+    ],
+    "entities": [],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/mastery-view-table/coa-classlists/7learners.json"
+        }
+    ]
+}
