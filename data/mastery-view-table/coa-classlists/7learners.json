@@ -23,6 +23,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -45,6 +51,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u1.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -67,6 +79,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u2.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -89,6 +107,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u3.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -111,6 +135,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u4.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -133,6 +163,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u5.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         },
@@ -155,6 +191,12 @@
                         "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
                     ],
                     "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u6.json"
+                },
+                {
+                    "rel": [
+                        "grades-summary"
+                    ],
+                    "href": "https://D2L.com"
                 }
             ]
         }

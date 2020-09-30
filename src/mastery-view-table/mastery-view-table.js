@@ -6,6 +6,8 @@ import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
+import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
+
 import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
 
@@ -13,6 +15,7 @@ import '@brightspace-ui/core/components/typography/typography.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/icons/icon.js';
+import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
@@ -43,9 +46,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				.learner-name-label {
 					padding: 0px 16px;
 				}
+
+				.learner-name-label:focus {
+					outline: 0;
+					text-decoration: underline;
+				}
 								
 			`,
-			d2lTableStyles
+			d2lTableStyles,
+			linkStyles
 		];
 	}
 
@@ -117,6 +126,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			return lastName + ', ' + firstName;
 		}
 	}
+
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
@@ -186,10 +196,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						});
 					})
 				]).then(() => {
+					const gradesPageLink = coaUser.getUserGradesSummaryHref();
 					const learnerInfo = {
 						firstName: firstName,
 						lastName: lastName,
-						outcomesProgressData: userOutcomeDataLinks
+						outcomesProgressData: userOutcomeDataLinks,
+						gradesPageHref: gradesPageLink
 					};
 					learnerInfoList.push(learnerInfo);
 				});
@@ -252,9 +264,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return html`
 		<tr>
 			<td sticky>
-				<div class="learner-name-label">
+				<a
+					href="${learnerData.gradesPageHref}"
+					class="d2l-link learner-name-label"
+				>
 					${this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat)}
-				</div>
+				</a>
 			</td>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
 				<td>

@@ -23,8 +23,18 @@ class CoaUserEntity extends SelflessEntity {
 	static get links() {
 		return {
 			userRel: 'user',
+			userGradesSummaryRel: 'grades-summary',
 			userProgressOutcomeRel: 'https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes'
 		};
+	}
+
+	getUserGradesSummaryHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(CoaUserEntity.links.userGradesSummaryRel)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(CoaUserEntity.links.userGradesSummaryRel).href;
+
 	}
 
 	getUserProgressOutcomesHref() {
