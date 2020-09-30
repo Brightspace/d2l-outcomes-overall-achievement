@@ -31,7 +31,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_firstRowIdx: Number,
 			_lastRowIdx: Number,
 			_nameFirstLastFormat: Boolean,
-			_sortDesc: Boolean
+			_sortDesc: Boolean,
+
+			_skeletonLoaded: Boolean
 		};
 	}
 
@@ -67,11 +69,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._lastRowIdx = 19;
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
+		this._skeletonLoaded = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
 	render() {
-		if (this._outcomeHeadersData.Length === 0) {
+		if (this._skeletonLoaded && this._outcomeHeadersData.length === 0) {
+			//TODO: render empty state for no aligned outcomes
 			return null;
 		}
 
@@ -218,6 +222,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return left.href.localeCompare(right.href);
 			});
 			this._outcomeHeadersData = outcomeHeadersData;
+			this._skeletonLoaded = true;
 		});
 	}
 
@@ -301,14 +306,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderTableBody(rowsData) {
-		if (rowsData.length === 0) {
-			//Show table loading state
+		if (this._skeletonLoaded && rowsData.length === 0) {
+			//TODO: render empty state for no enrolled students
 			return null;
 		}
-		else {
-			return rowsData.map(item => this._renderLearnerRow(item));
-		}
+		return rowsData.map(item => this._renderLearnerRow(item));
 	}
+
 	_renderTableHead() {
 		return html`
 		<tr header>
