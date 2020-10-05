@@ -3,7 +3,7 @@
     "bigTrendAttemptsScreenReaderString": "{numAttempts, plural, =1 {Attempt {attemptNames}} other {Attempts {attemptNames} and {lastAttemptName}}}",
     "descending": "Descending",
     "firstName": "First name",
-    "goToUserAchievementSummaryPage": "Go to {username}'s achievement summary page",
+    "goToUserAchievementSummaryPage": "Go to {username}'s achievement summary page.",
     "headingDate": "Date",
     "headingEvidence": "Evidence Name",
     "headingLoa": "Level of Achievement",
