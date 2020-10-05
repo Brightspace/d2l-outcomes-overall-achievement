@@ -230,7 +230,6 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			}
 			if (activity.getType() === 'checkpoint-item') {
 				//Activity is an overall achievement
-				evalHref = activity.getEvalPageHref();
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					hasOverallDemonstration = true;
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
@@ -241,6 +240,9 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 						name = loa.getName();
 						color = loa.getColor();
 					});
+				});
+				activity.onUserActivityUsageChanged(activityUsage => {
+					evalHref = activityUsage.getEvalPageHref();
 				});
 			}
 			else {

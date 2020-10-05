@@ -1,0 +1,15 @@
+{
+	"class": [
+		"user-activity-usage",
+		"checkpoint-item",
+		"activity"
+	],
+	"links": [
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/evaluation"
+			],
+			"href": "https://google.com"
+		}
+	]
+}
