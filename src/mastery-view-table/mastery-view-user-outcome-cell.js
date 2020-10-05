@@ -29,32 +29,32 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			}
 
 			.cell-content-container {
-				width: 198px;
+				width: 9.9rem;
 			}
 
 			#assessment-fraction-container {
-				line-height: 12px;
+				line-height: 0.6rem;
 			}
 
 			#assessment-fraction {
 				display: inline-block;
-				padding-left: 6px;
-				padding-top: 6px;
-				padding-right: 6px;
+				padding-left: 0.3rem;
+				padding-top: 0.3rem;
+				padding-right: 0.3rem;
 				font-family: 'Lato', sans-serif;
-				font-size: 12px;
+				font-size: 0.6rem;
 				color: var(--d2l-color-tungsten)
 			}
 
 			.assessment-label-container {
 				display: inline-block;
-				padding-left: 30px;
-				padding-bottom: 18px;
+				padding-left: 1.5rem;
+				padding-bottom: 0.9rem;
 			}
 
 			:host([dir="rtl"]) .assessment-label-container {
-				padding-right: 30px;
-				padding-left: 0px;
+				padding-right: 1.5rem;
+				padding-left: 0;
 			}
 
 			.assessment-level-label {
@@ -63,8 +63,8 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				max-width: 100px;
-				line-height: 24px;
+				max-width: 5rem;
+				line-height: 1.2rem;
 			}
 
 			:host([dir="rtl"]) .assessment-level-label {
@@ -82,27 +82,27 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			.assessment-outdated-icon {
 				display: inline-block;
 				float: right;
-				padding-right: 6px;
-				padding-top: 3px;
+				padding-right: 0.3rem;
+				padding-top: 0.15rem;
 			}
 
 			:host([dir="rtl"]) .assessment-outdated-icon {
 				float: left;
-				padding-left: 6px;
-				padding-right: 0px;
+				padding-left: 0.3rem;
+				padding-right: 0;
 			}
 
 			.assessment-publish-status-icon {
 				display: inline-block;
 				float: right;
-				padding-right: 9px;
-				padding-top: 6px;
+				padding-right: 0.45rem;
+				padding-top: 0.3rem;
 			}
 
 			:host([dir="rtl"]) .assessment-publish-status-icon {
 				float: left;
-				padding-left: 9px;
-				padding-right: 0px;
+				padding-left: 0.45rem;
+				padding-right: 0;
 			}
 
 		`;

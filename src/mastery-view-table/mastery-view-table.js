@@ -59,12 +59,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 
 				.learner-column-head {
-					padding: 0px 16px;
-					width: 166px;
+					padding: 0rem 0.8rem;
+					width: 8.3rem;
 				}
 
 				.learner-name-label {
-					padding: 0px 16px;
+					padding: 0rem 0.8rem;
 				}
 
 				.learner-name-label:focus {

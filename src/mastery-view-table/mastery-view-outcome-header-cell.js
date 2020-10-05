@@ -36,56 +36,56 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					display: -webkit-box;
 					-webkit-line-clamp: 2;
 					-webkit-box-orient: vertical;
-					padding-top: 12px;
-					padding-left: 12px;
-					padding-right: 9px;
+					padding-top: 0.6rem;
+					padding-left: 0.6rem;
+					padding-right: 0.45rem;
 				}
 
 				:host([dir="rtl"]) .outcome-name-description {
-					padding-left: 9px;
-					padding-right: 12px;
+					padding-left: 0.45rem;
+					padding-right: 0.6rem;
 				}
 
 				#graph-container {
 					align-items: stretch;
 					display: flex;
-					height: 12px;
-					width: 174px;
-					padding-top: 6px;
-					padding-bottom: 9px;
-					padding-left: 12px;
-					padding-right: 9px;
+					height: 0.6rem;
+					width: 8.7rem;
+					padding-top: 0.3rem;
+					padding-bottom: 0.45rem;
+					padding-left: 0.6rem;
+					padding-right: 0.45rem;
 				}
 
 				:host([dir="rtl"]) #graph-container {
-					padding-left: 9px;
-					padding-right: 12px;
+					padding-left: 0.45rem;
+					padding-right: 0.6rem;
 				}
 
 				.graph-bar {
-					margin-right: 2px;
+					margin-right: 0.1rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:first-child {
-					border-top-left-radius: 6px;
-					border-bottom-left-radius: 6px;
+					border-top-left-radius: 0.3rem;
+					border-bottom-left-radius: 0.3rem;
 				}
 
 				:host([dir="rtl"]) .graph-bar:first-child {
-					border-top-right-radius: 6px;
-					border-bottom-right-radius: 6px;
+					border-top-right-radius: 0.3rem;
+					border-bottom-right-radius: 0.3rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:last-child {
-					border-top-right-radius: 6px;
-					border-bottom-right-radius: 6px;
-					margin-right: 0px;
+					border-top-right-radius: 0.3rem;
+					border-bottom-right-radius: 0.3rem;
+					margin-right: 0;
 				}
 
 				:host([dir="rtl"]) .graph-bar:last-child {
-					border-top-left-radius: 6px;
-					border-bottom-left-radius: 6px;
-					margin-left: 0px;
+					border-top-left-radius: 0.3rem;
+					border-bottom-left-radius: 0.3rem;
+					margin-left: 0;
 				}
 
 				#tooltip {
@@ -93,14 +93,14 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				}
 
 				.tooltip-outcome-info {
-					margin-bottom: 6px;
-					width: 220px;
+					margin-bottom: 0.3rem;
+					width: 11rem;
 				}
 
 				.tooltip-line-container {
 					justify-content: left;
 					align-items: center;
-					height: 14px;
+					height: 0.7rem;
 				}
 
 				:host([dir="rtl"]) .tooltip-line-container {
@@ -108,35 +108,35 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				}
 
 				.color-patch {
-					margin-right: 7px;
+					margin-right: 0.35rem;
 				}				
 
 				:host([dir="rtl"]) .color-patch {
-					margin-left: 7px;
-					margin-right: 0px;
+					margin-left: 0.35rem;
+					margin-right: 0;
 				}				
 
 				td {
-					padding-bottom: 3px;
+					padding-bottom: 0.15rem;
 					vertical-align: top;
 					color: white;
-					font-size: 14px;
-					line-height: 14px;
+					font-size: 0.7rem;
+					line-height: 0.7rem;
 				}
 				
 				.tooltip-level-dist-table {
-					max-width: 216px;
+					max-width: 10.8rem;
 				}
 
 				.tooltip-level-label {
-					margin-right: 7px;
+					margin-right: 0.35rem;
 					text-align: left;
 					word-wrap: break-word;
 				}
 
 				:host([dir="rtl"]) .tooltip-level-label {
-					margin-left: 7px;
-					margin-right: 0px;
+					margin-left: 0.35rem;
+					margin-right: 0;
 					text-align: right;
 				}
 				
