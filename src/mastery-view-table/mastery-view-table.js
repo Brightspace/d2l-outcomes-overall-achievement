@@ -318,8 +318,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_renderLearnerRow(learnerData) {
 		return html`
-		<tr role="row" aria-label="test">
-			<th scope="row" sticky aria-label="${learnerData.firstName + ' ' + learnerData.lastName}">
+		<tr>
+			<th scope="row" sticky>
 			<div class="learner-name">
 				<a
 					href="${learnerData.gradesPageHref}"
@@ -329,8 +329,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				>
 					${this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat)}
 				</a>
-			</th>
 			</div>
+			</th>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
 				<td role="cell">
 					<d2l-mastery-view-user-outcome-cell
