@@ -40,6 +40,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get styles() {
 		return [
 			css`
+				#scroll-wrapper {
+					--d2l-scroll-wrapper-h-scroll: {
+						border-left: 1px dashed var(--d2l-color-mica);
+						border-right: 1px dashed var(--d2l-color-mica);
+					};
+
+					--d2l-scroll-wrapper-left: {
+						border-left: none;
+					};
+
+					--d2l-scroll-wrapper-right: {
+						border-right: none;
+					};
+
+					--d2l-scroll-wrapper-border-color: var(--d2l-color-mica);
+					--d2l-scroll-wrapper-background-color: var(--d2l-color-regolith);
+				}
+
 				.learner-column-head {
 					padding: 0px 16px;
 					width: 166px;
@@ -53,7 +71,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					outline: 0;
 					text-decoration: underline;
 				}
-								
+
+				.test {
+					border-color:red;
+				}
 			`,
 			d2lTableStyles,
 			linkStyles
@@ -80,8 +101,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
+		<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
 		<d2l-table-wrapper sticky-headers show-actions type="default">
-			<table class="d2l-table">
+			<table
+				class="d2l-table"
+				role="grid"
+				aria-label="Mastery View table: this table displays overall achievements of all course outcomes for each learner. Outcomes with aligned activities are displayed as column headers with class breakdown statistics."
+			>
 				<thead>
 					${this._renderTableHead(this._overallOutcomesData)}
 				</thead>
@@ -90,6 +116,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				<tbody>
 			</table>
 		</d2l-table-wrapper>
+		</d2l-scroll-wrapper>
 		`;
 	}
 	set _entity(entity) {
@@ -97,6 +124,30 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_getLearnerHeadLabelDescription(isSecondButton) {
+		let currentSortKey, currentSortDirection, newSortKey, newSortDirection;
+
+		if (isSecondButton) {
+			newSortKey = this._nameFirstLastFormat ? this.localize('lastName') : this.localize('firstName');
+			newSortDirection = this.localize('ascending');
+		}
+		else {
+			newSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
+			newSortDirection = this._sortDesc ? this.localize('ascending') : this.localize('descending');
+		}
+
+		currentSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
+		currentSortDirection = this._sortDesc ? this.localize('descending') : this.localize('ascending');
+
+		return this.localize(
+			'learnerSortButtonDescription',
+			'newSortKey', newSortKey,
+			'newSortDirection', newSortDirection,
+			'currentSortKey', currentSortKey,
+			'currentSortDirection', currentSortDirection
+		);
 	}
 
 	_getLearnerHeadLabelsText() {
@@ -247,6 +298,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-table-col-sort-button
 				?desc=${this._sortDesc}
 				@click="${this._onFirstLearnerHeaderButtonClicked}}"
+				role="region"
+				aria-label="${this._getLearnerHeadLabelDescription(false)}"
 			>
 				${nameLabels.first}
 			</d2l-table-col-sort-button>
@@ -254,30 +307,32 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-table-col-sort-button
 				nosort
 				@click="${this._onSecondLearnerHeaderButtonClicked}}"
+				role="region"
+				aria-label="${this._getLearnerHeadLabelDescription(true)}"
 			>
-				${nameLabels.second}</d2l-table-col-sort-button>
+				${nameLabels.second}
+			</d2l-table-col-sort-button>
 		</div></th>
 		`;
 	}
 
 	_renderLearnerRow(learnerData) {
-		if (!learnerData) {
-			//Should this ever happen? This means we have data for a user but no data is present.
-			return null;
-		}
-		//Need to add learner outcome cells
 		return html`
-		<tr>
-			<td sticky>
+		<tr role="row" aria-label="test">
+			<th scope="row" sticky aria-label="${learnerData.firstName + ' ' + learnerData.lastName}">
+			<div class="learner-name">
 				<a
 					href="${learnerData.gradesPageHref}"
 					class="d2l-link learner-name-label"
+					role="region"
+					aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
 				>
 					${this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat)}
 				</a>
-			</td>
+			</th>
+			</div>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
-				<td>
+				<td role="cell">
 					<d2l-mastery-view-user-outcome-cell
 						href="${outcomeData.activityCollectionHref}"
 						token="${this.token}"
@@ -287,19 +342,25 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		</tr>
 		`;
 	}
-	_renderOutcomeColumnHead(outcomeData) {
-		if (!outcomeData) {
-			//Should this ever happen?
-			return null;
+	_renderOutcomeColumnHead(outcomeData, index) {
+		let tooltipAlign = 'center';
+		if (index === 0) {
+			tooltipAlign = 'start';
 		}
+		else if (index === this._outcomeHeadersData.length - 1) {
+			tooltipAlign = 'end';
+		}
+
 		return html`
-		<th>
+		<th scope="col">
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
 				outcome-name="${outcomeData.name}"
 				outcome-description="${outcomeData.description}"
+				tooltip-align="${tooltipAlign}"
 				display-unassessed
+				aria-label="${outcomeData.name + '. ' + outcomeData.description}"
 			/>
 		</th>`;
 
@@ -317,7 +378,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return html`
 		<tr header>
 			${this._renderLearnerColumnHead(this._nameFirstLastFormat)}
-			${this._outcomeHeadersData.map(item => this._renderOutcomeColumnHead(item))}
+			${this._outcomeHeadersData.map((item, index) => {
+				return this._renderOutcomeColumnHead(item, index);
+			})
+			}
 		</tr>
 		`;
 	}
