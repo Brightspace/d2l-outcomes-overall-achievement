@@ -70,6 +70,8 @@ export const d2lTableStyles = css`
 		padding: 0rem 0rem;
 		height: 27px; /* min-height to be 48px including border */
 		background-color:var(--d2l-table-header-background-color);
+		position: relative;
+		z-index: 2;
 	}
 	/* border radiuses */
 	d2l-table-wrapper[type="default"] .d2l-table-row-first > .d2l-table-cell-first,

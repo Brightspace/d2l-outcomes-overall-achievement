@@ -15,14 +15,17 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			outcomeDescription: {
 				type: String,
 				attribute: 'outcome-description'
+			},
+			tooltipAlign: {
+				type: String,
+				attribute: 'tooltip-align'
 			}
 		};
 	}
 
 	static get styles() {
 		return [
-			css`
-
+			css`				
 				#cell-content-container:focus {
 					outline-color: var(--d2l-color-celestine);
 				}
@@ -85,6 +88,10 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					margin-left: 0px;
 				}
 
+				#tooltip {
+					position: fixed;
+				}
+
 				.tooltip-outcome-info {
 					margin-bottom: 6px;
 					width: 220px;
@@ -116,7 +123,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					font-size: 14px;
 					line-height: 14px;
 				}
-
+				
 				.tooltip-level-dist-table {
 					max-width: 216px;
 				}
@@ -132,6 +139,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					margin-right: 0px;
 					text-align: right;
 				}
+				
+				.hidden-punctuation {
+					margin: 0;
+					opacity: 0;
+				}
 
 				.tooltip-percent-label {
 					text-align: left;
@@ -144,10 +156,16 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		];
 	}
 
+	constructor() {
+		super();
+		this.tooltipAlign = '';
+	}
+
 	render() {
+		console.log("test");
 		return html`
-		<div id="cell-content-container" tabindex="0" aria-labelledby="tooltip">
-			<div class="outcome-name-description">
+		<div id="cell-content-container" tabindex="0">
+			<div class="outcome-name-description" aria-hidden="true">
 				<b>${this.outcomeName}.</b> ${this.outcomeDescription}
 			</div>
 			<div id="graph-container">
@@ -158,8 +176,9 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			id="tooltip"
 			for="cell-content-container"
 			position="bottom"
-			boundary="{&quot;left&quot;:0, &quot;right&quot;:66}">
-			<div class="tooltip-outcome-info">${this.outcomeName}. ${this.outcomeDescription}</div>
+			align="${this.tooltipAlign}"
+			boundary="{&quot;left&quot;:-25, &quot;right&quot;:25}">
+			<div aria-hidden="true" class="tooltip-outcome-info">${this.outcomeName}. ${this.outcomeDescription}</div>
 			<table class="tooltip-level-dist-table">
 				${this._histData.map(this._renderTooltipLine.bind(this))}
 			</table>
@@ -170,7 +189,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	_getLevelCountText(levelData) {
 		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
 		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
-		return `${percentage}%`;
+		return String(percentage) + '%';
 	}
 
 	_renderTooltipLine(levelData) {
@@ -191,8 +210,18 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					/>
 				</svg>
 			</td>
-			<td><div class="tooltip-level-label">${levelData.name}</div></td>
-			<td><div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div></td>
+			<td>
+				<div class="tooltip-level-label">${levelData.name}</div>
+			</td>
+			<td>
+				<div class="hidden-punctuation">;</div>
+			</td>
+			<td>
+				<div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div>
+			</td>
+			<td>
+				<div class="hidden-punctuation">,</div>
+			</td>
 		</tr>
 		`;
 	}
