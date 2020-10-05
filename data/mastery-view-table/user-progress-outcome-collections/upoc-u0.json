@@ -44,7 +44,7 @@
 					"rel": [
 						"https://user-progress.api.brightspace.com/rels/outcome-activities"
 					],
-					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl2.json"
+					"href": "/data/mastery-view-table/outcome-activity-collections/user/oac-full-lvl2-longname.json"
 				}
 			]
 		},
