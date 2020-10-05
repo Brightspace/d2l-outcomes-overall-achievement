@@ -127,8 +127,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_getLearnerHeadLabelDescription(isSecondButton) {
-		let currentSortKey, currentSortDirection, newSortKey, newSortDirection;
 
+		let newSortKey, newSortDirection;
 		if (isSecondButton) {
 			newSortKey = this._nameFirstLastFormat ? this.localize('lastName') : this.localize('firstName');
 			newSortDirection = this.localize('ascending');
@@ -138,8 +138,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			newSortDirection = this._sortDesc ? this.localize('ascending') : this.localize('descending');
 		}
 
-		currentSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
-		currentSortDirection = this._sortDesc ? this.localize('descending') : this.localize('ascending');
+		const currentSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
+		const currentSortDirection = this._sortDesc ? this.localize('descending') : this.localize('ascending');
 
 		return this.localize(
 			'learnerSortButtonDescription',
@@ -378,10 +378,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return html`
 		<tr header>
 			${this._renderLearnerColumnHead(this._nameFirstLastFormat)}
-			${this._outcomeHeadersData.map((item, index) => {
-				return this._renderOutcomeColumnHead(item, index);
-			})
-			}
+			${this._outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
 	}

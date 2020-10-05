@@ -162,7 +162,6 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	render() {
-		console.log("test");
 		return html`
 		<div id="cell-content-container" tabindex="0">
 			<div class="outcome-name-description" aria-hidden="true">

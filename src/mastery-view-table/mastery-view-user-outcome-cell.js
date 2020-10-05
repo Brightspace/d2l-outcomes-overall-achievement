@@ -176,10 +176,10 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 	_getAriaText(data) {
 		var text = '';
 		if (data.hasOverallAssessment) {
-			text += data.levelName + ", ";
+			text += data.levelName + ', ';
 		}
 		else {
-			text += this.localize('notEvaluated') + ", ";
+			text += this.localize('notEvaluated') + ', ';
 		}
 
 		if (data.isManualOverride) {
@@ -201,7 +201,6 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 		text += '. ';
 		text += this.localize('pressToOpenTheEvaluationPage');
 		text += '.';
-		console.log(text);
 		return text;
 	}
 
