@@ -46,29 +46,37 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				color: var(--d2l-color-tungsten)
 			}
 
-			.assessment-level-label {
-				@apply --d2l-body-compact-text;
+			.assessment-label-container {
 				display: inline-block;
-				line-height: 24px;
 				padding-left: 30px;
 				padding-bottom: 18px;
 			}
 
-			.cell-content-container:hover > .assessment-level-label{
-				text-decoration: underline;
+			:host([dir="rtl"]) .assessment-label-container {
+				padding-right: 30px;
+				padding-left: 0px;
+			}
+
+			.assessment-level-label {
+				@apply --d2l-body-compact-text;
+				float: left;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 100px;
+				line-height: 24px;
 			}
 
 			:host([dir="rtl"]) .assessment-level-label {
-				padding-right: 30px;
-				padding-left: 0px;
-
+				float: right;
 			}
-			.override-indicator {
-				display: inline-block;
-				line-height: 24px;
-				padding-bottom: 18px;
-				font-family: 'Lato', sans-serif;
-				font-size: 20px;
+
+			.cell-content-container:hover .assessment-level-label {
+				text-decoration: underline;
+			}
+
+			:host([dir="rtl"]) .override-indicator {
+				float: right;
 			}
 
 			.assessment-outdated-icon {
@@ -84,14 +92,14 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				padding-right: 0px;
 			}
 
-			.assessment-publish-status-img {
+			.assessment-publish-status-icon {
 				display: inline-block;
 				float: right;
 				padding-right: 9px;
 				padding-top: 6px;
 			}
 
-			:host([dir="rtl"]) .assessment-publish-status-img {
+			:host([dir="rtl"]) .assessment-publish-status-icon {
 				float: left;
 				padding-left: 9px;
 				padding-right: 0px;
@@ -118,22 +126,32 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			style="background-color:${data.levelColor}"
 			@click=${() => { this._onClick(); }}
 			@keydown=${(e) => { this._onKeyDown(e); }}
+			aria-label="${this._getAriaText(data)}"
 		>
-			<div id="assessment-fraction-container">
+			<div id="assessment-fraction-container" aria-hidden="true">
 				<span id="assessment-fraction">
 					${data.totalEvaluatedAssessments}/${data.totalAssessments}
 				</span>
 			</div>
-			<div class="assessment-level-label">${data.levelName}</div>
-			${data.isManualOverride ? html`
-				<div class="override-indicator"><b>*</b></div>
-			` : null}
-			
-			<div class="assessment-publish-status-img">
-				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide>`}
+			<div class="assessment-label-container" aria-hidden="true">
+				<div class="assessment-level-label" title="${data.levelName}">
+					${data.levelName}
+				</div>
+				${data.isManualOverride ? html`
+					<span class="override-indicator" title="Manual override"><b>*</b></span>
+				` : null}
+			</div>
+			<div
+				class="assessment-publish-status-icon"
+				aria-hidden="true"
+				title="${data.published ? 'Published' : 'Not published'}"
+			>
+				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide />`}
 			</div>
 			${data.outdated ? html`
-				<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
+				<span aria-hidden="true" title="Out-of-date">
+					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh" />
+				</span>
 			` : null}
 
 		</div>
@@ -153,6 +171,38 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_getAriaText(data) {
+		var text = '';
+		if (data.hasOverallAssessment) {
+			text += data.levelName + ", ";
+		}
+		else {
+			text += this.localize('notEvaluated') + ", ";
+		}
+
+		if (data.isManualOverride) {
+			text += this.localize('manualOverride') + ', ';
+		}
+
+		if (data.outdated) {
+			text += this.localize('outOfDate') + ', ';
+		}
+
+		if (data.isPublished) {
+			text += this.localize('published') + ', ';
+		}
+		else {
+			text += this.localize('notPublished') + ', ';
+		}
+
+		text += this.localize('tooltipUserOutcomeAssessments', 'numAssessed', data.totalEvaluatedAssessments, 'numTotal', data.totalAssessments);
+		text += '. ';
+		text += this.localize('pressToOpenTheEvaluationPage');
+		text += '.';
+		console.log(text);
+		return text;
 	}
 
 	_getTooltipText(totalActivities, totalAssessed) {
@@ -217,6 +267,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				hasManualOverride = false;
 			}
 			this._cellData = {
+				hasOverallAssessment: hasOverallDemonstration,
 				totalAssessments: assessmentCount,
 				totalEvaluatedAssessments: assessmentWithDemonstrationCount,
 				levelName: name,
