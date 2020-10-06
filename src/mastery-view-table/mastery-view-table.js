@@ -71,10 +71,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					outline: 0;
 					text-decoration: underline;
 				}
-
-				.test {
-					border-color:red;
-				}
 			`,
 			d2lTableStyles,
 			linkStyles

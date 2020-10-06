@@ -92,9 +92,13 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					position: fixed;
 				}
 
-				.tooltip-outcome-info {
+				#tooltip-outcome-info {
 					margin-bottom: 0.3rem;
 					width: 11rem;
+				}
+
+				#tooltip-level-dist-table {
+					max-width: 11rem;
 				}
 
 				.tooltip-line-container {
@@ -139,11 +143,6 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					margin-right: 0;
 					text-align: right;
 				}
-				
-				.hidden-punctuation {
-					margin: 0;
-					opacity: 0;
-				}
 
 				.tooltip-percent-label {
 					text-align: left;
@@ -163,26 +162,40 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 	render() {
 		return html`
-		<div id="cell-content-container" tabindex="0">
-			<div class="outcome-name-description" aria-hidden="true">
+		<div id="cell-content-container" tabindex="0" role="button">
+			<div class="outcome-name-description">
 				<b>${this.outcomeName}.</b> ${this.outcomeDescription}
 			</div>
 			<div id="graph-container">
 				${this._histData.map(this._renderBar.bind(this))}
 			</div>
+			<d2l-tooltip
+				id="tooltip"
+				for="cell-content-container"
+				position="bottom"
+				align="${this.tooltipAlign}"
+			>
+				<div id="tooltip-outcome-info" aria-hidden="true">${this.outcomeName}. ${this.outcomeDescription}</div>
+				<table id="tooltip-level-dist-table" aria-hidden="true">
+					${this._histData.map(this._renderTooltipLine.bind(this))}
+				</table>
+				<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
+			</d2l-tooltip>
+
 		</div>
-		<d2l-tooltip
-			id="tooltip"
-			for="cell-content-container"
-			position="bottom"
-			align="${this.tooltipAlign}"
-			boundary="{&quot;left&quot;:-25, &quot;right&quot;:25}">
-			<div aria-hidden="true" class="tooltip-outcome-info">${this.outcomeName}. ${this.outcomeDescription}</div>
-			<table class="tooltip-level-dist-table">
-				${this._histData.map(this._renderTooltipLine.bind(this))}
-			</table>
-		</d2l-tooltip>
 		`;
+	}
+
+	_getGraphLevelsLabel() {
+		var labelText = '';
+		this._histData.map((levelData) => {
+			labelText += levelData.name;
+			labelText += ': ';
+			labelText += this._getLevelCountText(levelData);
+			labelText += '. ';
+		})
+
+		return labelText;
 	}
 
 	_getLevelCountText(levelData) {
@@ -213,13 +226,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				<div class="tooltip-level-label">${levelData.name}</div>
 			</td>
 			<td>
-				<div class="hidden-punctuation">;</div>
-			</td>
-			<td>
 				<div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div>
-			</td>
-			<td>
-				<div class="hidden-punctuation">,</div>
 			</td>
 		</tr>
 		`;
