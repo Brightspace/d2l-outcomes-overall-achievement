@@ -168,7 +168,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				<b>${this.outcomeName}.</b> ${this.outcomeDescription}
 			</div>
 			<div id="graph-container">
-				${this._histData.map(this._renderBar.bind(this))}
+				${this._renderGraph()}
 			</div>
 		</div>
 		<d2l-tooltip

@@ -17,7 +17,8 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 			displayUnassessed: {attribute: 'display-unassessed', type: Boolean },
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
-			_totalCount: { attribute: false }
+			_totalCount: { attribute: false },
+			_skeletonLoaded: {attribute: false, type: Boolean},
 		};
 	}
 
@@ -49,6 +50,11 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 
 				.compact #graph-container .graph-bar {
 					border-radius: 0px;
+				}
+
+				.empty-bar {
+					background: var(--d2l-color-mica);
+					flex-grow: 1;
 				}
 
 				#summary {
@@ -121,13 +127,14 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 		this._histData = [];
 		this._totalCount = 0;
 		this._assessedCount = 0;
+		this._skeletonLoaded = false;
 	}
 
 	render() {
 		return html`
 			<div id="container" class="${this._getContainerClass(this.compact)}">
 				<div id="graph-container" tabindex="0" aria-labelledby="tooltip">
-					${this._histData.map(this._renderBar.bind(this))}
+					${this._renderGraph()}
 				</div>
 				<d2l-tooltip id="tooltip" for="graph-container">
 					${this._histData.map(this._renderTooltipLine.bind(this))}
@@ -216,8 +223,29 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 
 			entity.subEntitiesLoaded().then(() => {
 				this._buildHistData(levels, demonstrations);
+				this._skeletonLoaded = true;
 			});
 		}
+	}
+
+	_renderGraph() {
+		if (!this._skeletonLoaded) {
+			//TODO: render loading state/animation
+			return null;
+		}
+
+
+		if (this._totalCount === 0) {
+			//Render empty state skeleton
+			return html`
+			<div
+				class="graph-bar"
+				style="background: var(--d2l-color-mica); flex-grow: 1;"
+			></div>
+		`;
+		}
+
+		return this._histData.map(this._renderBar.bind(this));
 	}
 
 	_renderBar(levelData) {
