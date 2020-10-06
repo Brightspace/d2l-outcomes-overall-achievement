@@ -6,7 +6,7 @@ import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityColl
 import '../stacked-bar/stacked-bar';
 
 const excludedActivityTypes = [
-	'Checkpoint'
+	'checkpoint-item'
 ];
 
 class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
