@@ -14,6 +14,7 @@
     "learnerSortButtonDescription": "Select to sort table rows by user�s {newSortKey}, {newSortDirection}. Current sort order is by {currentSortKey}, {currentSortDirection}.",
     "manualOverride": "manual override",
     "miniTrendScreenReaderText": "Assessed {numAssessed} {numAssessed, plural, =1 {time} other {times}}: {levelNames}",
+    "noEnrolledLearners": "No enrolled learners in the course.",
     "noScaleInstructor": "To view learner progress towards achieving this {outcome, select, competencies {competency} expectations {expectation} objectives {objective} outcomes {outcome} standards {standard} other {standard}}, create and select an achievement scale.",
     "noScaleStudent": "No scale has been set to measure achievement of {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
     "notAssessed": "Not assessed",
