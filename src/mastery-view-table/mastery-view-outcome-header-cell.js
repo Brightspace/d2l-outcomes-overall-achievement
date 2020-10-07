@@ -193,7 +193,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			labelText += ': ';
 			labelText += this._getLevelCountText(levelData);
 			labelText += '. ';
-		})
+		});
 
 		return labelText;
 	}
