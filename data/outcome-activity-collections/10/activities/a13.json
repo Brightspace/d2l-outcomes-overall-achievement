@@ -7,7 +7,7 @@
 	],
 	"properties": {
 		"name": "Overall Achievement",
-		"type": "Checkpoint"
+		"type": "checkpoint-item"
 	},
 	"entities": [
 		{
