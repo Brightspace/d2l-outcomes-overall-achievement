@@ -3,7 +3,7 @@
         "user-progress-outcome-activity"
     ],
     "properties": {
-        "type": "Checkpoint",
+        "type": "checkpoint-item",
         "name": "Activity 15"
     },
     "entities": [

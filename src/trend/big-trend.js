@@ -477,7 +477,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
 			let type;
 			switch (groupType.toLowerCase()) {
-				case 'checkpoint':
+				case 'checkpoint-item':
 					type = BarTypes.Diamond;
 					groupName = this.localize('labelOverallAchievement');
 					break;
