@@ -15,14 +15,17 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			outcomeDescription: {
 				type: String,
 				attribute: 'outcome-description'
+			},
+			tooltipAlign: {
+				type: String,
+				attribute: 'tooltip-align'
 			}
 		};
 	}
 
 	static get styles() {
 		return [
-			css`
-
+			css`				
 				#cell-content-container:focus {
 					outline-color: var(--d2l-color-celestine);
 				}
@@ -33,67 +36,75 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					display: -webkit-box;
 					-webkit-line-clamp: 2;
 					-webkit-box-orient: vertical;
-					padding-top: 12px;
-					padding-left: 12px;
-					padding-right: 9px;
+					padding-top: 0.6rem;
+					padding-left: 0.6rem;
+					padding-right: 0.45rem;
 				}
 
 				:host([dir="rtl"]) .outcome-name-description {
-					padding-left: 9px;
-					padding-right: 12px;
+					padding-left: 0.45rem;
+					padding-right: 0.6rem;
 				}
 
 				#graph-container {
 					align-items: stretch;
 					display: flex;
-					height: 12px;
-					width: 174px;
-					padding-top: 6px;
-					padding-bottom: 9px;
-					padding-left: 12px;
-					padding-right: 9px;
+					height: 0.6rem;
+					width: 8.7rem;
+					padding-top: 0.3rem;
+					padding-bottom: 0.45rem;
+					padding-left: 0.6rem;
+					padding-right: 0.45rem;
 				}
 
 				:host([dir="rtl"]) #graph-container {
-					padding-left: 9px;
-					padding-right: 12px;
+					padding-left: 0.45rem;
+					padding-right: 0.6rem;
 				}
 
 				.graph-bar {
-					margin-right: 2px;
+					margin-right: 0.1rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:first-child {
-					border-top-left-radius: 6px;
-					border-bottom-left-radius: 6px;
+					border-top-left-radius: 0.3rem;
+					border-bottom-left-radius: 0.3rem;
 				}
 
 				:host([dir="rtl"]) .graph-bar:first-child {
-					border-top-right-radius: 6px;
-					border-bottom-right-radius: 6px;
+					border-top-right-radius: 0.3rem;
+					border-bottom-right-radius: 0.3rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:last-child {
-					border-top-right-radius: 6px;
-					border-bottom-right-radius: 6px;
-					margin-right: 0px;
+					border-top-right-radius: 0.3rem;
+					border-bottom-right-radius: 0.3rem;
+					margin-right: 0;
 				}
 
 				:host([dir="rtl"]) .graph-bar:last-child {
-					border-top-left-radius: 6px;
-					border-bottom-left-radius: 6px;
-					margin-left: 0px;
+					border-top-left-radius: 0.3rem;
+					border-bottom-left-radius: 0.3rem;
+					margin-left: 0;
 				}
 
-				.tooltip-outcome-info {
-					margin-bottom: 6px;
-					width: 220px;
+				#tooltip {
+					position: fixed;
+				}
+
+				#tooltip-outcome-info {
+					margin-bottom: 0.3rem;
+					width: 11rem;
+				}
+
+				#tooltip-level-dist-table {
+					max-width: 11rem;
 				}
 
 				.tooltip-line-container {
 					justify-content: left;
 					align-items: center;
-					height: 14px;
+					height: 0.7rem;
 				}
 
 				:host([dir="rtl"]) .tooltip-line-container {
@@ -101,35 +112,35 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				}
 
 				.color-patch {
-					margin-right: 7px;
+					margin-right: 0.35rem;
 				}				
 
 				:host([dir="rtl"]) .color-patch {
-					margin-left: 7px;
-					margin-right: 0px;
+					margin-left: 0.35rem;
+					margin-right: 0;
 				}				
 
 				td {
-					padding-bottom: 3px;
+					padding-bottom: 0.15rem;
 					vertical-align: top;
 					color: white;
-					font-size: 14px;
-					line-height: 14px;
+					font-size: 0.7rem;
+					line-height: 0.7rem;
 				}
-
+				
 				.tooltip-level-dist-table {
-					max-width: 216px;
+					max-width: 10.8rem;
 				}
 
 				.tooltip-level-label {
-					margin-right: 7px;
+					margin-right: 0.35rem;
 					text-align: left;
 					word-wrap: break-word;
 				}
 
 				:host([dir="rtl"]) .tooltip-level-label {
-					margin-left: 7px;
-					margin-right: 0px;
+					margin-left: 0.35rem;
+					margin-right: 0;
 					text-align: right;
 				}
 
@@ -144,33 +155,52 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		];
 	}
 
+	constructor() {
+		super();
+		this.tooltipAlign = '';
+	}
+
 	render() {
 		return html`
-		<div id="cell-content-container" tabindex="0" aria-labelledby="tooltip">
+		<div id="cell-content-container" tabindex="0" role="button">
 			<div class="outcome-name-description">
 				<b>${this.outcomeName}.</b> ${this.outcomeDescription}
 			</div>
 			<div id="graph-container">
 				${this._histData.map(this._renderBar.bind(this))}
 			</div>
+			<d2l-tooltip
+				id="tooltip"
+				for="cell-content-container"
+				position="bottom"
+				align="${this.tooltipAlign}"
+			>
+				<div id="tooltip-outcome-info" aria-hidden="true">${this.outcomeName}. ${this.outcomeDescription}</div>
+				<table id="tooltip-level-dist-table" aria-hidden="true">
+					${this._histData.map(this._renderTooltipLine.bind(this))}
+				</table>
+				<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
+			</d2l-tooltip>
+
 		</div>
-		<d2l-tooltip
-			id="tooltip"
-			for="cell-content-container"
-			position="bottom"
-			boundary="{&quot;left&quot;:0, &quot;right&quot;:66}">
-			<div class="tooltip-outcome-info">${this.outcomeName}. ${this.outcomeDescription}</div>
-			<table class="tooltip-level-dist-table">
-				${this._histData.map(this._renderTooltipLine.bind(this))}
-			</table>
-		</d2l-tooltip>
 		`;
+	}
+
+	_getGraphLevelsLabel() {
+		var labelText = '';
+		this._histData.map((levelData) => {
+			const name = levelData.name;
+			const percentage = this._getLevelCountText(levelData);
+			labelText += this.localize('levelNamePercentLabel', 'name', name, 'percentage', percentage) + ' ';
+		});
+
+		return labelText;
 	}
 
 	_getLevelCountText(levelData) {
 		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
 		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
-		return `${percentage}%`;
+		return this.localize('percentLabel', 'percentage', String(percentage));
 	}
 
 	_renderTooltipLine(levelData) {
@@ -191,8 +221,12 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					/>
 				</svg>
 			</td>
-			<td><div class="tooltip-level-label">${levelData.name}</div></td>
-			<td><div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div></td>
+			<td>
+				<div class="tooltip-level-label">${levelData.name}</div>
+			</td>
+			<td>
+				<div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div>
+			</td>
 		</tr>
 		`;
 	}

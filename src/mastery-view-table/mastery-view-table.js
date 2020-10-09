@@ -6,6 +6,8 @@ import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
+import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
+
 import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
 
@@ -13,6 +15,7 @@ import '@brightspace-ui/core/components/typography/typography.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/icons/icon.js';
+import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
@@ -28,24 +31,49 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_firstRowIdx: Number,
 			_lastRowIdx: Number,
 			_nameFirstLastFormat: Boolean,
-			_sortDesc: Boolean
+			_sortDesc: Boolean,
+
+			_skeletonLoaded: Boolean
 		};
 	}
 
 	static get styles() {
 		return [
 			css`
+				#scroll-wrapper {
+					--d2l-scroll-wrapper-h-scroll: {
+						border-left: 1px dashed var(--d2l-color-mica);
+						border-right: 1px dashed var(--d2l-color-mica);
+					};
+
+					--d2l-scroll-wrapper-left: {
+						border-left: none;
+					};
+
+					--d2l-scroll-wrapper-right: {
+						border-right: none;
+					};
+
+					--d2l-scroll-wrapper-border-color: var(--d2l-color-mica);
+					--d2l-scroll-wrapper-background-color: var(--d2l-color-regolith);
+				}
+
 				.learner-column-head {
-					padding: 0px 16px;
-					width: 166px;
+					padding: 0rem 0.8rem;
+					width: 8.3rem;
 				}
 
 				.learner-name-label {
-					padding: 0px 16px;
+					padding: 0rem 0.8rem;
 				}
-								
+
+				.learner-name-label:focus {
+					outline: 0;
+					text-decoration: underline;
+				}
 			`,
-			d2lTableStyles
+			d2lTableStyles,
+			linkStyles
 		];
 	}
 
@@ -58,17 +86,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._lastRowIdx = 19;
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
+		this._skeletonLoaded = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
 	render() {
-		if (this._outcomeHeadersData.Length === 0) {
+		if (this._skeletonLoaded && this._outcomeHeadersData.length === 0) {
+			//TODO: render empty state for no aligned outcomes
 			return null;
 		}
 
 		return html`
+		<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
 		<d2l-table-wrapper sticky-headers show-actions type="default">
-			<table class="d2l-table">
+			<table
+				class="d2l-table"
+				role="grid"
+				aria-label="${this.localize('masteryViewTableDescription')}"
+			>
 				<thead>
 					${this._renderTableHead(this._overallOutcomesData)}
 				</thead>
@@ -77,6 +112,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				<tbody>
 			</table>
 		</d2l-table-wrapper>
+		</d2l-scroll-wrapper>
 		`;
 	}
 	set _entity(entity) {
@@ -84,6 +120,30 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_getLearnerHeadLabelDescription(isSecondButton) {
+
+		let newSortKey, newSortDirection;
+		if (isSecondButton) {
+			newSortKey = this._nameFirstLastFormat ? this.localize('lastName') : this.localize('firstName');
+			newSortDirection = this.localize('ascending');
+		}
+		else {
+			newSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
+			newSortDirection = this._sortDesc ? this.localize('ascending') : this.localize('descending');
+		}
+
+		const currentSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
+		const currentSortDirection = this._sortDesc ? this.localize('descending') : this.localize('ascending');
+
+		return this.localize(
+			'learnerSortButtonDescription',
+			'newSortKey', newSortKey,
+			'newSortDirection', newSortDirection,
+			'currentSortKey', currentSortKey,
+			'currentSortDirection', currentSortDirection
+		);
 	}
 
 	_getLearnerHeadLabelsText() {
@@ -117,6 +177,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			return lastName + ', ' + firstName;
 		}
 	}
+
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
@@ -186,10 +247,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						});
 					})
 				]).then(() => {
+					const gradesPageLink = coaUser.getUserGradesSummaryHref();
 					const learnerInfo = {
 						firstName: firstName,
 						lastName: lastName,
-						outcomesProgressData: userOutcomeDataLinks
+						outcomesProgressData: userOutcomeDataLinks,
+						gradesPageHref: gradesPageLink
 					};
 					learnerInfoList.push(learnerInfo);
 				});
@@ -206,6 +269,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return left.href.localeCompare(right.href);
 			});
 			this._outcomeHeadersData = outcomeHeadersData;
+			this._skeletonLoaded = true;
 		});
 	}
 
@@ -230,6 +294,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-table-col-sort-button
 				?desc=${this._sortDesc}
 				@click="${this._onFirstLearnerHeaderButtonClicked}}"
+				role="region"
+				aria-label="${this._getLearnerHeadLabelDescription(false)}"
 			>
 				${nameLabels.first}
 			</d2l-table-col-sort-button>
@@ -237,27 +303,32 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-table-col-sort-button
 				nosort
 				@click="${this._onSecondLearnerHeaderButtonClicked}}"
+				role="region"
+				aria-label="${this._getLearnerHeadLabelDescription(true)}"
 			>
-				${nameLabels.second}</d2l-table-col-sort-button>
+				${nameLabels.second}
+			</d2l-table-col-sort-button>
 		</div></th>
 		`;
 	}
 
 	_renderLearnerRow(learnerData) {
-		if (!learnerData) {
-			//Should this ever happen? This means we have data for a user but no data is present.
-			return null;
-		}
-		//Need to add learner outcome cells
 		return html`
 		<tr>
-			<td sticky>
-				<div class="learner-name-label">
+			<th scope="row" sticky>
+			<div class="learner-name">
+				<a
+					href="${learnerData.gradesPageHref}"
+					class="d2l-link learner-name-label"
+					role="region"
+					aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
+				>
 					${this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat)}
-				</div>
-			</td>
+				</a>
+			</div>
+			</th>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
-				<td>
+				<td role="cell">
 					<d2l-mastery-view-user-outcome-cell
 						href="${outcomeData.activityCollectionHref}"
 						token="${this.token}"
@@ -267,38 +338,43 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		</tr>
 		`;
 	}
-	_renderOutcomeColumnHead(outcomeData) {
-		if (!outcomeData) {
-			//Should this ever happen?
-			return null;
+	_renderOutcomeColumnHead(outcomeData, index) {
+		let tooltipAlign = 'center';
+		if (index === 0) {
+			tooltipAlign = 'start';
 		}
+		else if (index === this._outcomeHeadersData.length - 1) {
+			tooltipAlign = 'end';
+		}
+
 		return html`
-		<th>
+		<th scope="col">
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
 				outcome-name="${outcomeData.name}"
 				outcome-description="${outcomeData.description}"
+				tooltip-align="${tooltipAlign}"
 				display-unassessed
+				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
 			/>
 		</th>`;
 
 	}
 
 	_renderTableBody(rowsData) {
-		if (rowsData.length === 0) {
-			//Show table loading state
+		if (this._skeletonLoaded && rowsData.length === 0) {
+			//TODO: render empty state for no enrolled students
 			return null;
 		}
-		else {
-			return rowsData.map(item => this._renderLearnerRow(item));
-		}
+		return rowsData.map(item => this._renderLearnerRow(item));
 	}
+
 	_renderTableHead() {
 		return html`
 		<tr header>
 			${this._renderLearnerColumnHead(this._nameFirstLastFormat)}
-			${this._outcomeHeadersData.map(item => this._renderOutcomeColumnHead(item))}
+			${this._outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
 	}

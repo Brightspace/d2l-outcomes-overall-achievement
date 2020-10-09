@@ -29,72 +29,80 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			}
 
 			.cell-content-container {
-				width: 198px;
+				width: 9.9rem;
 			}
 
 			#assessment-fraction-container {
-				line-height: 12px;
+				line-height: 0.6rem;
 			}
 
 			#assessment-fraction {
 				display: inline-block;
-				padding-left: 6px;
-				padding-top: 6px;
-				padding-right: 6px;
+				padding-left: 0.3rem;
+				padding-top: 0.3rem;
+				padding-right: 0.3rem;
 				font-family: 'Lato', sans-serif;
-				font-size: 12px;
+				font-size: 0.6rem;
 				color: var(--d2l-color-tungsten)
+			}
+
+			.assessment-label-container {
+				display: inline-block;
+				padding-left: 1.5rem;
+				padding-bottom: 0.9rem;
+			}
+
+			:host([dir="rtl"]) .assessment-label-container {
+				padding-right: 1.5rem;
+				padding-left: 0;
 			}
 
 			.assessment-level-label {
 				@apply --d2l-body-compact-text;
-				display: inline-block;
-				line-height: 24px;
-				padding-left: 30px;
-				padding-bottom: 18px;
-			}
-
-			.cell-content-container:hover > .assessment-level-label{
-				text-decoration: underline;
+				float: left;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 5rem;
+				line-height: 1.2rem;
 			}
 
 			:host([dir="rtl"]) .assessment-level-label {
-				padding-right: 30px;
-				padding-left: 0px;
-
+				float: right;
 			}
-			.override-indicator {
-				display: inline-block;
-				line-height: 24px;
-				padding-bottom: 18px;
-				font-family: 'Lato', sans-serif;
-				font-size: 20px;
+
+			.cell-content-container:hover .assessment-level-label {
+				text-decoration: underline;
+			}
+
+			:host([dir="rtl"]) .override-indicator {
+				float: right;
 			}
 
 			.assessment-outdated-icon {
 				display: inline-block;
 				float: right;
-				padding-right: 6px;
-				padding-top: 3px;
+				padding-right: 0.3rem;
+				padding-top: 0.15rem;
 			}
 
 			:host([dir="rtl"]) .assessment-outdated-icon {
 				float: left;
-				padding-left: 6px;
-				padding-right: 0px;
+				padding-left: 0.3rem;
+				padding-right: 0;
 			}
 
-			.assessment-publish-status-img {
+			.assessment-publish-status-icon {
 				display: inline-block;
 				float: right;
-				padding-right: 9px;
-				padding-top: 6px;
+				padding-right: 0.45rem;
+				padding-top: 0.3rem;
 			}
 
-			:host([dir="rtl"]) .assessment-publish-status-img {
+			:host([dir="rtl"]) .assessment-publish-status-icon {
 				float: left;
-				padding-left: 9px;
-				padding-right: 0px;
+				padding-left: 0.45rem;
+				padding-right: 0;
 			}
 
 		`;
@@ -118,22 +126,32 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			style="background-color:${data.levelColor}"
 			@click=${() => { this._onClick(); }}
 			@keydown=${(e) => { this._onKeyDown(e); }}
+			aria-label="${this._getAriaText(data)}"
 		>
-			<div id="assessment-fraction-container">
+			<div id="assessment-fraction-container" aria-hidden="true">
 				<span id="assessment-fraction">
 					${data.totalEvaluatedAssessments}/${data.totalAssessments}
 				</span>
 			</div>
-			<div class="assessment-level-label">${data.levelName}</div>
-			${data.isManualOverride ? html`
-				<div class="override-indicator"><b>*</b></div>
-			` : null}
-			
-			<div class="assessment-publish-status-img">
-				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide>`}
+			<div class="assessment-label-container" aria-hidden="true">
+				<div class="assessment-level-label" title="${data.levelName}">
+					${data.levelName}
+				</div>
+				${data.isManualOverride ? html`
+					<span class="override-indicator" title="${this.localize('manualOverride')}"><b>*</b></span>
+				` : null}
+			</div>
+			<div
+				class="assessment-publish-status-icon"
+				aria-hidden="true"
+				title="${data.published ? this.localize('published') : this.localize('notPublished')}"
+			>
+				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide />`}
 			</div>
 			${data.outdated ? html`
-				<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
+				<span aria-hidden="true" title="${this.localize('outOfDate')}">
+					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh" />
+				</span>
 			` : null}
 
 		</div>
@@ -153,6 +171,39 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_getAriaText(data) {
+		var assessmentInfo = '';
+		if (data.hasOverallAssessment) {
+			assessmentInfo += data.levelName + this.localize('commaSeparator');
+		}
+		else {
+			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
+		}
+
+		if (data.isManualOverride) {
+			assessmentInfo += this.localize('manualOverride') + this.localize('commaSeparator');
+		}
+
+		if (data.outdated) {
+			assessmentInfo += this.localize('outOfDate') + this.localize('commaSeparator');
+		}
+
+		if (data.published) {
+			assessmentInfo += this.localize('published') + this.localize('commaSeparator');
+		}
+		else {
+			assessmentInfo += this.localize('notPublished') + this.localize('commaSeparator');
+		}
+
+		assessmentInfo += this.localize('tooltipUserOutcomeAssessments',
+			'numAssessed', data.totalEvaluatedAssessments,
+			'numTotal', data.totalAssessments);
+
+		return this.localize('masteryViewUserOutcomeScreenReaderText',
+			'assessmentInfo', assessmentInfo
+		);
 	}
 
 	_getTooltipText(totalActivities, totalAssessed) {
@@ -219,6 +270,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				hasManualOverride = false;
 			}
 			this._cellData = {
+				hasOverallAssessment: hasOverallDemonstration,
 				totalAssessments: assessmentCount,
 				totalEvaluatedAssessments: assessmentWithDemonstrationCount,
 				levelName: name,
