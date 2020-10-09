@@ -189,10 +189,9 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	_getGraphLevelsLabel() {
 		var labelText = '';
 		this._histData.map((levelData) => {
-			labelText += levelData.name;
-			labelText += ': ';
-			labelText += this._getLevelCountText(levelData);
-			labelText += '. ';
+			const name = levelData.name;
+			const percentage = this._getLevelCountText(levelData);
+			labelText += this.localize('levelNamePercentLabel', 'name', name, 'percentage', percentage) + ' ';
 		});
 
 		return labelText;
@@ -201,7 +200,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	_getLevelCountText(levelData) {
 		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
 		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
-		return String(percentage) + '%';
+		return this.localize('percentLabel', 'percentage', String(percentage));
 	}
 
 	_renderTooltipLine(levelData) {

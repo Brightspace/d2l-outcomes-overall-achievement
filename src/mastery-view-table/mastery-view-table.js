@@ -102,7 +102,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<table
 				class="d2l-table"
 				role="grid"
-				aria-label="Mastery View table: this table displays overall achievements of all course outcomes for each learner. Outcomes with aligned activities are displayed as column headers with class breakdown statistics."
+				aria-label="${this.localize('masteryViewTableDescription')}"
 			>
 				<thead>
 					${this._renderTableHead(this._overallOutcomesData)}
@@ -356,7 +356,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				outcome-description="${outcomeData.description}"
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
-				aria-label="${outcomeData.name + '. ' + outcomeData.description}"
+				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
 			/>
 		</th>`;
 

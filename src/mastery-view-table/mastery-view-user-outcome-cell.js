@@ -138,18 +138,18 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 					${data.levelName}
 				</div>
 				${data.isManualOverride ? html`
-					<span class="override-indicator" title="Manual override"><b>*</b></span>
+					<span class="override-indicator" title="${this.localize('manualOverride')}"><b>*</b></span>
 				` : null}
 			</div>
 			<div
 				class="assessment-publish-status-icon"
 				aria-hidden="true"
-				title="${data.published ? 'Published' : 'Not published'}"
+				title="${data.published ? this.localize('published') : this.localize('notPublished')}"
 			>
 				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide />`}
 			</div>
 			${data.outdated ? html`
-				<span aria-hidden="true" title="Out-of-date">
+				<span aria-hidden="true" title="${this.localize('outOfDate')}">
 					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh" />
 				</span>
 			` : null}
@@ -174,34 +174,36 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 	}
 
 	_getAriaText(data) {
-		var text = '';
+		var assessmentInfo = '';
 		if (data.hasOverallAssessment) {
-			text += data.levelName + ', ';
+			assessmentInfo += data.levelName + this.localize('commaSeparator');
 		}
 		else {
-			text += this.localize('notEvaluated') + ', ';
+			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
 		}
 
 		if (data.isManualOverride) {
-			text += this.localize('manualOverride') + ', ';
+			assessmentInfo += this.localize('manualOverride') + this.localize('commaSeparator');
 		}
 
 		if (data.outdated) {
-			text += this.localize('outOfDate') + ', ';
+			assessmentInfo += this.localize('outOfDate') + this.localize('commaSeparator');
 		}
 
-		if (data.isPublished) {
-			text += this.localize('published') + ', ';
+		if (data.published) {
+			assessmentInfo += this.localize('published') + this.localize('commaSeparator');
 		}
 		else {
-			text += this.localize('notPublished') + ', ';
+			assessmentInfo += this.localize('notPublished') + this.localize('commaSeparator');
 		}
 
-		text += this.localize('tooltipUserOutcomeAssessments', 'numAssessed', data.totalEvaluatedAssessments, 'numTotal', data.totalAssessments);
-		text += '. ';
-		text += this.localize('pressToOpenTheEvaluationPage');
-		text += '.';
-		return text;
+		assessmentInfo += this.localize('tooltipUserOutcomeAssessments',
+			'numAssessed', data.totalEvaluatedAssessments,
+			'numTotal', data.totalAssessments);
+		
+		return this.localize('masteryViewUserOutcomeScreenReaderText',
+			'assessmentInfo', assessmentInfo
+		);
 	}
 
 	_getTooltipText(totalActivities, totalAssessed) {
