@@ -200,7 +200,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 		assessmentInfo += this.localize('tooltipUserOutcomeAssessments',
 			'numAssessed', data.totalEvaluatedAssessments,
 			'numTotal', data.totalAssessments);
-		
+
 		return this.localize('masteryViewUserOutcomeScreenReaderText',
 			'assessmentInfo', assessmentInfo
 		);
