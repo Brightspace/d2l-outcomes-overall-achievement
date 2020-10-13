@@ -16,6 +16,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
+			instructor: { type: Boolean },
+			outcomeTerm: { type: String },
 			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
 			_checkpointHref: { attribute: false },
@@ -41,6 +43,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		super();
 		this._setEntityType(UserProgressOutcomeEntity);
 
+		this.instructor = false;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
@@ -57,8 +60,10 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
-				token="${this.token}">
-			</d2l-coa-big-trend>
+				token="${this.token}"
+				instructor="${this.instructor}"
+				outcome-term="${this.outcomeTerm}"
+			></d2l-coa-big-trend>
 
 			<div id="trend-spacer"></div>
 
