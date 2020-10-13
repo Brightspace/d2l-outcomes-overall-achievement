@@ -53,7 +53,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				token="${this.token}">
 			</d2l-coa-outcome-text-display>
 
-			<div class="d2l-heading-3">Trend</div>
+			<div class="d2l-heading-3">${this.localize('trend')}</div>
 
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
@@ -67,7 +67,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				token="${this.token}">
 			</d2l-coa-overall-achievement-tile>
 
-			<div class="d2l-heading-3">Evidence</div>
+			<div class="d2l-heading-3">${this.localize('evidence')}</div>
 			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
 				token="${this.token}">
