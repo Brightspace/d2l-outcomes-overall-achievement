@@ -1,0 +1,5616 @@
+{
+    "class": [
+        "collection",
+        "checkpoint-user"
+    ],
+    "entities": [
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u0.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u1.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u1.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u2.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u2.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u3.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u3.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u4.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u4.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u5.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u5.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/u6.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-u6.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-user"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "user"
+                    ],
+                    "href": "/data/mastery-view-table/users/ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+                    ],
+                    "href": "/data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+                },
+                {
+                    "rel": [
+                        "https://api.brightspace.com/rels/user-grades-view"
+                    ],
+                    "href": "https://D2L.com"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "/data/mastery-view-table/coa-classlists/200learners.json"
+        }
+    ]
+}
