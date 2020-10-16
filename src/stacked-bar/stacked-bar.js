@@ -228,12 +228,24 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 		}
 	}
 
+	_renderBar(levelData) {
+		if (!levelData || !levelData.count) {
+			return null;
+		}
+
+		return html`
+			<div
+				class="graph-bar" 
+				style="background: ${levelData.color}; flex-grow: ${levelData.count};"
+			></div>
+		`;
+	}
+
 	_renderGraph() {
 		if (!this._skeletonLoaded) {
 			//TODO: render loading state/animation
 			return null;
 		}
-
 
 		if (this._totalCount === 0) {
 			//Render empty state skeleton
@@ -246,19 +258,6 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 		}
 
 		return this._histData.map(this._renderBar.bind(this));
-	}
-
-	_renderBar(levelData) {
-		if (!levelData || !levelData.count) {
-			return null;
-		}
-
-		return html`
-			<div
-				class="graph-bar" 
-				style="background: ${levelData.color}; flex-grow: ${levelData.count};"
-			></div>
-		`;
 	}
 
 	_renderSummaryLine(levelData) {

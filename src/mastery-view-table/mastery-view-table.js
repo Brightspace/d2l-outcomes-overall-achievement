@@ -458,7 +458,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	_renderNoLearnerState(outcomeCount) {
+	_renderNoLearnerState() {
 		//1 column per outcome, plus learner column, plus (later) checkbox column
 		const colSpan = this._outcomeHeadersData.length + 1;
 		return html`
@@ -467,7 +467,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					<div class="no-learners-label">${this.localize('noEnrolledLearners')}</div>
 				</td>
 			</tr>
-		`
+		`;
 	}
 
 	_renderOutcomeColumnHead(outcomeData, index) {
@@ -496,9 +496,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_renderTableBody(rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
-			//TODO: render empty state for no enrolled students
 			return this._renderNoLearnerState();
-			return null;
 		}
 		return rowsData.map(item => this._renderLearnerRow(item));
 	}
