@@ -9,13 +9,9 @@ class LeftArrowIcon extends LitElement {
 	static get properties() {
 		return {
 			hidden: {type: Boolean, attribute: 'hidden'}
-		}
+		};
 	}
 
-	constructor() {
-		super();
-		this.hidden = false;
-	}
 	static get styles() {
 		return css`
 			:host {

@@ -7,7 +7,7 @@ import './mastery-view-outcome-header-cell.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
-import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js'
+import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
 
 import '../custom-icons/LeftArrow.js';
 import '../custom-icons/RightArrow.js';
@@ -230,13 +230,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return this.localize('pageNumberDropdownText',
 			'currentPage', this._currentPage,
 			'pageCount', this._pageCount
-		)
+		);
 	}
 
 	_getPageSizeDropdownEntryText(rowsPerPage) {
 		return this.localize('pageSizeDropdownText',
 			'rowsPerPage', rowsPerPage
-		)
+		);
 	}
 
 	_getUserNameDisplay(firstName, lastName, firstLastFormat) {
@@ -357,6 +357,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._updateSortOrder();
 	}
 
+	_onNextPageButtonClicked() {
+		if (this._currentPage < this._pageCount) {
+			this._goToPageNumber(this._currentPage + 1);
+		}
+	}
 
 	_onPageSelectDropdownSelectionChanged() {
 		var selector = this.shadowRoot.getElementById('page-select-menu');
@@ -371,14 +376,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._updatePageCount();
 	}
 
-	_onNextPageButtonClicked() {
-		if(this._currentPage < this._pageCount) {
-			this._goToPageNumber(this._currentPage + 1);
-		}
-	}
-
 	_onPreviousPageButtonClicked() {
-		if(this._currentPage > 1) {
+		if (this._currentPage > 1) {
 			this._goToPageNumber(this._currentPage - 1);
 		}
 	}
@@ -475,16 +474,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderTableControls() {
-		if(this._learnerList.length <= 20) {
+		if (this._learnerList.length <= 20) {
 			return null;
 		}
 		const pageSelectOptionTemplates = [];
-		for(var i = 1; i <= this._pageCount; i++) {
+		for (var i = 1; i <= this._pageCount; i++) {
 			pageSelectOptionTemplates.push(html`
 				<option value=${i}>
 					${this.localize('pageSelectOptionText', 'currentPage', i, 'pageCount', this._pageCount)}
 				</option>
-			`)
+			`);
 		}
 
 		const pageSizeOptionTemplates = [];
@@ -604,14 +603,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_updatePageCount() {
 		const learnerCount = this._learnerList.length;
-		if(learnerCount === 0) {
+		if (learnerCount === 0) {
 			this._pageCount = 1;
 		}
 		else {
-			this._pageCount = Math.ceil(learnerCount/this._rowsPerPage);
+			this._pageCount = Math.ceil(learnerCount / this._rowsPerPage);
 		}
 
-		if(this._currentPage > this._pageCount) {
+		if (this._currentPage > this._pageCount) {
 			this._goToPageNumber(this._pageCount);
 		}
 		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);

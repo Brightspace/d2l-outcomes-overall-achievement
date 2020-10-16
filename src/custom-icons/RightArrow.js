@@ -9,7 +9,7 @@ class RightArrowIcon extends LitElement {
 	static get properties() {
 		return {
 			hidden: {type: Boolean, attribute: 'hidden'}
-		}
+		};
 	}
 
 	static get styles() {
