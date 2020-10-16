@@ -87,7 +87,7 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			return html	`
 				<d2l-coa-assessment-skeleton
 					href="${this.href}"
-					token="${this.token}"
+					.token="${this.token}"
 				></d2l-coa-assessment-skeleton>
 			`;
 		}
@@ -96,7 +96,7 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-coa-assessment-entry 
 				href="${entry.demonstrationHref}" 
 				.activity="${entry.activity}" 
-				token="${this.token}">
+				.token="${this.token}">
 			</d2l-coa-assessment-entry>
 		`;
 	}

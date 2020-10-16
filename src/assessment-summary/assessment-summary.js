@@ -43,7 +43,7 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-coa-stacked-bar
 				id="chart"
 				href="${this.href}"
-				token="${this.token}"
+				.token="${this.token}"
 				excluded-types=${JSON.stringify(excludedActivityTypes)}
 			></d2l-coa-stacked-bar>
         `;
