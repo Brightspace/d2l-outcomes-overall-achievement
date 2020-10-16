@@ -65,7 +65,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		const closeButton = this.showClose
-			? html`<d2l-button-icon class="close-button" icon="d2l-tier1:close-large-thick" text="${this.localize('close')}" @click=${this._close}></d2l-button-icon>` 
+			? html`<d2l-button-icon class="close-button" icon="d2l-tier1:close-large-thick" text="${this.localize('close')}" @click=${this._close}></d2l-button-icon>`
 			: null;
 
 		return html`
@@ -108,6 +108,9 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
+	_close() {
+		this.dispatchEvent(new Event(Consts.events.primaryPanelCloseClicked));
+	}
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
@@ -136,9 +139,6 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	_close() {
-		this.dispatchEvent(new Event(Consts.events.primaryPanelCloseClicked));
-	}
 }
 
 customElements.define(PrimaryPanel.is, PrimaryPanel);
