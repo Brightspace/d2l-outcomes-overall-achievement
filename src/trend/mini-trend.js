@@ -258,15 +258,6 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		return this._hasData(trendData) && !this._hasTrendData(trendData);
 	}
 
-	_renderTrendItem(trendItem, index) {
-		switch (trendItem.type) {
-			case BarTypes.Diamond:
-				return this._renderTrendPin(trendItem, index);
-			default:
-				return this._renderTrendBar(trendItem, index);
-		}
-	}
-
 	_renderTrendBar(trendItem, index) {
 		const blocks = trendItem.blocks.map(block => {
 			if (block.height > 0) {
@@ -281,6 +272,40 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 			<div class="trend-group" id="group${index}">
 				${blocks}
 			</div>
+		`;
+	}
+
+	_renderTrendItem(trendItem, index) {
+		switch (trendItem.type) {
+			case BarTypes.Diamond:
+				return this._renderTrendPin(trendItem, index);
+			default:
+				return this._renderTrendBar(trendItem, index);
+		}
+	}
+
+	_renderTrendItemTooltip(trendItem, index) {
+		let assessment = html`<div>${this.localize('notAssessed')}</div>`;
+
+		if (this._groupHasBlocks(trendItem)) {
+			assessment = trendItem.attempts.map(attemptGroup => {
+				const groupLabel = this._hasMultipleAttempts(trendItem)
+					? html`<b>${this._getAttemptGroupLabel(attemptGroup.attempts)}</b>:`
+					: null;
+
+				return html`
+					<div>
+						${groupLabel}
+						${attemptGroup.name}
+					</div>
+				`;
+			});
+		}
+
+		return html`
+			<d2l-tooltip for="group${index}" position="top" offset="${TOOLTIP_POINTER_SIZE + TOOLTIP_GAP}">
+				${assessment}	
+			</d2l-tooltip>
 		`;
 	}
 
@@ -328,31 +353,6 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 			<div class="trend-group" id="group${index}">
 				${blocks}
 			</div>
-		`;
-	}
-
-	_renderTrendItemTooltip(trendItem, index) {
-		let assessment = html`<div>${this.localize('notAssessed')}</div>`;
-
-		if (this._groupHasBlocks(trendItem)) {
-			assessment = trendItem.attempts.map(attemptGroup => {
-				const groupLabel = this._hasMultipleAttempts(trendItem)
-					? html`<b>${this._getAttemptGroupLabel(attemptGroup.attempts)}</b>:`
-					: null;
-
-				return html`
-					<div>
-						${groupLabel}
-						${attemptGroup.name}
-					</div>
-				`;
-			});
-		}
-
-		return html`
-			<d2l-tooltip for="group${index}" position="top" offset="${TOOLTIP_POINTER_SIZE + TOOLTIP_GAP}">
-				${assessment}	
-			</d2l-tooltip>
 		`;
 	}
 
