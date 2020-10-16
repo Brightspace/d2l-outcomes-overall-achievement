@@ -23,7 +23,8 @@ import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
-const pageRowSizes = [10, 20, 30, 50, 100, 200];
+const DEFAULT_ROW_SIZE = 20;
+const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-mastery-view-table'; }
@@ -134,7 +135,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
-		this._rowsPerPage = 20;
+		this._rowsPerPage = DEFAULT_ROW_SIZE;
 		this._currentPage = 1;
 		this._pageCount = 1;
 		this._nameFirstLastFormat = false;
@@ -474,7 +475,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderTableControls() {
-		if (this._learnerList.length <= 20) {
+		if (this._learnerList.length <= DEFAULT_ROW_SIZE) {
 			return null;
 		}
 		const pageSelectOptionTemplates = [];
@@ -487,7 +488,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		const pageSizeOptionTemplates = [];
-		pageRowSizes.map(pageSize => {
+		PAGE_ROW_SIZES.map(pageSize => {
 			pageSizeOptionTemplates.push(html`
 				<option value=${pageSize} ?selected=${pageSize === this._rowsPerPage}>
 					${this.localize('pageSizeSelectOptionText', 'pageSize', pageSize)}
