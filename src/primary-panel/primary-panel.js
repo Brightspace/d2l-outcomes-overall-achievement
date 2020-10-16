@@ -2,12 +2,14 @@ import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { heading3Styles } from '@brightspace-ui/core/components/typography/styles';
+import '@brightspace-ui/core/components/button/button-icon';
 import '../outcome-text-display/outcome-text-display';
 import '../overall-achievement-tile/overall-achievement-tile';
 import '../assessment-summary/assessment-summary';
 import '../assessment-list/assessment-list';
 import '../trend/big-trend';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
+import { Consts } from '../consts';
 
 class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() {
@@ -16,6 +18,9 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
+			instructor: { type: Boolean },
+			outcomeTerm: { attribute: 'outcome-term', type: String },
+			showClose: { attribute: 'show-close', type: Boolean },
 			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
 			_checkpointHref: { attribute: false },
@@ -32,6 +37,16 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				#trend-spacer {
 					height: 30px;
 				}
+
+				#header {
+					display: flex;
+				}
+
+				.close-button {
+					display: block;
+					flex-grow: 0;
+					margin-left: 16px;
+				}
 			`,
 			heading3Styles
 		];
@@ -41,24 +56,35 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		super();
 		this._setEntityType(UserProgressOutcomeEntity);
 
+		this.instructor = false;
+		this.showClose = false;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
 	}
 
 	render() {
-		return html`
-			<d2l-coa-outcome-text-display 
-				href="${this._outcomeHref}" 
-				token="${this.token}">
-			</d2l-coa-outcome-text-display>
+		const closeButton = this.showClose
+			? html`<d2l-button-icon class="close-button" icon="d2l-tier1:close-large-thick" text="${this.localize('close')}" @click=${this._close}></d2l-button-icon>`
+			: null;
 
-			<div class="d2l-heading-3">Trend</div>
+		return html`
+			<div id="header">
+				<d2l-coa-outcome-text-display 
+					href="${this._outcomeHref}" 
+					token="${this.token}">
+				</d2l-coa-outcome-text-display>
+				${closeButton}
+			</div>
+
+			<div class="d2l-heading-3">${this.localize('trend')}</div>
 
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
-				token="${this.token}">
-			</d2l-coa-big-trend>
+				token="${this.token}"
+				instructor="${this.instructor}"
+				outcome-term="${this.outcomeTerm}"
+			></d2l-coa-big-trend>
 
 			<div id="trend-spacer"></div>
 
@@ -67,7 +93,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				token="${this.token}">
 			</d2l-coa-overall-achievement-tile>
 
-			<div class="d2l-heading-3">Evidence</div>
+			<div class="d2l-heading-3">${this.localize('evidence')}</div>
 			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
 				token="${this.token}">
@@ -82,6 +108,9 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
+	_close() {
+		this.dispatchEvent(new Event(Consts.events.primaryPanelCloseClicked));
+	}
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
@@ -109,6 +138,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			});
 		}
 	}
+
 }
 
 customElements.define(PrimaryPanel.is, PrimaryPanel);

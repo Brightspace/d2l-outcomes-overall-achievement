@@ -30,7 +30,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	static get properties() {
 		return {
 			instructor: { type: Boolean },
-			outcomeTerm: { type: String }
+			outcomeTerm: { attribute: 'outcome-term', type: String }
 		};
 	}
 

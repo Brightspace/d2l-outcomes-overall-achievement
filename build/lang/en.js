@@ -1,8 +1,10 @@
 export const val = {
 	'ascending': 'Ascending',
 	'bigTrendAttemptsScreenReaderString': '{numAttempts, plural, =1 {Attempt {attemptNames}} other {Attempts {attemptNames} and {lastAttemptName}}}',
+	'close': 'Close',
 	'commaSeparator': ', ',
 	'descending': 'Descending',
+	'evidence': 'Evidence',
 	'firstName': 'First name',
 	'goToNextPage': 'Go to the next page in the table.',
 	'goToPreviousPage': 'Go to the previous page in the table.',
@@ -38,5 +40,6 @@ export const val = {
 	'selectLearnersPerPage': 'Select how many rows to display on each page of the table.',
 	'selectTablePage': 'Select a specific page in the table.',
 	'tooltipUserOutcomeAssessments': '{numAssessed} out of {numTotal} activities are assessed',
+	'trend': 'Trend',
 	'untitled': 'Untitled'
 };
