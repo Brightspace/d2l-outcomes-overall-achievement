@@ -109,8 +109,12 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_close() {
-		this.dispatchEvent(new Event(Consts.events.primaryPanelCloseClicked));
+		this.dispatchEvent(new CustomEvent(
+			Consts.events.primaryPanelCloseClicked,
+			{ bubbles: true, composed: true }
+		));
 	}
+
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
