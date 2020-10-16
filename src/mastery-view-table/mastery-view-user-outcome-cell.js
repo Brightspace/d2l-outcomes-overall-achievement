@@ -129,7 +129,10 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			aria-label="${this._getAriaText(data)}"
 		>
 			<div id="assessment-fraction-container" aria-hidden="true">
-				<span id="assessment-fraction">
+				<span
+					id="assessment-fraction"
+					title=${this._getTooltipText(data.totalAssessments, data.totalEvaluatedAssessments)}
+				>
 					${data.totalEvaluatedAssessments}/${data.totalAssessments}
 				</span>
 			</div>
@@ -155,14 +158,6 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			` : null}
 
 		</div>
-		<d2l-tooltip
-			id="tooltip"
-			for="assessment-fraction"
-			position="top"
-			align="start"
-		>
-			${this._getTooltipText(data.totalAssessments, data.totalEvaluatedAssessments)}
-		</d2l-tooltip>
 		`;
 	}
 
