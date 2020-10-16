@@ -61,7 +61,7 @@ export class OutcomeActivityEntity extends Entity {
 			return;
 		}
 
-		return this._entity.getSubEntitiesByClasses([DemonstrationEntity.class, DemonstrationEntity.classes.assessed]);
+		return this._entity.entities ? this._entity.getSubEntitiesByClasses([DemonstrationEntity.class, DemonstrationEntity.classes.assessed]) : [];
 	}
 
 	_userActivityUsageHref() {

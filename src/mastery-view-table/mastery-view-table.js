@@ -7,16 +7,24 @@ import './mastery-view-outcome-header-cell.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
+import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+
+import '../custom-icons/LeftArrow.js';
+import '../custom-icons/RightArrow.js';
 
 import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
 
 import '@brightspace-ui/core/components/typography/typography.js';
+import '@brightspace-ui/core/components/button/button-subtle.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
+
+const DEFAULT_ROW_SIZE = 20;
+const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-mastery-view-table'; }
@@ -28,8 +36,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_outcomeHeadersData: Array,
 			_learnerRowsData: Array,
 
-			_firstRowIdx: Number,
-			_lastRowIdx: Number,
+			_rowsPerPage: Number,
+			_currentPage: Number,
+			_pageCount: Number,
+
 			_nameFirstLastFormat: Boolean,
 			_sortDesc: Boolean,
 
@@ -83,9 +93,50 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					line-height: 3rem;
 				}
 
+				#pagination-controls-container {
+					margin-top: 0.9rem;
+					margin-bottom: 2.1rem;
+				}
+
+				#page-label {
+					margin-left: 0.35rem;
+				}
+
+				:host([dir="rtl"]) #page-label {
+					margin-left: 0;
+					margin-right: 0.35rem;
+				}
+
+				#page-select-menu {
+					margin-right: 0.35rem;
+				}
+
+				:host([dir="rtl"]) #page-select-menu {
+					margin-right: 0;
+					margin-left: 0.35rem;
+				}
+
+				#page-size-menu {
+					margin-left: 1.8rem;
+				}
+
+				:host([dir="rtl"]) #page-size-menu {
+					margin-left: 0;
+					margin-right: 1.2rem;
+				}
+
+				.page-label {
+					height: 2.1rem;
+				}
+
+				.page-select-menu,
+				.page-size-menu {
+					height: 2.1rem;
+				}
 			`,
 			d2lTableStyles,
-			linkStyles
+			linkStyles,
+			selectStyles
 		];
 	}
 
@@ -94,8 +145,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
-		this._firstRowIdx = 0;
-		this._lastRowIdx = 19;
+		this._rowsPerPage = DEFAULT_ROW_SIZE;
+		this._currentPage = 1;
+		this._pageCount = 1;
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
 		this._skeletonLoaded = false;
@@ -119,7 +171,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<table
 				class="d2l-table"
 				role="grid"
-				aria-label="Mastery View table: this table displays overall achievements of all course outcomes for each learner. Outcomes with aligned activities are displayed as column headers with class breakdown statistics."
+				aria-label="${this.localize('masteryViewTableDescription')}"
 			>
 				<thead>
 					${this._renderTableHead(this._overallOutcomesData)}
@@ -130,6 +182,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			</table>
 		</d2l-table-wrapper>
 		</d2l-scroll-wrapper>
+		${this._renderTableControls()}
 		`;
 	}
 	set _entity(entity) {
@@ -182,8 +235,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return labelStrings;
 	}
 
-	_getLearnerRowsData(learnerInfoList, firstRowIdx, lastRowIdx) {
-		return learnerInfoList.slice(firstRowIdx, lastRowIdx);
+	_getLearnerRowsData(learnerInfoList, currentPage, rowsPerPage) {
+		const firstRowIdx = (currentPage - 1) * rowsPerPage;
+		const lastRowIdx = firstRowIdx + (rowsPerPage - 1);
+		const list = learnerInfoList.slice(firstRowIdx, lastRowIdx + 1);
+		return list;
+	}
+
+	_getPageNumberDropdownText() {
+		return this.localize('pageNumberDropdownText',
+			'currentPage', this._currentPage,
+			'pageCount', this._pageCount
+		);
+	}
+
+	_getPageSizeDropdownEntryText(rowsPerPage) {
+		return this.localize('pageSizeDropdownText',
+			'rowsPerPage', rowsPerPage
+		);
 	}
 
 	_getUserNameDisplay(firstName, lastName, firstLastFormat) {
@@ -193,6 +262,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		else {
 			return lastName + ', ' + firstName;
 		}
+	}
+
+	_goToPageNumber(newPage) {
+		this._currentPage = newPage;
+		var selector = this.shadowRoot.getElementById('page-select-menu');
+		selector.selectedIndex = newPage - 1;
+		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
 	}
 
 	_onEntityChanged(entity) {
@@ -277,7 +353,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			classlist.subEntitiesLoaded().then(() => {
 				this._learnerList = this._sortLearners(learnerInfoList, !this._nameFirstLastFormat, this._sortDesc);
-				this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._firstRowIdx, this._lastRowIdx);
+				this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
+				this._updatePageCount();
 			});
 		});
 
@@ -294,6 +371,31 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_onFirstLearnerHeaderButtonClicked() {
 		this._sortDesc = !this._sortDesc;
 		this._updateSortOrder();
+	}
+
+	_onNextPageButtonClicked() {
+		if (this._currentPage < this._pageCount) {
+			this._goToPageNumber(this._currentPage + 1);
+		}
+	}
+
+	_onPageSelectDropdownSelectionChanged() {
+		var selector = this.shadowRoot.getElementById('page-select-menu');
+		const newPageNumber = parseInt(selector.options[selector.selectedIndex].value);
+		this._goToPageNumber(newPageNumber);
+	}
+
+	_onPageSizeDropdownSelectionChanged() {
+		var selector = this.shadowRoot.getElementById('page-size-menu');
+		const newRowsPerPage = parseInt(selector.options[selector.selectedIndex].value);
+		this._rowsPerPage = newRowsPerPage;
+		this._updatePageCount();
+	}
+
+	_onPreviousPageButtonClicked() {
+		if (this._currentPage > 1) {
+			this._goToPageNumber(this._currentPage - 1);
+		}
 	}
 
 	//Switches between first-last or last-first format and sorts ascending
@@ -319,7 +421,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			${nameLabels.divider}
 			<d2l-table-col-sort-button
 				nosort
-				@click="${this._onSecondLearnerHeaderButtonClicked}}"
+				@click="${this._onSecondLearnerHeaderButtonClicked}"
 				role="region"
 				aria-label="${this._getLearnerHeadLabelDescription(true)}"
 			>
@@ -386,7 +488,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				outcome-description="${outcomeData.description}"
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
-				aria-label="${outcomeData.name + '. ' + outcomeData.description}"
+				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
 			/>
 		</th>`;
 
@@ -401,6 +503,95 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return rowsData.map(item => this._renderLearnerRow(item));
 	}
 
+	_renderTableControls() {
+		if (this._learnerList.length <= DEFAULT_ROW_SIZE) {
+			return null;
+		}
+		const pageSelectOptionTemplates = [];
+		for (var i = 1; i <= this._pageCount; i++) {
+			pageSelectOptionTemplates.push(html`
+				<option value=${i}>
+					${this.localize('pageSelectOptionText', 'currentPage', i, 'pageCount', this._pageCount)}
+				</option>
+			`);
+		}
+
+		const pageSizeOptionTemplates = [];
+		PAGE_ROW_SIZES.map(pageSize => {
+			pageSizeOptionTemplates.push(html`
+				<option value=${pageSize} ?selected=${pageSize === this._rowsPerPage}>
+					${this.localize('pageSizeSelectOptionText', 'pageSize', pageSize)}
+				</option>
+			`);
+		});
+
+		return html`
+		<table id="pagination-controls-container" aria-hidden="true">
+			<tr>
+				<td class="prev-page-button-container">
+					<d2l-button-subtle
+						class="prev-page-button"
+						text=""
+						?disabled=${!this._shouldShowPrevPageButton()}
+						@click=${this._onPreviousPageButtonClicked}
+						aria-label=${this.localize('goToPreviousPage')}
+					>
+						<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()} />
+					</d2l-button-subtle>
+				</td>
+				<td class="page-label-container">
+					<div id="page-label">${this.localize('page')}</div>
+				</td>
+				<td class="page-select-menu-container">
+					<select
+						id="page-select-menu"
+						class="d2l-input-select"
+						@change=${this._onPageSelectDropdownSelectionChanged}}
+						aria-label=${this.localize('selectTablePage')}
+						aria-controls="new-page-select-live-text"
+					>
+						${pageSelectOptionTemplates}
+					</select>
+				</td>
+				<td class="next-page-button-container">
+					<d2l-button-subtle
+						class="next-page-button"
+						text=""
+						?disabled=${!this._shouldShowNextPageButton()}
+						@click=${this._onNextPageButtonClicked}
+						aria-label=${this.localize('goToNextPage')}
+					>
+						<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()} />
+					</d2l-button-subtle>
+				</td>
+				<td class="page-size-menu-container">
+					<select
+						id="page-size-menu"
+						class="d2l-input-select"
+						@change=${this._onPageSizeDropdownSelectionChanged}}
+						aria-label=${this.localize('selectLearnersPerPage')}
+						aria-controls="new-page-size-live-text"
+					>
+						${pageSizeOptionTemplates}
+					</select>
+				</td>
+			<tr>
+		</table>
+		<div
+			role="region"
+			id="new-page-select-live-text"
+			aria-live="polite"
+			aria-label=${this.localize('newPageSelectLiveText', 'pageNum', this._currentPage, 'totalPages', this._pageCount)}
+		/>
+		<div
+			role="region"
+			id="new-page-size-live-text"
+			aria-live="polite"
+			aria-label=${this.localize('newPageSizeLiveText', 'pageSize', this._rowsPerPage)}
+		/>
+		`;
+	}
+
 	_renderTableHead() {
 		return html`
 		<tr header>
@@ -408,6 +599,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			${this._outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
+	}
+
+	_shouldShowNextPageButton() {
+		return this._currentPage < this._pageCount;
+	}
+
+	_shouldShowPrevPageButton() {
+		return this._currentPage > 1;
 	}
 
 	_sortLearners(list, byLastName, descending) {
@@ -432,9 +631,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return list;
 	}
 
+	_updatePageCount() {
+		const learnerCount = this._learnerList.length;
+		if (learnerCount === 0) {
+			this._pageCount = 1;
+		}
+		else {
+			this._pageCount = Math.ceil(learnerCount / this._rowsPerPage);
+		}
+
+		if (this._currentPage > this._pageCount) {
+			this._goToPageNumber(this._pageCount);
+		}
+		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
+	}
+
 	_updateSortOrder() {
 		this._learnerList = this._sortLearners(this._learnerList, !this._nameFirstLastFormat, this._sortDesc);
-		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._firstRowIdx, this._lastRowIdx);
+		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
 	}
 
 }

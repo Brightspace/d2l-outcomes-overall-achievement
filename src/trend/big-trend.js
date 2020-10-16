@@ -30,7 +30,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	static get properties() {
 		return {
 			instructor: { type: Boolean },
-			outcomeTerm: { type: String }
+			outcomeTerm: { attribute: 'outcome-term', type: String }
 		};
 	}
 
@@ -477,7 +477,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 
 			let type;
 			switch (groupType.toLowerCase()) {
-				case 'checkpoint':
+				case 'checkpoint-item':
 					type = BarTypes.Diamond;
 					groupName = this.localize('labelOverallAchievement');
 					break;

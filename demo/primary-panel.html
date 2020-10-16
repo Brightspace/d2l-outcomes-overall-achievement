@@ -17,9 +17,23 @@
 			<d2l-demo-snippet>
 				<d2l-coa-primary-panel 
 					href="/data/user-progress-outcome/upo0.json" 
-					token="abc123">
-				</d2l-coa-primary-panel>
+					token="abc123"
+				></d2l-coa-primary-panel>
+			</d2l-demo-snippet>
+
+			<h2>With Close Button (User Progress)</h2>
+			<d2l-demo-snippet>
+				<d2l-coa-primary-panel
+					id="thrower"
+					href="/data/user-progress-outcome/upo0.json" 
+					token="abc123"
+					show-close="true"
+				></d2l-coa-primary-panel>
 			</d2l-demo-snippet>
 		</d2l-demo-page>
 	</body>
+	<script type="module">
+		import { Consts } from '../src/consts';
+		document.getElementById('thrower').addEventListener(Consts.events.primaryPanelCloseClicked, () => alert('Close button clicked'));
+	</script>
 </html>

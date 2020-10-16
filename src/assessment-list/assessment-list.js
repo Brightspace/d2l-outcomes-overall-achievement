@@ -8,7 +8,7 @@ import './assessment-entry';
 import './assessment-skeleton';
 
 const excludedActivityTypes = [
-	'Checkpoint'
+	'checkpoint-item'
 ];
 
 export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {

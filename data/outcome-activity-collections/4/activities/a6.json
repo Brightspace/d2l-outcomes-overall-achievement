@@ -4,9 +4,8 @@
 	],
 	"properties": {
 		"name": "Assignment 7",
-		"type": "Checkpoint"
+		"type": "checkpoint-item"
 	},
-	"entities": [],
 	"links": [
 		{
 			"rel": [
