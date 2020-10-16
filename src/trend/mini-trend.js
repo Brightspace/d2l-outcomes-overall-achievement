@@ -9,6 +9,13 @@ const COMPONENT_HEIGHT = 36;
 const MAX_TREND_ITEMS = 6;
 const TOOLTIP_GAP = 8;
 const TOOLTIP_POINTER_SIZE = 8;
+const DIAMOND_SIZE = 6;
+const DIAMOND_WIDTH = Math.sqrt(DIAMOND_SIZE * DIAMOND_SIZE / 2) * 2;
+
+const BarTypes = Object.freeze({
+	Bar: 'bar',
+	Diamond: 'diamond'
+});
 
 class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-coa-mini-trend'; }
@@ -55,6 +62,26 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				.trend-group .trend-block:last-of-type {
 					border-bottom-left-radius: var(--border-radius);
 					border-bottom-right-radius: var(--border-radius);
+				}
+
+				.trend-pin {
+					align-items: center;
+					display: flex;
+					flex-direction: column;
+				}
+
+				.trend-pin .diamond {
+					display: inline-block;
+					flex-shrink: 0;
+					position: relative;
+					transform: rotate(45deg);
+				}
+
+				.diamond-post {
+					display: inline-block;
+					flex-shrink: 0;
+					position: relative;
+					width: 2px;
 				}
 
 				.empty-text {
@@ -129,7 +156,25 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		trendGroups.forEach(group => {
 			const blocks = [];
 			const groupAttempts = group.attempts;
-			const groupItem = {};
+			const groupType = group.type;
+
+			let type;
+			switch (groupType.toLowerCase()) {
+				case 'checkpoint-item':
+					type = BarTypes.Diamond;
+					break;
+				default:
+					type = BarTypes.Bar;
+					break;
+			}
+
+			if (type === BarTypes.Diamond && groupAttempts.length === 0) {
+				return;
+			}
+
+			const groupItem = {
+				type
+			};
 
 			// Compute levels achieved
 			const groupLevels = groupAttempts
@@ -213,7 +258,7 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		return this._hasData(trendData) && !this._hasTrendData(trendData);
 	}
 
-	_renderTrendItem(trendItem, index) {
+	_renderTrendBar(trendItem, index) {
 		const blocks = trendItem.blocks.map(block => {
 			if (block.height > 0) {
 				return html`
@@ -228,6 +273,15 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				${blocks}
 			</div>
 		`;
+	}
+
+	_renderTrendItem(trendItem, index) {
+		switch (trendItem.type) {
+			case BarTypes.Diamond:
+				return this._renderTrendPin(trendItem, index);
+			default:
+				return this._renderTrendBar(trendItem, index);
+		}
 	}
 
 	_renderTrendItemTooltip(trendItem, index) {
@@ -252,6 +306,53 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 			<d2l-tooltip for="group${index}" position="top" offset="${TOOLTIP_POINTER_SIZE + TOOLTIP_GAP}">
 				${assessment}	
 			</d2l-tooltip>
+		`;
+	}
+
+	_renderTrendPin(trendItem, index) {
+		let blocks;
+		if (trendItem.blocks.length > 0) {
+			const extraPoleHeight = 2;
+			const sizeDiff = DIAMOND_WIDTH - DIAMOND_SIZE;
+			const pinOffset = sizeDiff / 2;
+
+			blocks = trendItem.blocks.map(block => {
+				const diamondOverflow = Math.max(0, DIAMOND_WIDTH - block.height);
+
+				const diamondStyles = [
+					`background-color:${block.color}`,
+					`height:${DIAMOND_SIZE}px`,
+					`top:${pinOffset - diamondOverflow}px`,
+					`width:${DIAMOND_SIZE}px`,
+				].join(';');
+
+				const postStyles = [
+					`height:${block.height + extraPoleHeight - DIAMOND_WIDTH + diamondOverflow}px`,
+					`background-color:${block.color}`,
+					`top:${sizeDiff - extraPoleHeight - diamondOverflow}px`
+				].join(';');
+
+				return html`
+					<div class="trend-pin" style="height: ${block.height}px; min-width: ${DIAMOND_WIDTH}px">
+						<div
+							class="diamond"
+							style=${diamondStyles}
+						></div>
+						<div
+							class="diamond-post"
+							style=${postStyles}
+						></div>
+					</div>
+				`;
+			});
+		} else {
+			return null;
+		}
+
+		return html`
+			<div class="trend-group" id="group${index}">
+				${blocks}
+			</div>
 		`;
 	}
 
