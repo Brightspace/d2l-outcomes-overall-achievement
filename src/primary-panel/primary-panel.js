@@ -42,6 +42,10 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					display: flex;
 				}
 
+				#header d2l-coa-outcome-text-display {
+					flex-grow: 1;
+				}
+
 				.close-button {
 					display: block;
 					flex-grow: 0;
