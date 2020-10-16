@@ -24,6 +24,7 @@
     "miniTrendScreenReaderText": "Assessed {numAssessed} {numAssessed, plural, =1 {time} other {times}}: {levelNames}",
     "newPageSelectLiveText": "Page {pageNum} of {totalPages} selected.",
     "newPageSizeLiveText": "Displaying {pageSize} rows per page.",
+    "noEnrolledLearners":  "No enrolled learners in the course.",
     "noScaleStudent": "No scale has been set to measure achievement of {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
     "noScaleInstructor": "To view learner progress towards achieving this {outcome, select, competencies {competency} expectations {expectation} objectives {objective} outcomes {outcome} standards {standard} other {standard}}, create and select an achievement scale.",
     "notAssessed": "Not assessed",

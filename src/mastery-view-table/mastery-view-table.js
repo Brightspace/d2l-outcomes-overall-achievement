@@ -75,11 +75,22 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 				.learner-name-label {
 					padding: 0rem 0.8rem;
+					line-height: 3rem;
 				}
 
 				.learner-name-label:focus {
 					outline: 0;
 					text-decoration: underline;
+				}
+				
+				#no-learners-cell {
+					border-radius: 0;
+					border-bottom: 1px solid var(--d2l-table-border-color);
+				}
+
+				.no-learners-label {
+					padding: 0rem 0.8rem;
+					line-height: 3rem;
 				}
 
 				#pagination-controls-container {
@@ -122,7 +133,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				.page-size-menu {
 					height: 2.1rem;
 				}
-
 			`,
 			d2lTableStyles,
 			linkStyles,
@@ -145,8 +155,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	render() {
-		if (this._skeletonLoaded && this._outcomeHeadersData.length === 0) {
-			//TODO: render empty state for no aligned outcomes
+		if (!this._skeletonLoaded) {
+			//Basic table outline (classlist, aligned outcomes) still loading - hold off on rendering
+			return null;
+		}
+
+		if (this._outcomeHeadersData.length === 0) {
+			//TODO: render empty state for no aligned outcomes, OR propagate an event
 			return null;
 		}
 
@@ -419,7 +434,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderLearnerRow(learnerData) {
 		return html`
 		<tr>
-			<th scope="row" sticky>
+			<th scope="row" sticky class="learner-name-cell">
 			<div class="learner-name">
 				<a
 					href="${learnerData.gradesPageHref}"
@@ -442,6 +457,19 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		</tr>
 		`;
 	}
+
+	_renderNoLearnerState() {
+		//1 column per outcome, plus learner column, plus (later) checkbox column
+		const colSpan = this._outcomeHeadersData.length + 1;
+		return html`
+			<tr>
+				<td id="no-learners-cell" colspan="${colSpan}">
+					<div class="no-learners-label">${this.localize('noEnrolledLearners')}</div>
+				</td>
+			</tr>
+		`;
+	}
+
 	_renderOutcomeColumnHead(outcomeData, index) {
 		let tooltipAlign = 'center';
 		if (index === 0) {
@@ -468,8 +496,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_renderTableBody(rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
-			//TODO: render empty state for no enrolled students
-			return null;
+			return this._renderNoLearnerState();
 		}
 		return rowsData.map(item => this._renderLearnerRow(item));
 	}
