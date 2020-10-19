@@ -146,6 +146,10 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	render() {
+		const dateElement = this._accessDate && html`
+			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
+		`;
+
 		return html`
 			<div id="card">
 				<div id="card-header">
@@ -156,7 +160,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 								<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
 								<div>${this._renderVisibilityIcon(this._published)}</div> 
 							</div>
-							<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
+							${dateElement}				
 						</div>
 					</div>
 					<div id="loa">
@@ -167,7 +171,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				</div>
 				<div id="feedback-container">
 					<div id="feedback-spacer"></div>
-					${this._feedback.map(this._renderFeedback.bind(this))}
+					${this._feedback && this._feedback.map(this._renderFeedback.bind(this))}
 				</div>
 			</div>           
 		`;
