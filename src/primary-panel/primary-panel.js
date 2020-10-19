@@ -76,7 +76,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<div id="header">
 				<d2l-coa-outcome-text-display 
 					href="${this._outcomeHref}" 
-					token="${this.token}">
+					.token="${this.token}">
 				</d2l-coa-outcome-text-display>
 				${closeButton}
 			</div>
@@ -85,7 +85,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
-				token="${this.token}"
+				.token="${this.token}"
 				instructor="${this.instructor}"
 				outcome-term="${this.outcomeTerm}"
 			></d2l-coa-big-trend>
@@ -94,20 +94,20 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			<d2l-coa-overall-achievement-tile 
 				href="${this._checkpointHref}" 
-				token="${this.token}">
+				.token="${this.token}">
 			</d2l-coa-overall-achievement-tile>
 
 			<div class="d2l-heading-3">${this.localize('evidence')}</div>
 			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
-				token="${this.token}">
+				.token="${this.token}">
 			</d2l-coa-assessment-summary>
 			
 			<div id="list-spacer"></div>
 
 			<d2l-coa-assessment-list
 				href="${this.href}"
-				token="${this.token}">
+				.token="${this.token}">
 			</d2l-coa-assessment-list>
 		`;
 	}
