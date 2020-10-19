@@ -42,6 +42,10 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					display: flex;
 				}
 
+				#header d2l-coa-outcome-text-display {
+					flex-grow: 1;
+				}
+
 				.close-button {
 					display: block;
 					flex-grow: 0;
@@ -109,8 +113,12 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_close() {
-		this.dispatchEvent(new Event(Consts.events.primaryPanelCloseClicked));
+		this.dispatchEvent(new CustomEvent(
+			Consts.events.primaryPanelCloseClicked,
+			{ bubbles: true, composed: true }
+		));
 	}
+
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);

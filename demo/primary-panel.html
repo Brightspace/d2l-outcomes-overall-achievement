@@ -24,7 +24,6 @@
 			<h2>With Close Button (User Progress)</h2>
 			<d2l-demo-snippet>
 				<d2l-coa-primary-panel
-					id="thrower"
 					href="/data/user-progress-outcome/upo0.json" 
 					token="abc123"
 					show-close="true"
@@ -34,6 +33,6 @@
 	</body>
 	<script type="module">
 		import { Consts } from '../src/consts';
-		document.getElementById('thrower').addEventListener(Consts.events.primaryPanelCloseClicked, () => alert('Close button clicked'));
+		document.addEventListener(Consts.events.primaryPanelCloseClicked, () => alert('Close button clicked'));
 	</script>
 </html>
