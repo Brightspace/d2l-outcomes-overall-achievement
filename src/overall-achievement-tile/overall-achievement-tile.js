@@ -160,7 +160,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 								<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
 								<div>${this._renderVisibilityIcon(this._published)}</div> 
 							</div>
-							${dateElement}				
+							${dateElement}
 						</div>
 					</div>
 					<div id="loa">
