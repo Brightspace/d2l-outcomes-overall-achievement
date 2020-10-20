@@ -185,11 +185,15 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	render() {
+		const dateElement = this._date && html`
+			<span class="date d2l-body-small">${formatDate(this._date, {format: 'MMM dd'})}</span>
+		`;
+
 		return html `
 			<div class="evidence">
 				<div class="timeline">
 					<d2l-icon icon="${this._getActivityIcon(this._activityType)}"></d2l-icon>
-					<span class="date d2l-body-small">${formatDate(this._date, {format: 'MMM dd'})}</span>
+					${dateElement}
 					<div class="grow line"></div>
 				</div>
 				<div id="timeline-spacer"></div>
@@ -209,7 +213,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					</div>
 					<div>
 						<div id="feedback-spacer"></div>
-						${this._feedback.map(this._renderFeedback, this)}
+						${this._feedback && this._feedback.map(this._renderFeedback, this)}
 					</div>
 				</button>
 			</div>		
