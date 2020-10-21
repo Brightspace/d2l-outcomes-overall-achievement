@@ -166,7 +166,6 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 		});
 
 		this._histData = Object.values(levelMap);
-		this._assessedCount = demonstrations.length;
 		if (this.displayUnassessed) {
 			const unassessedData = {
 				color: unassessedColor,
@@ -208,8 +207,6 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 				if (activityType && this.excludedTypes.includes(activityType)) {
 					return;
 				}
-				this._totalCount++;
-
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
 					demonstrations.push(demonstratedLevel.getLevelId());
@@ -222,6 +219,8 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 			});
 
 			entity.subEntitiesLoaded().then(() => {
+				this._assessedCount = demonstrations.length;
+				this._totalCount = entity.getOutcomeActivities().length;
 				this._buildHistData(levels, demonstrations);
 				this._skeletonLoaded = true;
 			});
