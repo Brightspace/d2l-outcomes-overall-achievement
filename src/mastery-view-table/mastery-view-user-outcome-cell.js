@@ -49,7 +49,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			.assessment-label-container {
 				display: inline-block;
 				padding-left: 1.5rem;
-				padding-bottom: 0.9rem;
+				padding-bottom: 0.4rem;
 			}
 
 			:host([dir="rtl"]) .assessment-label-container {
