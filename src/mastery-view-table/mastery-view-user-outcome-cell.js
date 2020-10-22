@@ -30,6 +30,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 
 			.cell-content-container {
 				width: 9.9rem;
+				height: 3rem;
 			}
 
 			#assessment-fraction-container {
