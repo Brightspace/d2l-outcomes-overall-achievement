@@ -39,6 +39,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					padding-top: 0.6rem;
 					padding-left: 0.6rem;
 					padding-right: 0.45rem;
+					min-height: 2rem;
 				}
 
 				:host([dir="rtl"]) .outcome-name-description {
