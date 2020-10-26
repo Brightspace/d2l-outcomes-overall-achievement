@@ -143,7 +143,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_onElementResize() {
 		const boundingRect = this.getBoundingClientRect();
 		const panelWidth = boundingRect.width;
-		if(panelWidth > Consts.primaryPanelMargins.widePanelThresholdPx) {
+		if (panelWidth > Consts.primaryPanelMargins.widePanelThresholdPx) {
 			this._hMargin = Consts.primaryPanelMargins.widePanelHMargin;
 		}
 		else {
