@@ -732,7 +732,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					`height:${block.height + extraPoleHeight - DIAMOND_WIDTH + diamondOverflow}px`,
 					`background-color:${block.color}`,
 					`top:${GRID_THICKNESS + sizeDiff - extraPoleHeight - diamondOverflow}px`,
-					`transition: height 0.3s ease-out`
+					'transition: height 0.3s ease-out'
 				].join(';');
 
 				return html`
