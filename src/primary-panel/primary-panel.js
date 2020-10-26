@@ -24,6 +24,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
 			_checkpointHref: { attribute: false },
+			_hMargin: { type: String, attribute: false }
 		};
 	}
 
@@ -65,6 +66,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
+		this._hMargin = Consts.primaryPanelMargins.widePanelHMargin;
+		window.addEventListener('resize', this._onElementResize.bind(this));
 	}
 
 	render() {
@@ -85,6 +88,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 
 		return html`
+		<div id="panel-content-container" style="margin: 36px ${this._hMargin};">
 			<div id="header">
 				<d2l-coa-outcome-text-display 
 					href="${this._outcomeHref}" 
@@ -118,6 +122,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				href="${this.href}"
 				.token="${this.token}">
 			</d2l-coa-assessment-list>
+		</div>
 		`;
 	}
 
@@ -132,6 +137,17 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
+		}
+	}
+
+	_onElementResize() {
+		const boundingRect = this.getBoundingClientRect();
+		const panelWidth = boundingRect.width;
+		if(panelWidth > Consts.primaryPanelMargins.widePanelThresholdPx) {
+			this._hMargin = Consts.primaryPanelMargins.widePanelHMargin;
+		}
+		else {
+			this._hMargin = Consts.primaryPanelMargins.narrowPanelHMargin;
 		}
 	}
 
@@ -155,7 +171,6 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			});
 		}
 	}
-
 }
 
 customElements.define(PrimaryPanel.is, PrimaryPanel);
