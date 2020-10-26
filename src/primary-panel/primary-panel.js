@@ -68,14 +68,14 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	render() {
-		const closeButton = this.showClose && html`
+		const closeButton = this.showClose ? html`
 			<d2l-button-icon
 				class="close-button"
 				icon="d2l-tier1:close-large-thick"
 				text="${this.localize('close')}"
 				@click=${this._close}
 			></d2l-button-icon>
-		`;
+		` : null;
 
 		const coaTile = this._checkpointHref && html`
 			<d2l-coa-overall-achievement-tile 
