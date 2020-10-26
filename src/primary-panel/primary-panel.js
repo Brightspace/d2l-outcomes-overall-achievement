@@ -67,6 +67,11 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._checkpointHref = '';
 	}
 
+	refreshOverallAchievementActivities() {
+		this.shadowRoot.querySelector('d2l-coa-big-trend')._getEntity();
+		this.shadowRoot.querySelector('d2l-coa-overall-achievement-tile')._getEntity();
+	}
+
 	render() {
 		const closeButton = this.showClose
 			? html`<d2l-button-icon class="close-button" icon="d2l-tier1:close-large-thick" text="${this.localize('close')}" @click=${this._close}></d2l-button-icon>`
