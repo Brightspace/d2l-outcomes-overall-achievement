@@ -9,7 +9,7 @@
 				"https://api.brightspace.com/rels/first-name"
 			],
 			"properties": {
-				"name": "Hashir"
+				"name": "Exceptionally-lengthy-name-of-a"
 			}
 		},
 		{
@@ -21,7 +21,7 @@
 				"https://api.brightspace.com/rels/last-name"
 			],
 			"properties": {
-				"name": "Sargent"
+				"name": "Learner-in-the-current-class-with-some-assigned-outcomes"
 			}
 		}
 	]
