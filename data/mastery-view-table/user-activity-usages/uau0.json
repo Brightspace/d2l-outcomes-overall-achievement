@@ -7,7 +7,7 @@
 	"links": [
 		{
 			"rel": [
-				"https://activities.api.brightspace.com/rels/evaluation"
+				"checkpoint-consistent-evaluation"
 			],
 			"href": "https://google.com"
 		}

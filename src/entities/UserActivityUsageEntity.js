@@ -5,7 +5,7 @@ export class UserActivityUsageEntity extends Entity {
 	static get class() { return 'activity'; }
 	static get links() {
 		return {
-			evalPage: 'https://activities.api.brightspace.com/rels/evaluation'
+			evalPage: 'checkpoint-consistent-evaluation'
 		};
 	}
 

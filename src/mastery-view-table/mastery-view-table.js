@@ -70,12 +70,30 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 				.learner-column-head {
 					padding: 0rem 0.8rem;
-					width: 8.3rem;
+					min-width: 9.9rem;
+					max-width: 25.6rem;
+				}
+
+				.outcome-column-head {
+					vertical-align: bottom;
+					width: 9.9rem;
+				}
+
+				.learner-name-cell {
+					height: 3rem;
+					max-width: 25.6rem;
+				}
+
+				.learner-name-container {
+					display: flex;
 				}
 
 				.learner-name-label {
 					padding: 0rem 0.8rem;
 					line-height: 3rem;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 
 				.learner-name-label:focus {
@@ -83,6 +101,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					text-decoration: underline;
 				}
 				
+				.learner-outcome-cell {
+					width: 9.9rem;
+				}
+
 				#no-learners-cell {
 					border-radius: 0;
 					border-bottom: 1px solid var(--d2l-table-border-color);
@@ -432,22 +454,25 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderLearnerRow(learnerData) {
+		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
+
 		return html`
 		<tr>
 			<th scope="row" sticky class="learner-name-cell">
-			<div class="learner-name">
+			<div class="learner-name-container">
 				<a
 					href="${learnerData.gradesPageHref}"
 					class="d2l-link learner-name-label"
 					role="region"
 					aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
+					title=${userNameDisplay}
 				>
-					${this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat)}
+					${userNameDisplay}
 				</a>
 			</div>
 			</th>
 			${learnerData.outcomesProgressData.map(outcomeData => { return html`
-				<td role="cell">
+				<td role="cell" class="learner-outcome-cell">
 					<d2l-mastery-view-user-outcome-cell
 						href="${outcomeData.activityCollectionHref}"
 						token="${this.token}"
@@ -480,7 +505,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
-		<th scope="col">
+		<th scope="col" class="outcome-column-head">
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"

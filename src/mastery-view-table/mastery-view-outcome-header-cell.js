@@ -39,6 +39,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					padding-top: 0.6rem;
 					padding-left: 0.6rem;
 					padding-right: 0.45rem;
+					min-height: 2rem;
 				}
 
 				:host([dir="rtl"]) .outcome-name-description {
@@ -161,10 +162,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	render() {
+		const outcomeLabel = this.outcomeName.length > 0 ? html`${this.outcomeName}. ` : null;
 		return html`
 		<div id="cell-content-container" tabindex="0" role="button">
 			<div class="outcome-name-description">
-				<b>${this.outcomeName}.</b> ${this.outcomeDescription}
+				<b>${outcomeLabel}</b>${this.outcomeDescription}
 			</div>
 			<div id="graph-container">
 				${this._renderGraph()}
@@ -175,7 +177,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				position="bottom"
 				align="${this.tooltipAlign}"
 			>
-				<div id="tooltip-outcome-info" aria-hidden="true">${this.outcomeName}. ${this.outcomeDescription}</div>
+				<div id="tooltip-outcome-info" aria-hidden="true">${outcomeLabel}${this.outcomeDescription}</div>
 				<table id="tooltip-level-dist-table" aria-hidden="true">
 					${this._histData.map(this._renderTooltipLine.bind(this))}
 				</table>
