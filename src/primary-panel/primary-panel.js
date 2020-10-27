@@ -62,14 +62,24 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		this.instructor = false;
 		this.showClose = false;
+		this.refreshEntity = this._refreshEntity.bind(this);
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
 	}
 
-	refreshOverallAchievementActivities() {
-		this.shadowRoot.querySelector('d2l-coa-big-trend')._getEntity();
-		this.shadowRoot.querySelector('d2l-coa-overall-achievement-tile')._getEntity();
+	connectedCallback() {
+		super.connectedCallback();
+		window.addEventListener('d2l-save-evaluation', this.refreshEntity);
+	}
+
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		window.removeEventListener('d2l-save-evaluation', this.refreshEntity);
+	}
+
+	_refreshEntity() {
+		//window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
 	}
 
 	render() {
