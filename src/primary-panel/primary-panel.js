@@ -78,10 +78,6 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		window.removeEventListener('d2l-save-evaluation', this.refreshEntity);
 	}
 
-	_refreshEntity() {
-		//window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
-	}
-
 	render() {
 		const closeButton = this.showClose ? html`
 			<d2l-button-icon
@@ -171,6 +167,9 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	_refreshEntity() {
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	}
 }
 
 customElements.define(PrimaryPanel.is, PrimaryPanel);

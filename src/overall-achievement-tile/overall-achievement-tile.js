@@ -195,10 +195,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	_refreshEntity() {
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
-	}
-
 	_onEntityChanged(entity) {
 		if (entity) {
 			let levelName, levelColor, accessDate, feedback, published;
@@ -225,6 +221,10 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._published = published;
 			});
 		}
+	}
+
+	_refreshEntity() {
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
 	}
 
 	_renderFeedback(feedbackData) {
