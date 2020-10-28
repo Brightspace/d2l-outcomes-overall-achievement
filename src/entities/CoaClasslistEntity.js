@@ -28,13 +28,20 @@ class CoaUserEntity extends SelflessEntity {
 		};
 	}
 
+	getFirstName() {
+		return this._entity && this._entity.properties && this._entity.properties.FirstName;
+	}
+
+	getLastName() {
+		return this._entity && this._entity.properties && this._entity.properties.LastName;
+	}
+
 	getUserGradesSummaryHref() {
 		if (!this._entity || !this._entity.hasLinkByRel(CoaUserEntity.links.userGradesSummaryRel)) {
 			return;
 		}
 
 		return this._entity.getLinkByRel(CoaUserEntity.links.userGradesSummaryRel).href;
-
 	}
 
 	getUserProgressOutcomesHref() {

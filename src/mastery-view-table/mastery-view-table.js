@@ -297,6 +297,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (!entity) {
 			return;
 		}
+
 		const learnerInfoList = [];
 		const outcomeHeadersData = [];
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
@@ -322,46 +323,33 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			if (!classlist) {
 				return;
 			}
+
 			const coaUserEntities = classlist.getUsers();
 			//Resolve all user links to get first and last names, plus links to data
 			coaUserEntities.map(coaUser => {
 				if (!coaUser) {
 					return;
 				}
-				let firstName, lastName;
+
+				const firstName = coaUser.getFirstName();
+				const lastName = coaUser.getLastName();
 				const userOutcomeDataLinks = [];
 
-				Promise.all([
-					new Promise((resolve) => {
-						coaUser.onUserChanged(user => {
-							if (!user) {
-								return;
-							}
-							firstName = user.getFirstName();
-							lastName = user.getLastName();
-							resolve();
+				coaUser.onUserProgressOutcomesChanged(upoc => {
+					if (upoc) {
+						const upoEntities = upoc.getUserProgressOutcomes();
+						upoEntities.map(upo => {
+							const userOutcomeData = {
+								outcomeHref: upo.getOutcomeHref(),
+								activityCollectionHref: upo.getOutcomeActivitiesHref()
+							};
+							userOutcomeDataLinks.push(userOutcomeData);
 						});
-					}),
-					new Promise((resolve) => {
-						coaUser.onUserProgressOutcomesChanged(upoc => {
-							if (!upoc) {
-								return;
-							}
-							const upoEntities = upoc.getUserProgressOutcomes();
-							upoEntities.map(upo => {
-								const userOutcomeData = {
-									outcomeHref: upo.getOutcomeHref(),
-									activityCollectionHref: upo.getOutcomeActivitiesHref()
-								};
-								userOutcomeDataLinks.push(userOutcomeData);
-							});
-							userOutcomeDataLinks.sort((left, right) => {
-								return left.outcomeHref.localeCompare(right.outcomeHref);
-							});
-							resolve();
+						userOutcomeDataLinks.sort((left, right) => {
+							return left.outcomeHref.localeCompare(right.outcomeHref);
 						});
-					})
-				]).then(() => {
+					}
+
 					const gradesPageLink = coaUser.getUserGradesSummaryHref();
 					const learnerInfo = {
 						firstName: firstName,

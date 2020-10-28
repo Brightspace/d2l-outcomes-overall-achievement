@@ -11,6 +11,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Bob",
+                "LastName": "Jenkins"
+            },
             "links": [
                 {
                     "rel": [
@@ -39,6 +43,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Jordan",
+                "LastName": "Vibe"
+            },
             "links": [
                 {
                     "rel": [
@@ -67,6 +75,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Matt",
+                "LastName": "Gross"
+            },
             "links": [
                 {
                     "rel": [
@@ -95,6 +107,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "John",
+                "LastName": "Johnson"
+            },
             "links": [
                 {
                     "rel": [
@@ -123,6 +139,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Aladeen",
+                "LastName": "Jones"
+            },
             "links": [
                 {
                     "rel": [
@@ -151,6 +171,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Richard",
+                "LastName": "Picks"
+            },
             "links": [
                 {
                     "rel": [
@@ -179,6 +203,10 @@
             "rel": [
                 "item"
             ],
+            "properties": {
+                "FirstName": "Murray",
+                "LastName": "Gordon"
+            },
             "links": [
                 {
                     "rel": [
