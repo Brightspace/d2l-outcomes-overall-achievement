@@ -279,6 +279,17 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	constructor() {
 		super();
 		this.instructor = false;
+		this.refreshEntity = this._refreshEntity.bind(this);
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		window.addEventListener('d2l-save-evaluation', this.refreshEntity);
+	}
+
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		window.removeEventListener('d2l-save-evaluation', this.refreshEntity);
 	}
 
 	firstUpdated() {
@@ -621,6 +632,10 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		this.scrollContainer.scrollLeft += scrollAmount;
 	}
 
+	_refreshEntity() {
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	}
+
 	_renderScreenReaderText(trendItems) {
 		const hasData = this._checkTrendData(this._trendData);
 
@@ -731,7 +746,8 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 				const postStyles = [
 					`height:${block.height + extraPoleHeight - DIAMOND_WIDTH + diamondOverflow}px`,
 					`background-color:${block.color}`,
-					`top:${GRID_THICKNESS + sizeDiff - extraPoleHeight - diamondOverflow}px`
+					`top:${GRID_THICKNESS + sizeDiff - extraPoleHeight - diamondOverflow}px`,
+					'transition: height 0.3s ease-out'
 				].join(';');
 
 				return html`

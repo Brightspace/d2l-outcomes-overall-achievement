@@ -143,6 +143,17 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._activityName = '';
 		this._levelColor = '';
 		this._levelName = '';
+		this.refreshEntity = this._refreshEntity.bind(this);
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		window.addEventListener('d2l-save-evaluation', this.refreshEntity);
+	}
+
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		window.removeEventListener('d2l-save-evaluation', this.refreshEntity);
 	}
 
 	render() {
@@ -210,6 +221,10 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._published = published;
 			});
 		}
+	}
+
+	_refreshEntity() {
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
 	}
 
 	_renderFeedback(feedbackData) {
