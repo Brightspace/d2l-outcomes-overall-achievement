@@ -201,33 +201,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return Math.random().toString(36).substring(2) + Date.now().toString(36);
 	}
 
-	_handleSirenErrors(e) {
-		if (e && e['target'] && e.target.href == this.href) {
-			this.hasErrors = true;
-			let errorInfo = {
-				RequestUrl: this.href,
-				RequestMethod: 'GET',
-				ResponseStatus: (e.detail && typeof e.detail['error'] === 'number') ? e.detail.error : null
-			};
-			let errorObject = {
-				Type: 'ApiError',
-				Location: window.location.pathname,
-				Referrer: document.referrer || null,
-				Error: errorInfo 
-			};
-			window.fetch(
-				this.errorLoggingEndpoint, {
-					method: 'POST',
-					mode: 'no-cors',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify([errorObject])
-				}
-			);
-		}
-	}
-
 	render() {
 		if (!this._skeletonLoaded) {
 			//Basic table outline (classlist, aligned outcomes) still loading - hold off on rendering
@@ -351,6 +324,34 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		var selector = this.shadowRoot.getElementById('page-select-menu');
 		selector.selectedIndex = newPage - 1;
 		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
+	}
+
+	_handleSirenErrors(e) {
+		if (e && e['target'] && e.target.href === this.href) {
+			this.hasErrors = true;
+			const errorInfo = {
+				RequestUrl: this.href,
+				RequestMethod: 'GET',
+				ResponseStatus: (e.detail && typeof e.detail['error'] === 'number') ? e.detail.error : null
+			};
+			const errorObject = {
+				Type: 'ApiError',
+				SessionId: this._sessionId,
+				Location: window.location.pathname,
+				Referrer: document.referrer || null,
+				Error: errorInfo
+			};
+			window.fetch(
+				this.errorLoggingEndpoint, {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify([errorObject])
+				}
+			);
+		}
 	}
 
 	_onEntityChanged(entity) {
