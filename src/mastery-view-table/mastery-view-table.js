@@ -40,6 +40,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_currentPage: Number,
 			_pageCount: Number,
 
+			_showFirstNames: Boolean,
+			_showLastNames: Boolean,
 			_nameFirstLastFormat: Boolean,
 			_sortDesc: Boolean,
 
@@ -170,6 +172,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._rowsPerPage = DEFAULT_ROW_SIZE;
 		this._currentPage = 1;
 		this._pageCount = 1;
+		this._showFirstNames = false;
+		this._showLastNames = false;
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
 		this._skeletonLoaded = false;
@@ -207,6 +211,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		${this._renderTableControls()}
 		`;
 	}
+
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
@@ -214,19 +219,19 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	_getLearnerHeadLabelDescription(isSecondButton) {
+	_getLearnerHeadAriaLabel(isLastName, isSecondButton) {
+		const newSortKey = isLastName ? this.localize('lastName') : this.localize('firstName');
 
-		let newSortKey, newSortDirection;
+		let currentSortKey, newSortDirection;
 		if (isSecondButton) {
-			newSortKey = this._nameFirstLastFormat ? this.localize('lastName') : this.localize('firstName');
 			newSortDirection = this.localize('ascending');
+			currentSortKey = isLastName ? this.localize('firstName') : this.localize('lastName');
 		}
 		else {
-			newSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
 			newSortDirection = this._sortDesc ? this.localize('ascending') : this.localize('descending');
+			currentSortKey = newSortKey;
 		}
 
-		const currentSortKey = this._nameFirstLastFormat ? this.localize('firstName') : this.localize('lastName');
 		const currentSortDirection = this._sortDesc ? this.localize('descending') : this.localize('ascending');
 
 		return this.localize(
@@ -236,25 +241,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			'currentSortKey', currentSortKey,
 			'currentSortDirection', currentSortDirection
 		);
-	}
-
-	_getLearnerHeadLabelsText() {
-		let labelStrings;
-		if (this._nameFirstLastFormat) {
-			labelStrings = {
-				first: this.localize('firstName'),
-				second: this.localize('lastName'),
-				divider: ''
-			};
-		}
-		else {
-			labelStrings = {
-				first: this.localize('lastName'),
-				second: this.localize('firstName'),
-				divider: ','
-			};
-		}
-		return labelStrings;
 	}
 
 	_getLearnerRowsData(learnerInfoList, currentPage, rowsPerPage) {
@@ -277,13 +263,26 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		);
 	}
 
-	_getUserNameDisplay(firstName, lastName, firstLastFormat) {
-		if (firstLastFormat) {
+	_getUserNameDisplay(firstName, lastName) {
+		let displayString;
+
+		if (!firstName && !lastName) {
+			displayString = this.localize('anonymousUser');
+		}
+		else if (!firstName) {
+			displayString = lastName;
+		}
+		else if (!lastName) {
+			displayString = firstName;
+		}
+		else if (this._nameFirstLastFormat) {
 			return firstName + ' ' + lastName;
 		}
 		else {
 			return lastName + ', ' + firstName;
 		}
+
+		return displayString;
 	}
 
 	_goToPageNumber(newPage) {
@@ -333,6 +332,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 				const firstName = coaUser.getFirstName();
 				const lastName = coaUser.getLastName();
+				if (firstName) {
+					this._showFirstNames = true;
+				}
+				if (lastName) {
+					this._showLastNames = true;
+				}
+
 				const userOutcomeDataLinks = [];
 
 				coaUser.onUserProgressOutcomesChanged(upoc => {
@@ -416,33 +422,61 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderLearnerColumnHead() {
-		const nameLabels = this._getLearnerHeadLabelsText();
+
+		const firstNameFirstButton = this._renderLearnerColumnSortButton(false, false);
+		const firstNameSecondButton = this._renderLearnerColumnSortButton(true, false);
+		const lastNameFirstButton = this._renderLearnerColumnSortButton(false, true);
+		const lastNameSecondButton = this._renderLearnerColumnSortButton(true, true);
+
+		let cellContent;
+
+		if (!this._showFirstNames && !this._showLastNames) {
+			cellContent = this.localize('name');
+		}
+		else if (!this._showFirstNames) {
+			cellContent = lastNameFirstButton;
+		}
+		else if (!this._showLastNames) {
+			cellContent = firstNameFirstButton;
+		}
+		else if (this._nameFirstLastFormat) {
+			cellContent = html`
+				${firstNameFirstButton}, ${lastNameSecondButton}
+			`;
+		}
+		else {
+			cellContent = html`
+				${lastNameFirstButton}, ${firstNameSecondButton}
+			`;
+		}
+
 		return html`
 		<th sticky>
 		<div class="learner-column-head">
-			<d2l-table-col-sort-button
-				?desc=${this._sortDesc}
-				@click="${this._onFirstLearnerHeaderButtonClicked}}"
-				role="region"
-				aria-label="${this._getLearnerHeadLabelDescription(false)}"
-			>
-				${nameLabels.first}
-			</d2l-table-col-sort-button>
-			${nameLabels.divider}
-			<d2l-table-col-sort-button
-				nosort
-				@click="${this._onSecondLearnerHeaderButtonClicked}"
-				role="region"
-				aria-label="${this._getLearnerHeadLabelDescription(true)}"
-			>
-				${nameLabels.second}
-			</d2l-table-col-sort-button>
+			${cellContent}
 		</div></th>
 		`;
 	}
 
+	_renderLearnerColumnSortButton(isSecondButton, isLastName) {
+		const text = isLastName ? this.localize('lastName') : this.localize('firstName');
+		const ariaLabel = this._getLearnerHeadAriaLabel(isLastName, isSecondButton);
+		const clickCallback = isSecondButton ? this._onSecondLearnerHeaderButtonClicked : this._onFirstLearnerHeaderButtonClicked;
+		return html`
+			<d2l-table-col-sort-button
+				?desc=${this._sortDesc}
+				?nosort=${isSecondButton}
+				@click="${clickCallback}}"
+				role="region"
+				aria-label="${ariaLabel}"
+			>
+				${text}
+			</d2l-table-col-sort-button>
+		`;
+	}
+
 	_renderLearnerRow(learnerData) {
-		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
+		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName);
 
 		return html`
 		<tr>
@@ -452,7 +486,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					href="${learnerData.gradesPageHref}"
 					class="d2l-link learner-name-label"
 					role="region"
-					aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
+					aria-label=${this.localize('goToUserAchievementSummaryPage')}
 					title=${userNameDisplay}
 				>
 					${userNameDisplay}
@@ -622,21 +656,28 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_sortLearners(list, byLastName, descending) {
 		list.sort((left, right) => {
-			let leftName, rightName;
+			let leftSortString = '';
+			let rightSortString = '';
+
+			const leftFirst = left.firstName || '';
+			const leftLast = left.lastName || '';
+			const rightFirst = right.firstName || '';
+			const rightLast = right.lastName || '';
+
 			if (byLastName) {
-				leftName = left.lastName;
-				rightName = right.lastName;
+				leftSortString = leftLast + '_' + leftFirst;
+				rightSortString = rightLast + '_' + rightFirst;
 			}
 			else {
-				leftName = left.firstName;
-				rightName = right.firstName;
+				leftSortString = leftFirst + '_' + leftLast;
+				rightSortString = rightFirst + '_' + rightLast;
 			}
 
 			if (descending) {
-				return rightName.localeCompare(leftName);
+				return rightSortString.localeCompare(leftSortString);
 			}
 			else {
-				return leftName.localeCompare(rightName);
+				return leftSortString.localeCompare(rightSortString);
 			}
 		});
 		return list;
