@@ -14,6 +14,7 @@ import '../custom-icons/RightArrow.js';
 
 import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
+import 'd2l-alert/d2l-alert.js';
 
 import '@brightspace-ui/core/components/typography/typography.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
@@ -31,6 +32,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
+			errorLoggingEndpoint: {
+				type: String,
+				value: null
+			},
 			_learnerList: Array,
 
 			_outcomeHeadersData: Array,
@@ -43,7 +48,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_nameFirstLastFormat: Boolean,
 			_sortDesc: Boolean,
 
-			_skeletonLoaded: Boolean
+			_skeletonLoaded: Boolean,
+
+			_hasErrors: Boolean,
+			_sessionId: Number
 		};
 	}
 
@@ -173,7 +181,51 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
 		this._skeletonLoaded = false;
+		this._hasErrors = false;
+		this._sessionId = this.getUUID();
 		this._setEntityType(ClassOverallAchievementEntity);
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this._handleSirenErrors = this._handleSirenErrors.bind(this);
+		window.addEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+	}
+
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		window.removeEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+	}
+
+	getUUID() {
+		return Math.random().toString(36).substring(2) + Date.now().toString(36);
+	}
+
+	_handleSirenErrors(e) {
+		if (e && e['target'] && e.target.href == this.href) {
+			this.hasErrors = true;
+			let errorInfo = {
+				RequestUrl: this.href,
+				RequestMethod: 'GET',
+				ResponseStatus: (e.detail && typeof e.detail['error'] === 'number') ? e.detail.error : null
+			};
+			let errorObject = {
+				Type: 'ApiError',
+				Location: window.location.pathname,
+				Referrer: document.referrer || null,
+				Error: errorInfo 
+			};
+			window.fetch(
+				this.errorLoggingEndpoint, {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify([errorObject])
+				}
+			);
+		}
 	}
 
 	render() {
@@ -182,9 +234,17 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			return null;
 		}
 
+		if (this._hasErrors) {
+			return html`
+			<d2l-alert type="error">
+				${this.localize('masteryViewTableEmptyError')}
+			</d2l-alert>
+			`;
+		}
+
 		if (this._outcomeHeadersData.length === 0) {
 			//TODO: render empty state for no aligned outcomes, OR propagate an event
-			return null;
+
 		}
 
 		return html`
@@ -444,6 +504,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderLearnerRow(learnerData) {
 		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 
+		if (!learnerData.outcomesProgressData) {
+			return this._renderNoLearnerState(true);
+		}
+
 		return html`
 		<tr>
 			<th scope="row" sticky class="learner-name-cell">
@@ -471,13 +535,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	_renderNoLearnerState() {
+	_renderNoLearnerState(singleRow) {
 		//1 column per outcome, plus learner column, plus (later) checkbox column
 		const colSpan = this._outcomeHeadersData.length + 1;
+		const colText = singleRow ? this.localize('learnerHasNoData') : this.localize('noEnrolledLearners');
 		return html`
 			<tr>
 				<td id="no-learners-cell" colspan="${colSpan}">
-					<div class="no-learners-label">${this.localize('noEnrolledLearners')}</div>
+					<div class="no-learners-label">${colText}</div>
 				</td>
 			</tr>
 		`;
@@ -509,7 +574,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_renderTableBody(rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
-			return this._renderNoLearnerState();
+			return this._renderNoLearnerState(false);
 		}
 		return rowsData.map(item => this._renderLearnerRow(item));
 	}
