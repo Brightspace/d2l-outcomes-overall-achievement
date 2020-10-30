@@ -328,7 +328,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_handleSirenErrors(e) {
 		if (e && e['target'] && e.target.href === this.href) {
-			this.hasErrors = true;
+			this._hasErrors = true;
 			const errorInfo = {
 				RequestUrl: this.href,
 				RequestMethod: 'GET',
@@ -506,7 +506,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 
 		if (!learnerData.outcomesProgressData) {
-			return this._renderNoLearnerState(true);
+			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', learnerData.firstName + ' ' + learnerData.lastName));
 		}
 
 		return html`
@@ -536,14 +536,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	_renderNoLearnerState(singleRow) {
+	_renderNoLearnerState(rowText) {
 		//1 column per outcome, plus learner column, plus (later) checkbox column
 		const colSpan = this._outcomeHeadersData.length + 1;
-		const colText = singleRow ? this.localize('learnerHasNoData') : this.localize('noEnrolledLearners');
 		return html`
 			<tr>
 				<td id="no-learners-cell" colspan="${colSpan}">
-					<div class="no-learners-label">${colText}</div>
+					<div class="no-learners-label">${rowText}</div>
 				</td>
 			</tr>
 		`;
@@ -575,7 +574,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_renderTableBody(rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
-			return this._renderNoLearnerState(false);
+			return this._renderNoLearnerState(this.localize('noEnrolledLearners'));
 		}
 		return rowsData.map(item => this._renderLearnerRow(item));
 	}

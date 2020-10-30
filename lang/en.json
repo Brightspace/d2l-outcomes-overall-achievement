@@ -16,7 +16,7 @@
     "indexedAttempt": "Attempt {num}",
     "labelOverallAchievement": "Overall Achievement",
     "lastName": "Last name",
-    "learnerHasNoData":  "Learner has no overall achievement data.",
+    "learnerHasNoData":  "{username} has no overall achievement data.",
     "learnerSortButtonDescription": "Select to sort table rows by user {newSortKey} {newSortDirection}. Current sort order is by {currentSortKey} {currentSortDirection}.",
     "levelNamePercentLabel": "{name}: {percentage}.",
     "manualOverride": "manual override",
