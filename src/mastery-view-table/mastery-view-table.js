@@ -324,6 +324,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			}
 
 			const coaUserEntities = classlist.getUsers();
+			var showFirstNames = false;
+			var showLastNames = false;
 			//Resolve all user links to get first and last names, plus links to data
 			coaUserEntities.map(coaUser => {
 				if (!coaUser) {
@@ -333,10 +335,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				const firstName = coaUser.getFirstName();
 				const lastName = coaUser.getLastName();
 				if (firstName) {
-					this._showFirstNames = true;
+					showFirstNames = true;
 				}
 				if (lastName) {
-					this._showLastNames = true;
+					showLastNames = true;
 				}
 
 				const userOutcomeDataLinks = [];
@@ -368,6 +370,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			});
 
 			classlist.subEntitiesLoaded().then(() => {
+				this._showFirstNames = showFirstNames;
+				this._showLastNames = showLastNames;
 				this._learnerList = this._sortLearners(learnerInfoList, !this._nameFirstLastFormat, this._sortDesc);
 				this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
 				this._updatePageCount();
