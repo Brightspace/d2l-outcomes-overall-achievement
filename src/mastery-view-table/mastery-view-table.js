@@ -324,8 +324,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			}
 
 			const coaUserEntities = classlist.getUsers();
-			var showFirstNames = false;
-			var showLastNames = false;
+			let showFirstNames = false;
+			let showLastNames = false;
 			//Resolve all user links to get first and last names, plus links to data
 			coaUserEntities.map(coaUser => {
 				if (!coaUser) {
