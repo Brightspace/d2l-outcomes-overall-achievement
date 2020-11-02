@@ -253,7 +253,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		if (this._outcomeHeadersData.length === 0) {
-			//TODO: render empty state for no aligned outcomes, OR propagate an event
+			//Empty state for no aligned outcomes
 			return html`
 			<div id="no-outcomes-container" class="d2l-typography">
 				<img src=${Images['blueprint']} />
@@ -264,7 +264,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					<a href=${this.outcomesToolLink}>${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
 				</div>
 			</div>
-			`
+			`;
 		}
 
 		return html`
