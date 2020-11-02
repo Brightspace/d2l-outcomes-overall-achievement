@@ -4,7 +4,7 @@ import { LocalizeMixin } from '../LocalizeMixin';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import 'd2l-table/d2l-table.js';
-import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
 
@@ -18,6 +18,10 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 
 	static get properties() {
 		return {
+			outcomeHref: {
+				attribute: 'outcome-href',
+				type: String
+			},
 			_cellData: Object
 		};
 	}
@@ -111,7 +115,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 
 	constructor() {
 		super();
-		this._setEntityType(OutcomeActivityCollectionEntity);
+		this._setEntityType(MasteryViewRowEntity);
 	}
 
 	render() {
@@ -218,57 +222,40 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 		if (!entity) {
 			return;
 		}
-		let name, color, hasOverallDemonstration, overallAssessmentDate, mostRecentAssessmentDate, hasManualOverride, isPublished, isOutOfDate, evalHref;
-		let assessmentCount = 0;
-		let assessmentWithDemonstrationCount = 0;
-		entity.onActivityChanged(activity => {
-			if (!activity) {
-				return;
-			}
-			if (activity.getType() === 'checkpoint-item') {
-				//Activity is an overall achievement
-				activity.onAssessedDemonstrationChanged(demonstration => {
-					hasOverallDemonstration = true;
-					const demonstratedLevel = demonstration.getDemonstratedLevel();
-					hasManualOverride = demonstratedLevel.isManualOverride();
-					overallAssessmentDate = demonstration.getDateAssessed();
-					isPublished = demonstration.isPublished();
-					demonstratedLevel.onLevelChanged(loa => {
-						name = loa.getName();
-						color = loa.getColor();
-					});
-				});
-				activity.onUserActivityUsageChanged(activityUsage => {
-					evalHref = activityUsage.getEvalPageHref();
-				});
-			}
-			else {
-				assessmentCount++;
-				activity.onAssessedDemonstrationChanged(demonstration => {
-					assessmentWithDemonstrationCount++;
-					const assessmentDate = demonstration.getDateAssessed();
-					if (!mostRecentAssessmentDate || assessmentDate > mostRecentAssessmentDate) {
-						mostRecentAssessmentDate = assessmentDate;
-					}
-				});
-			}
+
+		const cellEntity = entity.getCells().find(cell => cell.getOutcomeHref() === this.outcomeHref);
+		if (!cellEntity) {
+			return;
+		}
+
+		const activityCount = cellEntity.getActivityCount();
+		const assessedActivityCount = cellEntity.getAssessedActivityCount();
+		const evalHref = cellEntity.getEvaluationHref();
+		const isOutOfDate = cellEntity.isOutdated();
+
+		let name = '-';
+		let color = '#FFFFFF';
+		let isPublished = false;
+		let hasManualOverride = false;
+		let hasOverallDemonstration = false;
+
+		cellEntity.onCheckpointDemonstrationChanged(demonstration => {
+			hasOverallDemonstration = true;
+			isPublished = demonstration.isPublished();
+
+			const demonstratedLevel = demonstration.getDemonstratedLevel();
+			hasManualOverride = demonstratedLevel.isManualOverride();
+			demonstratedLevel.onLevelChanged(loa => {
+				name = loa.getName();
+				color = loa.getColor();
+			});
 		});
 
 		entity.subEntitiesLoaded().then(() => {
-			if (hasOverallDemonstration) {
-				isOutOfDate = (mostRecentAssessmentDate && mostRecentAssessmentDate > overallAssessmentDate);
-			}
-			else {
-				name = '-';
-				color = '#FFFFFF';
-				isPublished = false;
-				isOutOfDate = false;
-				hasManualOverride = false;
-			}
 			this._cellData = {
 				hasOverallAssessment: hasOverallDemonstration,
-				totalAssessments: assessmentCount,
-				totalEvaluatedAssessments: assessmentWithDemonstrationCount,
+				totalAssessments: activityCount,
+				totalEvaluatedAssessments: assessedActivityCount,
 				levelName: name,
 				levelColor: color + '1A',
 				isManualOverride: hasManualOverride,
