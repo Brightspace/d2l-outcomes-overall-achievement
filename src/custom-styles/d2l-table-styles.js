@@ -9,7 +9,7 @@ export const d2lTableStyles = css`
 		display:table;
 		font-size: 0.8rem;
 		font-weight: 400;
-		width:100%;
+		max-width:100%;
 	}
 	.d2l-table > thead,
 	d2l-thead {
