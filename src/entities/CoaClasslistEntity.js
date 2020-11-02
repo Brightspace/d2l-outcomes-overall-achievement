@@ -22,6 +22,7 @@ class CoaUserEntity extends SelflessEntity {
 
 	static get links() {
 		return {
+			rowDataRel: 'https://mastery.api.brightspace.com/rels/row-data',
 			userRel: 'user',
 			userGradesSummaryRel: 'https://api.brightspace.com/rels/user-grades-view',
 			userProgressOutcomeRel: 'https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes'
@@ -34,6 +35,14 @@ class CoaUserEntity extends SelflessEntity {
 
 	getLastName() {
 		return this._entity && this._entity.properties && this._entity.properties.LastName;
+	}
+
+	getRowDataHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(CoaUserEntity.links.rowDataRel)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(CoaUserEntity.links.rowDataRel).href;
 	}
 
 	getUserGradesSummaryHref() {

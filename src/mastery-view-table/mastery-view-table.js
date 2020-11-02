@@ -188,23 +188,23 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
-		<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
-		<d2l-table-wrapper sticky-headers show-actions type="default">
-			<table
-				class="d2l-table"
-				role="grid"
-				aria-label="${this.localize('masteryViewTableDescription')}"
-			>
-				<thead>
-					${this._renderTableHead(this._overallOutcomesData)}
-				</thead>
-				<tbody>
-					${this._renderTableBody(this._learnerRowsData)}
-				<tbody>
-			</table>
-		</d2l-table-wrapper>
-		</d2l-scroll-wrapper>
-		${this._renderTableControls()}
+			<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
+				<d2l-table-wrapper sticky-headers show-actions type="default">
+					<table
+						class="d2l-table"
+						role="grid"
+						aria-label="${this.localize('masteryViewTableDescription')}"
+					>
+						<thead>
+							${this._renderTableHead(this._nameFirstLastFormat, this._outcomeHeadersData)}
+						</thead>
+						<tbody>
+							${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
+						<tbody>
+					</table>
+				</d2l-table-wrapper>
+			</d2l-scroll-wrapper>
+			${this._renderTableControls()}
 		`;
 	}
 	set _entity(entity) {
@@ -333,32 +333,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 				const firstName = coaUser.getFirstName();
 				const lastName = coaUser.getLastName();
-				const userOutcomeDataLinks = [];
+				const rowDataHref = coaUser.getRowDataHref();
+				const gradesPageHref = coaUser.getUserGradesSummaryHref();
 
-				coaUser.onUserProgressOutcomesChanged(upoc => {
-					if (upoc) {
-						const upoEntities = upoc.getUserProgressOutcomes();
-						upoEntities.map(upo => {
-							const userOutcomeData = {
-								outcomeHref: upo.getOutcomeHref(),
-								activityCollectionHref: upo.getOutcomeActivitiesHref()
-							};
-							userOutcomeDataLinks.push(userOutcomeData);
-						});
-						userOutcomeDataLinks.sort((left, right) => {
-							return left.outcomeHref.localeCompare(right.outcomeHref);
-						});
-					}
-
-					const gradesPageLink = coaUser.getUserGradesSummaryHref();
-					const learnerInfo = {
-						firstName: firstName,
-						lastName: lastName,
-						outcomesProgressData: userOutcomeDataLinks,
-						gradesPageHref: gradesPageLink
-					};
-					learnerInfoList.push(learnerInfo);
-				});
+				const learnerInfo = {
+					firstName,
+					lastName,
+					gradesPageHref,
+					rowDataHref
+				};
+				learnerInfoList.push(learnerInfo);
 			});
 
 			classlist.subEntitiesLoaded().then(() => {
@@ -418,55 +402,57 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderLearnerColumnHead() {
 		const nameLabels = this._getLearnerHeadLabelsText();
 		return html`
-		<th sticky>
-		<div class="learner-column-head">
-			<d2l-table-col-sort-button
-				?desc=${this._sortDesc}
-				@click="${this._onFirstLearnerHeaderButtonClicked}}"
-				role="region"
-				aria-label="${this._getLearnerHeadLabelDescription(false)}"
-			>
-				${nameLabels.first}
-			</d2l-table-col-sort-button>
-			${nameLabels.divider}
-			<d2l-table-col-sort-button
-				nosort
-				@click="${this._onSecondLearnerHeaderButtonClicked}"
-				role="region"
-				aria-label="${this._getLearnerHeadLabelDescription(true)}"
-			>
-				${nameLabels.second}
-			</d2l-table-col-sort-button>
-		</div></th>
+			<th sticky>
+				<div class="learner-column-head">
+					<d2l-table-col-sort-button
+						?desc=${this._sortDesc}
+						@click="${this._onFirstLearnerHeaderButtonClicked}}"
+						role="region"
+						aria-label="${this._getLearnerHeadLabelDescription(false)}"
+					>
+						${nameLabels.first}
+					</d2l-table-col-sort-button>
+					${nameLabels.divider}
+					<d2l-table-col-sort-button
+						nosort
+						@click="${this._onSecondLearnerHeaderButtonClicked}"
+						role="region"
+						aria-label="${this._getLearnerHeadLabelDescription(true)}"
+					>
+						${nameLabels.second}
+					</d2l-table-col-sort-button>
+				</div>
+			</th>
 		`;
 	}
 
-	_renderLearnerRow(learnerData) {
+	_renderLearnerRow(learnerData, outcomeHeaderData) {
 		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 
 		return html`
 		<tr>
 			<th scope="row" sticky class="learner-name-cell">
-			<div class="learner-name-container">
-				<a
-					href="${learnerData.gradesPageHref}"
-					class="d2l-link learner-name-label"
-					role="region"
-					aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
-					title=${userNameDisplay}
-				>
-					${userNameDisplay}
-				</a>
-			</div>
+				<div class="learner-name-container">
+					<a
+						href="${learnerData.gradesPageHref}"
+						class="d2l-link learner-name-label"
+						role="region"
+						aria-label=${this.localize('goToUserAchievementSummaryPage', 'username', learnerData.firstName + ' ' + learnerData.lastName)}
+						title=${userNameDisplay}
+					>
+						${userNameDisplay}
+					</a>
+				</div>
 			</th>
-			${learnerData.outcomesProgressData.map(outcomeData => { return html`
+			${outcomeHeaderData.map(outcomeData => html`
 				<td role="cell" class="learner-outcome-cell">
 					<d2l-mastery-view-user-outcome-cell
-						href="${outcomeData.activityCollectionHref}"
-						token="${this.token}"
+						href=${learnerData.rowDataHref}
+						token=${this.token}
+						outcome-href=${outcomeData.href}
 					/>
 				</td>
-				`; })}
+			`)}
 		</tr>
 		`;
 	}
@@ -507,11 +493,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	}
 
-	_renderTableBody(rowsData) {
+	_renderTableBody(outcomeHeaderData, rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
 			return this._renderNoLearnerState();
 		}
-		return rowsData.map(item => this._renderLearnerRow(item));
+		return rowsData.map(item => this._renderLearnerRow(item, outcomeHeaderData));
 	}
 
 	_renderTableControls() {
@@ -603,11 +589,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	_renderTableHead() {
+	_renderTableHead(nameFirstLastFormat, outcomeHeadersData) {
 		return html`
 		<tr header>
-			${this._renderLearnerColumnHead(this._nameFirstLastFormat)}
-			${this._outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
+			${this._renderLearnerColumnHead(nameFirstLastFormat)}
+			${outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
 	}
