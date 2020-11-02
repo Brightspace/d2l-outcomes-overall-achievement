@@ -28,6 +28,7 @@
     "newPageSelectLiveText": "Page {pageNum} of {totalPages} selected.",
     "newPageSizeLiveText": "Displaying {pageSize} rows per page.",
     "name": "Name",
+    "noAlignedOutcomes": "To use the Mastery View, start with aligning {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}} to course activities on the activity's editing page.",
     "noEnrolledLearners":  "No enrolled learners in the course.",
     "noScaleStudent": "No scale has been set to measure achievement of {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
     "noScaleInstructor": "To view learner progress towards achieving this {outcome, select, competencies {competency} expectations {expectation} objectives {objective} outcomes {outcome} standards {standard} other {standard}}, create and select an achievement scale.",
@@ -46,5 +47,6 @@
     "selectTablePage": "Select a specific page in the table.",
     "tooltipUserOutcomeAssessments": "{numAssessed} out of {numTotal} activities are assessed",
     "trend": "Trend",
-    "untitled": "Untitled"
+    "untitled": "Untitled",
+    "viewCourseIntentList": "View the course intent list in the {outcome, select, competencies {Competencies} expectations {Expectations} objectives {Objectives} outcomes {Outcomes} standards {Standards} other {Standards}} tool"
 }
