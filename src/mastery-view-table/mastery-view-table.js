@@ -110,6 +110,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					text-decoration: none;
 				}
 
+				.d2l-table {
+					width: auto !important;
+					max-width: 100%;
+				}
+
 				.learner-column-head {
 					padding: 0rem 0.8rem;
 					min-width: 9.9rem;
