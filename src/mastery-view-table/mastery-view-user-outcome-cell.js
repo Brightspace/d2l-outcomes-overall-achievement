@@ -244,11 +244,13 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 			isPublished = demonstration.isPublished();
 
 			const demonstratedLevel = demonstration.getDemonstratedLevel();
-			hasManualOverride = demonstratedLevel.isManualOverride();
-			demonstratedLevel.onLevelChanged(loa => {
-				name = loa.getName();
-				color = loa.getColor();
-			});
+			if (demonstratedLevel) {
+				hasManualOverride = demonstratedLevel.isManualOverride();
+				demonstratedLevel.onLevelChanged(loa => {
+					name = loa.getName();
+					color = loa.getColor();
+				});
+			}
 		});
 
 		entity.subEntitiesLoaded().then(() => {
