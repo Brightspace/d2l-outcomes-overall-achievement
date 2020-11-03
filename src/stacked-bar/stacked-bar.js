@@ -207,9 +207,16 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 				if (activityType && this.excludedTypes.includes(activityType)) {
 					return;
 				}
+				let levelId;
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
-					demonstrations.push(demonstratedLevel.getLevelId());
+					levelId = demonstratedLevel.getLevelId();
+				});
+
+				activity.subEntitiesLoaded().then(() => {
+					if (levelId) {
+						demonstrations.push(levelId);
+					}
 				});
 			});
 
