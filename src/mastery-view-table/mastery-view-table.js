@@ -8,6 +8,7 @@ import './mastery-view-outcome-header-cell.js';
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
 import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 
 import '../custom-icons/LeftArrow.js';
 import '../custom-icons/RightArrow.js';
@@ -24,6 +25,8 @@ import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
+import Images from '../images/images.js';
+
 const DEFAULT_ROW_SIZE = 20;
 const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
@@ -35,6 +38,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			errorLoggingEndpoint: {
 				type: String,
 				value: null
+			},
+			outcomesToolLink: {
+				type: String,
+				attribute: 'outcomes-tool-link'
+			},
+			outcomeTerm: {
+				type: String,
+				attribute: 'outcome-term'
 			},
 			_learnerList: Array,
 
@@ -76,6 +87,32 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 					--d2l-scroll-wrapper-border-color: var(--d2l-color-mica);
 					--d2l-scroll-wrapper-background-color: var(--d2l-color-regolith);
+				}
+
+				#no-outcomes-container {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+				}
+
+				#no-outcomes-container img {
+					height: 357px;
+					width: 479px;
+				}
+
+				#no-outcomes-container div {
+					margin-top: 30px;
+					text-align: center;
+				}
+
+				#no-outcomes-container a {
+					text-decoration: none;
+				}
+
+				.d2l-table {
+					width: auto !important;
+					max-width: 100%;
 				}
 
 				.learner-column-head {
@@ -168,7 +205,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			`,
 			d2lTableStyles,
 			linkStyles,
-			selectStyles
+			selectStyles,
+			bodyCompactStyles
 		];
 	}
 
@@ -220,8 +258,18 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		if (this._outcomeHeadersData.length === 0) {
-			//TODO: render empty state for no aligned outcomes, OR propagate an event
-
+			//Empty state for no aligned outcomes
+			return html`
+			<div id="no-outcomes-container" class="d2l-typography">
+				<img src=${Images['blueprint']} />
+				<div class="d2l-body-compact">
+					${this.localize('noAlignedOutcomes', 'outcome', this.outcomeTerm)}
+				</div>
+				<div class="d2l-body-compact">
+					<a href=${this.outcomesToolLink}>${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
+				</div>
+			</div>
+			`;
 		}
 
 		return html`

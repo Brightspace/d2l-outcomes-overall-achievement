@@ -181,6 +181,8 @@ A panel displaying a user's current progress toward achieving a given outcome wi
 
 - `href` - Hypermedia URL for a collection entity of `user-progress-outcome`
 - `token` - Auth token
+- `outcomes-tool-link` - Link to the Outcomes Tool in the corresponding course. Displayed when there are no aligned outcomes in the course.
+- `outcome-term` - **[Optional]** The preferred term to use when referring to outcomes. Accepted values are: `competencies`, `expectations`, `objectives`, `outcomes` and `standards`. Default value is `standards`
 
 ---
 
