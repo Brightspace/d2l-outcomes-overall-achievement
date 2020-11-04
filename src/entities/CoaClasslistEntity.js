@@ -22,7 +22,7 @@ class CoaUserEntity extends SelflessEntity {
 
 	static get links() {
 		return {
-			rowDataRel: 'https://mastery.api.brightspace.com/rels/row-data',
+			rowDataRel: 'https://outcomes.api.brightspace.com/rels/row-data',
 			userRel: 'user',
 			userGradesSummaryRel: 'https://api.brightspace.com/rels/user-grades-view',
 			userProgressOutcomeRel: 'https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes'

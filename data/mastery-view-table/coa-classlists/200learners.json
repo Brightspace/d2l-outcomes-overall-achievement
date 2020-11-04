@@ -36,7 +36,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -74,7 +74,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row1.json"
 				}
@@ -112,7 +112,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row2.json"
 				}
@@ -150,7 +150,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row3.json"
 				}
@@ -188,7 +188,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row4.json"
 				}
@@ -226,7 +226,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row5.json"
 				}
@@ -264,7 +264,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row6.json"
 				}
@@ -302,7 +302,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -340,7 +340,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -378,7 +378,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -416,7 +416,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -454,7 +454,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -492,7 +492,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -530,7 +530,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -568,7 +568,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -606,7 +606,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -644,7 +644,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -682,7 +682,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -720,7 +720,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -758,7 +758,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -796,7 +796,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -834,7 +834,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -872,7 +872,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -910,7 +910,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -948,7 +948,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -986,7 +986,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1024,7 +1024,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1062,7 +1062,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1100,7 +1100,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1138,7 +1138,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1176,7 +1176,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1214,7 +1214,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1252,7 +1252,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1290,7 +1290,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1328,7 +1328,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1366,7 +1366,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1404,7 +1404,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1442,7 +1442,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1480,7 +1480,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1518,7 +1518,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1556,7 +1556,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1594,7 +1594,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1632,7 +1632,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1670,7 +1670,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1708,7 +1708,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1746,7 +1746,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1784,7 +1784,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1822,7 +1822,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1860,7 +1860,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1898,7 +1898,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1936,7 +1936,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -1974,7 +1974,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2012,7 +2012,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2050,7 +2050,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2088,7 +2088,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2126,7 +2126,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2164,7 +2164,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2202,7 +2202,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2240,7 +2240,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2278,7 +2278,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2316,7 +2316,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2354,7 +2354,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2392,7 +2392,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2430,7 +2430,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2468,7 +2468,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2506,7 +2506,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2544,7 +2544,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2582,7 +2582,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2620,7 +2620,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2658,7 +2658,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2696,7 +2696,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2734,7 +2734,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2772,7 +2772,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2810,7 +2810,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2848,7 +2848,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2886,7 +2886,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2924,7 +2924,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -2962,7 +2962,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3000,7 +3000,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3038,7 +3038,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3076,7 +3076,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3114,7 +3114,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3152,7 +3152,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3190,7 +3190,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3228,7 +3228,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3266,7 +3266,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3304,7 +3304,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3342,7 +3342,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3380,7 +3380,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3418,7 +3418,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3456,7 +3456,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3494,7 +3494,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3532,7 +3532,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3570,7 +3570,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3608,7 +3608,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3646,7 +3646,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3684,7 +3684,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3722,7 +3722,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3760,7 +3760,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3798,7 +3798,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3836,7 +3836,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3874,7 +3874,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3912,7 +3912,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3950,7 +3950,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -3988,7 +3988,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4026,7 +4026,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4064,7 +4064,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4102,7 +4102,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4140,7 +4140,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4178,7 +4178,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4216,7 +4216,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4254,7 +4254,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4292,7 +4292,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4330,7 +4330,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4368,7 +4368,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4406,7 +4406,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4444,7 +4444,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4482,7 +4482,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4520,7 +4520,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4558,7 +4558,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4596,7 +4596,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4634,7 +4634,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4672,7 +4672,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4710,7 +4710,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4748,7 +4748,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4786,7 +4786,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4824,7 +4824,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4862,7 +4862,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4900,7 +4900,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4938,7 +4938,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -4976,7 +4976,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5014,7 +5014,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5052,7 +5052,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5090,7 +5090,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5128,7 +5128,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5166,7 +5166,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5204,7 +5204,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5242,7 +5242,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5280,7 +5280,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5318,7 +5318,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5356,7 +5356,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5394,7 +5394,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5432,7 +5432,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5470,7 +5470,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5508,7 +5508,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5546,7 +5546,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5584,7 +5584,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5622,7 +5622,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5660,7 +5660,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5698,7 +5698,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5736,7 +5736,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5774,7 +5774,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5812,7 +5812,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5850,7 +5850,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5888,7 +5888,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5926,7 +5926,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -5964,7 +5964,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6002,7 +6002,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6040,7 +6040,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6078,7 +6078,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6116,7 +6116,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6154,7 +6154,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6192,7 +6192,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6230,7 +6230,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6268,7 +6268,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6306,7 +6306,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6344,7 +6344,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6382,7 +6382,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6420,7 +6420,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6458,7 +6458,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6496,7 +6496,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6534,7 +6534,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6572,7 +6572,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6610,7 +6610,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6648,7 +6648,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6686,7 +6686,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6724,7 +6724,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6762,7 +6762,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6800,7 +6800,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6838,7 +6838,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6876,7 +6876,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6914,7 +6914,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6952,7 +6952,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -6990,7 +6990,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7028,7 +7028,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7066,7 +7066,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7104,7 +7104,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7142,7 +7142,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7180,7 +7180,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7218,7 +7218,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7256,7 +7256,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7294,7 +7294,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7332,7 +7332,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7370,7 +7370,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7408,7 +7408,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7446,7 +7446,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7484,7 +7484,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7522,7 +7522,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7560,7 +7560,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
@@ -7598,7 +7598,7 @@
 				},
 				{
 					"rel": [
-						"https://mastery.api.brightspace.com/rels/row-data"
+						"https://outcomes.api.brightspace.com/rels/row-data"
 					],
 					"href": "/data/mastery-view-table/row-data/row0.json"
 				}
