@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import 'd2l-table/d2l-table.js';
@@ -13,7 +14,7 @@ const KEYCODES = {
 	SPACE: 32
 };
 
-export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(LitElement)) {
+export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
 	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
 
 	static get properties() {
@@ -27,103 +28,130 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 	}
 
 	static get styles() {
-		return css`
-			.cell-content-container:focus {
-				outline-color: var(--d2l-color-celestine);
-			}
+		return [
+			css`
+				.cell-content-container:focus {
+					outline-color: var(--d2l-color-celestine);
+				}
 
-			.cell-content-container {
-				width: 9.9rem;
-				height: 3rem;
-			}
+				.cell-content-container {
+					width: 9.9rem;
+					height: 3rem;
+				}
 
-			#assessment-fraction-container {
-				line-height: 0.6rem;
-			}
+				#assessment-fraction-container {
+					line-height: 0.6rem;
+				}
 
-			#assessment-fraction {
-				display: inline-block;
-				padding-left: 0.3rem;
-				padding-top: 0.3rem;
-				padding-right: 0.3rem;
-				font-family: 'Lato', sans-serif;
-				font-size: 0.6rem;
-				color: var(--d2l-color-tungsten)
-			}
+				#assessment-fraction {
+					display: inline-block;
+					padding-left: 0.3rem;
+					padding-top: 0.3rem;
+					padding-right: 0.3rem;
+					font-family: 'Lato', sans-serif;
+					font-size: 0.6rem;
+					color: var(--d2l-color-tungsten)
+				}
 
-			.assessment-label-container {
-				display: inline-block;
-				padding-left: 1.5rem;
-				padding-bottom: 0.4rem;
-			}
+				.assessment-label-container {
+					display: inline-block;
+					padding-left: 1.5rem;
+					padding-bottom: 0.4rem;
+				}
 
-			:host([dir="rtl"]) .assessment-label-container {
-				padding-right: 1.5rem;
-				padding-left: 0;
-			}
+				:host([dir="rtl"]) .assessment-label-container {
+					padding-right: 1.5rem;
+					padding-left: 0;
+				}
 
-			.assessment-level-label {
-				@apply --d2l-body-compact-text;
-				float: left;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				max-width: 5rem;
-				line-height: 1.2rem;
-			}
+				.assessment-level-label {
+					@apply --d2l-body-compact-text;
+					float: left;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: 5rem;
+					line-height: 1.2rem;
+				}
 
-			:host([dir="rtl"]) .assessment-level-label {
-				float: right;
-			}
+				.assessment-label-skeleton {
+					width: 4.8rem;
+					height: 1rem;
+					margin-left: 1.5rem;
+					margin-top: 1rem;
+					float: left;
+				}
 
-			.cell-content-container:hover .assessment-level-label {
-				text-decoration: underline;
-			}
+				:host([dir="rtl"]) .assessment-label-skeleton {
+					margin-left: 0rem;
+					margin-right: 1.5rem;
+					float: right;
+				}
 
-			:host([dir="rtl"]) .override-indicator {
-				float: right;
-			}
+				:host([dir="rtl"]) .assessment-level-label {
+					float: right;
+				}
 
-			.assessment-outdated-icon {
-				display: inline-block;
-				float: right;
-				padding-right: 0.3rem;
-				padding-top: 0.15rem;
-			}
+				.cell-content-container:hover .assessment-level-label {
+					text-decoration: underline;
+				}
 
-			:host([dir="rtl"]) .assessment-outdated-icon {
-				float: left;
-				padding-left: 0.3rem;
-				padding-right: 0;
-			}
+				:host([dir="rtl"]) .override-indicator {
+					float: right;
+				}
 
-			.assessment-publish-status-icon {
-				display: inline-block;
-				float: right;
-				padding-right: 0.45rem;
-				padding-top: 0.3rem;
-			}
+				.assessment-outdated-icon {
+					display: inline-block;
+					float: right;
+					padding-right: 0.3rem;
+					padding-top: 0.15rem;
+				}
 
-			:host([dir="rtl"]) .assessment-publish-status-icon {
-				float: left;
-				padding-left: 0.45rem;
-				padding-right: 0;
-			}
+				:host([dir="rtl"]) .assessment-outdated-icon {
+					float: left;
+					padding-left: 0.3rem;
+					padding-right: 0;
+				}
 
-		`;
+				.assessment-publish-status-icon {
+					display: inline-block;
+					float: right;
+					padding-right: 0.45rem;
+					padding-top: 0.3rem;
+				}
+
+				:host([dir="rtl"]) .assessment-publish-status-icon {
+					float: left;
+					padding-left: 0.45rem;
+					padding-right: 0;
+				}
+			`,
+			super.styles
+		];
 	}
 
 	constructor() {
 		super();
+		this.skeleton = true;
 		this._setEntityType(MasteryViewRowEntity);
 	}
 
 	render() {
-		const data = this._cellData;
-		if (!data) {
-			//TODO: create loading skeleton to render in place of cell content
-			return null;
+		if (this.skeleton) {
+			console.log("skeleton");
+			return html`
+				<div
+					class="cell-content-container"
+					tabindex="0"
+					aria-label="${this._getAriaText(null)}"
+				>
+					<div class="assessment-label-skeleton d2l-skeletize" />
+				</div>
+			`;
 		}
+
+		const data = this._cellData;
+
 		return html`
 		<div
 			class="cell-content-container"
@@ -174,7 +202,13 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 	}
 
 	_getAriaText(data) {
+		
+		if (!data) {
+			return this.localize('loadingOutcomeOverallAchievement');
+		}
+
 		var assessmentInfo = '';
+
 		if (data.hasOverallAssessment) {
 			assessmentInfo += data.levelName + this.localize('commaSeparator');
 		}
@@ -265,6 +299,7 @@ export class MasteryViewUserOutcomeCell extends LocalizeMixin(EntityMixinLit(Lit
 				published: isPublished,
 				evalPageHref: evalHref
 			};
+			this.skeleton = false;
 		});
 	}
 
