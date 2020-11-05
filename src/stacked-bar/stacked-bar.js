@@ -40,13 +40,26 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 					margin-right: 2px;
 				}
 
+				:host([dir="rtl"]) .graph-bar {
+					margin-right: 0px;
+					margin-left: 2px;
+				}
+
 				.graph-bar:first-child {
 					border-radius: 4px 0px 0px 4px;
+				}
+
+				:host([dir="rtl"]) .graph-bar:first-child {
+					border-radius: 0px 4px 4px 0px;
 				}
 
 				.graph-bar:last-child {
 					border-radius: 0px 4px 4px 0px;
 					margin-right: 0px;
+				}
+
+				:host([dir="rtl"]) .graph-bar:last-child {
+					border-radius: 4px 0px 0px 4px;
 				}
 
 				.graph-bar-skeleton {
