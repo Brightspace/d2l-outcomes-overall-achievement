@@ -1,6 +1,6 @@
 {
   "name": "d2l-outcomes-overall-achievement",
-  "version": "1.1.20",
+  "version": "1.1.22",
   "description": "A collection of components related to outcomes COA (Course Overall Achievement)",
   "scripts": {
     "lang:build": "lang-build -es \"\t\" -c langtools/config.json",
@@ -11,7 +11,7 @@
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "dependencies": {
-    "@brightspace-ui/core": "^1.64.1",
+    "@brightspace-ui/core": "^1.98.0",
     "d2l-alert": "github:BrightspaceUI/alert#semver:^4",
     "d2l-table": "github:BrightspaceUI/table#semver:^2",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware#semver:^1",
