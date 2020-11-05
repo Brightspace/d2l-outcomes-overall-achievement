@@ -138,7 +138,6 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 	render() {
 		if (this.skeleton) {
-			console.log("skeleton");
 			return html`
 				<div
 					class="cell-content-container"
@@ -202,7 +201,6 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 	}
 
 	_getAriaText(data) {
-		
 		if (!data) {
 			return this.localize('loadingOutcomeOverallAchievement');
 		}
