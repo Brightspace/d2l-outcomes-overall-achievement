@@ -1,13 +1,14 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 const unassessedColor = '#9ea5a9';
 
-export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
+export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
 	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	static get properties() {
@@ -18,12 +19,12 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
 			_totalCount: { attribute: false },
-			_skeletonLoaded: {attribute: false, type: Boolean},
 		};
 	}
 
 	static get styles() {
 		return [
+			super.styles,
 			css`
 				#graph-container {
 					align-items: stretch;
@@ -46,6 +47,11 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 				.graph-bar:last-child {
 					border-radius: 0px 4px 4px 0px;
 					margin-right: 0px;
+				}
+
+				.graph-bar-skeleton {
+					border-radius: 4px 4px 4px 4px;
+					flex-grow: 1;
 				}
 
 				.compact #graph-container .graph-bar {
@@ -80,8 +86,8 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 				}
 
 				@media (pointer: fine) {
-					#graph-container:focus,
-					#graph-container:hover {
+					:host(:not([skeleton])) #graph-container:focus,
+					:host(:not([skeleton])) #graph-container:hover {
 						filter: brightness(120%);
 						outline: none;
 					}
@@ -127,7 +133,7 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 		this._histData = [];
 		this._totalCount = 0;
 		this._assessedCount = 0;
-		this._skeletonLoaded = false;
+		this.skeleton = true;
 	}
 
 	render() {
@@ -229,7 +235,7 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 				this._assessedCount = demonstrations.length;
 				this._totalCount = entity.getOutcomeActivities().length;
 				this._buildHistData(levels, demonstrations);
-				this._skeletonLoaded = true;
+				this.skeleton = false;
 			});
 		}
 	}
@@ -248,18 +254,18 @@ export class StackedBar extends LocalizeMixin(EntityMixinLit(LitElement)) {
 	}
 
 	_renderGraph() {
-		if (!this._skeletonLoaded) {
-			//TODO: render loading state/animation
-			return null;
+		if (this.skeleton) {
+			return html`
+				<div class="graph-bar-skeleton d2l-skeletize" />
+			`;
 		}
 
 		if (this._totalCount === 0) {
-			//Render empty state skeleton
 			return html`
-			<div
-				class="graph-bar"
-				style="background: var(--d2l-color-mica); flex-grow: 1;"
-			></div>
+				<div
+					class="graph-bar"
+					style="background: var(--d2l-color-mica); flex-grow: 1;"
+				></div>
 		`;
 		}
 
