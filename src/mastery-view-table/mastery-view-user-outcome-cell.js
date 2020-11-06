@@ -38,6 +38,10 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					width: 9.9rem;
 					height: 3rem;
 				}
+				
+				.cell-content-container:not(.skeleton) {
+					cursor: pointer;
+				}
 
 				#assessment-fraction-container {
 					line-height: 0.6rem;
@@ -140,7 +144,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		if (this.skeleton) {
 			return html`
 				<div
-					class="cell-content-container"
+					class="cell-content-container skeleton"
 					tabindex="0"
 					aria-label="${this._getAriaText(null)}"
 				>
