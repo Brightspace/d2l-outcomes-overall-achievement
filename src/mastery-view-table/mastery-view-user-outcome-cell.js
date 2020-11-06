@@ -202,7 +202,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 	_getAriaText(data) {
 		if (!data) {
-			return this.localize('loadingOutcomeOverallAchievement');
+			return this.localize('loadingOverallAchievement');
 		}
 
 		var assessmentInfo = '';
