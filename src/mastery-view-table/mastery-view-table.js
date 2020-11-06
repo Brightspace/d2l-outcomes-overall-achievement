@@ -410,7 +410,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		const outcomeHeadersData = [];
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
 		outcomeClassProgressEntities.map(outcomeProgressEntity => {
-
 			const activityCollectionHref = outcomeProgressEntity.getOutcomeActivityCollectionHref();
 			outcomeProgressEntity.onOutcomeChanged(outcome => {
 				if (!outcome) {
@@ -473,7 +472,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		entity.subEntitiesLoaded().then(() => {
 			outcomeHeadersData.sort((left, right) => {
-				return left.href.localeCompare(right.href);
+				return left.name.localeCompare(right.name);
 			});
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._skeletonLoaded = true;
