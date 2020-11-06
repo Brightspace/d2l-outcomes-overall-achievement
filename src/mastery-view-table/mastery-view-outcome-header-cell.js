@@ -25,6 +25,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 	static get styles() {
 		return [
+			super.styles,
 			css`				
 				#cell-content-container:focus {
 					outline-color: var(--d2l-color-celestine);

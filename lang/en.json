@@ -20,6 +20,7 @@
     "learnerHasNoData": "{username} has no overall achievement data.",
     "learnerSortButtonDescription": "Select to sort table rows by user {newSortKey} {newSortDirection}. Current sort order is by {currentSortKey} {currentSortDirection}.",
     "levelNamePercentLabel": "{name}: {percentage}.",
+    "loadingOverallAchievement": "Loading overall achievement.",
     "manualOverride": "manual override",
     "masteryViewTableDescription": "Mastery View table: this table displays overall achievements of all course outcomes for each learner. Outcomes with aligned activities are displayed as column headers with class breakdown statistics.",
     "masteryViewTableEmptyError": "Outcomes overall achievements are unable to load. Refresh the page to try again or contact the Administrator if the error persists.",
