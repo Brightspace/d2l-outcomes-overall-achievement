@@ -39,7 +39,7 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		return html` 
-			<div class="d2l-heading-3" id="outcome-name">${this._outcomeName}</div>
+			<h2 class="d2l-heading-3" id="outcome-name">${this._outcomeName}</h2>
 			<div class="d2l-body-small">${this._outcomeNotation}</div>
 		`;
 	}
