@@ -163,7 +163,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	render() {
-		const outcomeLabel = this.outcomeName.length > 0 ? html`${this.outcomeName}. ` : null;
+		const outcomeLabel = this.outcomeName && this.outcomeName.length ? html`${this.outcomeName}. ` : null;
 		return html`
 		<div id="cell-content-container" tabindex="0" role="button">
 			<div class="outcome-name-description">

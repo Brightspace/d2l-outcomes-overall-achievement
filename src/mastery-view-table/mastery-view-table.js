@@ -4,6 +4,7 @@ import { LocalizeMixin } from '../LocalizeMixin';
 import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
 import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
@@ -472,7 +473,28 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		entity.subEntitiesLoaded().then(() => {
 			outcomeHeadersData.sort((left, right) => {
-				return left.name.localeCompare(right.name);
+				// Sort by whatever text is available A-Z (name + description).
+				// All outcomes with no text are positioned at the end sorted by href (based on GUID so essentially a fixed random)
+
+				const leftText = ((left.name || '') + ' ' + (left.description || '')).trim();
+				const rightText = ((right.name || '') + ' ' + (right.description || '')).trim();
+
+				const leftEmpty = leftText === '';
+				const rightEmpty = rightText === '';
+
+				if (leftEmpty || rightEmpty) {
+					if (leftEmpty && rightEmpty) {
+						return left.href.localeCompare(right.href);
+					}
+
+					if (leftEmpty) {
+						return 1;
+					}
+
+					return -1;
+				}
+
+				return leftText.localeCompare(rightText);
 			});
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._skeletonLoaded = true;
@@ -627,8 +649,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
-				outcome-name="${outcomeData.name}"
-				outcome-description="${outcomeData.description}"
+				outcome-name="${ifDefined(outcomeData.name)}"
+				outcome-description="${ifDefined(outcomeData.description)}"
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
 				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
