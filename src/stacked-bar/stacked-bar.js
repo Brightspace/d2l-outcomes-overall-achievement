@@ -178,11 +178,12 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 			};
 			return acc;
 		}, {});
-		demonstrations.forEach(demonstratedLevel => {
+		for (const href in demonstrations) {
+			const demonstratedLevel = demonstrations[href];
 			if (levelMap[demonstratedLevel]) {
 				levelMap[demonstratedLevel].count++;
 			}
-		});
+		}
 
 		this._histData = Object.values(levelMap);
 		if (this.displayUnassessed) {
@@ -220,21 +221,18 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 
 	_onEntityChanged(entity) {
 		if (entity) {
-			const demonstrations = [];
+			const demonstrations = {};
 			entity.onActivityChanged(activity => {
 				const activityType = activity.getType();
 				if (activityType && this.excludedTypes.includes(activityType)) {
 					return;
 				}
-				let levelId;
 				activity.onAssessedDemonstrationChanged(demonstration => {
+					const demonstrationHref = demonstration.getSelfHref();
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
-					levelId = demonstratedLevel.getLevelId();
-				});
-
-				activity.subEntitiesLoaded().then(() => {
-					if (levelId) {
-						demonstrations.push(levelId);
+					const levelId = demonstratedLevel.getLevelId();
+					if (levelId && demonstrationHref) {
+						demonstrations[demonstrationHref] = levelId;
 					}
 				});
 			});
@@ -245,7 +243,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 			});
 
 			entity.subEntitiesLoaded().then(() => {
-				this._assessedCount = demonstrations.length;
+				this._assessedCount = Object.keys(demonstrations).length;
 				this._totalCount = entity.getOutcomeActivities().length;
 				this._buildHistData(levels, demonstrations);
 				this.skeleton = false;
