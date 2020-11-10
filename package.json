@@ -1,6 +1,6 @@
 {
   "name": "d2l-outcomes-overall-achievement",
-  "version": "1.1.23",
+  "version": "1.1.24",
   "description": "A collection of components related to outcomes COA (Course Overall Achievement)",
   "scripts": {
     "lang:build": "lang-build -es \"\t\" -c langtools/config.json",
