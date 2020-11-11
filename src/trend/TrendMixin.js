@@ -36,8 +36,14 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 				};
 
 				activity.onAssessedDemonstrationChanged(demonstration => {
+					if (!demonstration) {
+						return;
+					}
 					const assessedDate = demonstration.getDateAssessed();
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
+					if (!demonstratedLevel) {
+						return;
+					}
 					const levelId = demonstratedLevel.getLevelId();
 
 					const attempt = {
