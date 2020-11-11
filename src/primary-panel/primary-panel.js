@@ -152,7 +152,13 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			const outcomeHref = entity.getOutcomeHref();
 			const outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
+				if(!outcomeActivities) {
+					return;
+				}
 				outcomeActivities.onActivityChanged(activity => {
+					if(!activity) {
+						return;
+					}
 					if (activity.getType() === 'checkpoint-item') {
 						checkpointHref = activity.getSelfHref();
 					}
