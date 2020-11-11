@@ -20,10 +20,12 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return {
 			instructor: { type: Boolean },
 			outcomeTerm: { attribute: 'outcome-term', type: String },
+			hideUnpublishedCoa: { attribute: "hide-unpublished-coa", type: Boolean },
 			showClose: { attribute: 'show-close', type: Boolean },
 			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
 			_checkpointHref: { attribute: false },
+			_checkpointPublished: { attribute: false }
 		};
 	}
 
@@ -60,12 +62,14 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		super();
 		this._setEntityType(UserProgressOutcomeEntity);
 
+		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
 		this.refreshEntity = this._refreshEntity.bind(this);
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
+		this._checkpointPublished = false;
 	}
 
 	connectedCallback() {
@@ -88,11 +92,11 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			></d2l-button-icon>
 		` : null;
 
-		const coaTile = this._checkpointHref && html`
-			<d2l-coa-overall-achievement-tile 
-				href="${this._checkpointHref}" 
-				.token="${this.token}">
-			</d2l-coa-overall-achievement-tile>
+		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : this._checkpointHref && html`
+		<d2l-coa-overall-achievement-tile 
+			href="${this._checkpointHref}" 
+			.token="${this.token}">
+		</d2l-coa-overall-achievement-tile>
 		`;
 
 		return html`
@@ -111,6 +115,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				.token="${this.token}"
 				instructor="${this.instructor}"
 				outcome-term="${this.outcomeTerm}"
+				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
 			></d2l-coa-big-trend>
 
 			<div id="trend-spacer"></div>
@@ -149,12 +154,16 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_onEntityChanged(entity) {
 		if (entity) {
 			let checkpointHref;
+			let checkpointPublished;
 			const outcomeHref = entity.getOutcomeHref();
 			const outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
 				outcomeActivities.onActivityChanged(activity => {
 					if (activity.getType() === 'checkpoint-item') {
 						checkpointHref = activity.getSelfHref();
+						activity.onAssessedDemonstrationChanged(demonstration => {
+							checkpointPublished = demonstration.isPublished();
+						});
 					}
 				});
 			});
@@ -163,6 +172,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._outcomeHref = outcomeHref;
 				this._outcomeActivitiesHref = outcomeActivitiesHref;
 				this._checkpointHref = checkpointHref;
+				this._checkpointPublished = checkpointPublished;
 			});
 		}
 	}
