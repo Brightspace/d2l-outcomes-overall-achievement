@@ -199,14 +199,14 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (entity) {
 			let levelName, levelColor, accessDate, feedback, published;
 			entity.onAssessedDemonstrationChanged(demonstration => {
-				if(!demonstration) {
+				if (!demonstration) {
 					return;
 				}
 				demonstration.onFeedbackChanged(feedbackList => {
 					feedback = feedbackList.getFeedback();
 				});
 				const demonstratedLevel = demonstration.getDemonstratedLevel();
-				if(!demonstratedLevel) {
+				if (!demonstratedLevel) {
 					return;
 				}
 				demonstratedLevel.onLevelChanged(level => {
