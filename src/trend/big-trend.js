@@ -486,7 +486,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			let groupName = (!group.name || group.name.trim() === '') ? this.localize('untitled') : group.name;
 			const groupType = group.type;
 
-			if (group.type === "checkpoint-item" && group.unpublishedCoa && this.hideUnpublishedCoa) {
+			if (group.type === 'checkpoint-item' && group.unpublishedCoa && this.hideUnpublishedCoa) {
 				return;
 			}
 

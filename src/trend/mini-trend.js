@@ -372,7 +372,7 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				continue;
 			}
 
-			if (trendGroups[i].type === "checkpoint-item" && trendGroups[i].unpublishedCoa && this.hideUnpublishedCoa) {
+			if (trendGroups[i].type === 'checkpoint-item' && trendGroups[i].unpublishedCoa && this.hideUnpublishedCoa) {
 				continue;
 			}
 

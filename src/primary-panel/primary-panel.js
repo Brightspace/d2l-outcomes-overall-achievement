@@ -20,7 +20,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return {
 			instructor: { type: Boolean },
 			outcomeTerm: { attribute: 'outcome-term', type: String },
-			hideUnpublishedCoa: { attribute: "hide-unpublished-coa", type: Boolean },
+			hideUnpublishedCoa: { attribute: 'hide-unpublished-coa', type: Boolean },
 			showClose: { attribute: 'show-close', type: Boolean },
 			_outcomeHref: { attribute: false },
 			_outcomeActivitiesHref: { attribute: false },
