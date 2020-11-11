@@ -31,6 +31,10 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					outline-color: var(--d2l-color-celestine);
 				}
 
+				#cell-content-container {
+					width: 9.9rem;
+				}
+
 				.outcome-name-description {
 					overflow: hidden;
 					text-overflow: ellipsis;
