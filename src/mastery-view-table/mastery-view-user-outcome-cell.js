@@ -279,15 +279,30 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 			const demonstratedLevel = demonstration.getDemonstratedLevel();
 			if (demonstratedLevel) {
-				hasManualOverride = demonstratedLevel.isManualOverride();
 				demonstratedLevel.onLevelChanged(loa => {
 					name = loa.getName();
 					color = loa.getColor();
 				});
 			}
+			demonstration.subEntitiesLoaded().then(() => {
+				let selectedLevelId = null, suggestedLevelId = null;
+				demonstration.getAllDemonstratableLevels().map(level => {
+					if(level.isSelected()) {
+						selectedLevelId = level.getLevelId();
+					}
+					if(level.isSuggested()) {
+						suggestedLevelId = level.getLevelId();
+					}
+				})
+
+				if(suggestedLevelId && selectedLevelId != suggestedLevelId) {
+					hasManualOverride = true;
+				}
+			});
 		});
 
 		entity.subEntitiesLoaded().then(() => {
+			
 			this._cellData = {
 				totalAssessments: activityCount,
 				totalEvaluatedAssessments: assessedActivityCount,
