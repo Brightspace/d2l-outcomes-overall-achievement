@@ -5,6 +5,7 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 
 	static get properties() {
 		return {
+			hideUnpublishedCoa: { attribute: 'hide-unpublished-coa', type: Boolean },
 			_trendData: { attribute: false }
 		};
 	}
@@ -13,6 +14,7 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 		super();
 		this._setEntityType(OutcomeActivityCollectionEntity);
 
+		this.hideUnpublishedCoa = false;
 		this._trendData = null;
 	}
 
@@ -32,12 +34,17 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 					attempts: [],
 					dueDate: activity.getDueDate(),
 					name: activity.getName(),
-					type: activity.getType()
+					type: activity.getType(),
+					unpublishedCoa: false
 				};
 
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					if (!demonstration) {
 						return;
+					}
+
+					if (activity.getType() === 'checkpoint-item' && !demonstration.isPublished()) {
+						activities[id].unpublishedCoa = true;
 					}
 					const assessedDate = demonstration.getDateAssessed();
 					const demonstratedLevel = demonstration.getDemonstratedLevel();
