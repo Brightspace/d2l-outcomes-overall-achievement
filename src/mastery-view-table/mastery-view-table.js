@@ -345,21 +345,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		);
 	}
 
-	_getUserAriaName(firstName, lastName) {
-		if (!firstName && !lastName) {
-			return this.localize('anonymousUser');
-		}
-		else if (!firstName) {
-			return lastName;
-		}
-		else if (!lastName) {
-			return firstName;
-		}
-		else {
-			return firstName + ' ' + lastName;
-		}
-	}
-
 	_getUserNameText(firstName, lastName, firstLastDisplay) {
 		let displayText, ariaText;
 
