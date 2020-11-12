@@ -9,7 +9,7 @@
     "firstName": "First name",
     "goToNextPage": "Go to the next page in the table.",
     "goToPreviousPage": "Go to the previous page in the table.",
-    "goToUserAchievementSummaryPage": "Press space or enter to open users achievement summary page.",
+    "goToUserAchievementSummaryPage": "Press space or enter to open {name}'s achievement summary page.",
     "headingDate": "Date",
     "headingEvidence": "Evidence Name",
     "headingLoa": "Level of Achievement",
