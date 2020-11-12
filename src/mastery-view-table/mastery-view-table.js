@@ -95,6 +95,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					display: flex;
 					align-items: center;
 					flex-direction: column;
+					margin-bottom: 100px;
 				}
 
 				#no-outcomes-container img {
@@ -105,10 +106,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				#no-outcomes-container div {
 					margin-top: 30px;
 					text-align: center;
-				}
-
-				#no-outcomes-container a {
-					text-decoration: none;
 				}
 
 				.d2l-table {
@@ -267,7 +264,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					${this.localize('noAlignedOutcomes', 'outcome', this.outcomeTerm)}
 				</div>
 				<div class="d2l-body-compact">
-					<a href=${this.outcomesToolLink}>${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
+					<a href=${this.outcomesToolLink} class="d2l-link">${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
 				</div>
 			</div>
 			`;
