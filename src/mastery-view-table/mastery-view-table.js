@@ -379,7 +379,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			displayText = lastName + ', ' + firstName;
 		}
 
-		if(firstName && lastName) {
+		if (firstName && lastName) {
 			ariaText = firstName + ' ' + lastName;
 		}
 		else {
