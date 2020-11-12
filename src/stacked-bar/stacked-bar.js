@@ -26,6 +26,10 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 		return [
 			super.styles,
 			css`
+				#container {
+					position: relative;
+				}
+
 				#graph-container {
 					align-items: stretch;
 					display: flex;
