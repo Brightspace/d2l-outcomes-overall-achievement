@@ -22,6 +22,14 @@ export class DemonstrationEntity extends Entity {
 		};
 	}
 
+	getAllDemonstratableLevels() {
+		if (!this._entity) {
+			return;
+		}
+		const levels = this._entity.getSubEntitiesByClass(DemonstratableLevelEntity.class);
+		return levels.map(level => new DemonstratableLevelEntity(this, level));
+	}
+
 	getDateAssessed() {
 		return this._entity && this._entity.properties && this._entity.properties.dateAssessed;
 	}
@@ -99,10 +107,6 @@ export class DemonstratableLevelEntity extends SelflessEntity {
 
 	getLevelId() {
 		return this._entity && this._entity.properties && this._entity.properties.levelId;
-	}
-
-	isManualOverride() {
-		return this.isSelected() && !this.isSuggested();
 	}
 
 	isSelected() {

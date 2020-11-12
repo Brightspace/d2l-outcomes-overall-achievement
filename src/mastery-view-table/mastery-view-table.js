@@ -342,26 +342,37 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		);
 	}
 
-	_getUserNameDisplay(firstName, lastName) {
-		let displayString;
+	_getUserNameText(firstName, lastName, firstLastDisplay) {
+		let displayText, ariaText;
 
 		if (!firstName && !lastName) {
-			displayString = this.localize('anonymousUser');
+			displayText = this.localize('anonymousUser');
 		}
 		else if (!firstName) {
-			displayString = lastName;
+			displayText = lastName;
 		}
 		else if (!lastName) {
-			displayString = firstName;
+			displayText = firstName;
 		}
-		else if (this._nameFirstLastFormat) {
-			return firstName + ' ' + lastName;
+		else if (firstLastDisplay) {
+			displayText = firstName + ' ' + lastName;
 		}
 		else {
-			return lastName + ', ' + firstName;
+			displayText = lastName + ', ' + firstName;
 		}
 
-		return displayString;
+		if (firstName && lastName) {
+			ariaText = firstName + ' ' + lastName;
+		}
+		else {
+			ariaText = displayText;
+		}
+
+		const text = {
+			displayText,
+			ariaText
+		};
+		return text;
 	}
 
 	_goToPageNumber(newPage) {
@@ -586,8 +597,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderLearnerRow(learnerData, outcomeHeaderData) {
-		const userNameDisplay = this._getUserNameDisplay(learnerData.firstName, learnerData.lastName);
-
+		const userNameText = this._getUserNameText(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 		if (outcomeHeaderData.length === 0 || !learnerData.rowDataHref) {
 			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', learnerData.firstName + ' ' + learnerData.lastName));
 		}
@@ -600,10 +610,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						href="${learnerData.gradesPageHref}"
 						class="d2l-link learner-name-label"
 						role="region"
-						aria-label=${this.localize('goToUserAchievementSummaryPage')}
-						title=${userNameDisplay}
+						aria-label=${this.localize('goToUserAchievementSummaryPage', 'name', userNameText.ariaText)}
+						title=${userNameText.displayText}
 					>
-						${userNameDisplay}
+						${userNameText.displayText}
 					</a>
 				</div>
 			</th>
