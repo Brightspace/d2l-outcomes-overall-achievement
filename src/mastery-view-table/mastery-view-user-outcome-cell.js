@@ -8,6 +8,7 @@ import 'd2l-table/d2l-table.js';
 import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
+import { Consts } from '../consts';
 
 const KEYCODES = {
 	ENTER: 13,
@@ -210,12 +211,11 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		}
 
 		var assessmentInfo = '';
-
-		if (data.hasOverallAssessment) {
-			assessmentInfo += data.levelName + this.localize('commaSeparator');
+		if (data.levelName === Consts.noCoaLevelName) {
+			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
 		}
 		else {
-			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
+			assessmentInfo += data.levelName + this.localize('commaSeparator');
 		}
 
 		if (data.isManualOverride) {
@@ -269,14 +269,12 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		const evalHref = cellEntity.getEvaluationHref();
 		const isOutOfDate = cellEntity.isOutdated();
 
-		let name = '-';
-		let color = '#FFFFFF';
+		let name = Consts.noCoaLevelName;
+		let color = Consts.noCoaLevelColor;
 		let isPublished = false;
 		let hasManualOverride = false;
-		let hasOverallDemonstration = false;
 
 		cellEntity.onCheckpointDemonstrationChanged(demonstration => {
-			hasOverallDemonstration = true;
 			isPublished = demonstration.isPublished();
 
 			const demonstratedLevel = demonstration.getDemonstratedLevel();
@@ -291,11 +289,10 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 		entity.subEntitiesLoaded().then(() => {
 			this._cellData = {
-				hasOverallAssessment: hasOverallDemonstration,
 				totalAssessments: activityCount,
 				totalEvaluatedAssessments: assessedActivityCount,
 				levelName: name,
-				levelColor: color + '1A',
+				levelColor: color + Consts.tenPercentAlphaHex,
 				isManualOverride: hasManualOverride,
 				outdated: isOutOfDate,
 				published: isPublished,
