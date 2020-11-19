@@ -148,12 +148,12 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	connectedCallback() {
 		super.connectedCallback();
-		window.addEventListener('d2l-save-evaluation', this.refreshEntity);
+		window.addEventListener('d2l-refresh-outcome-activities', this.refreshEntity);
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		window.removeEventListener('d2l-save-evaluation', this.refreshEntity);
+		window.removeEventListener('d2l-refresh-outcome-activities', this.refreshEntity);
 	}
 
 	render() {
