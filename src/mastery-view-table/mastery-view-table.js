@@ -31,6 +31,61 @@ import Images from '../images/images.js';
 const DEFAULT_ROW_SIZE = 20;
 const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
+const _naturalStringCompare = function(a, b) {
+	return (a || '').localeCompare(b || '', undefined, { numeric: true });
+};
+
+const _getOutcomePrefix = function(outcome) {
+	if (!outcome) {
+		return null;
+	}
+
+	if (outcome.altNotation && outcome.altNotation.trim()) {
+		return outcome.altNotation.trim();
+	}
+
+	if (outcome.notation && outcome.notation.trim()) {
+		return outcome.notation.trim();
+	}
+
+	if (outcome.label && outcome.label.trim()) {
+		if (outcome.listId && outcome.listId.trim()) {
+			return outcome.label.trim() + ' ' + outcome.listId.trim();
+		}
+		return outcome.label.trim();
+	}
+
+	if (outcome.listId && outcome.listId.trim()) {
+		return outcome.listId.trim();
+	}
+
+	return '';
+};
+
+const _compareOutcomes = function(a, b) {
+	if (!a) {
+		return b ? 0 : 1;
+	} else if (!b) {
+		return -1;
+	}
+
+	if (a.href === b.href) {
+		return 0;
+	}
+
+	const prefixComparison = _naturalStringCompare(a.prefix, b.prefix);
+	if (prefixComparison !== 0) {
+		return prefixComparison;
+	}
+
+	const descriptionComparison = _naturalStringCompare(a.description, b.description);
+	if (descriptionComparison !== 0) {
+		return descriptionComparison;
+	}
+
+	return a.href < b.href ? -1 : 1;
+};
+
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get is() { return 'd2l-mastery-view-table'; }
 
@@ -429,7 +484,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					href: outcome.getSelfHref(),
 					activityCollectionHref: activityCollectionHref,
 					name: outcome.getNotation(),
-					description: outcome.getDescription()
+					description: outcome.getDescription(),
+					prefix: _getOutcomePrefix(outcome._entity.properties)
 				};
 				outcomeHeadersData.push(outcomeData);
 			});
@@ -480,30 +536,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		});
 
 		entity.subEntitiesLoaded().then(() => {
-			outcomeHeadersData.sort((left, right) => {
-				// Sort by whatever text is available A-Z (name + description).
-				// All outcomes with no text are positioned at the end sorted by href (based on GUID so essentially a fixed random)
-
-				const leftText = ((left.name || '') + ' ' + (left.description || '')).trim();
-				const rightText = ((right.name || '') + ' ' + (right.description || '')).trim();
-
-				const leftEmpty = leftText === '';
-				const rightEmpty = rightText === '';
-
-				if (leftEmpty || rightEmpty) {
-					if (leftEmpty && rightEmpty) {
-						return left.href.localeCompare(right.href);
-					}
-
-					if (leftEmpty) {
-						return 1;
-					}
-
-					return -1;
-				}
-
-				return leftText.localeCompare(rightText);
-			});
+			outcomeHeadersData.sort(_compareOutcomes);
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._skeletonLoaded = true;
 		});
