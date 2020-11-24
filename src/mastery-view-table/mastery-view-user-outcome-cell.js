@@ -285,17 +285,14 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				});
 			}
 			demonstration.subEntitiesLoaded().then(() => {
-				let selectedLevelId = null, suggestedLevelId = null;
+				let suggestedLevelId = null;
 				demonstration.getAllDemonstratableLevels().map(level => {
-					if (level.isSelected()) {
-						selectedLevelId = level.getLevelId();
-					}
 					if (level.isSuggested()) {
 						suggestedLevelId = level.getLevelId();
 					}
 				});
 
-				if (suggestedLevelId && selectedLevelId !== suggestedLevelId) {
+				if (suggestedLevelId && demonstration.isMasteryOverride()) {
 					hasManualOverride = true;
 				}
 			});
