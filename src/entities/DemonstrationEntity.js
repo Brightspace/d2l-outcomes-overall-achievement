@@ -10,7 +10,9 @@ export class DemonstrationEntity extends Entity {
 	static get classes() {
 		return {
 			assessed: 'assessed',
-			published: 'published'
+			published: 'published',
+			masteryOverride: 'mastery-override',
+			masterySnapshot: 'mastery-snapshot'
 		};
 	}
 
@@ -57,6 +59,10 @@ export class DemonstrationEntity extends Entity {
 		}
 
 		return this._entity.getLinkByRel(DemonstrationEntity.links.submissionLink).href;
+	}
+
+	isMasteryOverride() {
+		return this._entity.hasClass(DemonstrationEntity.classes.masteryOverride);
 	}
 
 	isPublished() {
