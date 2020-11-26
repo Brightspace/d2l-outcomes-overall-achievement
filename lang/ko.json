@@ -29,10 +29,10 @@
    "name" : "이름",
    "newPageSelectLiveText" : "선택한 {totalPages}의 {pageNum} 페이지.",
    "newPageSizeLiveText" : "페이지당 {pageSize} 표시.",
-   "noAlignedOutcomes" : "숙련도 보기를 사용하려면 먼저 {결과, 선택, 역량 {Competencies} 기대 {Expectations} 목표 {Objectives} 결과 {Outcomes} 표준 {Standards} 기타 {Standards}}을(를) 활동 편집 페이지의 강의 활동에 맞게 정렬하십시오.",
+   "noAlignedOutcomes": "To use the Mastery View, start with aligning {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}} to course activities on the activity's editing page.",
    "noEnrolledLearners" : "강의에 등록한 학습자 없음",
-   "noScaleInstructor" : "이 {결과, 선택, 역량 {competency} 기대 {expectation} 목표 {objective} 결과 {outcome} 표준 {standard} 기타 {standard}}을(를) 성취하기 위해 학습자 진행 상황을 보려면, 성취 척도를 생성하고 선택합니다.",
-   "noScaleStudent" : "{결과, 선택, 역량 {competencies} 기대 {expectations} 목표 {objectives} 결과 {outcomes} 표준 {standards} 기타 {standards}}에 대한 성취를 측정하기 위해 어떠한 척도도 설정되지 않았습니다.",
+   "noScaleStudent": "No scale has been set to measure achievement of {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
+   "noScaleInstructor": "To view learner progress towards achieving this {outcome, select, competencies {competency} expectations {expectation} objectives {objective} outcomes {outcome} standards {standard} other {standard}}, create and select an achievement scale.",
    "notAssessed" : "평가되지 않음",
    "notEvaluated" : "평가되지 않음",
    "notPublished" : "게시되지 않음",
@@ -49,5 +49,5 @@
    "tooltipUserOutcomeAssessments" : "{numTotal}개 활동 중 {numAssessed}개가 평가됩니다.",
    "trend" : "추세",
    "untitled" : "제목 없음",
-   "viewCourseIntentList" : "{결과, 선택, 역량 {Competencies} 기대 {Expectations} 목표 {Objectives} 결과 {Outcomes} 표준 {Standards} 기타 {Standards}} 도구에서 강의 인텐트 목록 보기"
+   "viewCourseIntentList": "View the course intent list in the {outcome, select, competencies {Competencies} expectations {Expectations} objectives {Objectives} outcomes {Outcomes} standards {Standards} other {Standards}} tool"
 }
