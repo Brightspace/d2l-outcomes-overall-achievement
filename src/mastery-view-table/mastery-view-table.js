@@ -278,22 +278,35 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._skeletonLoaded = false;
 		this._hasErrors = false;
 		this._sessionId = this.getUUID();
+		this._resizeHandler = undefined;
+		this._stickyHeadersEnabled = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
 		this._handleSirenErrors = this._handleSirenErrors.bind(this);
+		this._onResize = this._onResize.bind(this);
 		window.addEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+		window.addEventListener('resize', this._onResize);
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
 		window.removeEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+		window.removeEventListener('resize', this._onResize);
 	}
 
 	getUUID() {
 		return Math.random().toString(36).substring(2) + Date.now().toString(36);
+	}
+
+	updated() {
+		if (this._resizeHandler) {
+			clearTimeout(this._resizeHandler);
+		}
+		
+		this._resizeHandler = setTimeout(this._setStickyWidth, 100);
 	}
 
 	render() {
@@ -326,22 +339,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
-			<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
-				<d2l-table-wrapper sticky-headers show-actions type="default">
-					<table
-						class="d2l-table"
-						role="grid"
-						aria-label="${this.localize('masteryViewTableDescription')}"
-					>
-						<thead>
-							${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
-						</thead>
-						<tbody>
-							${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
-						<tbody>
-					</table>
-				</d2l-table-wrapper>
-			</d2l-scroll-wrapper>
+			<d2l-table-wrapper 
+				?sticky-headers=${this._stickyHeadersEnabled}
+				show-actions
+				type="default"
+			>
+				<table
+					class="d2l-table"
+					role="grid"
+					aria-label="${this.localize('masteryViewTableDescription')}"
+				>
+					<thead>
+						${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
+					</thead>
+					<tbody>
+						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
+					<tbody>
+				</table>
+			</d2l-table-wrapper>
 			${this._renderTableControls()}
 		`;
 	}
@@ -573,6 +588,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	_onResize() {
+		if (this._resizeHandler) {
+			clearTimeout(this._resizeHandler);
+		}
+		
+		this._resizeHandler = setTimeout(this._setStickyWidth, 100);
+	}
+
 	//Switches between first-last or last-first format and sorts ascending
 	_onSecondLearnerHeaderButtonClicked() {
 		this._nameFirstLastFormat = !this._nameFirstLastFormat;
@@ -802,6 +825,46 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			${outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
+	}
+
+	_setStickyHeaders(enable) {
+		if (enable) {
+
+		} else {
+
+		}
+	}
+
+	_setStickyWidth() {
+		requestAnimationFrame(() => {
+			const header = document.querySelector('header');
+			const title = document.querySelector(".d2l-outcomes-gradebook-header");
+
+			if (header) {
+				header.style.width = null;
+			}
+			if (title) {
+				title.style.width = null;
+			}
+
+			if (window.innerWidth < 780) {
+				return;
+			}
+
+			console.log(window.innerWidth);
+
+			const bodyWidth = Math.max(document.body.scrollWidth, document.body.offsetWidth);
+			const containerWidth = bodyWidth < 1230 
+				? bodyWidth - (bodyWidth * 0.02439 * 2)
+				: bodyWidth - 60;
+			if (header) {
+				console.log(bodyWidth);
+				header.style.width = bodyWidth + 'px';
+			}
+			if (title) {
+				title.style.width = containerWidth + 'px';
+			}
+		})
 	}
 
 	_shouldShowNextPageButton() {
