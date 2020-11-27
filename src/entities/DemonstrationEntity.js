@@ -70,8 +70,8 @@ export class DemonstrationEntity extends Entity {
 	}
 
 	onFeedbackChanged(onChange) {
-		const href = this._feedbackHref();
-		href && this._subEntity(FeedbackListEntity, href, onChange);
+		const feedbackEntity = this._getFeedback();
+		feedbackEntity && this._subEntity(FeedbackListEntity, feedbackEntity, onChange);
 	}
 
 	onUserActivityUsageChanged(onChange) {
@@ -79,12 +79,12 @@ export class DemonstrationEntity extends Entity {
 		href && this._subEntity(UserActivityUsageEntity, href, onChange);
 	}
 
-	_feedbackHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.feedback)) {
+	_getFeedback() {
+		if (!this._entity || !this._entity.hasSubEntityByClass(FeedbackListEntity.class)) {
 			return;
 		}
 
-		return this._entity.getLinkByRel(DemonstrationEntity.links.feedback).href;
+		return this._entity.getSubEntityByClass(FeedbackListEntity.class);
 	}
 
 	_userActivityUsageHref() {
