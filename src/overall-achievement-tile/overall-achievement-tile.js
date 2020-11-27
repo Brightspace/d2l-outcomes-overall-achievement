@@ -143,7 +143,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._activityName = '';
 		this._levelColor = '';
 		this._levelName = '';
-		this._feedbackHref = undefined;
 		this.refreshEntity = this._refreshEntity.bind(this);
 	}
 
@@ -198,12 +197,11 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_onEntityChanged(entity) {
 		if (entity) {
-			let levelName, levelColor, accessDate, feedback, feedbackHref, published;
+			let levelName, levelColor, accessDate, feedback, published;
 			entity.onAssessedDemonstrationChanged(demonstration => {
 				if (!demonstration) {
 					return;
 				}
-				feedbackHref = demonstration.getFeedbackHref();
 				demonstration.onFeedbackChanged(feedbackList => {
 					feedback = feedbackList.getFeedback();
 				});
@@ -224,7 +222,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._accessDate = new Date(accessDate);
 				this._activityName = activityName;
 				this._feedback = feedback;
-				this._feedbackHref = feedbackHref;
 				this._levelColor = levelColor;
 				this._levelName = levelName;
 				this._published = published;
@@ -234,9 +231,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_refreshEntity() {
 		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
-		if (this._feedbackHref) {
-			window.D2L.Siren.EntityStore.fetch(this._feedbackHref, this.token, true);
-		}
 	}
 
 	_renderFeedback(feedbackData) {

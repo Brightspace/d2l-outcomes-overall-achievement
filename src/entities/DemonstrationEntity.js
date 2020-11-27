@@ -45,14 +45,6 @@ export class DemonstrationEntity extends Entity {
 		return levelEntity && new DemonstratableLevelEntity(this, levelEntity);
 	}
 
-	getFeedbackHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.feedback)) {
-			return;
-		}
-
-		return this._entity.getLinkByRel(DemonstrationEntity.links.feedback).href;
-	}
-
 	getSelfHref() {
 		if (!this._entity || !this._entity.hasLinkByRel('self')) {
 			return null;
@@ -78,13 +70,21 @@ export class DemonstrationEntity extends Entity {
 	}
 
 	onFeedbackChanged(onChange) {
-		const href = this.getFeedbackHref();
+		const href = this._feedbackHref();
 		href && this._subEntity(FeedbackListEntity, href, onChange);
 	}
 
 	onUserActivityUsageChanged(onChange) {
 		const href = this._userActivityUsageHref();
 		href && this._subEntity(UserActivityUsageEntity, href, onChange);
+	}
+
+	_feedbackHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstrationEntity.links.feedback)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(DemonstrationEntity.links.feedback).href;
 	}
 
 	_userActivityUsageHref() {
