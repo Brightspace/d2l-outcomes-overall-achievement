@@ -255,6 +255,30 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				.page-size-menu {
 					height: 2.1rem;
 				}
+
+				@media (min-width: 768px) {
+					.sticky-headers {
+						position: sticky;
+						left: 2.439%;
+					}
+
+					[dir="rtl"] .sticky-headers {
+						left: unset;
+						right: 2.439%;
+					}
+				}
+
+				@media (min-width: 1230px) {
+					.sticky-headers {
+						position: sticky;
+						left: 30px;
+					}
+
+					[dir="rtl"] .sticky-headers {
+						left: unset;
+						right: 30px;
+					}
+				}
 			`,
 			d2lTableStyles,
 			linkStyles,
@@ -299,14 +323,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	getUUID() {
 		return Math.random().toString(36).substring(2) + Date.now().toString(36);
-	}
-
-	updated() {
-		if (this._resizeHandler) {
-			clearTimeout(this._resizeHandler);
-		}
-		
-		this._resizeHandler = setTimeout(this._setStickyWidth, 100);
 	}
 
 	render() {
@@ -361,6 +377,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
+	updated() {
+		if (this._resizeHandler) {
+			clearTimeout(this._resizeHandler);
+		}
+
+		this._resizeHandler = setTimeout(this._setStickyWidth.bind(this), 100);
+	}
+
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
@@ -410,6 +434,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return this.localize('pageSizeDropdownText',
 			'rowsPerPage', rowsPerPage
 		);
+	}
+
+	_getPaginationControlsClass() {
+		const classes = [];
+		if (this._stickyHeadersEnabled) {
+			classes.push('sticky-headers');
+		}
+
+		return classes.join(' ');
 	}
 
 	_getUserNameText(firstName, lastName, firstLastDisplay) {
@@ -592,8 +625,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (this._resizeHandler) {
 			clearTimeout(this._resizeHandler);
 		}
-		
-		this._resizeHandler = setTimeout(this._setStickyWidth, 100);
+
+		this._resizeHandler = setTimeout(this._setStickyWidth.bind(this), 100);
 	}
 
 	//Switches between first-last or last-first format and sorts ascending
@@ -752,7 +785,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		});
 
 		return html`
-		<table id="pagination-controls-container" aria-hidden="true">
+		<table id="pagination-controls-container" class="${this._getPaginationControlsClass()}" aria-hidden="true">
 			<tr>
 				<td class="prev-page-button-container">
 					<d2l-button-subtle
@@ -829,16 +862,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_setStickyHeaders(enable) {
 		if (enable) {
-
+			this._stickyHeadersEnabled = true;
 		} else {
-
+			this._stickyHeadersEnabled = false;
 		}
 	}
 
 	_setStickyWidth() {
 		requestAnimationFrame(() => {
 			const header = document.querySelector('header');
-			const title = document.querySelector(".d2l-outcomes-gradebook-header");
+			const title = document.querySelector('.d2l-outcomes-gradebook-header');
 
 			if (header) {
 				header.style.width = null;
@@ -848,23 +881,23 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			}
 
 			if (window.innerWidth < 780) {
+				this._setStickyHeaders(false);
 				return;
 			}
 
-			console.log(window.innerWidth);
+			this._setStickyHeaders(true);
 
 			const bodyWidth = Math.max(document.body.scrollWidth, document.body.offsetWidth);
-			const containerWidth = bodyWidth < 1230 
+			const containerWidth = bodyWidth < 1230
 				? bodyWidth - (bodyWidth * 0.02439 * 2)
 				: bodyWidth - 60;
 			if (header) {
-				console.log(bodyWidth);
 				header.style.width = bodyWidth + 'px';
 			}
 			if (title) {
 				title.style.width = containerWidth + 'px';
 			}
-		})
+		});
 	}
 
 	_shouldShowNextPageButton() {
