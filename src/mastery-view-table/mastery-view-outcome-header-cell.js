@@ -94,10 +94,6 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					margin-left: 0;
 				}
 
-				#tooltip {
-					position: fixed;
-				}
-
 				#tooltip-outcome-info {
 					margin-bottom: 0.3rem;
 					width: 11rem;
