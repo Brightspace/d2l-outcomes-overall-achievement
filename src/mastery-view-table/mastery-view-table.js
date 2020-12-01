@@ -909,7 +909,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			}
 			containers.forEach((container) => {
 				container.style.width = containerWidth + 'px';
-			})
+			});
 		});
 	}
 
