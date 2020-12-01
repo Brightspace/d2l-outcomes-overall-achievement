@@ -65,21 +65,10 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
-		this.refreshEntity = this._refreshEntity.bind(this);
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
 		this._checkpointPublished = false;
-	}
-
-	connectedCallback() {
-		super.connectedCallback();
-		window.addEventListener('d2l-refresh-outcome-activities', this.refreshEntity);
-	}
-
-	disconnectedCallback() {
-		super.disconnectedCallback();
-		window.removeEventListener('d2l-refresh-outcome-activities', this.refreshEntity);
 	}
 
 	render() {
@@ -181,10 +170,6 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._checkpointPublished = checkpointPublished;
 			});
 		}
-	}
-
-	_refreshEntity() {
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
 	}
 }
 
