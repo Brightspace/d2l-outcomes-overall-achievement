@@ -51,6 +51,8 @@ export const val = {
 	'retractAllTxt': 'Retract overall achievements for all learners in the course?',
 	'selectLearnersPerPage': '표의 각 페이지를 표시할 행 수를 선택하십시오.',
 	'selectTablePage': '표에서 특정 페이지를 표시하십시오.',
+	'toastReleased': 'Overall achievements published for all learners',
+	'toastRetracted': 'Overall achievements retracted for all learners',
 	'tooltipUserOutcomeAssessments': '{numTotal}개 활동 중 {numAssessed}개가 평가됩니다.',
 	'trend': '추세',
 	'untitled': '제목 없음',

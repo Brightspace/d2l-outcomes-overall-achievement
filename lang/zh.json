@@ -51,6 +51,8 @@
     "retractAllTxt": "Retract overall achievements for all learners in the course?",
     "selectLearnersPerPage": "选择表格每一页的显示行数。",
     "selectTablePage": "选择表格中的特定页面。",
+    "toastReleased": "Overall achievements published for all learners",
+    "toastRetracted": "Overall achievements retracted for all learners",
     "tooltipUserOutcomeAssessments": "{numTotal} 个活动中有 {numAssessed} 个活动已评估",
     "trend": "趋势",
     "untitled": "无标题",

@@ -51,6 +51,8 @@ export const val = {
 	'retractAllTxt': 'Retract overall achievements for all learners in the course?',
 	'selectLearnersPerPage': 'Sélectionnez le nombre de rangées à afficher sur chaque page du tableau.',
 	'selectTablePage': 'Sélectionnez une page précise dans le tableau.',
+	'toastReleased': 'Overall achievements published for all learners',
+	'toastRetracted': 'Overall achievements retracted for all learners',
 	'tooltipUserOutcomeAssessments': '{numAssessed} activités sur {numTotal} sont évaluées',
 	'trend': 'Tendance',
 	'untitled': 'Sans titre',

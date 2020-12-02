@@ -51,6 +51,8 @@
     "retractAllTxt": "Retract overall achievements for all learners in the course?",
     "selectLearnersPerPage": "Välj hur många rader som ska visas på varje sida i tabellen.",
     "selectTablePage": "Välj en viss sida i tabellen.",
+    "toastReleased": "Overall achievements published for all learners",
+    "toastRetracted": "Overall achievements retracted for all learners",
     "tooltipUserOutcomeAssessments": "{numAssessed} av {numTotal} aktiviteter har bedömts",
     "trend": "Trend",
     "untitled": "Namnlös",

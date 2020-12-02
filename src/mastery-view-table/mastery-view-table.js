@@ -19,6 +19,7 @@ import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
 import 'd2l-alert/d2l-alert.js';
 
+import '@brightspace-ui/core/components/alert/alert-toast.js';
 import '@brightspace-ui/core/components/typography/typography.js';
 import '@brightspace-ui/core/components/button/button.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
@@ -130,7 +131,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_bulkReleaseAction: Object,
 			_bulkRetractAction: Object,
 
-			_showBulkActionDialog: Boolean
+			_showBulkActionDialog: Boolean,
+			_displayReleasedToast: Boolean,
+			_displayRetractedToast: Boolean
 		};
 	}
 
@@ -296,6 +299,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._bulkReleaseAction = {};
 		this._bulkRetractAction = {};
 		this._showBulkActionDialog = false;
+		this._displayReleasedToast = false;
+		this._displayRetractedToast = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
@@ -376,6 +381,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
 					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
+			${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
+			${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
 		`;
 	}
 
@@ -502,14 +509,25 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	async _onBulkActionRelease() {
+		await performSirenAction(this.token, this._bulkReleaseAction, null, true);
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	}
+
+	async _onBulkActionRetract() {
+		await performSirenAction(this.token, this._bulkRetractAction, null, true);
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	}
+
+
 	_onBulkActionDialogClose(e) {
 		this._showBulkActionDialog = false;
 		if (e.detail.action === BULK_RELEASE_ACTION) {
-			performSirenAction(this.token, this._bulkReleaseAction, null, true);
-			window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+			this._onBulkActionRelease();
+			this._displayReleasedToast = true;
 		} else if (e.detail.action === BULK_RETRACT_ACTION) {
-			performSirenAction(this.token, this._bulkRetractAction, null, true);
-			window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+			this._onBulkActionRetract();
+			this._displayRetractedToast = true;
 		}
 	}
 
@@ -628,6 +646,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._nameFirstLastFormat = !this._nameFirstLastFormat;
 		this._sortDesc = false;
 		this._updateSortOrder();
+	}
+
+	_onToastClose() {
+		this._displayReleasedToast = false;
+		this._displayRetractedToast = false;
 	}
 
 	_renderBulkButtons() {
@@ -858,6 +881,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			${outcomeHeadersData.map((item, index) => { return this._renderOutcomeColumnHead(item, index); })}
 		</tr>
 		`;
+	}
+
+	_renderToast(opened, text) {
+		return html`<d2l-alert-toast
+			?open=${opened}
+			button-text=""
+			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
 
 	_shouldShowNextPageButton() {

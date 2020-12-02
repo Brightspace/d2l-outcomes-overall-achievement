@@ -51,6 +51,8 @@
     "retractAllTxt": "Retract overall achievements for all learners in the course?",
     "selectLearnersPerPage": "Selecione quantas linhas serão exibidas em cada página da tabela.",
     "selectTablePage": "Selecione uma página específica da tabela.",
+    "toastReleased": "Overall achievements published for all learners",
+    "toastRetracted": "Overall achievements retracted for all learners",
     "tooltipUserOutcomeAssessments": "{numAssessed} de {numTotal} atividades foram avaliadas",
     "trend": "Tendência",
     "untitled": "Sem título",

@@ -51,6 +51,8 @@ export const val = {
 	'retractAllTxt': 'Retract overall achievements for all learners in the course?',
 	'selectLearnersPerPage': '選取表格每頁要顯示多少列。',
 	'selectTablePage': '選取表格中的特定頁面。',
+	'toastReleased': 'Overall achievements published for all learners',
+	'toastRetracted': 'Overall achievements retracted for all learners',
 	'tooltipUserOutcomeAssessments': '共有 {numTotal} 個活動，已評量其中的 {numAssessed} 個活動',
 	'trend': '趨勢',
 	'untitled': '未命名',
