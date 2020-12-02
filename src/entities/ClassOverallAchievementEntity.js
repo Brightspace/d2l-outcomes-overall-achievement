@@ -11,20 +11,6 @@ export class ClassOverallAchievementEntity extends Entity {
 		};
 	}
 
-	getOutcomeClassProgressItems() {
-		if (!this._entity) {
-			return;
-		}
-
-		const progressItems = this._entity.getSubEntitiesByClass(OutcomeClassProgressEntity.class);
-		return progressItems.map(item => new OutcomeClassProgressEntity(this, item));
-	}
-
-	onClasslistChanged(onChange) {
-		const href = this._classlistHref();
-		href && this._subEntity(CoaClasslistEntity, href, onChange);
-	}
-
 	getBulkReleaseAction() {
 		if (!this._entity || !this._entity.hasActionByName('release-all')) {
 			return;
@@ -37,6 +23,20 @@ export class ClassOverallAchievementEntity extends Entity {
 			return;
 		}
 		return this._entity.getActionByName('retract-all');
+	}
+
+	getOutcomeClassProgressItems() {
+		if (!this._entity) {
+			return;
+		}
+
+		const progressItems = this._entity.getSubEntitiesByClass(OutcomeClassProgressEntity.class);
+		return progressItems.map(item => new OutcomeClassProgressEntity(this, item));
+	}
+
+	onClasslistChanged(onChange) {
+		const href = this._classlistHref();
+		href && this._subEntity(CoaClasslistEntity, href, onChange);
 	}
 
 	_classlistHref() {

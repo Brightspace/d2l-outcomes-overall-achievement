@@ -386,15 +386,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
+	_bulkButtonClick() {
+		this._showBulkActionDialog = true;
+	}
+
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
-	}
-
-	_bulkButtonClick() {
-		this._showBulkActionDialog = true;
 	}
 
 	_getLearnerHeadAriaLabel(isLastName, isSecondButton) {
@@ -509,20 +509,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	async _onBulkActionRelease() {
-		await performSirenAction(this.token, this._bulkReleaseAction, null, true);
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
-	}
-
-	async _onBulkActionRetract() {
-		await performSirenAction(this.token, this._bulkRetractAction, null, true);
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
-	}
-
-
 	_onBulkActionDialogClose(e) {
 		this._showBulkActionDialog = false;
-		
+
 		if (e.detail.action === BULK_RELEASE_ACTION) {
 			this._onBulkActionRelease();
 			this._displayReleasedToast = true;
@@ -531,6 +520,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._displayRetractedToast = true;
 		}
 		window.location.reload();
+	}
+
+	async _onBulkActionRelease() {
+		await performSirenAction(this.token, this._bulkReleaseAction, null, true);
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	}
+
+	async _onBulkActionRetract() {
+		await performSirenAction(this.token, this._bulkRetractAction, null, true);
+		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
 	}
 
 	_onEntityChanged(entity) {
@@ -655,7 +654,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderBulkButtons() {
-		const text = !!this._bulkReleaseAction ? 'Publish All' : 'Retract All';
+		const text = this._bulkReleaseAction ? 'Publish All' : 'Retract All';
 		const buttonAction = this._bulkButtonClick;
 		return !!this._bulkReleaseAction || !!this._bulkRetractAction ? html`<d2l-button id='bulk-action' @click=${buttonAction} >${text}</d2l-button>` : html``;
 	}
