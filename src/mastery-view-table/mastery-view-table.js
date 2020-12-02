@@ -654,7 +654,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderBulkButtons() {
-		const text = this._bulkReleaseAction ? 'Publish All' : 'Retract All';
+		const text = this._bulkReleaseAction ? this.localize('releaseAllBtn') : this.localize('retractAllBtn');
 		const buttonAction = this._bulkButtonClick;
 		return !!this._bulkReleaseAction || !!this._bulkRetractAction ? html`<d2l-button id='bulk-action' @click=${buttonAction} >${text}</d2l-button>` : html``;
 	}
