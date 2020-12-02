@@ -522,6 +522,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_onBulkActionDialogClose(e) {
 		this._showBulkActionDialog = false;
+		
 		if (e.detail.action === BULK_RELEASE_ACTION) {
 			this._onBulkActionRelease();
 			this._displayReleasedToast = true;
@@ -529,13 +530,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onBulkActionRetract();
 			this._displayRetractedToast = true;
 		}
+		window.location.reload();
 	}
 
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
 		}
-
 		const learnerInfoList = [];
 		const outcomeHeadersData = [];
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();

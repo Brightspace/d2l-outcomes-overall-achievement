@@ -45,7 +45,7 @@ export const val = {
 	'percentLabel': '{percentage}%',
 	'periodSeparator': '.',
 	'published': '게시됨',
-	'releaseAllBtn': 'Release All',
+	'releaseAllBtn': 'Publish All',
 	'releaseAllTxt': 'Publish overall achievements for all learners in the course?',
 	'retractAllBtn': 'Retract All',
 	'retractAllTxt': 'Retract overall achievements for all learners in the course?',
