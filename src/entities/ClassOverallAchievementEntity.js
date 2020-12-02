@@ -25,6 +25,20 @@ export class ClassOverallAchievementEntity extends Entity {
 		href && this._subEntity(CoaClasslistEntity, href, onChange);
 	}
 
+	getBulkReleaseAction() {
+		if (!this._entity || !this._entity.hasActionByName('release-all')) {
+			return;
+		}
+		return this._entity.getActionByName('release-all');
+	}
+
+	getBulkRetractAction() {
+		if (!this._entity || !this._entity.hasActionByName('retract-all')) {
+			return;
+		}
+		return this._entity.getActionByName('retract-all');
+	}
+
 	_classlistHref() {
 		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.classlistRel)) {
 			return;

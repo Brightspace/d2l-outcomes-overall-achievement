@@ -5,6 +5,7 @@ import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchieveme
 import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
 import { ifDefined } from 'lit-html/directives/if-defined';
+import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
@@ -19,7 +20,9 @@ import 'd2l-table/d2l-scroll-wrapper.js';
 import 'd2l-alert/d2l-alert.js';
 
 import '@brightspace-ui/core/components/typography/typography.js';
+import '@brightspace-ui/core/components/button/button.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
+import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/icons/icon.js';
@@ -28,6 +31,8 @@ import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 import Images from '../images/images.js';
 
+const BULK_RELEASE_ACTION = 'release';
+const BULK_RETRACT_ACTION = 'retract';
 const DEFAULT_ROW_SIZE = 20;
 const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
@@ -120,7 +125,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_skeletonLoaded: Boolean,
 
 			_hasErrors: Boolean,
-			_sessionId: Number
+			_sessionId: Number,
+
+			_bulkReleaseAction: Object,
+			_bulkRetractAction: Object,
+
+			_showBulkActionDialog: Boolean
 		};
 	}
 
@@ -255,6 +265,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				.page-size-menu {
 					height: 2.1rem;
 				}
+
+				#bulk-action {
+					margin-bottom: 18px;
+					margin-left: 24px;
+				}
 			`,
 			d2lTableStyles,
 			linkStyles,
@@ -278,6 +293,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._skeletonLoaded = false;
 		this._hasErrors = false;
 		this._sessionId = this.getUUID();
+		this._bulkReleaseAction = {};
+		this._bulkRetractAction = {};
+		this._showBulkActionDialog = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
@@ -326,6 +344,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
+			${this._renderBulkButtons()}
 			<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
 				<d2l-table-wrapper sticky-headers show-actions type="default">
 					<table
@@ -343,6 +362,20 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				</d2l-table-wrapper>
 			</d2l-scroll-wrapper>
 			${this._renderTableControls()}
+			<d2l-dialog-confirm
+				text=${this.localize('releaseAllTxt')}
+				?opened=${this._showBulkActionDialog && !!this._bulkReleaseAction}
+				@d2l-dialog-close=${this._onBulkActionDialogClose}>
+					<d2l-button slot="footer" primary data-dialog-action=${BULK_RELEASE_ACTION}>${this.localize('releaseAllBtn')}</d2l-button>
+					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+			</d2l-dialog-confirm>
+			<d2l-dialog-confirm
+				text=${this.localize('retractAllTxt')}
+				?opened=${this._showBulkActionDialog && !!this._bulkRetractAction}
+				@d2l-dialog-close=${this._onBulkActionDialogClose}>
+					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
+					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+			</d2l-dialog-confirm>
 		`;
 	}
 
@@ -351,6 +384,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_bulkButtonClick() {
+		this._showBulkActionDialog = true;
 	}
 
 	_getLearnerHeadAriaLabel(isLastName, isSecondButton) {
@@ -465,6 +502,17 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	_onBulkActionDialogClose(e) {
+		this._showBulkActionDialog = false;
+		if (e.detail.action === BULK_RELEASE_ACTION) {
+			performSirenAction(this.token, this._bulkReleaseAction, null, true);
+			window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+		} else if (e.detail.action === BULK_RETRACT_ACTION) {
+			performSirenAction(this.token, this._bulkRetractAction, null, true);
+			window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+		}
+	}
+
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
@@ -539,6 +587,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			outcomeHeadersData.sort(_compareOutcomes);
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._skeletonLoaded = true;
+			this._bulkReleaseAction = entity.getBulkReleaseAction();
+			this._bulkRetractAction = entity.getBulkRetractAction();
 		});
 	}
 
@@ -578,6 +628,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._nameFirstLastFormat = !this._nameFirstLastFormat;
 		this._sortDesc = false;
 		this._updateSortOrder();
+	}
+
+	_renderBulkButtons() {
+		const text = !!this._bulkReleaseAction ? 'Publish All' : 'Retract All';
+		const buttonAction = this._bulkButtonClick;
+		return !!this._bulkReleaseAction || !!this._bulkRetractAction ? html`<d2l-button id='bulk-action' @click=${buttonAction} >${text}</d2l-button>` : html``;
 	}
 
 	_renderLearnerColumnHead(showFirstNames, showLastNames, nameFirstLastFormat) {
