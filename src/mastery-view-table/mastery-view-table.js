@@ -336,7 +336,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._sessionId = this.getUUID();
 		this._resizeHandler = undefined;
 		this._stickyHeadersEnabled = false;
-		this._searchTerm = "";
+		this._searchTerm = '';
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
@@ -407,7 +407,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_filterLearnerList(learnerList, searchTerm) {
 		return learnerList.filter((learnerInfo) => {
 			const searchText = this._getUserNameText(learnerInfo.firstName, learnerInfo.lastName, this._nameFirstLastFormat).displayText.toLowerCase();
-			return (searchText.search(searchTerm.toLowerCase()) != -1);
+			return (searchText.search(searchTerm.toLowerCase()) !== -1);
 		});
 	}
 
@@ -465,7 +465,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_getSearchResultsText() {
-		if (this._filteredLearnerList.length == 1) {
+		if (this._filteredLearnerList.length === 1) {
 			return this.localize('searchResultsSingular',
 				'numResults', this._filteredLearnerList.length
 			);
@@ -827,12 +827,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					</div>
 				</td>
 			</tr>
-			`
+			`;
 		}
 	}
 
 	_renderTable() {
-		if (this._learnerList.length === 0 || this._filteredLearnerList.length !== 0 ){
+		if (this._learnerList.length === 0 || this._filteredLearnerList.length !== 0) {
 			return html`
 				<d2l-table-wrapper 
 					?sticky-headers=${this._stickyHeadersEnabled}
@@ -853,8 +853,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					</table>
 				</d2l-table-wrapper>
 				${this._renderTableControls()}
-			`
-		}	
+			`;
+		}
 	}
 
 	_renderTableBody(outcomeHeaderData, rowsData) {
@@ -983,7 +983,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				</tbody>
 			</table>
 		</div>
-		`
+		`;
 	}
 
 	_searchUsers(e) {
