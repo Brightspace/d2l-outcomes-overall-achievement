@@ -993,10 +993,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 		this._updatePageCount();
 
-		console.log(this._getSearchResultsText());
-		if (this._searchTerm) {
-			announce(this._getSearchResultsText());
-		}
+		announce(this._getSearchResultsText());
 	}
 
 	_setStickyHeaders(enable) {
