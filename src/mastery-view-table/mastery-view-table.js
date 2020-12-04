@@ -519,7 +519,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onBulkActionRetract();
 			this._displayRetractedToast = true;
 		}
-		window.location.reload();
 	}
 
 	async _onBulkActionRelease() {
