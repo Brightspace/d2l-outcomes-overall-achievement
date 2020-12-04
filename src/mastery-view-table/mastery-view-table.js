@@ -521,14 +521,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
-	async _onBulkActionRelease() {
-		await performSirenAction(this.token, this._bulkReleaseAction, null, true);
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	_onBulkActionRelease() {
+		return performSirenAction(this.token, this._bulkReleaseAction, null, true);
 	}
 
-	async _onBulkActionRetract() {
-		await performSirenAction(this.token, this._bulkRetractAction, null, true);
-		window.D2L.Siren.EntityStore.fetch(this.href, this.token, true);
+	_onBulkActionRetract() {
+		return performSirenAction(this.token, this._bulkRetractAction, null, true);
 	}
 
 	_onEntityChanged(entity) {
