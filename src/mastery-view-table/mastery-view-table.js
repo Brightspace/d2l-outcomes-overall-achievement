@@ -128,6 +128,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_hasErrors: Boolean,
 			_sessionId: Number,
 
+			_stickyHeadersEnabled: Boolean,
 			_bulkReleaseAction: Object,
 			_bulkRetractAction: Object,
 
@@ -272,6 +273,28 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				#bulk-action {
 					margin-bottom: 18px;
 					margin-left: 24px;
+				}				@media (min-width: 768px) {
+					.sticky-headers {
+						position: sticky;
+						left: 2.439%;
+					}
+
+					[dir="rtl"] .sticky-headers {
+						left: unset;
+						right: 2.439%;
+					}
+				}
+
+				@media (min-width: 1230px) {
+					.sticky-headers {
+						position: sticky;
+						left: 30px;
+					}
+
+					[dir="rtl"] .sticky-headers {
+						left: unset;
+						right: 30px;
+					}
 				}
 			`,
 			d2lTableStyles,
@@ -296,6 +319,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._skeletonLoaded = false;
 		this._hasErrors = false;
 		this._sessionId = this.getUUID();
+		this._resizeHandler = undefined;
+		this._stickyHeadersEnabled = false;
 		this._bulkReleaseAction = {};
 		this._bulkRetractAction = {};
 		this._showBulkActionDialog = false;
@@ -307,12 +332,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	connectedCallback() {
 		super.connectedCallback();
 		this._handleSirenErrors = this._handleSirenErrors.bind(this);
+		this._onResize = this._onResize.bind(this);
 		window.addEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+		window.addEventListener('resize', this._onResize);
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
 		window.removeEventListener('d2l-siren-entity-error', this._handleSirenErrors);
+		window.removeEventListener('resize', this._onResize);
 	}
 
 	getUUID() {
@@ -350,22 +378,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		return html`
 			${this._renderBulkButtons()}
-			<d2l-scroll-wrapper id="scroll-wrapper" show-actions>
-				<d2l-table-wrapper sticky-headers show-actions type="default">
-					<table
-						class="d2l-table"
-						role="grid"
-						aria-label="${this.localize('masteryViewTableDescription')}"
-					>
-						<thead>
-							${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
-						</thead>
-						<tbody>
-							${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
-						<tbody>
-					</table>
-				</d2l-table-wrapper>
-			</d2l-scroll-wrapper>
+			<d2l-table-wrapper 
+				?sticky-headers=${this._stickyHeadersEnabled}
+				show-actions
+				type="default"
+			>
+				<table
+					class="d2l-table"
+					role="grid"
+					aria-label="${this.localize('masteryViewTableDescription')}"
+				>
+					<thead>
+						${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
+					</thead>
+					<tbody>
+						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
+					<tbody>
+				</table>
+			</d2l-table-wrapper>
 			${this._renderTableControls()}
 			<d2l-dialog-confirm
 				text=${this.localize('releaseAllTxt')}
@@ -384,6 +414,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
 			${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
 		`;
+	}
+
+	updated() {
+		this._onResize();
 	}
 
 	_bulkButtonClick() {
@@ -439,6 +473,28 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return this.localize('pageSizeDropdownText',
 			'rowsPerPage', rowsPerPage
 		);
+	}
+
+	_getPaginationControlsClass() {
+		const classes = [];
+		if (this._stickyHeadersEnabled) {
+			classes.push('sticky-headers');
+		}
+
+		return classes.join(' ');
+	}
+
+	_getStickyContainers() {
+		const containers = [];
+		const title = document.querySelector('.d2l-outcomes-gradebook-header');
+		const paginationControls = this.shadowRoot.querySelector('#pagination-controls-outer-container');
+		if (title) {
+			containers.push(title);
+		}
+		if (paginationControls) {
+			containers.push(paginationControls);
+		}
+		return containers;
 	}
 
 	_getUserNameText(firstName, lastName, firstLastDisplay) {
@@ -638,6 +694,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	_onResize() {
+		if (this._resizeHandler) {
+			clearTimeout(this._resizeHandler);
+		}
+
+		this._resizeHandler = setTimeout(this._setStickyWidth.bind(this), 100);
+	}
+
 	//Switches between first-last or last-first format and sorts ascending
 	_onSecondLearnerHeaderButtonClicked() {
 		this._nameFirstLastFormat = !this._nameFirstLastFormat;
@@ -805,57 +869,59 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		});
 
 		return html`
-		<table id="pagination-controls-container" aria-hidden="true">
-			<tr>
-				<td class="prev-page-button-container">
-					<d2l-button-subtle
-						class="prev-page-button"
-						text=""
-						?disabled=${!this._shouldShowPrevPageButton()}
-						@click=${this._onPreviousPageButtonClicked}
-						aria-label=${this.localize('goToPreviousPage')}
-					>
-						<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()} />
-					</d2l-button-subtle>
-				</td>
-				<td class="page-label-container">
-					<div id="page-label">${this.localize('page')}</div>
-				</td>
-				<td class="page-select-menu-container">
-					<select
-						id="page-select-menu"
-						class="d2l-input-select"
-						@change=${this._onPageSelectDropdownSelectionChanged}}
-						aria-label=${this.localize('selectTablePage')}
-						aria-controls="new-page-select-live-text"
-					>
-						${pageSelectOptionTemplates}
-					</select>
-				</td>
-				<td class="next-page-button-container">
-					<d2l-button-subtle
-						class="next-page-button"
-						text=""
-						?disabled=${!this._shouldShowNextPageButton()}
-						@click=${this._onNextPageButtonClicked}
-						aria-label=${this.localize('goToNextPage')}
-					>
-						<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()} />
-					</d2l-button-subtle>
-				</td>
-				<td class="page-size-menu-container">
-					<select
-						id="page-size-menu"
-						class="d2l-input-select"
-						@change=${this._onPageSizeDropdownSelectionChanged}}
-						aria-label=${this.localize('selectLearnersPerPage')}
-						aria-controls="new-page-size-live-text"
-					>
-						${pageSizeOptionTemplates}
-					</select>
-				</td>
-			<tr>
-		</table>
+		<div id="pagination-controls-outer-container">
+			<table id="pagination-controls-container" class="${this._getPaginationControlsClass()}" aria-hidden="true">
+				<tr>
+					<td class="prev-page-button-container">
+						<d2l-button-subtle
+							class="prev-page-button"
+							text=""
+							?disabled=${!this._shouldShowPrevPageButton()}
+							@click=${this._onPreviousPageButtonClicked}
+							aria-label=${this.localize('goToPreviousPage')}
+						>
+							<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()} />
+						</d2l-button-subtle>
+					</td>
+					<td class="page-label-container">
+						<div id="page-label">${this.localize('page')}</div>
+					</td>
+					<td class="page-select-menu-container">
+						<select
+							id="page-select-menu"
+							class="d2l-input-select"
+							@change=${this._onPageSelectDropdownSelectionChanged}}
+							aria-label=${this.localize('selectTablePage')}
+							aria-controls="new-page-select-live-text"
+						>
+							${pageSelectOptionTemplates}
+						</select>
+					</td>
+					<td class="next-page-button-container">
+						<d2l-button-subtle
+							class="next-page-button"
+							text=""
+							?disabled=${!this._shouldShowNextPageButton()}
+							@click=${this._onNextPageButtonClicked}
+							aria-label=${this.localize('goToNextPage')}
+						>
+							<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()} />
+						</d2l-button-subtle>
+					</td>
+					<td class="page-size-menu-container">
+						<select
+							id="page-size-menu"
+							class="d2l-input-select"
+							@change=${this._onPageSizeDropdownSelectionChanged}}
+							aria-label=${this.localize('selectLearnersPerPage')}
+							aria-controls="new-page-size-live-text"
+						>
+							${pageSizeOptionTemplates}
+						</select>
+					</td>
+				<tr>
+			</table>
+		</div>
 		<div
 			role="region"
 			id="new-page-select-live-text"
@@ -885,6 +951,46 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			?open=${opened}
 			button-text=""
 			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
+	}
+
+	_setStickyHeaders(enable) {
+		if (enable) {
+			this._stickyHeadersEnabled = true;
+		} else {
+			this._stickyHeadersEnabled = false;
+		}
+	}
+
+	_setStickyWidth() {
+		requestAnimationFrame(() => {
+			const header = document.querySelector('header');
+			const containers = this._getStickyContainers();
+
+			if (header) {
+				header.style.width = null;
+			}
+			containers.forEach((container) => {
+				container.style.width = null;
+			});
+
+			if (window.innerWidth < 780) {
+				this._setStickyHeaders(false);
+				return;
+			}
+
+			this._setStickyHeaders(true);
+
+			const bodyWidth = Math.max(document.body.scrollWidth, document.body.offsetWidth);
+			const containerWidth = bodyWidth < 1230
+				? bodyWidth - (bodyWidth * 0.02439 * 2)
+				: bodyWidth - 60;
+			if (header) {
+				header.style.width = bodyWidth + 'px';
+			}
+			containers.forEach((container) => {
+				container.style.width = containerWidth + 'px';
+			});
+		});
 	}
 
 	_shouldShowNextPageButton() {
