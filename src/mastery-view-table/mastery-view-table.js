@@ -1036,6 +1036,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
+	_renderToast(opened, text) {
+		return html`<d2l-alert-toast
+			?open=${opened}
+			button-text=""
+			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
+	}
 	_renderUpperControls() {
 		return html`
 		<div id="upper-controls-outer-container">
@@ -1064,13 +1070,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
 
 		announce(this._getSearchResultsText());
-	}
-
-	_renderToast(opened, text) {
-		return html`<d2l-alert-toast
-			?open=${opened}
-			button-text=""
-			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
 
 	_setStickyHeaders(enable) {
