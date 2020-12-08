@@ -5,6 +5,7 @@ import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchieveme
 import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
 import { ifDefined } from 'lit-html/directives/if-defined';
+import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
@@ -19,8 +20,11 @@ import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
 import 'd2l-alert/d2l-alert.js';
 
+import '@brightspace-ui/core/components/alert/alert-toast.js';
 import '@brightspace-ui/core/components/typography/typography.js';
+import '@brightspace-ui/core/components/button/button.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
+import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/inputs/input-search.js';
@@ -30,6 +34,8 @@ import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 import Images from '../images/images.js';
 
+const BULK_RELEASE_ACTION = 'release';
+const BULK_RETRACT_ACTION = 'retract';
 const DEFAULT_ROW_SIZE = 20;
 const PAGE_ROW_SIZES = [10, 20, 30, 50, 100, 200];
 
@@ -126,7 +132,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_hasErrors: Boolean,
 			_sessionId: Number,
 
-			_stickyHeadersEnabled: Boolean
+			_stickyHeadersEnabled: Boolean,
+			_bulkReleaseAction: Object,
+			_bulkRetractAction: Object,
+
+			_showBulkActionDialog: Boolean,
+			_displayReleasedToast: Boolean,
+			_displayRetractedToast: Boolean
 		};
 	}
 
@@ -287,7 +299,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					height: 2.1rem;
 				}
 
-				@media (min-width: 768px) {
+				#bulk-action {
+					margin-bottom: 18px;
+					margin-left: 24px;
+				}				@media (min-width: 768px) {
 					.sticky-headers {
 						position: sticky;
 						left: 2.439%;
@@ -337,6 +352,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._resizeHandler = undefined;
 		this._stickyHeadersEnabled = false;
 		this._searchTerm = '';
+		this._bulkReleaseAction = {};
+		this._bulkRetractAction = {};
+		this._showBulkActionDialog = false;
+		this._displayReleasedToast = false;
+		this._displayRetractedToast = false;
 		this._setEntityType(ClassOverallAchievementEntity);
 	}
 
@@ -389,7 +409,24 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		return html`
 			${this._renderUpperControls()}
+			${this._renderBulkButtons()}
 			${this._renderTable()}
+			<d2l-dialog-confirm
+				text=${this.localize('releaseAllTxt')}
+				?opened=${this._showBulkActionDialog && !!this._bulkReleaseAction}
+				@d2l-dialog-close=${this._onBulkActionDialogClose}
+			>
+					<d2l-button slot="footer" primary data-dialog-action=${BULK_RELEASE_ACTION}>${this.localize('releaseAllBtn')}</d2l-button>
+					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+			</d2l-dialog-confirm>
+			<d2l-dialog-confirm
+				text=${this.localize('retractAllTxt')}
+				?opened=${this._showBulkActionDialog && !!this._bulkRetractAction}
+				@d2l-dialog-close=${this._onBulkActionDialogClose}
+			>
+					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
+					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+			</d2l-dialog-confirm>
 		`;
 	}
 
@@ -402,6 +439,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 			this._updatePageCount();
 		}
+	}
+
+	_bulkButtonClick() {
+		this._showBulkActionDialog = true;
 	}
 
 	set _entity(entity) {
@@ -569,11 +610,30 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 	}
 
+	_onBulkActionDialogClose(e) {
+		this._showBulkActionDialog = false;
+
+		if (e.detail.action === BULK_RELEASE_ACTION) {
+			this._onBulkActionRelease();
+			this._displayReleasedToast = true;
+		} else if (e.detail.action === BULK_RETRACT_ACTION) {
+			this._onBulkActionRetract();
+			this._displayRetractedToast = true;
+		}
+	}
+
+	_onBulkActionRelease() {
+		return performSirenAction(this.token, this._bulkReleaseAction, null, true);
+	}
+
+	_onBulkActionRetract() {
+		return performSirenAction(this.token, this._bulkRetractAction, null, true);
+	}
+
 	_onEntityChanged(entity) {
 		if (!entity) {
 			return;
 		}
-
 		const learnerInfoList = [];
 		const outcomeHeadersData = [];
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
@@ -641,6 +701,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			outcomeHeadersData.sort(_compareOutcomes);
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._skeletonLoaded = true;
+			this._bulkReleaseAction = entity.getBulkReleaseAction();
+			this._bulkRetractAction = entity.getBulkRetractAction();
 		});
 	}
 
@@ -688,6 +750,17 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._nameFirstLastFormat = !this._nameFirstLastFormat;
 		this._sortDesc = false;
 		this._updateSortOrder();
+	}
+
+	_onToastClose() {
+		this._displayReleasedToast = false;
+		this._displayRetractedToast = false;
+	}
+
+	_renderBulkButtons() {
+		const text = this._bulkReleaseAction ? this.localize('releaseAllBtn') : this.localize('retractAllBtn');
+		const buttonAction = this._bulkButtonClick;
+		return !!this._bulkReleaseAction || !!this._bulkRetractAction ? html`<d2l-button id='bulk-action' @click=${buttonAction} >${text}</d2l-button>` : html``;
 	}
 
 	_renderLearnerColumnHead(showFirstNames, showLastNames, nameFirstLastFormat) {
@@ -830,24 +903,27 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderTable() {
 		if (this._learnerList.length === 0 || this._filteredLearnerList.length !== 0) {
 			return html`
-				<d2l-table-wrapper 
-					?sticky-headers=${this._stickyHeadersEnabled}
-					show-actions
-					type="default"
+			<d2l-table-wrapper 
+				?sticky-headers=${this._stickyHeadersEnabled}
+				show-actions
+				type="default"
+			>
+				<table
+					class="d2l-table"
+					role="grid"
+					aria-label="${this.localize('masteryViewTableDescription')}"
 				>
-					<table
-						class="d2l-table"
-						role="grid"
-						aria-label="${this.localize('masteryViewTableDescription')}"
-					>
-						<thead>
-							${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
-						</thead>
-						<tbody>
-							${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
-						<tbody>
-					</table>
-				</d2l-table-wrapper>
+					<thead>
+						${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
+					</thead>
+					<tbody>
+						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
+					<tbody>
+				</table>
+			</d2l-table-wrapper>
+			${this._renderTableControls()}
+		${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
+		${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
 				${this._renderTableControls()}
 			`;
 		}
@@ -988,6 +1064,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
 
 		announce(this._getSearchResultsText());
+	}
+
+	_renderToast(opened, text) {
+		return html`<d2l-alert-toast
+			?open=${opened}
+			button-text=""
+			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
 
 	_setStickyHeaders(enable) {

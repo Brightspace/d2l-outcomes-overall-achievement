@@ -11,6 +11,20 @@ export class ClassOverallAchievementEntity extends Entity {
 		};
 	}
 
+	getBulkReleaseAction() {
+		if (!this._entity || !this._entity.hasActionByName('release-all')) {
+			return;
+		}
+		return this._entity.getActionByName('release-all');
+	}
+
+	getBulkRetractAction() {
+		if (!this._entity || !this._entity.hasActionByName('retract-all')) {
+			return;
+		}
+		return this._entity.getActionByName('retract-all');
+	}
+
 	getOutcomeClassProgressItems() {
 		if (!this._entity) {
 			return;
