@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '.',
 	'published': '公開済み',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': 'テーブルの各ページに表示する行数を選択します。',

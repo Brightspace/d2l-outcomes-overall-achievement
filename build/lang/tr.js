@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '.',
 	'published': 'Yayınlandı',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': 'Tablonun her sayfasında kaç satır görüntüleneceğini seçin.',

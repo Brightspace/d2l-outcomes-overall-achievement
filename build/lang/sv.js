@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '.',
 	'published': 'Publicerad',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': 'Välj hur många rader som ska visas på varje sida i tabellen.',

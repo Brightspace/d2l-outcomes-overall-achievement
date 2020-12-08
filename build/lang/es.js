@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '.',
 	'published': 'Publicada',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': 'Seleccione cuántas filas desea mostrar en cada página de la tabla.',

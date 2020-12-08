@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '。',
 	'published': '已发布',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': '选择表格每一页的显示行数。',

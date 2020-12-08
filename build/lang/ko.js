@@ -45,7 +45,6 @@ export const val = {
 	'periodSeparator': '.',
 	'published': '게시됨',
 	'searchResults': '{numResults} Search Results',
-	'searchResultsSingular': '{numResults} Search Result',
 	'searchUsersLabel': 'Search for users',
 	'searchUsersPlaceholder': 'Search for users...',
 	'selectLearnersPerPage': '표의 각 페이지를 표시할 행 수를 선택하십시오.',

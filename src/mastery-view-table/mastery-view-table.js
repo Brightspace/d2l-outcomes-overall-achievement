@@ -393,8 +393,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	updated() {
+	updated(changedProperties) {
 		this._onResize();
+		if (changedProperties.has('_learnerList')) {
+			this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
+		}
+		if (changedProperties.has('_filteredLearnerList')) {
+			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
+			this._updatePageCount();
+		}
 	}
 
 	set _entity(entity) {
@@ -465,15 +472,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_getSearchResultsText() {
-		if (this._filteredLearnerList.length === 1) {
-			return this.localize('searchResultsSingular',
-				'numResults', this._filteredLearnerList.length
-			);
-		} else {
-			return this.localize('searchResults',
-				'numResults', this._filteredLearnerList.length
-			);
-		}
+		return this.localize('searchResults', 'numResults', this._filteredLearnerList.length);
 	}
 
 	_getStickyContainers() {
@@ -635,9 +634,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._showFirstNames = showFirstNames;
 				this._showLastNames = showLastNames;
 				this._learnerList = this._sortLearners(learnerInfoList, !this._nameFirstLastFormat, this._sortDesc);
-				this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
-				this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
-				this._updatePageCount();
 			});
 		});
 
@@ -990,8 +986,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		const searchText = e.detail.value;
 		this._searchTerm = searchText ? searchText.toLowerCase() : '';
 		this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
-		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
-		this._updatePageCount();
 
 		announce(this._getSearchResultsText());
 	}
@@ -1045,7 +1039,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_sortLearners(list, byLastName, descending) {
-		list.sort((left, right) => {
+		const sortedList = [...list].sort((left, right) => {
 			let leftSortString = '';
 			let rightSortString = '';
 
@@ -1070,7 +1064,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return leftSortString.localeCompare(rightSortString);
 			}
 		});
-		return list;
+		return sortedList;
 	}
 
 	_updatePageCount() {
@@ -1090,8 +1084,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_updateSortOrder() {
 		this._learnerList = this._sortLearners(this._learnerList, !this._nameFirstLastFormat, this._sortDesc);
-		this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
-		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
 }
