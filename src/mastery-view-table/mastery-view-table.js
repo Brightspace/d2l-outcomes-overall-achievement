@@ -260,13 +260,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					margin-left: 1.8rem;
 				}
 
-				#upper-controls-container{
+				#upper-controls-container {
 					border-spacing: 0px;
 					width: 60vw;
 				}
 
-				#upper-controls-container td {
-					padding-bottom: 18px;
+				#search-publish-container {
+					margin-bottom: 18px;
 				}
 
 				#search-input {
@@ -278,6 +278,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					background-color: var(--d2l-color-regolith);
 					border: 1px solid var(--d2l-color-gypsum);
 					color: var(--d2l-color-ferrite);
+					margin-bottom: 18px;
 				}
 
 				.msg-container
@@ -300,9 +301,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 
 				#bulk-action {
-					margin-bottom: 18px;
 					margin-left: 24px;
-				}				@media (min-width: 768px) {
+				}
+
+				@media (min-width: 768px) {
 					.sticky-headers {
 						position: sticky;
 						left: 2.439%;
@@ -409,7 +411,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		return html`
 			${this._renderUpperControls()}
-			${this._renderBulkButtons()}
 			${this._renderTable()}
 			<d2l-dialog-confirm
 				text=${this.localize('releaseAllTxt')}
@@ -427,6 +428,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
 					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
+			${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
+			${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
 		`;
 	}
 
@@ -885,17 +888,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderSearchMessage() {
 		if (this._searchTerm) {
 			return html`
-			<tr>
-				<td>
-					<div class="msg-container">
-						<div class="msg-container-text">
-							<label>
-								${this._getSearchResultsText()}
-							</label>
-						</div>
+				<div class="msg-container">
+					<div class="msg-container-text">
+						<label>
+							${this._getSearchResultsText()}
+						</label>
 					</div>
-				</td>
-			</tr>
+				</div>
 			`;
 		}
 	}
@@ -922,9 +921,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				</table>
 			</d2l-table-wrapper>
 			${this._renderTableControls()}
-		${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
-		${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
-				${this._renderTableControls()}
 			`;
 		}
 	}
@@ -1045,21 +1041,18 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	_renderUpperControls() {
 		return html`
 		<div id="upper-controls-outer-container">
-			<table id="upper-controls-container" class=${this._getUpperControlsClass()} role="search">
-				<tbody>
-					<tr>
-						<td>
-							<d2l-input-search
-								id="search-input"
-								label="${this.localize('searchUsersLabel')}"
-								placeholder="${this.localize('searchUsersPlaceholder')}"
-								@d2l-input-search-searched=${this._searchUsers}
-							/>
-						</td>
-					</tr>
-					${this._renderSearchMessage()}
-				</tbody>
-			</table>
+			<div id="upper-controls-container" class=${this._getUpperControlsClass()}>
+				<div id="search-publish-container">
+					<d2l-input-search
+						id="search-input"
+						label="${this.localize('searchUsersLabel')}"
+						placeholder="${this.localize('searchUsersPlaceholder')}"
+						@d2l-input-search-searched=${this._searchUsers}
+					></d2l-input-search>
+					${this._renderBulkButtons()}
+				</div>
+				${this._renderSearchMessage()}
+			</div>
 		</div>
 		`;
 	}
