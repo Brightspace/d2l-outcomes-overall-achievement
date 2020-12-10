@@ -10,6 +10,7 @@ import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
 import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+import { announce } from '@brightspace-ui/core/helpers/announce.js';
 import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 
 import '../custom-icons/LeftArrow.js';
@@ -26,6 +27,7 @@ import '@brightspace-ui/core/components/button/button-subtle.js';
 import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
+import '@brightspace-ui/core/components/inputs/input-search.js';
 import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
@@ -110,6 +112,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				attribute: 'outcome-term'
 			},
 			_learnerList: Array,
+			_filteredLearnerList: Array,
 
 			_outcomeHeadersData: Array,
 			_learnerRowsData: Array,
@@ -122,6 +125,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_showLastNames: Boolean,
 			_nameFirstLastFormat: Boolean,
 			_sortDesc: Boolean,
+			_searchTerm: String,
 
 			_skeletonLoaded: Boolean,
 
@@ -256,6 +260,32 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					margin-left: 1.8rem;
 				}
 
+				#upper-controls-container {
+					border-spacing: 0px;
+					width: 60vw;
+				}
+
+				#search-publish-container {
+					margin-bottom: 18px;
+				}
+
+				#search-input {
+					max-width: 270px;
+				}
+
+				.msg-container {
+					border-radius: 8px;
+					background-color: var(--d2l-color-regolith);
+					border: 1px solid var(--d2l-color-gypsum);
+					color: var(--d2l-color-ferrite);
+					margin-bottom: 18px;
+				}
+
+				.msg-container
+				.msg-container-text {
+					padding: 10px 20px;
+				}
+
 				:host([dir="rtl"]) #page-size-menu {
 					margin-left: 0;
 					margin-right: 1.2rem;
@@ -271,15 +301,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 
 				#bulk-action {
-					margin-bottom: 18px;
 					margin-left: 24px;
-				}				@media (min-width: 768px) {
+				}
+
+				@media (min-width: 768px) {
 					.sticky-headers {
 						position: sticky;
 						left: 2.439%;
 					}
 
-					[dir="rtl"] .sticky-headers {
+					:host([dir="rtl"]) .sticky-headers {
 						left: unset;
 						right: 2.439%;
 					}
@@ -291,7 +322,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						left: 30px;
 					}
 
-					[dir="rtl"] .sticky-headers {
+					:host([dir="rtl"]) .sticky-headers {
 						left: unset;
 						right: 30px;
 					}
@@ -309,6 +340,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
+		this._filteredLearnerList = [];
 		this._rowsPerPage = DEFAULT_ROW_SIZE;
 		this._currentPage = 1;
 		this._pageCount = 1;
@@ -321,6 +353,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._sessionId = this.getUUID();
 		this._resizeHandler = undefined;
 		this._stickyHeadersEnabled = false;
+		this._searchTerm = '';
 		this._bulkReleaseAction = {};
 		this._bulkRetractAction = {};
 		this._showBulkActionDialog = false;
@@ -377,37 +410,21 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 
 		return html`
-			${this._renderBulkButtons()}
-			<d2l-table-wrapper 
-				?sticky-headers=${this._stickyHeadersEnabled}
-				show-actions
-				type="default"
-			>
-				<table
-					class="d2l-table"
-					role="grid"
-					aria-label="${this.localize('masteryViewTableDescription')}"
-				>
-					<thead>
-						${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
-					</thead>
-					<tbody>
-						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
-					<tbody>
-				</table>
-			</d2l-table-wrapper>
-			${this._renderTableControls()}
+			${this._renderUpperControls()}
+			${this._renderTable()}
 			<d2l-dialog-confirm
 				text=${this.localize('releaseAllTxt')}
 				?opened=${this._showBulkActionDialog && !!this._bulkReleaseAction}
-				@d2l-dialog-close=${this._onBulkActionDialogClose}>
+				@d2l-dialog-close=${this._onBulkActionDialogClose}
+			>
 					<d2l-button slot="footer" primary data-dialog-action=${BULK_RELEASE_ACTION}>${this.localize('releaseAllBtn')}</d2l-button>
 					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
 			<d2l-dialog-confirm
 				text=${this.localize('retractAllTxt')}
 				?opened=${this._showBulkActionDialog && !!this._bulkRetractAction}
-				@d2l-dialog-close=${this._onBulkActionDialogClose}>
+				@d2l-dialog-close=${this._onBulkActionDialogClose}
+			>
 					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
 					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
@@ -416,8 +433,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		`;
 	}
 
-	updated() {
+	updated(changedProperties) {
 		this._onResize();
+		if (changedProperties.has('_learnerList')) {
+			this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
+		}
+		if (changedProperties.has('_filteredLearnerList')) {
+			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
+			this._updatePageCount();
+		}
 	}
 
 	_bulkButtonClick() {
@@ -429,6 +453,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_filterLearnerList(learnerList, searchTerm) {
+		return learnerList.filter((learnerInfo) => {
+			const searchText = this._getUserNameText(learnerInfo.firstName, learnerInfo.lastName, this._nameFirstLastFormat).displayText.toLowerCase();
+			return (searchText.search(searchTerm.toLowerCase()) !== -1);
+		});
 	}
 
 	_getLearnerHeadAriaLabel(isLastName, isSecondButton) {
@@ -484,17 +515,34 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		return classes.join(' ');
 	}
 
+	_getSearchResultsText() {
+		return this.localize('searchResults', 'numResults', this._filteredLearnerList.length);
+	}
+
 	_getStickyContainers() {
 		const containers = [];
 		const title = document.querySelector('.d2l-outcomes-gradebook-header');
 		const paginationControls = this.shadowRoot.querySelector('#pagination-controls-outer-container');
+		const upperControls = this.shadowRoot.querySelector('#upper-controls-outer-container');
 		if (title) {
 			containers.push(title);
 		}
 		if (paginationControls) {
 			containers.push(paginationControls);
 		}
+		if (upperControls) {
+			containers.push(upperControls);
+		}
 		return containers;
+	}
+
+	_getUpperControlsClass() {
+		const classes = [];
+		if (this._stickyHeadersEnabled) {
+			classes.push('sticky-headers');
+		}
+
+		return classes.join(' ');
 	}
 
 	_getUserNameText(firstName, lastName, firstLastDisplay) {
@@ -534,7 +582,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._currentPage = newPage;
 		var selector = this.shadowRoot.getElementById('page-select-menu');
 		selector.selectedIndex = newPage - 1;
-		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
+		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
 	_handleSirenErrors(e) {
@@ -649,8 +697,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._showFirstNames = showFirstNames;
 				this._showLastNames = showLastNames;
 				this._learnerList = this._sortLearners(learnerInfoList, !this._nameFirstLastFormat, this._sortDesc);
-				this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
-				this._updatePageCount();
 			});
 		});
 
@@ -839,6 +885,46 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	}
 
+	_renderSearchMessage() {
+		if (this._searchTerm) {
+			return html`
+				<div class="msg-container">
+					<div class="msg-container-text">
+						<label>
+							${this._getSearchResultsText()}
+						</label>
+					</div>
+				</div>
+			`;
+		}
+	}
+
+	_renderTable() {
+		if (this._learnerList.length === 0 || this._filteredLearnerList.length !== 0) {
+			return html`
+			<d2l-table-wrapper 
+				?sticky-headers=${this._stickyHeadersEnabled}
+				show-actions
+				type="default"
+			>
+				<table
+					class="d2l-table"
+					role="grid"
+					aria-label="${this.localize('masteryViewTableDescription')}"
+				>
+					<thead>
+						${this._renderTableHead(this._showFirstNames, this._showLastNames, this._nameFirstLastFormat, this._outcomeHeadersData)}
+					</thead>
+					<tbody>
+						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
+					<tbody>
+				</table>
+			</d2l-table-wrapper>
+			${this._renderTableControls()}
+			`;
+		}
+	}
+
 	_renderTableBody(outcomeHeaderData, rowsData) {
 		if (this._skeletonLoaded && rowsData.length === 0) {
 			return this._renderNoLearnerState(this.localize('noEnrolledLearners'));
@@ -847,7 +933,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_renderTableControls() {
-		if (this._learnerList.length <= DEFAULT_ROW_SIZE) {
+		if (this._filteredLearnerList.length <= this._rowsPerPage) {
 			return null;
 		}
 		const pageSelectOptionTemplates = [];
@@ -952,6 +1038,32 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			button-text=""
 			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
+	_renderUpperControls() {
+		return html`
+		<div id="upper-controls-outer-container">
+			<div id="upper-controls-container" class=${this._getUpperControlsClass()}>
+				<div id="search-publish-container">
+					<d2l-input-search
+						id="search-input"
+						label="${this.localize('searchUsersLabel')}"
+						placeholder="${this.localize('searchUsersPlaceholder')}"
+						@d2l-input-search-searched=${this._searchUsers}
+					></d2l-input-search>
+					${this._renderBulkButtons()}
+				</div>
+				${this._renderSearchMessage()}
+			</div>
+		</div>
+		`;
+	}
+
+	_searchUsers(e) {
+		const searchText = e.detail.value;
+		this._searchTerm = searchText ? searchText.toLowerCase() : '';
+		this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
+
+		announce(this._getSearchResultsText());
+	}
 
 	_setStickyHeaders(enable) {
 		if (enable) {
@@ -1002,7 +1114,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	_sortLearners(list, byLastName, descending) {
-		list.sort((left, right) => {
+		const sortedList = [...list].sort((left, right) => {
 			let leftSortString = '';
 			let rightSortString = '';
 
@@ -1027,11 +1139,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				return leftSortString.localeCompare(rightSortString);
 			}
 		});
-		return list;
+		return sortedList;
 	}
 
 	_updatePageCount() {
-		const learnerCount = this._learnerList.length;
+		const learnerCount = this._filteredLearnerList.length;
 		if (learnerCount === 0) {
 			this._pageCount = 1;
 		}
@@ -1042,12 +1154,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (this._currentPage > this._pageCount) {
 			this._goToPageNumber(this._pageCount);
 		}
-		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
+		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
 	_updateSortOrder() {
 		this._learnerList = this._sortLearners(this._learnerList, !this._nameFirstLastFormat, this._sortDesc);
-		this._learnerRowsData = this._getLearnerRowsData(this._learnerList, this._currentPage, this._rowsPerPage);
 	}
 
 }
