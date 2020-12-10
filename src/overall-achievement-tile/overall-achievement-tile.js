@@ -22,7 +22,6 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	static get properties() {
 		return {
-			_activityName: { attribute: false },
 			_feedback: { attribute: false },
 			_levelColor: { attribute: false },
 			_levelName: { attribute: false },
@@ -157,7 +156,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						<d2l-icon icon="tier2:grade"></d2l-icon> 
 						<div id="card-info">
 							<div id="title">
-								<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
+								<h4 class="d2l-heading-4" id="activity-name">${this.localize('labelOverallAchievement')}</h4>
 								<div>${this._renderVisibilityIcon(this._published)}</div> 
 							</div>
 							${dateElement}
@@ -205,11 +204,9 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				published = demonstration.isPublished();
 				accessDate = demonstration.getDateAssessed();
 			});
-			const activityName = entity.getName();
 
 			entity.subEntitiesLoaded().then(() => {
 				this._accessDate = new Date(accessDate);
-				this._activityName = activityName;
 				this._feedback = feedback;
 				this._levelColor = levelColor;
 				this._levelName = levelName;
