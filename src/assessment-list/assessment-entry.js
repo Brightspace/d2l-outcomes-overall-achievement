@@ -200,7 +200,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				<button id="card" class="d2l-more-less-toggle" ?disabled="${!this._link}" @click="${this._onClick}">
 					<div id="card-header">
 						<div id="header-left">
-							<h4 class="d2l-heading-4" id="activity-name">${this._activityName}</h4>
+							<h4 class="d2l-heading-4" id="activity-name">${this.localizeActivityName(this._activityName)}</h4>
 							<div>${this._renderAttempt(this._attempt)}</div>
 						</div>
 						<div id="loa">
