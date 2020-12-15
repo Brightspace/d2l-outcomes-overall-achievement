@@ -168,7 +168,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						<d2l-icon icon="tier2:grade"></d2l-icon> 
 						<div id="card-info">
 							<div id="title">
-								<h4 class="d2l-heading-4" id="activity-name">${this.localizeActivityName(this._activityName, this.localize)}</h4>
+								<h4 class="d2l-heading-4" id="activity-name">${this.localizeActivityName(this._activityName)}</h4>
 								<div>${this._renderVisibilityIcon(this._published)}</div> 
 							</div>
 							${dateElement}

@@ -483,7 +483,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			const groupDate = formatDate(group.date, { format: 'MMMM d, yyyy' });
 			const groupId = formatDate(group.date, { format: 'yyyy-MM' });
 			const groupLabel = this._getGroupLabel(group);
-			const groupName = this.localizeActivityName(group.name, this.localize);
+			const groupName = this.localizeActivityName(group.name);
 			const groupType = group.type;
 
 			if (group.type === 'checkpoint-item' && group.unpublishedCoa && this.hideUnpublishedCoa) {
