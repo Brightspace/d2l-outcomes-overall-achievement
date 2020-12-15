@@ -483,7 +483,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			const groupDate = formatDate(group.date, { format: 'MMMM d, yyyy' });
 			const groupId = formatDate(group.date, { format: 'yyyy-MM' });
 			const groupLabel = this._getGroupLabel(group);
-			let groupName = (!group.name || group.name.trim() === '') ? this.localize('untitled') : group.name;
+			const groupName = this.localizeActivityName(group.name, this.localize);
 			const groupType = group.type;
 
 			if (group.type === 'checkpoint-item' && group.unpublishedCoa && this.hideUnpublishedCoa) {
@@ -494,7 +494,6 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			switch (groupType.toLowerCase()) {
 				case 'checkpoint-item':
 					type = BarTypes.Diamond;
-					groupName = this.localize('labelOverallAchievement');
 					break;
 				default:
 					type = BarTypes.Bar;
