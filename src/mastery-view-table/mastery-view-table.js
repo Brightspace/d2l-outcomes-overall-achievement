@@ -6,6 +6,7 @@ import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
 import { ifDefined } from 'lit-html/directives/if-defined';
 import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
+import { ErrorLogger } from '../ErrorLogger.js';
 
 import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
@@ -111,6 +112,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				type: String,
 				attribute: 'outcome-term'
 			},
+			_logger: ErrorLogger,
 			_learnerList: Array,
 			_filteredLearnerList: Array,
 
@@ -128,9 +130,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			_searchTerm: String,
 
 			_skeletonLoaded: Boolean,
-
 			_hasErrors: Boolean,
-			_sessionId: Number,
 
 			_stickyHeadersEnabled: Boolean,
 			_bulkReleaseAction: Object,
@@ -350,7 +350,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._sortDesc = false;
 		this._skeletonLoaded = false;
 		this._hasErrors = false;
-		this._sessionId = this.getUUID();
 		this._resizeHandler = undefined;
 		this._stickyHeadersEnabled = false;
 		this._searchTerm = '';
@@ -360,41 +359,34 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._displayReleasedToast = false;
 		this._displayRetractedToast = false;
 		this._setEntityType(ClassOverallAchievementEntity);
+		this._logger = new ErrorLogger(
+			() => this.errorLoggingEndpoint,
+			() => { this._hasErrors = true; }
+		);
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
-		this._handleSirenErrors = this._handleSirenErrors.bind(this);
 		this._onResize = this._onResize.bind(this);
-		window.addEventListener('d2l-siren-entity-error', this._handleSirenErrors);
 		window.addEventListener('resize', this._onResize);
+		window.addEventListener('error', this._logger.logJavascriptError);
+		window.addEventListener('unhandledrejection', this._logger.logPromiseError);
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		window.removeEventListener('d2l-siren-entity-error', this._handleSirenErrors);
 		window.removeEventListener('resize', this._onResize);
-	}
-
-	getUUID() {
-		return Math.random().toString(36).substring(2) + Date.now().toString(36);
+		window.removeEventListener('error', this._logger.logJavascriptError);
+		window.removeEventListener('unhandledrejection', this._logger.logPromiseError);
 	}
 
 	render() {
-		if (!this._skeletonLoaded) {
+		if (!this._skeletonLoaded && !this._hasErrors) {
 			//Basic table outline (classlist, aligned outcomes) still loading - hold off on rendering
 			return null;
 		}
 
-		if (this._hasErrors) {
-			return html`
-			<d2l-alert type="error">
-				${this.localize('masteryViewTableEmptyError')}
-			</d2l-alert>
-			`;
-		}
-
-		if (this._outcomeHeadersData.length === 0) {
+		if (this._outcomeHeadersData.length === 0 && !this._hasErrors) {
 			//Empty state for no aligned outcomes
 			return html`
 			<div id="no-outcomes-container" class="d2l-typography">
@@ -409,7 +401,17 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			`;
 		}
 
+		let errorAlert = null;
+		if (this._hasErrors) {
+			errorAlert = html`
+			<d2l-alert type="error">
+				${this.localize('masteryViewTableEmptyError')}
+			</d2l-alert>
+			`;
+		}
+
 		return html`
+			${errorAlert}
 			${this._renderUpperControls()}
 			${this._renderTable()}
 			<d2l-dialog-confirm
@@ -446,6 +448,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	_bulkButtonClick() {
 		this._showBulkActionDialog = true;
+	}
+
+	_doActionNow(action) {
+		return performSirenAction(this.token, action, null, true).catch(error => {
+			this._logger.logSirenError(action.href, action.method, error);
+			throw error;
+		});
 	}
 
 	set _entity(entity) {
@@ -585,56 +594,23 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
-	_handleSirenErrors(e) {
-		if (e && e['target'] && e.target.href === this.href) {
-			this._hasErrors = true;
-			const errorInfo = {
-				RequestUrl: this.href,
-				RequestMethod: 'GET',
-				ResponseStatus: (e.detail && typeof e.detail['error'] === 'number') ? e.detail.error : null
-			};
-			const errorObject = {
-				Type: 'ApiError',
-				SessionId: this._sessionId,
-				Location: window.location.pathname,
-				Referrer: document.referrer || null,
-				Error: errorInfo
-			};
-			window.fetch(
-				this.errorLoggingEndpoint, {
-					method: 'POST',
-					mode: 'no-cors',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify([errorObject])
-				}
-			);
-		}
-	}
-
 	_onBulkActionDialogClose(e) {
 		this._showBulkActionDialog = false;
 
 		if (e.detail.action === BULK_RELEASE_ACTION) {
-			this._onBulkActionRelease();
-			this._displayReleasedToast = true;
+			this._doActionNow(this._bulkReleaseAction).then(() => {
+				this._displayReleasedToast = true;
+			});
 		} else if (e.detail.action === BULK_RETRACT_ACTION) {
-			this._onBulkActionRetract();
-			this._displayRetractedToast = true;
+			this._doActionNow(this._bulkRetractAction).then(() => {
+				this._displayRetractedToast = true;
+			});
 		}
 	}
 
-	_onBulkActionRelease() {
-		return performSirenAction(this.token, this._bulkReleaseAction, null, true);
-	}
-
-	_onBulkActionRetract() {
-		return performSirenAction(this.token, this._bulkRetractAction, null, true);
-	}
-
-	_onEntityChanged(entity) {
+	_onEntityChanged(entity, error) {
 		if (!entity) {
+			this._logger.logSirenError(this.href, 'GET', error);
 			return;
 		}
 		const learnerInfoList = [];
@@ -655,6 +631,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					prefix: _getOutcomePrefix(outcome._entity.properties)
 				};
 				outcomeHeadersData.push(outcomeData);
+			}, error => {
+				this._logger.logSirenError(outcomeProgressEntity.self(), 'GET', error);
 			});
 		});
 
@@ -698,6 +676,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._showLastNames = showLastNames;
 				this._learnerList = this._sortLearners(learnerInfoList, !this._nameFirstLastFormat, this._sortDesc);
 			});
+		}, error => {
+			this._logger.logSirenError(entity._classlistHref(), 'GET', error);
 		});
 
 		entity.subEntitiesLoaded().then(() => {
@@ -842,6 +822,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 						href=${learnerData.rowDataHref}
 						token=${this.token}
 						outcome-href=${outcomeData.href}
+						._logger="${this._logger}"
 					/>
 				</td>
 			`)}

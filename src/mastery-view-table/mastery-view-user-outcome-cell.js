@@ -9,6 +9,7 @@ import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
 import { Consts } from '../consts';
+import { ErrorLogger } from '../ErrorLogger.js';
 
 const KEYCODES = {
 	ENTER: 13,
@@ -24,7 +25,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				attribute: 'outcome-href',
 				type: String
 			},
-			_cellData: Object
+			_cellData: Object,
+			_logger: ErrorLogger
 		};
 	}
 
@@ -254,8 +256,9 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		window.location = link;
 	}
 
-	_onEntityChanged(entity) {
+	_onEntityChanged(entity, error) {
 		if (!entity) {
+			this._logger.logSirenError(this.href, 'GET', error);
 			return;
 		}
 
@@ -282,6 +285,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				demonstratedLevel.onLevelChanged(loa => {
 					name = loa.getName();
 					color = loa.getColor();
+				}, error => {
+					this._logger.logSirenError(demonstratedLevel._levelHref(), 'GET', error);
 				});
 			}
 			demonstration.subEntitiesLoaded().then(() => {
@@ -296,6 +301,10 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					hasManualOverride = true;
 				}
 			});
+		}, error => {
+			const demonstration = cellEntity._getCheckpointDemonstration() || {};
+			const href = (demonstration && demonstration.getSelfHref) ? demonstration.getSelfHref() : null;
+			this._logger.logSirenError(href, 'GET', error);
 		});
 
 		entity.subEntitiesLoaded().then(() => {
