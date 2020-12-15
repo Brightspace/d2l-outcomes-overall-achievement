@@ -4,5 +4,6 @@ export const Consts = {
 	},
 	noCoaLevelName: '-',
 	noCoaLevelColor: '#FFFFFF',
-	tenPercentAlphaHex: '1A',
+	overallAchievementActivityName: 'Overall Achievement',
+	tenPercentAlphaHex: '1A'
 };

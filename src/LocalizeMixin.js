@@ -1,5 +1,7 @@
 import { LocalizeMixin as CoreLocalizeMixin } from '@brightspace-ui/core/mixins/localize-mixin';
 
+import { Consts } from './consts.js';
+
 export const LocalizeMixin = (superclass) => class extends CoreLocalizeMixin(superclass) {
 
 	static async getLocalizeResources(langs) {
@@ -62,6 +64,18 @@ export const LocalizeMixin = (superclass) => class extends CoreLocalizeMixin(sup
 			language: 'en',
 			resources: translations.val
 		};
+	}
+
+	localizeActivityName(name) {
+		if (!name || name.trim() === '') {
+			return this.localize('untitled');
+		}
+
+		if (name === Consts.overallAchievementActivityName) {
+			return this.localize('labelOverallAchievement');
+		}
+
+		return name;
 	}
 
 };
