@@ -600,10 +600,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (e.detail.action === BULK_RELEASE_ACTION) {
 			this._doActionNow(this._bulkReleaseAction).then(() => {
 				this._displayReleasedToast = true;
+				location.reload();
 			});
 		} else if (e.detail.action === BULK_RETRACT_ACTION) {
 			this._doActionNow(this._bulkRetractAction).then(() => {
 				this._displayRetractedToast = true;
+				location.reload();
 			});
 		}
 	}
