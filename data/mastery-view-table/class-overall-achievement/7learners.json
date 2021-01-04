@@ -191,6 +191,23 @@
             ]
         }
     ],
+    "actions": [
+        {
+            "href": "about:blank",
+            "name": "release-all",
+            "method": "POST",
+            "fields": [
+                {
+                    "class": [
+                        "required"
+                    ],
+                    "type": "text",
+                    "name": "action",
+                    "value": "release-all"
+                }
+            ]
+        }
+    ],
     "links": [
         {
             "rel": [

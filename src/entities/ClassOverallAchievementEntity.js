@@ -5,6 +5,13 @@ import { OutcomeEntity } from './OutcomeEntity.js';
 
 export class ClassOverallAchievementEntity extends Entity {
 
+	static get actions() {
+		return {
+			releaseAll: 'release-all',
+			retractAll: 'retract-all'
+		};
+	}
+
 	static get links() {
 		return {
 			classlistRel: 'https://assessments.api.brightspace.com/rels/coa-classlist',
@@ -12,17 +19,17 @@ export class ClassOverallAchievementEntity extends Entity {
 	}
 
 	getBulkReleaseAction() {
-		if (!this._entity || !this._entity.hasActionByName('release-all')) {
+		if (!this._entity || !this._entity.hasActionByName(ClassOverallAchievementEntity.actions.releaseAll)) {
 			return;
 		}
-		return this._entity.getActionByName('release-all');
+		return this._entity.getActionByName(ClassOverallAchievementEntity.actions.releaseAll);
 	}
 
 	getBulkRetractAction() {
-		if (!this._entity || !this._entity.hasActionByName('retract-all')) {
+		if (!this._entity || !this._entity.hasActionByName(ClassOverallAchievementEntity.actions.retractAll)) {
 			return;
 		}
-		return this._entity.getActionByName('retract-all');
+		return this._entity.getActionByName(ClassOverallAchievementEntity.actions.retractAll);
 	}
 
 	getOutcomeClassProgressItems() {

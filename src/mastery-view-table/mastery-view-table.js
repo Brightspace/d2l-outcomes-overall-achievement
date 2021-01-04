@@ -337,6 +337,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	constructor() {
 		super();
+		this._setEntityType(ClassOverallAchievementEntity);
+
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
@@ -358,7 +360,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._showBulkActionDialog = false;
 		this._displayReleasedToast = false;
 		this._displayRetractedToast = false;
-		this._setEntityType(ClassOverallAchievementEntity);
 		this._logger = new ErrorLogger(
 			() => this.errorLoggingEndpoint,
 			() => { this._hasErrors = true; }
@@ -419,16 +420,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				?opened=${this._showBulkActionDialog && !!this._bulkReleaseAction}
 				@d2l-dialog-close=${this._onBulkActionDialogClose}
 			>
-					<d2l-button slot="footer" primary data-dialog-action=${BULK_RELEASE_ACTION}>${this.localize('releaseAllBtn')}</d2l-button>
-					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+				<d2l-button slot="footer" primary data-dialog-action=${BULK_RELEASE_ACTION}>${this.localize('releaseAllBtn')}</d2l-button>
+				<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
 			<d2l-dialog-confirm
 				text=${this.localize('retractAllTxt')}
 				?opened=${this._showBulkActionDialog && !!this._bulkRetractAction}
 				@d2l-dialog-close=${this._onBulkActionDialogClose}
 			>
-					<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
-					<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
+				<d2l-button slot="footer" primary data-dialog-action=${BULK_RETRACT_ACTION}>${this.localize('retractAllBtn')}</d2l-button>
+				<d2l-button slot="footer" data-dialog-action>${this.localize('cancelBtn')}</d2l-button>
 			</d2l-dialog-confirm>
 			${this._renderToast(this._displayReleasedToast, this.localize('toastReleased'))}
 			${this._renderToast(this._displayRetractedToast, this.localize('toastRetracted'))}
@@ -617,6 +618,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		}
 		const learnerInfoList = [];
 		const outcomeHeadersData = [];
+		const bulkReleaseAction = entity.getBulkReleaseAction();
+		const bulkRetractAction = entity.getBulkRetractAction();
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
 		outcomeClassProgressEntities.map(outcomeProgressEntity => {
 			const activityCollectionHref = outcomeProgressEntity.getOutcomeActivityCollectionHref();
@@ -685,9 +688,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		entity.subEntitiesLoaded().then(() => {
 			outcomeHeadersData.sort(_compareOutcomes);
 			this._outcomeHeadersData = outcomeHeadersData;
+			this._bulkReleaseAction = bulkReleaseAction;
+			this._bulkRetractAction = bulkRetractAction;
 			this._skeletonLoaded = true;
-			this._bulkReleaseAction = entity.getBulkReleaseAction();
-			this._bulkRetractAction = entity.getBulkRetractAction();
 		});
 	}
 
@@ -1022,6 +1025,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
 	_renderUpperControls() {
+		if (!this._learnerRowsData || this._learnerRowsData.length === 0) {
+			return null;
+		}
+
 		return html`
 		<div id="upper-controls-outer-container">
 			<div id="upper-controls-container" class=${this._getUpperControlsClass()}>
