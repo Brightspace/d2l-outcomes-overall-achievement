@@ -49,7 +49,7 @@
    "releaseAllTxt" : "Publicar o desempenho geral de todos os alunos do curso?",
    "retractAllBtn" : "Retirar tudo",
    "retractAllTxt" : "Retirar o desempenho geral de todos os alunos do curso?",
-   "searchResults" : "{numResults} Pesquisar{numResults, plural, =1 {Resultado} other {Resultados}}",
+   "searchResults" : "{numResults} Pesquisar {numResults, plural, =1 {Resultado} other {Resultados}}",
    "searchUsersLabel" : "Pesquisar usuários",
    "searchUsersPlaceholder" : "Pesquisar usuários...",
    "selectLearnersPerPage" : "Selecione quantas linhas serão exibidas em cada página da tabela.",

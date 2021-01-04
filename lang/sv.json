@@ -30,10 +30,10 @@
    "name" : "Namn",
    "newPageSelectLiveText" : "Du har valt sidan {pageNum} av {totalPages}.",
    "newPageSizeLiveText" : "{pageSize} rader per sida visas.",
-   "noAlignedOutcomes" : "Om du vill använda kompetensvyn börjar du med att justera {outcome, select, kompetenser {competencies} förväntningar {expectations} mål {objectives} resultat {outcomes} standarder {standards} other {standards}} efter kursaktiviteter på redigeringssidan för aktiviteten.",
+   "noAlignedOutcomes" : "Om du vill använda kompetensvyn börjar du med att justera {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}} efter kursaktiviteter på redigeringssidan för aktiviteten.",
    "noEnrolledLearners" : "Det finns inga registrerade elever på kursen.",
-   "noScaleInstructor" : "För att se elevens framsteg mot dessa {outcome, select, kompetenser {competency} förväntningar {expectation} mål {objective} resultat {outcome} standarder {standard} other {standard}} skapar du och väljer en nivåskala.",
-   "noScaleStudent" : "Ingen skala har angetts för mätning av uppnådda {outcome, select, kompetenser {competencies} förväntningar {expectations} mål {objectives} resultat {outcomes} standarder {standards} other {standards}}.",
+   "noScaleInstructor" : "För att se elevens framsteg mot dessa {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}} skapar du och väljer en nivåskala.",
+   "noScaleStudent" : "Ingen skala har angetts för mätning av uppnådda {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}}.",
    "notAssessed" : "Ej bedömt",
    "notEvaluated" : "Inte utvärderat",
    "notPublished" : "Inte publicerat",
@@ -59,5 +59,5 @@
    "tooltipUserOutcomeAssessments" : "{numAssessed} av {numTotal} aktiviteter har bedömts",
    "trend" : "Trend",
    "untitled" : "Namnlös",
-   "viewCourseIntentList" : "Visa listan med förväntade kursresultat i verktyget {outcome, select, kompetenser {Competencies} förväntningar {Expectations} mål {Objectives} resultat {Outcomes} standarder {Standards} other {Standards}}"
+   "viewCourseIntentList" : "Visa listan med förväntade kursresultat i verktyget {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}}"
 }

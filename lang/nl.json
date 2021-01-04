@@ -32,7 +32,7 @@
    "newPageSizeLiveText" : "Er worden {pageSize} rijen per pagina weergegeven.",
    "noAlignedOutcomes" : "Als u de Masterweergave wilt gebruiken, zorgt u er eerst voor dat {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}} overeenkomen met cursusactiviteiten op de pagina voor het bewerken van activiteiten.",
    "noEnrolledLearners" : "Geen cursisten ingeschreven voor de cursus.",
-   "noScaleInstructor" : "Als u wilt kijken hoe ver een cursist is gevorderd bij het bereiken van {outcome, select, competencies {competency} expectations {expectation} objectives {objective} outcomes {outcome} standards {standard} other {standard}}, maakt en selecteert u een voltooiingsschaal.",
+   "noScaleInstructor" : "Als u wilt kijken hoe ver een cursist is gevorderd bij het bereiken van {outcome, select, competencies {Competenties} expectations {Verwachtingen} objectives {Doelstellingen} outcomes {Resultaten} standards {Standaarden} other {Standaarden}}, maakt en selecteert u een voltooiingsschaal.",
    "noScaleStudent" : "Er is geen schaal ingesteld om de resultaten van {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}} te meten.",
    "notAssessed" : "Niet geëvalueerd",
    "notEvaluated" : "Niet geëvalueerd",
