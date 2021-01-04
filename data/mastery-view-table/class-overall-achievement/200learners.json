@@ -191,6 +191,23 @@
             ]
         }
     ],
+    "actions": [
+        {
+            "href": "about:blank",
+            "name": "retract-all",
+            "method": "POST",
+            "fields": [
+                {
+                    "class": [
+                        "required"
+                    ],
+                    "type": "text",
+                    "name": "action",
+                    "value": "retract-all"
+                }
+            ]
+        }
+    ],
     "links": [
         {
             "rel": [
