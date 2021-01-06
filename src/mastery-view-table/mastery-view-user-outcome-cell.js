@@ -89,6 +89,11 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					float: left;
 				}
 
+				.d2l-skeletize {
+					position: relative;
+					z-index: 0;
+				}
+
 				:host([dir="rtl"]) .assessment-label-skeleton {
 					margin-left: 0rem;
 					margin-right: 1.5rem;
