@@ -8,6 +8,8 @@ export const val = {
 	'descending': 'Descending',
 	'evidence': 'Evidence',
 	'firstName': 'First name',
+	'firstUseAlertSettingPageMessage': 'View method details or change calculation method in Settings',
+	'firstUseAlertToastMessage': 'Mastery view is automatically calculated using the "Most Common" method',
 	'goToNextPage': 'Go to the next page in the table.',
 	'goToPreviousPage': 'Go to the previous page in the table.',
 	'goToUserAchievementSummaryPage': 'Press space or enter to open {name}\'s achievement summary page.',
