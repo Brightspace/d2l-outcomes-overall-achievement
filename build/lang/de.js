@@ -12,7 +12,7 @@ export const val = {
 	'firstUseAlertToastMessage': 'Mastery view is automatically calculated using the "Most Common" method',
 	'goToNextPage': 'Gehen Sie zur nächsten Seite in der Tabelle.',
 	'goToPreviousPage': 'Gehen Sie zur vorherigen Seite in der Tabelle.',
-	'goToUserAchievementSummaryPage': 'Drücken Sie die Leertaste oder Eingabetaste, um die Seite mit der Zusammenfassung der Lernerfolge von {Name} zu öffnen.',
+	'goToUserAchievementSummaryPage': 'Drücken Sie die Leertaste oder Eingabetaste, um die Seite mit der Zusammenfassung der Lernerfolge von {name} zu öffnen.',
 	'headingDate': 'Datum',
 	'headingEvidence': 'Nachweisname',
 	'headingLoa': 'Erreichte Stufe',
