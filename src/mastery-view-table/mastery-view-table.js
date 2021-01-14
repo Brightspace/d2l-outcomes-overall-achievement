@@ -426,9 +426,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		let firstUseAlert = null;
 		if (this.showFirstUse) {
 			firstUseAlert = html`
-			<d2l-alert has-close-button id="first-user-alert">
-				<div> ${this.Localize('firstUseAlertToastMessage')} </div>
-				<d2l-link small href="${this.settingPageLocation}"> ${this.localize('firstUseAlertSettingPageMessage')} </d2l-link>
+			<d2l-alert has-close-button id="first-use-alert">
+				<div> ${this.localize('firstUseAlertToastMessage')} </div>
+				<d2l-link small href=${this.settingPageLocation}> ${this.localize('firstUseAlertSettingPageMessage')} </d2l-link>
 			</d2l-alert>
 			`;
 		}
