@@ -112,6 +112,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				type: String,
 				attribute: 'outcome-term'
 			},
+			showFirstUse: {
+				type: Boolean,
+				attribute: 'show-first-use'
+			},
+			settingPageLocation: {
+				type: String,
+				attribute: 'setting-page-link'
+			},
 			_logger: ErrorLogger,
 			_learnerList: Array,
 			_filteredLearnerList: Array,
@@ -145,6 +153,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get styles() {
 		return [
 			css`
+				#first-use-alert {
+					margin-bottom: 18px;
+				}
+
 				#scroll-wrapper {
 					--d2l-scroll-wrapper-h-scroll: {
 						border-left: 1px dashed var(--d2l-color-mica);
@@ -411,8 +423,19 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			`;
 		}
 
+		let firstUseAlert = null;
+		if (this.showFirstUse) {
+			firstUseAlert = html`
+			<d2l-alert has-close-button id="first-use-alert">
+				<div> ${this.localize('firstUseAlertToastMessage')} </div>
+				<d2l-link small href=${this.settingPageLocation}> ${this.localize('firstUseAlertSettingPageMessage')} </d2l-link>
+			</d2l-alert>
+			`;
+		}
+
 		return html`
 			${errorAlert}
+			${firstUseAlert}
 			${this._renderUpperControls()}
 			${this._renderTable()}
 			<d2l-dialog-confirm
