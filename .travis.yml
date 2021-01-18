@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-- 11
-script:
-- npm run lint
-env:
-  global:
-  - REPO_NAME=d2l-outcomes-overall-achievement
