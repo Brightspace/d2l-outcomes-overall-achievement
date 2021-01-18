@@ -6,7 +6,7 @@
     "lang:build": "lang-build -es \"\t\" -c langtools/config.json",
     "lang:copy": "lang-copy -svc langtools/config.json",
     "lint:eslint": "eslint src build/lang",
-    "start": "es-dev-server --node-resolve --dedupe --watch --open"
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
