@@ -1,6 +1,6 @@
 # d2l-outcomes-overall-achievement
 
-[![Build][CI Badge]][CI Workflows]
+[![CI][CI Badge]][CI Workflows]
 
 A collection of components related to outcomes COA (Course Overall Achievement)
 
