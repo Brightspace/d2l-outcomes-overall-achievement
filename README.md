@@ -1,5 +1,7 @@
 # d2l-outcomes-overall-achievement
 
+[![Build][CI Badge]][CI Workflows]
+
 A collection of components related to outcomes COA (Course Overall Achievement)
 
 ## Prerequisites
@@ -202,3 +204,7 @@ A visual representation of the number of each level achieved on a particular use
 - `token` - Auth token
 - `compact` - **[Optional]** Boolean attribute, when present graph will be displayed in "compact mode" (does not show table on mobile displays)
 - `excluded-types` - **[Optional]** JSON array of Activity types to be excluded from the graph
+
+<!-- links -->
+[CI Badge]: https://github.com/Brightspace/d2l-outcomes-overall-achievement/workflows/CI/badge.svg?branch=master
+[CI Workflows]: https://github.com/Brightspace/d2l-outcomes-overall-achievement/actions?query=workflow%3ACI+branch%3Amaster
