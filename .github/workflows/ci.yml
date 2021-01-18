@@ -5,8 +5,8 @@ on:
     branches:
       - master
 jobs:
-  test:
-    name: Test
+  lint:
+    name: Lint
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +16,14 @@ jobs:
         uses: Brightspace/third-party-actions@actions/setup-node
         with:
           node-version: 14 # Latest LTS
+      - name: Set up cache
+        uses: Brightspace/third-party-actions@actions/cache
+        id: cache
+        with:
+          path: '**/node_modules'
+          key: npm-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        run: npm i
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
       - name: Lint (JavaScript)
         run: npm run lint:eslint

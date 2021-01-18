@@ -10,6 +10,14 @@ A collection of components related to outcomes COA (Course Overall Achievement)
 
 1. Run `npm i` in project root directory
 
+## Version Bump
+
+1. Run `npm version --no-git-tag-version [major | minor | patch]` in project
+root directory, selecting the appropriate version increase type.
+
+This will bump the version in both `package.json` and `package-lock.json` and
+leave it in your working changes.
+
 ## Component Demos
 
 To view component demos, run `npm start`. A page should be launched with links to specific component demos.
