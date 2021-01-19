@@ -4,8 +4,12 @@
     "output_file_path": "lang/%LANG%.json",
     "output_lang_rewrite": [
         "ar-sa ar",
+        "cy-gb cy-gb",
+        "da-dk da-dk",
         "de-de de",
+        "es-es es-es",
         "es-mx es",
+        "fr-fr fr-fr",
         "fr-ca fr",
         "ja-jp ja",
         "ko-kr ko",
@@ -13,7 +17,7 @@
         "pt-br pt",
         "sv-se sv",
         "tr-tr tr",
-        "zh-cn zh",
-        "zh-tw zh-TW"
+        "zh-tw zh-tw",
+        "zh-cn zh"
     ]
 }
