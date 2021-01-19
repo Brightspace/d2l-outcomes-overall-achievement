@@ -4,6 +4,7 @@ import { heading4Styles, bodySmallStyles } from '@brightspace-ui/core/components
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { OutcomeActivityEntity } from '../entities/OutcomeActivityEntity';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/icons/icon';
@@ -15,7 +16,7 @@ import '../custom-icons/quote';
 import '../custom-icons/visibility-hide';
 import '../custom-icons/visibility-show';
 
-class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
 		return 'd2l-coa-overall-achievement-tile';
 	}
@@ -65,6 +66,10 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				#date {
 					margin: 0px;
 					margin-top: 12px;
+				}
+
+				.d2l-skeletize {
+					height: 102px;
 				}
 
 				.feedback {
@@ -131,7 +136,8 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 			`,
 			heading4Styles,
-			bodySmallStyles
+			bodySmallStyles,
+			super.styles
 		];
 	}
 
@@ -143,12 +149,20 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._activityName = '';
 		this._levelColor = '';
 		this._levelName = '';
+
+		this.skeleton = true;
 	}
 
 	render() {
 		const dateElement = this._accessDate && html`
 			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
 		`;
+
+		if (this.skeleton) {
+			return html`
+			<div class="d2l-skeletize"></div>
+			`;
+		}
 
 		return html`
 			<div id="card">
@@ -214,6 +228,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._levelColor = levelColor;
 				this._levelName = levelName;
 				this._published = published;
+				this.skeleton = false;
 			});
 		}
 	}
