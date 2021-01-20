@@ -43,9 +43,9 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					box-sizing: border-box;
 					border: 1px solid;
 					animation-name: border-pulse;
-					animation-duration: 0.9s;
-					animation-direction: alternate;
-					animation-iteration-count: infinite;
+                    animation-duration: 0.9s;
+                    animation-direction: alternate;
+                    animation-iteration-count: infinite;
 				}
 				
 				.icon {

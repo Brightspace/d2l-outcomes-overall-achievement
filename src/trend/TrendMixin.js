@@ -1,7 +1,8 @@
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
-export const TrendMixin = (superclass) => class extends EntityMixinLit(superclass) {
+export const TrendMixin = (superclass) => class extends SkeletonMixin(EntityMixinLit(superclass)) {
 
 	static get properties() {
 		return {
@@ -10,12 +11,19 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 		};
 	}
 
+	static get styles() {
+		return [
+			super.styles
+		];
+	}
+
 	constructor() {
 		super();
 		this._setEntityType(OutcomeActivityCollectionEntity);
 
 		this.hideUnpublishedCoa = false;
 		this._trendData = null;
+		this.skeleton = true;
 	}
 
 	set _entity(entity) {
@@ -84,6 +92,7 @@ export const TrendMixin = (superclass) => class extends EntityMixinLit(superclas
 					levels,
 					groups
 				};
+				this.skeleton = false;
 			});
 		}
 	}

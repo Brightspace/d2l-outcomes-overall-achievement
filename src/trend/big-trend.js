@@ -272,7 +272,12 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					box-sizing: border-box;
 					width: 100%;
 				}
-			`
+
+				.d2l-skeletize {
+					height: 126px;
+				}
+			`,
+			super.styles
 		];
 	}
 
@@ -298,6 +303,10 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		if (this._hasNoScale(this._trendData)) {
 			const langTerm = this.instructor ? 'noScaleInstructor' : 'noScaleStudent';
 			return html`<div class="no-scale">${this.localize(langTerm, 'outcome', this.outcomeTerm)}</div>`;
+		}
+
+		if (this.skeleton) {
+			return html`<div class="d2l-skeletize"></div>`;
 		}
 
 		const rowHeight = this._getRowHeight(this._trendData);

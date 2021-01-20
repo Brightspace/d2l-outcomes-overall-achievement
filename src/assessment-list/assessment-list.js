@@ -47,8 +47,6 @@ export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(L
 	}
 
 	render() {
-
-		// Fiona specified that she wants three list items when it is in the loading mode
 		if (this.skeleton) {
 			return html`
 				<d2l-coa-assessment-skeleton
