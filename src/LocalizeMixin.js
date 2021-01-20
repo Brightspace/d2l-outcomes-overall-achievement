@@ -12,14 +12,26 @@ export const LocalizeMixin = (superclass) => class extends CoreLocalizeMixin(sup
 				case 'ar':
 					translations = await import('../build/lang/ar.js');
 					break;
+				case 'cy-gb':
+					translations = await import('../build/lang/cy-gb.js');
+					break;
+				case 'da-dk':
+					translations = await import('../build/lang/da-dk.js');
+					break;
 				case 'de':
 					translations = await import('../build/lang/de.js');
 					break;
 				case 'en':
 					translations = await import('../build/lang/en.js');
 					break;
+				case 'es-es':
+					translations = await import('../build/lang/es-es.js');
+					break;
 				case 'es':
 					translations = await import('../build/lang/es.js');
+					break;
+				case 'fr-fr':
+					translations = await import('../build/lang/fr-fr.js');
 					break;
 				case 'fr':
 					translations = await import('../build/lang/fr.js');
