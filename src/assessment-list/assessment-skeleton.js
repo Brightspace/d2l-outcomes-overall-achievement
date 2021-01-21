@@ -17,11 +17,6 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 	static get styles() {
 		return [
 			css`			
-				@keyframes border-pulse {
-					from { border-color: var(--d2l-color-gypsum); }
-					to { border-color: var(--d2l-color-sylvite); }
-				}
-				
 				.skeleton-container {
 					display: flex;
 					height: 124px;
@@ -42,10 +37,6 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					padding: 17px 23px 20px 23px;
 					box-sizing: border-box;
 					border: 1px solid;
-					animation-name: border-pulse;
-                    animation-duration: 0.9s;
-                    animation-direction: alternate;
-                    animation-iteration-count: infinite;
 				}
 				
 				.icon {
@@ -118,7 +109,7 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 				<div class="timeline">
 					<div class="icon d2l-skeletize"></div>
 				</div>
-				<div class="card">
+				<div class="card d2l-skeletize-container">
 					<div class="card-left">
 						<div class="card-top d2l-skeletize"></div>
 						<div class="card-bottom">
