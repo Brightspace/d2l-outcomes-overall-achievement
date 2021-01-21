@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/button/button-icon';
 import '../outcome-text-display/outcome-text-display';
@@ -11,7 +12,7 @@ import '../trend/big-trend';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 import { Consts } from '../consts';
 
-class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
 		return 'd2l-coa-primary-panel';
 	}
@@ -53,8 +54,15 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					flex-grow: 0;
 					margin-left: 16px;
 				}
+				
+				.d2l-skeletize {
+					position: relative;
+					z-index: 0;
+					display: inline-block;
+				}
 			`,
-			heading3Styles
+			heading3Styles,
+			super.styles
 		];
 	}
 
@@ -65,6 +73,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
+		// this.skeleton = true;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
@@ -84,7 +93,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : this._checkpointHref && html`
 		<d2l-coa-overall-achievement-tile 
 			href="${this._checkpointHref}" 
-			.token="${this.token}">
+			.token="${this.token}"
+			?skeleton="${this.skeleton}">
 		</d2l-coa-overall-achievement-tile>
 		`;
 
@@ -105,6 +115,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				instructor="${this.instructor}"
 				outcome-term="${this.outcomeTerm}"
 				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
+				?skeleton="${this.skeleton}"
 			></d2l-coa-big-trend>
 
 			<div id="trend-spacer"></div>
@@ -121,7 +132,8 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			<d2l-coa-assessment-list
 				href="${this.href}"
-				.token="${this.token}">
+				.token="${this.token}"
+				?skeleton="${this.skeleton}">
 			</d2l-coa-assessment-list>
 		`;
 	}
@@ -168,6 +180,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._outcomeActivitiesHref = outcomeActivitiesHref;
 				this._checkpointHref = checkpointHref;
 				this._checkpointPublished = checkpointPublished;
+				this.skeleton = false;
 			});
 		}
 	}
