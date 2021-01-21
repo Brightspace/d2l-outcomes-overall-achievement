@@ -598,7 +598,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	}
 
 	_onDataScrolled() {
-		if(!this.scrollContainer) {
+		if (!this.scrollContainer) {
 			return;
 		}
 		const scroll = this.scrollContainer.scrollLeft;
@@ -782,7 +782,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	}
 
 	_scrollToEnd() {
-		if(!this.scrollContainer) {
+		if (!this.scrollContainer) {
 			return;
 		}
 		const scrollMax = this.scrollContainer.scrollLeftMax
