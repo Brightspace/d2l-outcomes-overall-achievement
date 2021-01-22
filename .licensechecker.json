@@ -3,7 +3,6 @@
 		"d2l"
 	],
 	"manualOverrides": {
-		"d2l-polymer-langtools@^1.4.0": "Public-Domain",
 		"valid-url@^1.0.9": "MIT"
 	}
 }
