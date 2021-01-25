@@ -33,6 +33,27 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 	static get styles() {
 		return [
 			css`
+				#big-trend-skeleton {
+					height: 126px;
+				}
+
+				#tile-skeleton {
+					height: 118px;
+				}
+
+				#outcome-text-skeleton {
+					height: 30px;
+				}
+
+				#outcome-level-skeleton {
+					width: 20%;
+					height: 12px;
+				}
+
+				#tile-skeleton {
+					height: 102px;
+				}
+
 				#list-spacer {
 					height: 18px;
 				}
@@ -54,11 +75,9 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 					flex-grow: 0;
 					margin-left: 16px;
 				}
-				
-				.d2l-skeletize {
-					position: relative;
-					z-index: 0;
-					display: inline-block;
+
+				.d2l-body-compact {
+					font-size: 17px;
 				}
 			`,
 			heading3Styles,
@@ -73,7 +92,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
-		// this.skeleton = true;
+		this.skeleton = true;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
@@ -90,33 +109,48 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			></d2l-button-icon>
 		` : null;
 
-		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : this._checkpointHref && html`
-		<d2l-coa-overall-achievement-tile 
-			href="${this._checkpointHref}" 
-			.token="${this.token}"
-			?skeleton="${this.skeleton}">
-		</d2l-coa-overall-achievement-tile>
+		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : (this.skeleton) ? html`
+			<div id="tile-skeleton" class="d2l-skeletize"></div>
+		` : html`
+			<d2l-coa-overall-achievement-tile 
+				href="${this._checkpointHref}" 
+				.token="${this.token}"
+			></d2l-coa-overall-achievement-tile>
 		`;
 
-		return html`
+		const coaOutcomeText = this.skeleton ? html `
+			<div class="d2l-body-compact d2l-skeletize-paragraph-2">2-line</div>
+			<div id="list-spacer"></div>
+			<div id="outcome-level-skeleton" class="d2l-skeletize"></div>
+		` : html `
 			<div id="header">
-				<d2l-coa-outcome-text-display 
-					href="${this._outcomeHref}" 
+				<d2l-coa-outcome-text-display
+					href="${this._outcomeHref}"
 					.token="${this.token}">
 				</d2l-coa-outcome-text-display>
 				${closeButton}
 			</div>
+		`;
 
-			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
-
+		const coaBigTrend = this.skeleton ? html `
+			<div id="big-trend-skeleton" class="d2l-skeletize"></div>
+		` : html `
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}"
 				instructor="${this.instructor}"
 				outcome-term="${this.outcomeTerm}"
 				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
-				?skeleton="${this.skeleton}"
 			></d2l-coa-big-trend>
+		`;
+
+		return html`
+
+			${coaOutcomeText}
+
+			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
+
+			${coaBigTrend}
 
 			<div id="trend-spacer"></div>
 
