@@ -81,7 +81,6 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 				}
 				
 				.lines {
-					margin-left: 15px;
 					flex-grow: 1;
 					flex-shrink: 1;
 				}
@@ -92,6 +91,10 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					margin-top: 4px;
 					margin-bottom: 9px;
 					border-radius: 4px;
+				}
+
+				#line-spacer {
+					width: 15px;
 				}
 			`,
 			super.styles
@@ -114,6 +117,7 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 						<div class="card-top d2l-skeletize"></div>
 						<div class="card-bottom">
 							<div class="mini-icon d2l-skeletize"></div>
+							<div id="line-spacer"></div>
 							<div class="lines">
 								<div class="line d2l-skeletize"></div>
 								<div class="line d2l-skeletize"></div>
