@@ -79,6 +79,12 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 				.d2l-body-compact {
 					font-size: 17px;
 				}
+
+				:host([skeleton][dir="rtl"]) .d2l-skeletize-paragraph-2 {
+					-webkit-transform: scale(-1, 1);
+					transform: scale(-1, 1);
+					transform-origin: center;
+				}
 			`,
 			heading3Styles,
 			super.styles
