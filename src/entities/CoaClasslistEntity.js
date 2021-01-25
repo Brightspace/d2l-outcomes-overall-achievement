@@ -1,7 +1,8 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
-import { UserEntity } from './UserEntity.js';
-import { UserProgressOutcomeCollectionEntity } from './UserProgressOutcomeCollectionEntity.js';
+import { MasteryViewRowEntity } from './MasteryViewRowEntity';
+import { UserEntity } from './UserEntity';
+import { UserProgressOutcomeCollectionEntity } from './UserProgressOutcomeCollectionEntity';
 
 export class CoaClasslistEntity extends Entity {
 
@@ -59,6 +60,11 @@ class CoaUserEntity extends SelflessEntity {
 		}
 
 		return this._entity.getLinkByRel(CoaUserEntity.links.userProgressOutcomeRel).href;
+	}
+
+	onRowDataChanged(onChange) {
+		const href = this.getRowDataHref();
+		href && this._subEntity(MasteryViewRowEntity, href, onChange);
 	}
 
 	onUserChanged(onChange) {
