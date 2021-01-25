@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { TelemetryMixin } from '../TelemetryMixin';
 import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
 import './mastery-view-user-outcome-cell.js';
 import './mastery-view-outcome-header-cell.js';
@@ -95,7 +96,7 @@ const _compareOutcomes = function(a, b) {
 	return a.href < b.href ? -1 : 1;
 };
 
-class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitElement))) {
 	static get is() { return 'd2l-mastery-view-table'; }
 
 	static get properties() {
@@ -119,6 +120,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			settingPageLocation: {
 				type: String,
 				attribute: 'setting-page-link'
+			},
+			telemetryEndpoint: {
+				attribute: 'telemetry-endpoint',
+				type: String
 			},
 			_logger: ErrorLogger,
 			_learnerList: Array,
@@ -380,6 +385,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	connectedCallback() {
 		super.connectedCallback();
+		this.markMasteryViewLoadStart();
 		this._onResize = this._onResize.bind(this);
 		window.addEventListener('resize', this._onResize);
 		window.addEventListener('error', this._logger.logJavascriptError);
@@ -467,6 +473,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (changedProperties.has('_filteredLearnerList')) {
 			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 			this._updatePageCount();
+		}
+		if (changedProperties.has('telemetryEndpoint')) {
+			this.setTelemetryEndpoint(this.telemetryEndpoint);
 		}
 	}
 
@@ -682,6 +691,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				const lastName = coaUser.getLastName();
 				const rowDataHref = coaUser.getRowDataHref();
 				const gradesPageHref = coaUser.getUserGradesSummaryHref();
+
+				// Prime cache with rowData so cells finish close to each other for telemetry
+				coaUser.onRowDataChanged(() => {});
 
 				const learnerInfo = {
 					firstName,
