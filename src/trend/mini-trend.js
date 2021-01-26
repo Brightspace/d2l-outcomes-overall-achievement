@@ -95,12 +95,39 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					position: absolute;
 					width: 1px;
 				}
-				
+
 				d2l-tooltip {
 					max-width: var(--max-tooltip-width);
 					text-align: center;
 				}
-			`
+
+				#skeleton-container {
+					display: flex;
+					align-items: flex-end;
+					flex-wrap: nowrap;
+				}
+
+				#left-block{
+					width: 12px;
+					height: 18px;
+				}
+
+				#middle-block {
+					width: 12px;
+					height: 24px;
+				}
+
+				#right-block {
+					width: 12px;
+					height: 36px;
+				}
+
+				#skeleton-spacer {
+					width: 2px;
+					height: auto;
+				}
+			`,
+			super.styles
 		];
 	}
 
@@ -110,6 +137,18 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 		if (this._isNotAssessed(trendDataTruncated)) {
 			return html`<div class="empty-text">${this.localize('notAssessed')}</div>`;
+		}
+
+		if (this.skeleton) {
+			return html`
+				<div id="skeleton-container" aria-label=${this.localize('loadingOverallAchievement')}>
+					<div id="left-block" class="d2l-skeletize"></div>
+					<div id="skeleton-spacer"></div>
+					<div id="middle-block" class="d2l-skeletize"></div>
+					<div id="skeleton-spacer"></div>
+					<div id="right-block" class="d2l-skeletize"></div>
+				</div>
+			`;
 		}
 
 		return html`
