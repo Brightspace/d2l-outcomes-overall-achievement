@@ -7,9 +7,11 @@ import '@brightspace-ui/core/components/button/button-icon';
 import '../outcome-text-display/outcome-text-display';
 import '../outcome-text-display/outcome-text-skeleton';
 import '../overall-achievement-tile/overall-achievement-tile';
+import '../overall-achievement-tile/overall-achievement-skeleton';
 import '../assessment-summary/assessment-summary';
 import '../assessment-list/assessment-list';
 import '../trend/big-trend';
+import '../trend/big-trend-skeleton';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 import { Consts } from '../consts';
 
@@ -34,24 +36,12 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 	static get styles() {
 		return [
 			css`
-				#big-trend-skeleton {
-					height: 126px;
-				}
-
-				#tile-skeleton {
-					height: 118px;
-				}
-
 				#trend-title-skeleton {
 					width: 100px;
 				}
 
 				#evidence-title-skeleton {
 					width: 100px;
-				}
-
-				#tile-skeleton {
-					height: 102px;
 				}
 
 				#list-spacer {
@@ -78,12 +68,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 
 				.d2l-body-compact {
 					font-size: 17px;
-				}
-
-				:host([skeleton][dir="rtl"]) .d2l-skeletize-paragraph-2 {
-					-webkit-transform: scale(-1, 1);
-					transform: scale(-1, 1);
-					transform-origin: center;
 				}
 			`,
 			heading3Styles,
@@ -118,7 +102,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		` : null;
 
 		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : (this.skeleton) ? html`
-			<div id="tile-skeleton" class="d2l-skeletize"></div>
+			<d2l-coa-overall-achievement-skeleton>
+			</d2l-coa-overall-achievement-skeleton>
 		` : html`
 			<d2l-coa-overall-achievement-tile 
 				href="${this._checkpointHref}" 
@@ -146,7 +131,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		`;
 
 		const coaBigTrend = this.skeleton ? html `
-			<div id="big-trend-skeleton" class="d2l-skeletize"></div>
+			<d2l-coa-big-trend-skeleton>
+			</d2l-coa-big-trend-skeleton>
 		` : html `
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
@@ -212,8 +198,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			const outcomeHref = entity.getOutcomeHref();
 			const outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
 
-			
-
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
 				if (!outcomeActivities) {
 					return;
@@ -230,7 +214,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 					}
 				});
 			});
-			
+
 			entity.subEntitiesLoaded().then(() => {
 				this._outcomeHref = outcomeHref;
 				this._outcomeActivitiesHref = outcomeActivitiesHref;

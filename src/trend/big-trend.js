@@ -7,6 +7,7 @@ import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/tooltip/tooltip';
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
+import './big-trend-skeleton';
 
 const COMPONENT_HEIGHT = 120;
 const DIAMOND_SIZE = 18;
@@ -272,12 +273,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 					box-sizing: border-box;
 					width: 100%;
 				}
-
-				.d2l-skeletize {
-					height: 126px;
-				}
-			`,
-			super.styles
+			`
 		];
 	}
 
@@ -306,7 +302,9 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 		}
 
 		if (this.skeleton) {
-			return html`<div class="d2l-skeletize"></div>`;
+			return html`
+				<d2l-coa-big-trend-skeleton>
+				</d2l-coa-big-trend-skeleton>`;
 		}
 
 		const rowHeight = this._getRowHeight(this._trendData);
