@@ -87,7 +87,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
 		this._checkpointPublished = false;
-		this.skeleton = true;
 	}
 
 	render() {
