@@ -5,6 +5,7 @@ import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton
 import { heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/button/button-icon';
 import '../outcome-text-display/outcome-text-display';
+import '../outcome-text-display/outcome-text-skeleton';
 import '../overall-achievement-tile/overall-achievement-tile';
 import '../assessment-summary/assessment-summary';
 import '../assessment-list/assessment-list';
@@ -108,10 +109,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 
 	render() {
 
-		if(this.skeleton) {
-			return this._renderPanelSkeleton();
-		}
-
 		const closeButton = this.showClose ? html`
 			<d2l-button-icon
 				class="close-button"
@@ -131,9 +128,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		`;
 
 		const coaOutcomeText = this.skeleton ? html `
-			<div class="d2l-body-compact d2l-skeletize-paragraph-2">2-line</div>
-			<div id="list-spacer"></div>
-			<div id="outcome-level-skeleton" class="d2l-skeletize"></div>
+			<d2l-coa-outcome-text-skeleton>
+			</d2l-coa-outcome-text-skeleton>
 		` : html `
 			<div id="header">
 				<d2l-coa-outcome-text-display

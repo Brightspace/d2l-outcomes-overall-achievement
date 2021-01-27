@@ -1,10 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { heading3Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
 import { OutcomeEntity } from '../entities/OutcomeEntity';
+import './outcome-text-skeleton.js';
 
-class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class OutcomeTextDisplay extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
 		return 'd2l-coa-outcome-text-display';
 	}
@@ -25,7 +27,8 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				}
 			`,
 			heading3Styles,
-			bodySmallStyles
+			bodySmallStyles,
+			super.styles
 		];
 	}
 
@@ -35,10 +38,14 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 		this._outcomeName = '';
 		this._outcomeNotation = '';
+		this.skeleton = true;
 	}
 
 	render() {
-		return html` 
+		return this.skeleton ? html`
+			<d2l-coa-outcome-text-skeleton>
+			</d2l-coa-outcome-text-skeleton>
+		` : html` 
 			<h2 class="d2l-heading-3" id="outcome-name">${this._outcomeName}</h2>
 			<div class="d2l-body-small">${this._outcomeNotation}</div>
 		`;
@@ -55,6 +62,7 @@ class OutcomeTextDisplay extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		if (entity) {
 			this._outcomeName = entity.getDescription();
 			this._outcomeNotation = entity.getNotation() || entity.getAltNotation();
+			this.skeleton = false;
 		}
 	}
 }
