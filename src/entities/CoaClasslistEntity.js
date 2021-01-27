@@ -4,19 +4,6 @@ import { MasteryViewRowEntity } from './MasteryViewRowEntity';
 import { UserEntity } from './UserEntity';
 import { UserProgressOutcomeCollectionEntity } from './UserProgressOutcomeCollectionEntity';
 
-export class CoaClasslistEntity extends Entity {
-
-	getUsers() {
-		if (!this._entity) {
-			return;
-		}
-
-		const users = this._entity.getSubEntitiesByClass(CoaUserEntity.class);
-		return users.map(user => new CoaUserEntity(this, user));
-	}
-
-}
-
 class CoaUserEntity extends SelflessEntity {
 
 	static get class() { return 'checkpoint-user'; }
@@ -84,4 +71,18 @@ class CoaUserEntity extends SelflessEntity {
 
 		return this._entity.getLinkByRel(CoaUserEntity.links.userRel).href;
 	}
+
+}
+
+export class CoaClasslistEntity extends Entity {
+
+	getUsers() {
+		if (!this._entity) {
+			return;
+		}
+
+		const users = this._entity.getSubEntitiesByClass(CoaUserEntity.class);
+		return users.map(user => new CoaUserEntity(this, user));
+	}
+
 }

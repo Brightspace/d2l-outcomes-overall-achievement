@@ -15,7 +15,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 		return {
 			compact: { type: Boolean },
 			excludedTypes: { attribute: 'excluded-types', type: Array },
-			displayUnassessed: {attribute: 'display-unassessed', type: Boolean },
+			displayUnassessed: { attribute: 'display-unassessed', type: Boolean },
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
 			_totalCount: { attribute: false },

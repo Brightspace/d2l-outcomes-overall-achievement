@@ -3,6 +3,39 @@ import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { CoaClasslistEntity } from './CoaClasslistEntity.js';
 import { OutcomeEntity } from './OutcomeEntity.js';
 
+class OutcomeClassProgressEntity extends SelflessEntity {
+
+	static get class() { return 'outcome-checkpoint-item'; }
+
+	static get links() {
+		return {
+			outcomeRel: 'https://outcomes.api.brightspace.com/rels/outcome',
+			outcomeActivityCollectionRel: 'https://user-progress.api.brightspace.com/rels/checkpoint-class-progress'
+		};
+	}
+
+	getOutcomeActivityCollectionHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(OutcomeClassProgressEntity.links.outcomeActivityCollectionRel)) {
+			return;
+		}
+		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeActivityCollectionRel).href;
+	}
+
+	onOutcomeChanged(onChange) {
+		const href = this._outcomeHref();
+		href && this._subEntity(OutcomeEntity, href, onChange);
+	}
+
+	_outcomeHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(OutcomeClassProgressEntity.links.outcomeRel)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeRel).href;
+	}
+
+}
+
 export class ClassOverallAchievementEntity extends Entity {
 
 	static get actions() {
@@ -52,35 +85,5 @@ export class ClassOverallAchievementEntity extends Entity {
 		}
 		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.classlistRel).href;
 	}
-}
 
-class OutcomeClassProgressEntity extends SelflessEntity {
-
-	static get class() { return 'outcome-checkpoint-item'; }
-	static get links() {
-		return {
-			outcomeRel: 'https://outcomes.api.brightspace.com/rels/outcome',
-			outcomeActivityCollectionRel: 'https://user-progress.api.brightspace.com/rels/checkpoint-class-progress'
-		};
-	}
-
-	getOutcomeActivityCollectionHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(OutcomeClassProgressEntity.links.outcomeActivityCollectionRel)) {
-			return;
-		}
-		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeActivityCollectionRel).href;
-	}
-
-	onOutcomeChanged(onChange) {
-		const href = this._outcomeHref();
-		href && this._subEntity(OutcomeEntity, href, onChange);
-	}
-
-	_outcomeHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(OutcomeClassProgressEntity.links.outcomeRel)) {
-			return;
-		}
-
-		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeRel).href;
-	}
 }

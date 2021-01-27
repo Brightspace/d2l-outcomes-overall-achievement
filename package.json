@@ -21,12 +21,12 @@
     "siren-sdk": "BrightspaceHypermediaComponents/siren-sdk#semver:^1"
   },
   "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
     "babel-eslint": "^10.1.0",
-    "es-dev-server": "^1.54.0",
-    "eslint": "^7.1.0",
-    "eslint-config-brightspace": "^0.8.0",
-    "eslint-plugin-html": "^6.0.2",
-    "eslint-plugin-sort-class-members": "^1.7.0"
+    "es-dev-server": "^2.1.0",
+    "eslint": "^7.18.0",
+    "eslint-config-brightspace": "^0.11.0",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-sort-class-members": "^1.9.0"
   }
 }

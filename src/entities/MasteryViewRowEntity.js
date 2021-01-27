@@ -2,21 +2,6 @@ import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { DemonstrationEntity } from './DemonstrationEntity';
 
-export class MasteryViewRowEntity extends Entity {
-
-	static get class() { return 'mastery-view-row'; }
-
-	getCells() {
-		if (!this._entity) {
-			return;
-		}
-
-		const cells = this._entity.getSubEntitiesByClass(MasteryViewCellEntity.class);
-		return cells.map(cell => new MasteryViewCellEntity(this, cell));
-	}
-
-}
-
 class MasteryViewCellEntity extends SelflessEntity {
 
 	static get class() { return 'mastery-view-cell'; }
@@ -73,6 +58,21 @@ class MasteryViewCellEntity extends SelflessEntity {
 		}
 
 		return this._entity.getSubEntityByRel(MasteryViewCellEntity.entities.checkpointDemonstrationRel);
+	}
+
+}
+
+export class MasteryViewRowEntity extends Entity {
+
+	static get class() { return 'mastery-view-row'; }
+
+	getCells() {
+		if (!this._entity) {
+			return;
+		}
+
+		const cells = this._entity.getSubEntitiesByClass(MasteryViewCellEntity.class);
+		return cells.map(cell => new MasteryViewCellEntity(this, cell));
 	}
 
 }

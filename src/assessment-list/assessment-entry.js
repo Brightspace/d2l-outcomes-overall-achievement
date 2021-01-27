@@ -186,7 +186,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		const dateElement = this._date && html`
-			<span class="date d2l-body-small">${formatDate(this._date, {format: 'MMM dd'})}</span>
+			<span class="date d2l-body-small">${formatDate(this._date, { format: 'MMM dd' })}</span>
 		`;
 
 		return html `

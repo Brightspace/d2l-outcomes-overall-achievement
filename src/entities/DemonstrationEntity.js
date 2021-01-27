@@ -4,7 +4,52 @@ import { AchievementLevelEntity } from './AchievementLevelEntity';
 import { FeedbackListEntity } from './FeedbackListEntity';
 import { UserActivityUsageEntity } from './UserActivityUsageEntity';
 
+export class DemonstratableLevelEntity extends SelflessEntity {
+
+	static get class() { return 'demonstratable-level'; }
+
+	static get classes() {
+		return {
+			selected: 'selected',
+			suggested: 'suggested'
+		};
+	}
+
+	static get links() {
+		return {
+			level: 'https://achievements.api.brightspace.com/rels/level'
+		};
+	}
+
+	getLevelId() {
+		return this._entity && this._entity.properties && this._entity.properties.levelId;
+	}
+
+	isSelected() {
+		return this._entity.hasClass(DemonstratableLevelEntity.classes.selected);
+	}
+
+	isSuggested() {
+		return this._entity.hasClass(DemonstratableLevelEntity.classes.suggested);
+	}
+
+	onLevelChanged(onChange) {
+		const href = this._levelHref();
+		href && this._subEntity(AchievementLevelEntity, href, onChange);
+	}
+
+	_levelHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(DemonstratableLevelEntity.links.level)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(DemonstratableLevelEntity.links.level).href;
+	}
+
+}
+
 export class DemonstrationEntity extends Entity {
+
 	static get class() { return 'demonstration'; }
 
 	static get classes() {
@@ -93,46 +138,5 @@ export class DemonstrationEntity extends Entity {
 		}
 		return this._entity.getLinkByRel(DemonstrationEntity.links.userActivityUsage).href;
 	}
-}
 
-export class DemonstratableLevelEntity extends SelflessEntity {
-	static get class() { return 'demonstratable-level'; }
-
-	static get classes() {
-		return {
-			selected: 'selected',
-			suggested: 'suggested'
-		};
-	}
-
-	static get links() {
-		return {
-			level: 'https://achievements.api.brightspace.com/rels/level'
-		};
-	}
-
-	getLevelId() {
-		return this._entity && this._entity.properties && this._entity.properties.levelId;
-	}
-
-	isSelected() {
-		return this._entity.hasClass(DemonstratableLevelEntity.classes.selected);
-	}
-
-	isSuggested() {
-		return this._entity.hasClass(DemonstratableLevelEntity.classes.suggested);
-	}
-
-	onLevelChanged(onChange) {
-		const href = this._levelHref();
-		href && this._subEntity(AchievementLevelEntity, href, onChange);
-	}
-
-	_levelHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(DemonstratableLevelEntity.links.level)) {
-			return;
-		}
-
-		return this._entity.getLinkByRel(DemonstratableLevelEntity.links.level).href;
-	}
 }

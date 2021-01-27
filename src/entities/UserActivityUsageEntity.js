@@ -1,8 +1,20 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 
+class ActivityNameEntity extends SelflessEntity {
+
+	static get class() { return 'user-activity-name'; }
+
+	getShortText() {
+		return this._entity && this._entity.properties && this._entity.properties.shortText;
+	}
+
+}
+
 export class UserActivityUsageEntity extends Entity {
+
 	static get class() { return 'activity'; }
+
 	static get links() {
 		return {
 			evalPage: 'checkpoint-consistent-evaluation'
@@ -25,12 +37,5 @@ export class UserActivityUsageEntity extends Entity {
 		const nameEntity = this._entity.getSubEntityByClass(ActivityNameEntity.class);
 		return nameEntity && new ActivityNameEntity(this, nameEntity);
 	}
-}
 
-class ActivityNameEntity extends SelflessEntity {
-	static get class() { return 'user-activity-name'; }
-
-	getShortText() {
-		return this._entity && this._entity.properties && this._entity.properties.shortText;
-	}
 }

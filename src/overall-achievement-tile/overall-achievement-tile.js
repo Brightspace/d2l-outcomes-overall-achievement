@@ -147,7 +147,7 @@ class OverallAchievementTile extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 	render() {
 		const dateElement = this._accessDate && html`
-			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
+			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, { format: 'short' })}</div>
 		`;
 
 		return html`
