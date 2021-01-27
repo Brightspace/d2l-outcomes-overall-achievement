@@ -27,18 +27,37 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					flex-grow: 0;
 					flex-shrink: 0;
 				}
-				
-				.card {
+
+				.card-container {
 					display: flex;
+					-webkit-flex-wrap: wrap;
+					flex-wrap: wrap;
 					flex-grow: 1;
 					flex-shrink: 1;
 					height: 100%;
-					border-radius: 4px;
-					padding: 17px 23px 20px 23px;
-					box-sizing: border-box;
-					border: 1px solid;
 				}
-				
+
+				.card-horizontal-border {
+					display: block;
+					width: 100%;
+					height: 2px;
+					margin: 0px;
+				}
+
+				.card-vertical-border {
+					display: inline-block;
+					width: 2px;
+					height: 100%;
+					margin: 0;
+				}
+
+				.card {
+					display: flex;
+					flex-grow: 1;
+					padding: 17px 23px 20px 23px;
+					margin: -2px;
+				}
+
 				.icon {
 					margin: 18px;
 					width: 24px;
@@ -112,19 +131,25 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 				<div class="timeline">
 					<div class="icon d2l-skeletize"></div>
 				</div>
-				<div class="card d2l-skeletize-container">
-					<div class="card-left">
-						<div class="card-top d2l-skeletize"></div>
-						<div class="card-bottom">
-							<div class="mini-icon d2l-skeletize"></div>
-							<div id="line-spacer"></div>
-							<div class="lines">
-								<div class="line d2l-skeletize"></div>
-								<div class="line d2l-skeletize"></div>
+				<div class="card-container">
+					<div class="card-horizontal-border d2l-skeletize"></div>
+					<div class="card-vertical-border d2l-skeletize"></div>
+					<div class="card d2l-skeletize-container">
+						<div class="card-left">
+							<div class="card-top d2l-skeletize"></div>
+							<div class="card-bottom">
+								<div class="mini-icon d2l-skeletize"></div>
+								<div id="line-spacer"></div>
+								<div class="lines">
+									<div class="line d2l-skeletize"></div>
+									<div class="line d2l-skeletize"></div>
+								</div>
 							</div>
 						</div>
+						<div class="card-right d2l-skeletize"></div>
 					</div>
-					<div class="card-right d2l-skeletize"></div>
+					<div class="card-vertical-border d2l-skeletize"></div>
+					<div class="card-horizontal-border d2l-skeletize"></div>
 				</div>
 			</div>
 		`;
