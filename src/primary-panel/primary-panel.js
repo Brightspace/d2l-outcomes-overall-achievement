@@ -51,6 +51,14 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 					height: 12px;
 				}
 
+				#trend-title-skeleton {
+					width: 100px;
+				}
+
+				#evidence-title-skeleton {
+					width: 100px;
+				}
+
 				#tile-skeleton {
 					height: 102px;
 				}
@@ -140,6 +148,12 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			</div>
 		`;
 
+		const coaTrendTitle = this.skeleton ? html `
+			<div id="trend-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
+		` : html`
+			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
+		`;
+
 		const coaBigTrend = this.skeleton ? html `
 			<div id="big-trend-skeleton" class="d2l-skeletize"></div>
 		` : html `
@@ -152,11 +166,16 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			></d2l-coa-big-trend>
 		`;
 
+		const coaEvidenceTitle = this.skeleton ? html `
+			<div id="evidence-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
+		` : html`
+			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>
+		`;
 		return html`
 
 			${coaOutcomeText}
 
-			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
+			${coaTrendTitle}
 
 			${coaBigTrend}
 
@@ -164,7 +183,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 
 			${coaTile}
 
-			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>
+			${coaEvidenceTitle}
+			
 			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
 				.token="${this.token}">
