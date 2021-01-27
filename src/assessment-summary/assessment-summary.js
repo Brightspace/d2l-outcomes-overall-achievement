@@ -5,6 +5,7 @@ import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '../stacked-bar/stacked-bar';
+import './assessment-summary-skeleton.js';
 
 const excludedActivityTypes = [
 	'checkpoint-item'
@@ -49,9 +50,13 @@ class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitEl
 	}
 
 	render() {
-		const assessmentCountLabel = this.skeleton ? html`
-			<div skeleton class="d2l-skeletize" />
-		` : html`
+		if (this.skeleton) {
+			return html`
+				<d2l-coa-assessment-summary-skeleton>
+				</d2l-coa-assessment-summary-skeleton>
+			`;
+		}
+		const assessmentCountLabel = html`
 			<label for="chart" class="d2l-label-text">${this.localize('headingTotalAssessments', { num: this._totalCount })}</label>
 		`;
 		return html`

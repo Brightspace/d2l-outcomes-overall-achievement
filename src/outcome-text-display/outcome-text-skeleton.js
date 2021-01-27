@@ -42,7 +42,7 @@ export class OutcomeTextSkeleton extends SkeletonMixin(LitElement) {
 	render() {
 		return html`
 			<p id="outcome-text-skeleton" class="d2l-heading-3 d2l-skeletize-paragraph-2">2-line</p>
-			<p id="outcome-level-skeleton" class="d2l-body-small d2l-skeletize">1-line</div>
+			<p id="outcome-level-skeleton" class="d2l-body-small d2l-skeletize">1-line</p>
 		`;
 	}
 }

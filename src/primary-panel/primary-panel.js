@@ -147,6 +147,24 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		` : html`
 			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>
 		`;
+
+		const coaAssessmentSummary = this.skeleton ? html`
+			<d2l-coa-assessment-summary-skeleton>
+			</d2l-coa-assessment-summary-skeleton>
+		` : html`
+			<d2l-coa-assessment-summary
+				href="${this._outcomeActivitiesHref}" 
+				.token="${this.token}">
+			</d2l-coa-assessment-summary>
+		`;
+
+		const coaAssessmentList = html`
+			<d2l-coa-assessment-list
+				href="${this.href}"
+				.token="${this.token}"
+				?skeleton="${this.skeleton}">
+			</d2l-coa-assessment-list>
+		`;
 		return html`
 
 			${coaOutcomeText}
@@ -161,18 +179,11 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 
 			${coaEvidenceTitle}
 
-			<d2l-coa-assessment-summary
-				href="${this._outcomeActivitiesHref}" 
-				.token="${this.token}">
-			</d2l-coa-assessment-summary>
-			
+			${coaAssessmentSummary}
+
 			<div id="list-spacer"></div>
 
-			<d2l-coa-assessment-list
-				href="${this.href}"
-				.token="${this.token}"
-				?skeleton="${this.skeleton}">
-			</d2l-coa-assessment-list>
+			${coaAssessmentList}
 		`;
 	}
 
