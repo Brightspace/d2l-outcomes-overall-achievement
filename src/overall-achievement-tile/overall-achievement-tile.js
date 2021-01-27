@@ -15,6 +15,7 @@ import '../diamond/diamond';
 import '../custom-icons/quote';
 import '../custom-icons/visibility-hide';
 import '../custom-icons/visibility-show';
+import './overall-achievement-skeleton';
 
 class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
@@ -66,10 +67,6 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 				#date {
 					margin: 0px;
 					margin-top: 12px;
-				}
-
-				.d2l-skeletize {
-					height: 102px;
 				}
 
 				.feedback {
@@ -136,8 +133,7 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 				}
 			`,
 			heading4Styles,
-			bodySmallStyles,
-			super.styles
+			bodySmallStyles
 		];
 	}
 
@@ -160,7 +156,8 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 
 		if (this.skeleton) {
 			return html`
-			<div class="d2l-skeletize"></div>
+				<d2l-coa-overall-achievement-skeleton>
+				</d2l-coa-overall-achievement-skeleton>
 			`;
 		}
 
