@@ -12,7 +12,7 @@ import '../trend/big-trend';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 import { Consts } from '../consts';
 
-class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement))) {
+class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
 		return 'd2l-coa-primary-panel';
 	}
@@ -33,6 +33,27 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 	static get styles() {
 		return [
 			css`
+				#big-trend-skeleton {
+					height: 126px;
+				}
+
+				#tile-skeleton {
+					height: 118px;
+				}
+
+				#outcome-text-skeleton {
+					height: 30px;
+				}
+
+				#outcome-level-skeleton {
+					width: 20%;
+					height: 12px;
+				}
+
+				#tile-skeleton {
+					height: 102px;
+				}
+
 				#list-spacer {
 					height: 18px;
 				}
@@ -55,75 +76,15 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 					margin-left: 16px;
 				}
 
-				
-				.outcome-text-line1-skeleton {
-					display: block;
-					width: 100%;
-					height: 1.1rem;
-					margin-bottom: 0.5rem;
+				.d2l-body-compact {
+					font-size: 17px;
 				}
 
-				.outcome-text-line2-skeleton {
-					display: block;
-					width: 85%;
-					height: 1.1rem;
-					margin-bottom: 1.2rem;
+				:host([skeleton][dir="rtl"]) .d2l-skeletize-paragraph-2 {
+					-webkit-transform: scale(-1, 1);
+					transform: scale(-1, 1);
+					transform-origin: center;
 				}
-
-				.outcome-notation-skeleton {
-					display: block;
-					width: 6rem;
-					height: 0.8rem;
-					margin-bottom: 1.8rem;
-				}
-
-				.trend-title-skeleton {
-					display: block;
-					width: 6rem;
-					height: 1.1rem;
-					margin-bottom: 1.8rem;
-				}
-
-				.trend-graph-skeleton {
-					display: block;
-					width: 100%;
-					height: 6.3rem;
-					margin-bottom: 2.4rem;
-				}
-
-				.overall-achievement-tile-skeleton {
-					display: block;
-					width: 100%;
-					height: 5.1rem;
-					margin-bottom: 1.8rem;
-				}
-
-				.evidence-title-skeleton {
-					display: block;
-					width: 6rem;
-					height: 1.1rem;
-					margin-bottom: 1.8rem;
-				}
-
-				.assessment-skeleton-container {
-					display: flex;
-				}
-
-				.assessment-date-skeleton {
-					display: inline-block;
-					width: 1.5rem;
-					height: 1.5rem;
-					margin-left: 0.6rem;
-				}
-
-				.assessment-tile-skeleton {
-					display: inline-block;
-					flex-grow: 1;
-					height: 5.1rem;
-					margin-left: 0.6rem;
-					margin-bottom: 0.9rem;
-				}
-
 			`,
 			heading3Styles,
 			super.styles
@@ -137,6 +98,7 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
+		this.skeleton = true;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
@@ -159,25 +121,32 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 			></d2l-button-icon>
 		` : null;
 
-		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : this._checkpointHref && html`
-		<d2l-coa-overall-achievement-tile 
-			href="${this._checkpointHref}" 
-			.token="${this.token}">
-		</d2l-coa-overall-achievement-tile>
+		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : (this.skeleton) ? html`
+			<div id="tile-skeleton" class="d2l-skeletize"></div>
+		` : html`
+			<d2l-coa-overall-achievement-tile 
+				href="${this._checkpointHref}" 
+				.token="${this.token}"
+			></d2l-coa-overall-achievement-tile>
 		`;
 
-		return html`
+		const coaOutcomeText = this.skeleton ? html `
+			<div class="d2l-body-compact d2l-skeletize-paragraph-2">2-line</div>
+			<div id="list-spacer"></div>
+			<div id="outcome-level-skeleton" class="d2l-skeletize"></div>
+		` : html `
 			<div id="header">
-				<d2l-coa-outcome-text-display 
-					href="${this._outcomeHref}" 
-					.token="${this.token}"
-					?skeleton=${this.skeleton}
-				/>
+				<d2l-coa-outcome-text-display
+					href="${this._outcomeHref}"
+					.token="${this.token}">
+				</d2l-coa-outcome-text-display>
 				${closeButton}
 			</div>
+		`;
 
-			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
-
+		const coaBigTrend = this.skeleton ? html `
+			<div id="big-trend-skeleton" class="d2l-skeletize"></div>
+		` : html `
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}"
@@ -185,6 +154,15 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 				outcome-term="${this.outcomeTerm}"
 				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
 			></d2l-coa-big-trend>
+		`;
+
+		return html`
+
+			${coaOutcomeText}
+
+			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
+
+			${coaBigTrend}
 
 			<div id="trend-spacer"></div>
 
@@ -201,7 +179,8 @@ class PrimaryPanel extends EntityMixinLit(SkeletonMixin(LocalizeMixin(LitElement
 			<d2l-coa-assessment-list
 				href="${this.href}"
 				.token="${this.token}"
-			/>
+				?skeleton="${this.skeleton}">
+			</d2l-coa-assessment-list>
 		`;
 	}
 
