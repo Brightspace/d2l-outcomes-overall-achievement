@@ -42,15 +42,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 					height: 118px;
 				}
 
-				#outcome-text-skeleton {
-					height: 30px;
-				}
-
-				#outcome-level-skeleton {
-					width: 20%;
-					height: 12px;
-				}
-
 				#trend-title-skeleton {
 					width: 100px;
 				}
@@ -184,7 +175,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			${coaTile}
 
 			${coaEvidenceTitle}
-			
+
 			<d2l-coa-assessment-summary
 				href="${this._outcomeActivitiesHref}" 
 				.token="${this.token}">
@@ -248,31 +239,6 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 				this.skeleton = false;
 			});
 		}
-	}
-
-	_renderAssessmentPlaceholderSkeleton() {
-		return html`
-			<div class="assessment-skeleton-container">
-				<span class="assessment-date-skeleton d2l-skeletize"></span>
-				<span class="assessment-tile-skeleton d2l-skeletize"></span>
-			</div>
-		`
-	}
-
-	_renderPanelSkeleton() {
-		console.log("Skeleton!");
-		return html`
-			<div class="outcome-text-line1-skeleton d2l-skeletize"></div>
-			<div class="outcome-text-line2-skeleton d2l-skeletize"></div>
-			<div class="outcome-notation-skeleton d2l-skeletize"></div>
-			<div class="trend-title-skeleton d2l-skeletize"></div>
-			<div class="trend-graph-skeleton d2l-skeletize"></div>
-			<div class="overall-achievement-tile-skeleton d2l-skeletize"></div>
-			<div class="evidence-title-skeleton d2l-skeletize"></div>
-			${this._renderAssessmentPlaceholderSkeleton()}
-			${this._renderAssessmentPlaceholderSkeleton()}
-			${this._renderAssessmentPlaceholderSkeleton()}
-		`;
 	}
 }
 
