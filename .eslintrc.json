@@ -9,7 +9,9 @@
 		"indent": [
 			"error",
 			"tab",
-			{ "SwitchCase": 1 }
+			{
+				"SwitchCase": 1
+			}
 		]
 	}
 }

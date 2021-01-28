@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { TelemetryMixin } from '../TelemetryMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
@@ -16,7 +17,7 @@ const KEYCODES = {
 	SPACE: 32
 };
 
-export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
+export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(TelemetryMixin(LitElement)))) {
 	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
 
 	static get properties() {
@@ -324,6 +325,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				evalPageHref: evalHref
 			};
 			this.skeleton = false;
+
+			this.markMasteryViewLoadEnd();
 		});
 	}
 
