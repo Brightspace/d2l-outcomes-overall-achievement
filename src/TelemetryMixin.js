@@ -118,9 +118,9 @@ export const TelemetryMixin = superclass => class extends superclass {
 	_logAndDestroyPerformanceEvent({ viewName, startMark, endMark, actionName }, customData) {
 		if (
 			!window.performance
-            || !window.performance.measure
-            || !this._markExists(startMark)
-            || !this._markExists(endMark)
+			|| !window.performance.measure
+			|| !this._markExists(startMark)
+			|| !this._markExists(endMark)
 		) {
 			return;
 		}

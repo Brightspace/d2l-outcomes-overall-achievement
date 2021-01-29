@@ -693,7 +693,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				const gradesPageHref = coaUser.getUserGradesSummaryHref();
 
 				// Prime cache with rowData so cells finish close to each other for telemetry
-				coaUser.onRowDataChanged(() => {});
+				coaUser.onRowDataChanged(() => { });
 
 				const learnerInfo = {
 					firstName,

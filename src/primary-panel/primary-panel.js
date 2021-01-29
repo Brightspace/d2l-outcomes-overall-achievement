@@ -110,10 +110,10 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			></d2l-coa-overall-achievement-tile>
 		`;
 
-		const coaOutcomeText = this.skeleton ? html `
+		const coaOutcomeText = this.skeleton ? html`
 			<d2l-coa-outcome-text-skeleton>
 			</d2l-coa-outcome-text-skeleton>
-		` : html `
+		` : html`
 			<div id="header">
 				<d2l-coa-outcome-text-display
 					href="${this._outcomeHref}"
@@ -123,16 +123,16 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			</div>
 		`;
 
-		const coaTrendTitle = this.skeleton ? html `
+		const coaTrendTitle = this.skeleton ? html`
 			<div id="trend-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
 		` : html`
 			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
 		`;
 
-		const coaBigTrend = this.skeleton ? html `
+		const coaBigTrend = this.skeleton ? html`
 			<d2l-coa-big-trend-skeleton>
 			</d2l-coa-big-trend-skeleton>
-		` : html `
+		` : html`
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}"
@@ -142,7 +142,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			></d2l-coa-big-trend>
 		`;
 
-		const coaEvidenceTitle = this.skeleton ? html `
+		const coaEvidenceTitle = this.skeleton ? html`
 			<div id="evidence-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
 		` : html`
 			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>

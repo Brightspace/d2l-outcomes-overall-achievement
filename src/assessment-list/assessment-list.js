@@ -64,7 +64,7 @@ export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(L
 			`;
 		}
 
-		return html `
+		return html`
 			<div>
 				${this._assessmentList.map(this._renderAssessmentEntry, this)}
 			</div>
@@ -107,7 +107,7 @@ export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(L
 
 	_renderAssessmentEntry(entry) {
 		if (!entry) {
-			return html	`
+			return html`
 				<d2l-coa-assessment-skeleton
 					href="${this.href}"
 					.token="${this.token}"
