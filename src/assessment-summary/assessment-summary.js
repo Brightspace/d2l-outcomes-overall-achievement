@@ -2,14 +2,16 @@ import { LitElement, html, css } from 'lit-element';
 import { labelStyles } from '@brightspace-ui/core/components/typography/styles';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '../stacked-bar/stacked-bar';
+import './assessment-summary-skeleton.js';
 
 const excludedActivityTypes = [
 	'checkpoint-item'
 ];
 
-class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() { return 'd2l-coa-assessment-summary'; }
 
 	static get properties() {
@@ -23,10 +25,19 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			css`
 				label {
 					display: block;
-					margin-bottom: 12px;
+					margin-bottom: 0.6rem;
+				}
+
+				.d2l-skeletize {
+					display: block;
+					width: 6.7rem;
+					height: 1rem;
+					margin-bottom: 0.6rem;
+					color: red;
 				}
 			`,
-			labelStyles
+			labelStyles,
+			super.styles
 		];
 	}
 
@@ -35,16 +46,27 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._setEntityType(OutcomeActivityCollectionEntity);
 
 		this._totalCount = 0;
+		this.skeleton = true;
 	}
 
 	render() {
-		return html`
+		if (this.skeleton) {
+			return html`
+				<d2l-coa-assessment-summary-skeleton>
+				</d2l-coa-assessment-summary-skeleton>
+			`;
+		}
+		const assessmentCountLabel = html`
 			<label for="chart" class="d2l-label-text">${this.localize('headingTotalAssessments', { num: this._totalCount })}</label>
+		`;
+		return html`
+			${assessmentCountLabel}
 			<d2l-coa-stacked-bar
 				id="chart"
 				href="${this.href}"
 				.token="${this.token}"
 				excluded-types=${JSON.stringify(excludedActivityTypes)}
+				?skeleton=${this.skeleton}
 			></d2l-coa-stacked-bar>
         `;
 	}
@@ -55,7 +77,7 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			super._entity = entity;
 		}
 	}
-
+	//
 	_onEntityChanged(entity) {
 		if (entity) {
 			const demonstrations = [];
@@ -73,6 +95,7 @@ class AssessmentSummary extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			entity.subEntitiesLoaded().then(() => {
 				this._totalCount = demonstrations.length;
+				this.skeleton = false;
 			});
 		}
 	}

@@ -2,6 +2,7 @@ import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { DemonstrationEntity } from '../entities/DemonstrationEntity';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { heading4Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
@@ -11,8 +12,9 @@ import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/more-less/more-less';
 import '../custom-icons/quote';
+import './assessment-skeleton';
 
-export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
+export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() { return 'd2l-coa-assessment-entry'; }
 
 	static get properties() {
@@ -182,9 +184,16 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._levelColor = '';
 		this._levelName = '';
 		this._link = '';
+		this.skeleton = true;
 	}
 
 	render() {
+		if (this.skeleton) {
+			return html`
+				<d2l-coa-assessment-skeleton>
+				</d2l-coa-assessment-skeleton>
+			`;
+		}
 		const dateElement = this._date && html`
 			<span class="date d2l-body-small">${formatDate(this._date, {format: 'MMM dd'})}</span>
 		`;
@@ -314,6 +323,7 @@ export class AssessmentEntry extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._levelColor = levelColor;
 				this._levelName = levelName;
 				this._link = linkByDem || linkByActivity;
+				this.skeleton = false;
 			});
 		}
 	}

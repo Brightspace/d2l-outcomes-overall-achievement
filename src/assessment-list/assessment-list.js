@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/typography/typography';
 import './assessment-entry';
@@ -11,7 +12,7 @@ const excludedActivityTypes = [
 	'checkpoint-item'
 ];
 
-export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
+export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() { return 'd2l-coa-assessment-list'; }
 
 	static get properties() {
@@ -21,17 +22,20 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	static get styles() {
-		return css`
-			.no-evidence {
-				border: 1px solid var(--d2l-color-gypsum);
-				border-radius: 8px;
-				background-color: var(--d2l-color-regolith);
-				color: var(--d2l-color-ferrite);
-				padding: 15px;
-				box-sizing: border-box;
-				width: 100%;
-			}
-		`;
+		return [
+			css`
+				.no-evidence {
+					border: 1px solid var(--d2l-color-gypsum);
+					border-radius: 8px;
+					background-color: var(--d2l-color-regolith);
+					color: var(--d2l-color-ferrite);
+					padding: 15px;
+					box-sizing: border-box;
+					width: 100%;
+				}
+			`,
+			super.styles
+		];
 	}
 
 	constructor() {
@@ -39,9 +43,27 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this._setEntityType(UserProgressOutcomeEntity);
 
 		this._assessmentList = [];
+		this.skeleton = true;
 	}
 
 	render() {
+		if (this.skeleton) {
+			return html`
+				<d2l-coa-assessment-skeleton
+					href="${this.href}"
+					.token="${this.token}"
+				></d2l-coa-assessment-skeleton>
+				<d2l-coa-assessment-skeleton
+					href="${this.href}"
+					.token="${this.token}"
+				></d2l-coa-assessment-skeleton>
+				<d2l-coa-assessment-skeleton
+					href="${this.href}"
+					.token="${this.token}"
+				></d2l-coa-assessment-skeleton>
+			`;
+		}
+
 		return html `
 			<div>
 				${this._assessmentList.map(this._renderAssessmentEntry, this)}
@@ -78,6 +100,7 @@ export class AssessmentList extends EntityMixinLit(LocalizeMixin(LitElement)) {
 
 			entity.subEntitiesLoaded().then(() => {
 				this._assessmentList = assessmentList.sort((a, b) => b.date - a.date);
+				this.skeleton = false;
 			});
 		}
 	}

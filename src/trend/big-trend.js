@@ -7,6 +7,7 @@ import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/tooltip/tooltip';
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
+import './big-trend-skeleton';
 
 const COMPONENT_HEIGHT = 120;
 const DIAMOND_SIZE = 18;
@@ -300,6 +301,12 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 			return html`<div class="no-scale">${this.localize(langTerm, 'outcome', this.outcomeTerm)}</div>`;
 		}
 
+		if (this.skeleton) {
+			return html`
+				<d2l-coa-big-trend-skeleton>
+				</d2l-coa-big-trend-skeleton>`;
+		}
+
 		const rowHeight = this._getRowHeight(this._trendData);
 		const gridHorizontal = this._getGridHorizontal(this._trendData, rowHeight);
 		const trendItems = this._getTrendItems(this._trendData, rowHeight);
@@ -589,6 +596,9 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	}
 
 	_onDataScrolled() {
+		if (!this.scrollContainer) {
+			return;
+		}
 		const scroll = this.scrollContainer.scrollLeft;
 		const scrollMax = this.scrollContainer.scrollLeftMax
 			|| (this.scrollContainer.scrollWidth - this.scrollContainer.offsetWidth);
@@ -770,6 +780,9 @@ class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
 	}
 
 	_scrollToEnd() {
+		if (!this.scrollContainer) {
+			return;
+		}
 		const scrollMax = this.scrollContainer.scrollLeftMax
 			|| (this.scrollContainer.scrollWidth - this.scrollContainer.offsetWidth);
 

@@ -1,17 +1,21 @@
 import { LitElement, html, css } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/button/button-icon';
 import '../outcome-text-display/outcome-text-display';
+import '../outcome-text-display/outcome-text-skeleton';
 import '../overall-achievement-tile/overall-achievement-tile';
+import '../overall-achievement-tile/overall-achievement-skeleton';
 import '../assessment-summary/assessment-summary';
 import '../assessment-list/assessment-list';
 import '../trend/big-trend';
+import '../trend/big-trend-skeleton';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 import { Consts } from '../consts';
 
-class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
+class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 	static get is() {
 		return 'd2l-coa-primary-panel';
 	}
@@ -32,6 +36,14 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	static get styles() {
 		return [
 			css`
+				#trend-title-skeleton {
+					width: 100px;
+				}
+
+				#evidence-title-skeleton {
+					width: 100px;
+				}
+
 				#list-spacer {
 					height: 18px;
 				}
@@ -53,8 +65,13 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 					flex-grow: 0;
 					margin-left: 16px;
 				}
+
+				.d2l-body-compact {
+					font-size: 17px;
+				}
 			`,
-			heading3Styles
+			heading3Styles,
+			super.styles
 		];
 	}
 
@@ -65,6 +82,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 		this.hideUnpublishedCoa = false;
 		this.instructor = false;
 		this.showClose = false;
+		this.skeleton = true;
 		this._outcomeHref = '';
 		this._outcomeActivitiesHref = '';
 		this._checkpointHref = '';
@@ -72,6 +90,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 	}
 
 	render() {
+
 		const closeButton = this.showClose ? html`
 			<d2l-button-icon
 				class="close-button"
@@ -81,24 +100,39 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			></d2l-button-icon>
 		` : null;
 
-		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : this._checkpointHref && html`
-		<d2l-coa-overall-achievement-tile 
-			href="${this._checkpointHref}" 
-			.token="${this.token}">
-		</d2l-coa-overall-achievement-tile>
+		const coaTile = (this.hideUnpublishedCoa && !this._checkpointPublished) ? null : (this.skeleton) ? html`
+			<d2l-coa-overall-achievement-skeleton>
+			</d2l-coa-overall-achievement-skeleton>
+		` : html`
+			<d2l-coa-overall-achievement-tile 
+				href="${this._checkpointHref}" 
+				.token="${this.token}"
+			></d2l-coa-overall-achievement-tile>
 		`;
 
-		return html`
+		const coaOutcomeText = this.skeleton ? html `
+			<d2l-coa-outcome-text-skeleton>
+			</d2l-coa-outcome-text-skeleton>
+		` : html `
 			<div id="header">
-				<d2l-coa-outcome-text-display 
-					href="${this._outcomeHref}" 
+				<d2l-coa-outcome-text-display
+					href="${this._outcomeHref}"
 					.token="${this.token}">
 				</d2l-coa-outcome-text-display>
 				${closeButton}
 			</div>
+		`;
 
+		const coaTrendTitle = this.skeleton ? html `
+			<div id="trend-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
+		` : html`
 			<h3 class="d2l-heading-3">${this.localize('trend')}</h3>
+		`;
 
+		const coaBigTrend = this.skeleton ? html `
+			<d2l-coa-big-trend-skeleton>
+			</d2l-coa-big-trend-skeleton>
+		` : html `
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}"
@@ -106,23 +140,50 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				outcome-term="${this.outcomeTerm}"
 				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
 			></d2l-coa-big-trend>
+		`;
+
+		const coaEvidenceTitle = this.skeleton ? html `
+			<div id="evidence-title-skeleton" class="d2l-heading-3 d2l-skeletize"></div>
+		` : html`
+			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>
+		`;
+
+		const coaAssessmentSummary = this.skeleton ? html`
+			<d2l-coa-assessment-summary-skeleton>
+			</d2l-coa-assessment-summary-skeleton>
+		` : html`
+			<d2l-coa-assessment-summary
+				href="${this._outcomeActivitiesHref}" 
+				.token="${this.token}">
+			</d2l-coa-assessment-summary>
+		`;
+
+		const coaAssessmentList = html`
+			<d2l-coa-assessment-list
+				href="${this.href}"
+				.token="${this.token}"
+				?skeleton="${this.skeleton}">
+			</d2l-coa-assessment-list>
+		`;
+		return html`
+
+			${coaOutcomeText}
+
+			${coaTrendTitle}
+
+			${coaBigTrend}
 
 			<div id="trend-spacer"></div>
 
 			${coaTile}
 
-			<h3 class="d2l-heading-3">${this.localize('evidence')}</h3>
-			<d2l-coa-assessment-summary
-				href="${this._outcomeActivitiesHref}" 
-				.token="${this.token}">
-			</d2l-coa-assessment-summary>
-			
+			${coaEvidenceTitle}
+
+			${coaAssessmentSummary}
+
 			<div id="list-spacer"></div>
 
-			<d2l-coa-assessment-list
-				href="${this.href}"
-				.token="${this.token}">
-			</d2l-coa-assessment-list>
+			${coaAssessmentList}
 		`;
 	}
 
@@ -146,6 +207,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 			let checkpointPublished;
 			const outcomeHref = entity.getOutcomeHref();
 			const outcomeActivitiesHref = entity.getOutcomeActivitiesHref();
+
 			entity.onOutcomeActivitiesChanged(outcomeActivities => {
 				if (!outcomeActivities) {
 					return;
@@ -168,6 +230,7 @@ class PrimaryPanel extends EntityMixinLit(LocalizeMixin(LitElement)) {
 				this._outcomeActivitiesHref = outcomeActivitiesHref;
 				this._checkpointHref = checkpointHref;
 				this._checkpointPublished = checkpointPublished;
+				this.skeleton = false;
 			});
 		}
 	}
