@@ -195,10 +195,10 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 			`;
 		}
 		const dateElement = this._date && html`
-			<span class="date d2l-body-small">${formatDate(this._date, {format: 'MMM dd'})}</span>
+			<span class="date d2l-body-small">${formatDate(this._date, { format: 'MMM dd' })}</span>
 		`;
 
-		return html `
+		return html`
 			<div class="evidence">
 				<div class="timeline">
 					<d2l-icon icon="${this._getActivityIcon(this._activityType)}"></d2l-icon>

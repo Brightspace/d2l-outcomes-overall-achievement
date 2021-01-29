@@ -151,7 +151,7 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 
 	render() {
 		const dateElement = this._accessDate && html`
-			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, {format: 'short'})}</div>
+			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, { format: 'short' })}</div>
 		`;
 
 		if (this.skeleton) {

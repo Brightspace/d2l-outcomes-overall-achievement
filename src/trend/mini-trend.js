@@ -246,10 +246,10 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				let label = {
 					id: levelId,
 					name: levels[levelId].name,
-					attempts: [ {
+					attempts: [{
 						attemptIndex: attemptCounter,
 						name: attempt.name
-					} ]
+					}]
 				};
 				const prevAttempt = attemptLabels.pop();
 

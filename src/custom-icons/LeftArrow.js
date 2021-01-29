@@ -8,7 +8,7 @@ class LeftArrowIcon extends LitElement {
 
 	static get properties() {
 		return {
-			hidden: {type: Boolean, attribute: 'hidden'}
+			hidden: { type: Boolean, attribute: 'hidden' }
 		};
 	}
 
