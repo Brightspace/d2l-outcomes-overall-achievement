@@ -20,8 +20,8 @@ import '../custom-icons/RightArrow.js';
 
 import 'd2l-table/d2l-table.js';
 import 'd2l-table/d2l-scroll-wrapper.js';
-import 'd2l-alert/d2l-alert.js';
 
+import '@brightspace-ui/core/components/alert/alert.js';
 import '@brightspace-ui/core/components/alert/alert-toast.js';
 import '@brightspace-ui/core/components/typography/typography.js';
 import '@brightspace-ui/core/components/button/button.js';
