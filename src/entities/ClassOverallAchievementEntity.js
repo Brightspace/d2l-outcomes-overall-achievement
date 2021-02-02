@@ -34,6 +34,14 @@ export class ClassOverallAchievementEntity extends Entity {
 		return this._entity.getActionByName(ClassOverallAchievementEntity.actions.retractAll);
 	}
 
+	getCalculationMethodHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.calculationMethod)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.calculationMethod).href;
+	}
+
 	getOutcomeClassProgressItems() {
 		if (!this._entity) {
 			return;
@@ -44,7 +52,7 @@ export class ClassOverallAchievementEntity extends Entity {
 	}
 
 	onCalculationMethodChanged(onChange) {
-		const href = this._calculationMethodHref();
+		const href = this.getCalculationMethodHref();
 
 		href && this._subEntity(CalculationMethodEntity, href, onChange);
 	}
@@ -52,14 +60,6 @@ export class ClassOverallAchievementEntity extends Entity {
 	onClasslistChanged(onChange) {
 		const href = this._classlistHref();
 		href && this._subEntity(CoaClasslistEntity, href, onChange);
-	}
-
-	_calculationMethodHref() {
-		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.calculationMethod)) {
-			return;
-		}
-
-		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.calculationMethod).href;
 	}
 
 	_classlistHref() {

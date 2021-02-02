@@ -125,6 +125,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				type: String,
 				attribute: 'telemetry-endpoint'
 			},
+			_calculationMethod: { attribute: false },
 			_logger: ErrorLogger,
 			_learnerList: Array,
 			_filteredLearnerList: Array,
@@ -151,9 +152,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 			_showBulkActionDialog: Boolean,
 			_displayReleasedToast: Boolean,
-			_displayRetractedToast: Boolean,
-
-			_calculationMethod: Object
+			_displayRetractedToast: Boolean
 		};
 	}
 
@@ -691,12 +690,16 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			});
 		});
 
+		let calculationMethodEntity = null;
+
 		entity.onCalculationMethodChanged(calculationMethod => {
 			if (!calculationMethod) {
 				return;
 			}
 
-			this._calculationMethod = calculationMethod;
+			calculationMethodEntity = calculationMethod;
+		}, error => {
+			this._logger.logSirenError(entity.getCalculationMethodHref(), 'GET', error);
 		});
 
 		entity.onClasslistChanged(classlist => {
@@ -751,6 +754,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._bulkReleaseAction = bulkReleaseAction;
 			this._bulkRetractAction = bulkRetractAction;
+			this._calculationMethod = calculationMethodEntity;
 			this._skeletonLoaded = true;
 		});
 	}
