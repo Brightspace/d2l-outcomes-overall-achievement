@@ -122,8 +122,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				attribute: 'setting-page-link'
 			},
 			telemetryEndpoint: {
-				attribute: 'telemetry-endpoint',
-				type: String
+				type: String,
+				attribute: 'telemetry-endpoint'
 			},
 			_logger: ErrorLogger,
 			_learnerList: Array,
@@ -151,7 +151,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 			_showBulkActionDialog: Boolean,
 			_displayReleasedToast: Boolean,
-			_displayRetractedToast: Boolean
+			_displayRetractedToast: Boolean,
+
+			_calculationMethod: Object
 		};
 	}
 
@@ -377,6 +379,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._showBulkActionDialog = false;
 		this._displayReleasedToast = false;
 		this._displayRetractedToast = false;
+		this._calculationMethod = null;
 		this._logger = new ErrorLogger(
 			() => this.errorLoggingEndpoint,
 			() => { this._hasErrors = true; }
@@ -430,11 +433,26 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		let firstUseAlert = null;
+
 		if (this.showFirstUse) {
+			let toastMessageText = null;
+
+			if (!this._calculationMethod) {
+				toastMessageText = this.localize('firstUseAlertToastMessageNone');
+			} else {
+				toastMessageText = this.localize('firstUseAlertToastMessage', 'calculationMethod', this._calculationMethod.getName());
+			}
+
+			let toastMessage = null;
+
+			if (toastMessageText) {
+				toastMessage = html`<div>${toastMessageText}</div>`;
+			}
+
 			firstUseAlert = html`
 			<d2l-alert has-close-button id="first-use-alert">
-				<div> ${this.localize('firstUseAlertToastMessage')} </div>
-				<d2l-link small href=${this.settingPageLocation}> ${this.localize('firstUseAlertSettingPageMessage')} </d2l-link>
+				${toastMessage}
+				<d2l-link small href=${this.settingPageLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
 			</d2l-alert>
 			`;
 		}
@@ -671,6 +689,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			}, error => {
 				this._logger.logSirenError(outcomeProgressEntity.self(), 'GET', error);
 			});
+		});
+
+		entity.onCalculationMethodChanged(calculationMethod => {
+			if (!calculationMethod) {
+				return;
+			}
+
+			this._calculationMethod = calculationMethod;
 		});
 
 		entity.onClasslistChanged(classlist => {

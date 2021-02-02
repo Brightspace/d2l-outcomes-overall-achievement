@@ -221,6 +221,12 @@
                 "https://assessments.api.brightspace.com/rels/coa-classlist"
             ],
             "href": "/data/mastery-view-table/coa-classlists/200learners.json"
+        },
+        {
+            "rel": [
+                "calculation-method"
+            ],
+            "href": "/data/calculation-methods/most-common.json"
         }
     ]
 }

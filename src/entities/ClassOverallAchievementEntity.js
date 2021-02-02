@@ -2,6 +2,7 @@ import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { CoaClasslistEntity } from './CoaClasslistEntity.js';
 import { OutcomeEntity } from './OutcomeEntity.js';
+import { CalculationMethodEntity } from './CalculationMethodEntity';
 
 export class ClassOverallAchievementEntity extends Entity {
 
@@ -15,6 +16,7 @@ export class ClassOverallAchievementEntity extends Entity {
 	static get links() {
 		return {
 			classlistRel: 'https://assessments.api.brightspace.com/rels/coa-classlist',
+			calculationMethod: 'calculation-method',
 		};
 	}
 
@@ -41,9 +43,23 @@ export class ClassOverallAchievementEntity extends Entity {
 		return progressItems.map(item => new OutcomeClassProgressEntity(this, item));
 	}
 
+	onCalculationMethodChanged(onChange) {
+		const href = this._calculationMethodHref();
+
+		href && this._subEntity(CalculationMethodEntity, href, onChange);
+	}
+
 	onClasslistChanged(onChange) {
 		const href = this._classlistHref();
 		href && this._subEntity(CoaClasslistEntity, href, onChange);
+	}
+
+	_calculationMethodHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.calculationMethod)) {
+			return;
+		}
+
+		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.calculationMethod).href;
 	}
 
 	_classlistHref() {
@@ -52,6 +68,7 @@ export class ClassOverallAchievementEntity extends Entity {
 		}
 		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.classlistRel).href;
 	}
+
 }
 
 class OutcomeClassProgressEntity extends SelflessEntity {
