@@ -61,5 +61,5 @@ export default {
 	tooltipUserOutcomeAssessments: "Cafodd {numAssessed} o {numTotal} o weithgareddau eu hasesu",
 	trend: "Tuedd",
 	untitled: "Dideitl",
-	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcomes, select, cymwyseddau {Competencies} disgwyliadau {Expectations} amcanion {Objectives} canlyniadau {Outcomes} safonau {Standards} arall {Standards}}"
+	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcome, select, competencies {Cymwyseddau} expectations {Eisgwyliadau} objectives {Amcanion} outcomes {Canlyniadau} standards {Safonau} other {Safonau}}"
 };

@@ -61,5 +61,5 @@ export default {
 	tooltipUserOutcomeAssessments: "共有 {numTotal} 個活動，已評量其中的 {numAssessed} 個活動",
 	trend: "趨勢",
 	untitled: "未命名",
-	viewCourseIntentList: "在{outcomes, select, competencies {能力} expectations {預期} objectives {目標} outcomes {成果} standards {標準} other {標準}}工具中檢視課程目的列表"
+	viewCourseIntentList: "在{outcome, select, competencies {能力} expectations {預期} objectives {目標} outcomes {成果} standards {標準} other {標準}}工具中檢視課程目的列表"
 };
