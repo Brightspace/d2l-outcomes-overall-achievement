@@ -29,13 +29,13 @@ export default {
 	masteryViewTableEmptyError: "Methu â llwytho canlyniadau cyflawniadau cyffredinol Ail-lwythwch y dudalen i roi cynnig arall arni neu cysylltwch â'r Gweinyddwr os yw'r gwall yn parhau.",
 	masteryViewUserOutcomeScreenReaderText: "{assessmentInfo}. Pwyswch space neu enter i agor y dudalen werthuso.",
 	miniTrendScreenReaderText: "Aseswyd {numAssessed} {numAssessed, plural, one {waith} other {o weithiau}}: {levelNames}",
+	name: "Enw",
 	newPageSelectLiveText: "Tudalen {pageNum} o {totalPages} wedi’i dewis.",
 	newPageSizeLiveText: "Wrthi’n dangos {pageSize} o resi'rdudalen.",
-	name: "Enw",
 	noAlignedOutcomes: "I ddefnyddio'r Gwedd Feistrolaeth, dechreuwch ag alinio {outcome, select, cymwyseddau {competencies} disgwyliadau {expectations} amcanion {objectives} canlyniadau {outcomes} safonau {standards} arall {standards}}",
 	noEnrolledLearners: "Dim dysgwyr cofrestredig yn y cwrs.",
-	noScaleStudent: "Does dim graddfa wedi cael ei gosod i fesur cyrhaeddiad {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
 	noScaleInstructor: "I weld cynnydd y dysgwr tuag at gyflawni’r {outcome, select, cymwyseddau {competency} disgwyliadau {expectation} amcanion {objective} canlyniadau {outcome} safonau {standard} arall {standard}} hwn, crëwch a dewiswch raddfa cyflawni.",
+	noScaleStudent: "Does dim graddfa wedi cael ei gosod i fesur cyrhaeddiad {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
 	notAssessed: "Heb ei asesu",
 	notEvaluated: "Heb ei werthuso",
 	notPublished: "Heb ei gyhoeddi",
@@ -45,8 +45,8 @@ export default {
 	pageSelectOptionText: "{currentPage} o {pageCount}",
 	pageSizeSelectOptionText: "{pageSize} y dudalen",
 	percentLabel: "{percentage}%",
-	published: "Wedi cyhoeddi",
 	periodSeparator: ".",
+	published: "Wedi cyhoeddi",
 	releaseAllBtn: "Cyhoeddi’r Cyfan",
 	releaseAllTxt: "Cyhoeddi cyflawniadau cyffredinol ar gyfer pob dysgwr yn y cwrs?",
 	retractAllBtn: "Tynnu Pop un yn Ôl",
@@ -61,5 +61,5 @@ export default {
 	tooltipUserOutcomeAssessments: "Cafodd {numAssessed} o {numTotal} o weithgareddau eu hasesu",
 	trend: "Tuedd",
 	untitled: "Dideitl",
-	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcomes, select, cymwyseddau {Competencies} disgwyliadau {Expectations} amcanion {Objectives} canlyniadau {Outcomes} safonau {Standards} arall {Standards}}"
+	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcome, select, competencies {Cymwyseddau} expectations {Eisgwyliadau} objectives {Amcanion} outcomes {Canlyniadau} standards {Safonau} other {Safonau}}"
 };
