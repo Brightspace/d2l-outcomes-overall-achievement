@@ -8,8 +8,8 @@ export default {
 	descending: "Disgynnol",
 	evidence: "Tystiolaeth",
 	firstName: "Enw cyntaf",
-	firstUseAlertSettingPageMessage: "View method details or change calculation method in Settings",
-	firstUseAlertToastMessage: "Mastery view is automatically calculated using the \"Most Common\" method",
+	firstUseAlertSettingPageMessage: "Gweld manylion dull neu newid dull cyfrifo yn y Gosodiadau",
+	firstUseAlertToastMessage: "Cyfrifir gwedd rheolaeth yn awtomatig trwy ddefnyddio'r dull “Mwyaf Cyffredin”",
 	goToNextPage: "Ewch i'r dudalen nesaf yn y tabl.",
 	goToPreviousPage: "Ewch i'r dudalen flaenorol yn y tabl.",
 	goToUserAchievementSummaryPage: "Pwyswch Space neu Enter i agor tudalen crynodeb cyflawniad {name}.",
@@ -61,5 +61,5 @@ export default {
 	tooltipUserOutcomeAssessments: "Cafodd {numAssessed} o {numTotal} o weithgareddau eu hasesu",
 	trend: "Tuedd",
 	untitled: "Dideitl",
-	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcome, select, competencies {Cymwyseddau} expectations {Eisgwyliadau} objectives {Amcanion} outcomes {Canlyniadau} standards {Safonau} other {Safonau}}"
+	viewCourseIntentList: "Gweld rhestr bwriad y cwrs yn yr offer {outcomes, select, cymwyseddau {Competencies} disgwyliadau {Expectations} amcanion {Objectives} canlyniadau {Outcomes} safonau {Standards} arall {Standards}}"
 };
