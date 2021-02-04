@@ -122,9 +122,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				attribute: 'setting-page-link'
 			},
 			telemetryEndpoint: {
-				attribute: 'telemetry-endpoint',
-				type: String
+				type: String,
+				attribute: 'telemetry-endpoint'
 			},
+			_calculationMethod: { attribute: false },
 			_logger: ErrorLogger,
 			_learnerList: Array,
 			_filteredLearnerList: Array,
@@ -377,6 +378,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._showBulkActionDialog = false;
 		this._displayReleasedToast = false;
 		this._displayRetractedToast = false;
+		this._calculationMethod = null;
 		this._logger = new ErrorLogger(
 			() => this.errorLoggingEndpoint,
 			() => { this._hasErrors = true; }
@@ -430,11 +432,26 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		let firstUseAlert = null;
+
 		if (this.showFirstUse) {
+			let toastMessageText = null;
+
+			if (!this._calculationMethod) {
+				toastMessageText = this.localize('firstUseAlertToastMessageNone');
+			} else {
+				toastMessageText = this.localize('firstUseAlertToastMessage', 'calculationMethod', this._calculationMethod.getName());
+			}
+
+			let toastMessage = null;
+
+			if (toastMessageText) {
+				toastMessage = html`<div>${toastMessageText}</div>`;
+			}
+
 			firstUseAlert = html`
 			<d2l-alert has-close-button id="first-use-alert">
-				<div> ${this.localize('firstUseAlertToastMessage')} </div>
-				<d2l-link small href=${this.settingPageLocation}> ${this.localize('firstUseAlertSettingPageMessage')} </d2l-link>
+				${toastMessage}
+				<d2l-link small href=${this.settingPageLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
 			</d2l-alert>
 			`;
 		}
@@ -673,6 +690,18 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			});
 		});
 
+		let calculationMethodEntity = null;
+
+		entity.onCalculationMethodChanged(calculationMethod => {
+			if (!calculationMethod) {
+				return;
+			}
+
+			calculationMethodEntity = calculationMethod;
+		}, error => {
+			this._logger.logSirenError(entity.getCalculationMethodHref(), 'GET', error);
+		});
+
 		entity.onClasslistChanged(classlist => {
 			if (!classlist) {
 				return;
@@ -725,6 +754,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			this._outcomeHeadersData = outcomeHeadersData;
 			this._bulkReleaseAction = bulkReleaseAction;
 			this._bulkRetractAction = bulkRetractAction;
+			this._calculationMethod = calculationMethodEntity;
 			this._skeletonLoaded = true;
 		});
 	}
