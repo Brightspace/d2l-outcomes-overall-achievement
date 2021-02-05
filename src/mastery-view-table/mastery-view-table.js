@@ -35,6 +35,7 @@ import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 
 import Images from '../images/images.js';
+import { Consts } from '../consts';
 
 const BULK_RELEASE_ACTION = 'release';
 const BULK_RETRACT_ACTION = 'retract';
@@ -373,26 +374,36 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._displayReleasedToast = false;
 		this._displayRetractedToast = false;
 		this._calculationMethod = null;
+		this._completedCellCount = 0;
 		this._logger = new ErrorLogger(
 			() => this.errorLoggingEndpoint,
 			() => { this._hasErrors = true; }
 		);
+
+		this._onCellLoaded = this._onCellLoaded.bind(this);
+		this._onResize = this._onResize.bind(this);
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
+		
 		this.markMasteryViewLoadStart();
-		this._onResize = this._onResize.bind(this);
+
 		window.addEventListener('resize', this._onResize);
 		window.addEventListener('error', this._logger.logJavascriptError);
 		window.addEventListener('unhandledrejection', this._logger.logPromiseError);
+
+		this.addEventListener(Consts.events.masteryViewCellLoaded, this._onCellLoaded);
 	}
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
+		
 		window.removeEventListener('resize', this._onResize);
 		window.removeEventListener('error', this._logger.logJavascriptError);
 		window.removeEventListener('unhandledrejection', this._logger.logPromiseError);
+
+		this.removeEventListener(Consts.events.masteryViewCellLoaded, this._onCellLoaded);
 	}
 
 	render() {
@@ -446,13 +457,20 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	updated(changedProperties) {
 		this._onResize();
+
 		if (changedProperties.has('_learnerList')) {
 			this._filteredLearnerList = this._filterLearnerList(this._learnerList, this._searchTerm);
 		}
+
 		if (changedProperties.has('_filteredLearnerList')) {
 			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 			this._updatePageCount();
 		}
+
+		if (changedProperties.has('_learnerRowsData')) {
+			this._completedCellCount = 0;
+		}
+
 		if (changedProperties.has('telemetryEndpoint')) {
 			this.setTelemetryEndpoint(this.telemetryEndpoint);
 		}
@@ -622,6 +640,18 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 	}
 
+	_onCellLoaded() {
+		const targetCells = this._learnerRowsData.length * this._outcomeHeadersData.length;
+
+		if (!targetCells) {
+			return;
+		}
+
+		if (++this._completedCellCount === targetCells) {
+			this.markMasteryViewLoadEnd();
+		}
+	}
+
 	_onEntityChanged(entity, error) {
 		if (!entity) {
 			this._logger.logSirenError(this.href, 'GET', error);
@@ -682,9 +712,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				const lastName = coaUser.getLastName();
 				const rowDataHref = coaUser.getRowDataHref();
 				const gradesPageHref = coaUser.getUserGradesSummaryHref();
-
-				// Prime cache with rowData so cells finish close to each other for telemetry
-				coaUser.onRowDataChanged(() => { });
 
 				const learnerInfo = {
 					firstName,
@@ -1072,6 +1099,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			button-text=""
 			@d2l-alert-toast-close=${this._onToastClose}>${text}</d2l-alert-toast>`;
 	}
+
 	_renderUpperControls() {
 		if (!this._learnerRowsData || this._learnerRowsData.length === 0) {
 			return null;

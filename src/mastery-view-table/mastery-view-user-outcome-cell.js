@@ -326,7 +326,10 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			};
 			this.skeleton = false;
 
-			this.markMasteryViewLoadEnd();
+			this.dispatchEvent(new CustomEvent(
+				Consts.events.masteryViewCellLoaded,
+				{ bubbles: true, composed: true }
+			));
 		});
 	}
 

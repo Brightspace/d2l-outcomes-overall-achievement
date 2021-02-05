@@ -46,15 +46,13 @@ export const TelemetryMixin = superclass => class extends superclass {
 	}
 
 	markMasteryViewLoadEnd() {
-		debouncer('markMasteryViewLoadedEvent', () => {
-			this.perfMark(markMasteryViewLoadEnd);
-			this._logAndDestroyPerformanceEvent({
-				viewName: 'MasteryViewTable',
-				startMark: markMasteryViewLoadStart,
-				endMark: markMasteryViewLoadEnd,
-				actionName: 'PageLoad'
-			});
-		}, 1000);
+		this.perfMark(markMasteryViewLoadEnd);
+		this._logAndDestroyPerformanceEvent({
+			viewName: 'MasteryViewTable',
+			startMark: markMasteryViewLoadStart,
+			endMark: markMasteryViewLoadEnd,
+			actionName: 'PageLoad'
+		});
 	}
 
 	markMasteryViewLoadStart() {
