@@ -1,5 +1,4 @@
 import TBC from 'd2l-telemetry-browser-client';
-import debounce from 'lodash-es/debounce';
 
 const {
 	Client,
@@ -14,15 +13,6 @@ const sessionId = getUUID();
 
 const markMasteryViewLoadStart = 'masteryViewLoadStart';
 const markMasteryViewLoadEnd = 'masteryViewLoadEnd';
-
-const debounced = {};
-function debouncer(name, fn, wait) {
-	if (!debounced[name]) {
-		debounced[name] = debounce(fn, wait);
-	}
-
-	debounced[name]();
-}
 
 let defaultEndpoint = null;
 
@@ -46,15 +36,13 @@ export const TelemetryMixin = superclass => class extends superclass {
 	}
 
 	markMasteryViewLoadEnd() {
-		debouncer('markMasteryViewLoadedEvent', () => {
-			this.perfMark(markMasteryViewLoadEnd);
-			this._logAndDestroyPerformanceEvent({
-				viewName: 'MasteryViewTable',
-				startMark: markMasteryViewLoadStart,
-				endMark: markMasteryViewLoadEnd,
-				actionName: 'PageLoad'
-			});
-		}, 1000);
+		this.perfMark(markMasteryViewLoadEnd);
+		this._logAndDestroyPerformanceEvent({
+			viewName: 'MasteryViewTable',
+			startMark: markMasteryViewLoadStart,
+			endMark: markMasteryViewLoadEnd,
+			actionName: 'PageLoad'
+		});
 	}
 
 	markMasteryViewLoadStart() {
