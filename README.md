@@ -19,6 +19,12 @@ root directory, selecting the appropriate version increase type. This will bump
 the version in both `package.json` and `package-lock.json` and leave it in your
 working changes.
 
+## Formatting
+
+To deal with pedantic issues that will not pass linting you can run `npm run
+format`. This will run the various linters in fix mode to help get rid of
+issues.
+
 ## Component Demos
 
 To view component demos, run `npm start`. A page should be launched with links
