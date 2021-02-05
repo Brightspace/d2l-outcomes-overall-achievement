@@ -363,7 +363,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._nameFirstLastFormat = false;
 		this._sortDesc = false;
 		this._skeletonLoaded = false;
-		this._hasErrors = false;
+		this._hasErrors = null;
 		this._resizeHandler = undefined;
 		this._stickyHeadersEnabled = false;
 		this._searchTerm = '';
@@ -396,63 +396,31 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	render() {
-		if (!this._skeletonLoaded && !this._hasErrors) {
-			//Basic table outline (classlist, aligned outcomes) still loading - hold off on rendering
-			return null;
-		}
-
-		if (this._outcomeHeadersData.length === 0 && !this._hasErrors) {
-			//Empty state for no aligned outcomes
-			return html`
-			<div id="no-outcomes-container" class="d2l-typography">
-				<img src=${Images['blueprint']} />
-				<div class="d2l-body-compact">
-					${this.localize('noAlignedOutcomes', 'outcome', this.outcomeTerm)}
-				</div>
-				<div class="d2l-body-compact">
-					<a href=${this.outcomesToolLink} class="d2l-link">${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
-				</div>
-			</div>
-			`;
-		}
-
-		let errorAlert = null;
-		if (this._hasErrors) {
-			errorAlert = html`
-			<d2l-alert type="error">
-				${this.localize('masteryViewTableEmptyError')}
-			</d2l-alert>
-			`;
-		}
-
-		let firstUseAlert = null;
-
-		if (this.showFirstUse) {
-			let toastMessageText = null;
-
-			if (!this._calculationMethod) {
-				toastMessageText = this.localize('firstUseAlertToastMessageNone');
-			} else {
-				toastMessageText = this.localize('firstUseAlertToastMessage', 'calculationMethod', this._calculationMethod.getName());
+		if (!this._hasErrors) {
+			if (!this._skeletonLoaded) {
+				// Basic table outline (classlist, aligned outcomes) still loading - hold off on rendering
+				return null;
 			}
 
-			let toastMessage = null;
-
-			if (toastMessageText) {
-				toastMessage = html`<div>${toastMessageText}</div>`;
+			if (this._outcomeHeadersData.length === 0) {
+				// Empty state for no aligned outcomes
+				return html`
+					<div id="no-outcomes-container" class="d2l-typography">
+						<img src=${Images['blueprint']} />
+						<div class="d2l-body-compact">
+							${this.localize('noAlignedOutcomes', 'outcome', this.outcomeTerm)}
+						</div>
+						<div class="d2l-body-compact">
+							<a href=${this.outcomesToolLink} class="d2l-link">${this.localize('viewCourseIntentList', 'outcome', this.outcomeTerm)}</a>
+						</div>
+					</div>
+				`;
 			}
-
-			firstUseAlert = html`
-			<d2l-alert has-close-button id="first-use-alert">
-				${toastMessage}
-				<d2l-link small href=${this.settingPageLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
-			</d2l-alert>
-			`;
 		}
 
 		return html`
-			${errorAlert}
-			${firstUseAlert}
+			${this._hasErrors && this._renderErrorAlert()}
+			${this.showFirstUse && this._renderFirstUseAlert(this._calculationMethod, this.settingPageLocation)}
 			${this._renderUpperControls()}
 			${this._renderTable()}
 			<d2l-dialog-confirm
@@ -808,6 +776,27 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		const text = this._bulkReleaseAction ? this.localize('releaseAllBtn') : this.localize('retractAllBtn');
 		const buttonAction = this._bulkButtonClick;
 		return !!this._bulkReleaseAction || !!this._bulkRetractAction ? html`<d2l-button id='bulk-action' @click=${buttonAction} >${text}</d2l-button>` : html``;
+	}
+
+	_renderErrorAlert() {
+		return html`
+			<d2l-alert type="error">
+				${this.localize('masteryViewTableEmptyError')}
+			</d2l-alert>
+		`;
+	}
+
+	_renderFirstUseAlert(calculationMethodEntity, mvSettingsLocation) {
+		const toastMessageText = calculationMethodEntity
+			? this.localize('firstUseAlertToastMessage', 'calculationMethod', calculationMethodEntity.getName())
+			: this.localize('firstUseAlertToastMessageNone');
+
+		return html`
+			<d2l-alert has-close-button id="first-use-alert">
+				<div>${toastMessageText}</div>
+				<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
+			</d2l-alert>
+		`;
 	}
 
 	_renderLearnerColumnHead(showFirstNames, showLastNames, nameFirstLastFormat) {
