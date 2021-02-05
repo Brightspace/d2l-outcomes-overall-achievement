@@ -386,7 +386,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	connectedCallback() {
 		super.connectedCallback();
-		
+
 		this.markMasteryViewLoadStart();
 
 		window.addEventListener('resize', this._onResize);
@@ -398,7 +398,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	disconnectedCallback() {
 		super.disconnectedCallback();
-		
+
 		window.removeEventListener('resize', this._onResize);
 		window.removeEventListener('error', this._logger.logJavascriptError);
 		window.removeEventListener('unhandledrejection', this._logger.logPromiseError);
