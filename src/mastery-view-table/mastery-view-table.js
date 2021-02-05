@@ -126,33 +126,27 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				attribute: 'telemetry-endpoint'
 			},
 			_calculationMethod: { attribute: false },
-			_logger: ErrorLogger,
-			_learnerList: Array,
-			_filteredLearnerList: Array,
-
-			_outcomeHeadersData: Array,
-			_learnerRowsData: Array,
-
-			_rowsPerPage: Number,
-			_currentPage: Number,
-			_pageCount: Number,
-
-			_showFirstNames: Boolean,
-			_showLastNames: Boolean,
-			_nameFirstLastFormat: Boolean,
-			_sortDesc: Boolean,
-			_searchTerm: String,
-
-			_skeletonLoaded: Boolean,
-			_hasErrors: Boolean,
-
-			_stickyHeadersEnabled: Boolean,
-			_bulkReleaseAction: Object,
-			_bulkRetractAction: Object,
-
-			_showBulkActionDialog: Boolean,
-			_displayReleasedToast: Boolean,
-			_displayRetractedToast: Boolean
+			_logger: { attribute: false },
+			_learnerList: { attribute: false },
+			_filteredLearnerList: { attribute: false },
+			_outcomeHeadersData: { attribute: false },
+			_learnerRowsData: { attribute: false },
+			_rowsPerPage: { attribute: false },
+			_currentPage: { attribute: false },
+			_pageCount: { attribute: false },
+			_showFirstNames: { attribute: false },
+			_showLastNames: { attribute: false },
+			_nameFirstLastFormat: { attribute: false },
+			_sortDesc: { attribute: false },
+			_searchTerm: { attribute: false },
+			_skeletonLoaded: { attribute: false },
+			_hasErrors: { attribute: false },
+			_stickyHeadersEnabled: { attribute: false },
+			_bulkReleaseAction: { attribute: false },
+			_bulkRetractAction: { attribute: false },
+			_showBulkActionDialog: { attribute: false },
+			_displayReleasedToast: { attribute: false },
+			_displayRetractedToast: { attribute: false }
 		};
 	}
 
