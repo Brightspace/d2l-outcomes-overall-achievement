@@ -227,6 +227,12 @@
                 "calculation-method"
             ],
             "href": "/data/calculation-methods/most-common.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "/data/loa/scale0.json"
         }
     ]
 }
