@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - release/*
 env:
   NODE_VERSION: 14 # Latest LTS
 jobs:
