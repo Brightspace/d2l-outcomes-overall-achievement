@@ -278,12 +278,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					width: 60vw;
 				}
 
-				#search-publish-container {
-					padding-bottom: 18px;
+				:host([dir="rtl"]) #search-input {
+					margin-right: 0;
+					margin-left: 24px;
 				}
 
 				#search-input {
 					max-width: 270px;
+					padding-bottom: 18px;
+					margin-right: 24px;
 				}
 
 				.msg-container {
@@ -314,7 +317,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				}
 
 				#bulk-action {
-					margin-left: 24px;
+					padding-bottom: 18px;
 				}
 
 				@media (min-width: 768px) {
