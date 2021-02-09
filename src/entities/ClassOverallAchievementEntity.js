@@ -1,5 +1,6 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
+import { AchievementScaleEntity } from './AchievementScaleEntity';
 import { CoaClasslistEntity } from './CoaClasslistEntity.js';
 import { OutcomeEntity } from './OutcomeEntity.js';
 import { CalculationMethodEntity } from './CalculationMethodEntity';
@@ -17,6 +18,7 @@ export class ClassOverallAchievementEntity extends Entity {
 		return {
 			classlistRel: 'https://assessments.api.brightspace.com/rels/coa-classlist',
 			calculationMethod: 'calculation-method',
+			defaultScale: 'default-achievement-scale',
 		};
 	}
 
@@ -53,7 +55,6 @@ export class ClassOverallAchievementEntity extends Entity {
 
 	onCalculationMethodChanged(onChange) {
 		const href = this.getCalculationMethodHref();
-
 		href && this._subEntity(CalculationMethodEntity, href, onChange);
 	}
 
@@ -62,11 +63,23 @@ export class ClassOverallAchievementEntity extends Entity {
 		href && this._subEntity(CoaClasslistEntity, href, onChange);
 	}
 
+	onDefaultScaleChanged(onChange) {
+		const href = this._defaultScaleHref();
+		href && this._subEntity(AchievementScaleEntity, href, onChange);
+	}
+
 	_classlistHref() {
 		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.classlistRel)) {
 			return;
 		}
 		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.classlistRel).href;
+	}
+
+	_defaultScaleHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(ClassOverallAchievementEntity.links.defaultScale)) {
+			return;
+		}
+		return this._entity.getLinkByRel(ClassOverallAchievementEntity.links.defaultScale).href;
 	}
 
 }

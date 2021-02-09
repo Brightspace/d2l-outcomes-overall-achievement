@@ -661,6 +661,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		const outcomeHeadersData = [];
 		const bulkReleaseAction = entity.getBulkReleaseAction();
 		const bulkRetractAction = entity.getBulkRetractAction();
+
+		// Prime cache with achievement scale
+		entity.onDefaultScaleChanged(() => { /* Do nothing */ });
+
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
 		outcomeClassProgressEntities.map(outcomeProgressEntity => {
 			const activityCollectionHref = outcomeProgressEntity.getOutcomeActivityCollectionHref();
