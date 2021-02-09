@@ -279,7 +279,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				}
 
 				#search-publish-container {
-					margin-bottom: 18px;
+					padding-bottom: 18px;
 				}
 
 				#search-input {
