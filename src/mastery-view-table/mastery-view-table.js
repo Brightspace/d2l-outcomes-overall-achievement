@@ -155,7 +155,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		return [
 			css`
 				#first-use-alert {
-					margin-bottom: 18px;
+					padding-bottom: 18px;
 				}
 
 				#scroll-wrapper {
@@ -829,10 +829,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			: this.localize('firstUseAlertToastMessageNone');
 
 		return html`
-			<d2l-alert has-close-button id="first-use-alert">
-				<div>${toastMessageText}</div>
-				<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
-			</d2l-alert>
+			<div id="first-use-alert">
+				<d2l-alert has-close-button>
+					<div>${toastMessageText}</div>
+					<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
+				</d2l-alert>
+			</div>
 		`;
 	}
 
