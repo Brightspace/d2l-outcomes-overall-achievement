@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
 import { LocalizeMixin } from '../LocalizeMixin';
-import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin';
 import { TrendMixin } from './TrendMixin';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/icons/icon';
@@ -24,7 +23,7 @@ const BarTypes = Object.freeze({
 	Diamond: 'diamond'
 });
 
-class BigTrend extends TrendMixin(LocalizeMixin(RtlMixin(LitElement))) {
+class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 	static get is() { return 'd2l-coa-big-trend'; }
 

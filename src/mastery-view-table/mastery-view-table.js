@@ -276,14 +276,19 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				#upper-controls-container {
 					border-spacing: 0px;
 					width: 60vw;
+					display: flex;
+					flex-direction: column;
 				}
 
-				#search-publish-container {
-					margin-bottom: 18px;
+				:host([dir="rtl"]) #search-input {
+					margin-right: 0;
+					margin-left: 24px;
 				}
 
 				#search-input {
 					max-width: 270px;
+					margin-bottom: 18px;
+					margin-right: 24px;
 				}
 
 				.msg-container {
@@ -292,6 +297,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					border: 1px solid var(--d2l-color-gypsum);
 					color: var(--d2l-color-ferrite);
 					margin-bottom: 18px;
+					display: block;
 				}
 
 				.msg-container
@@ -314,7 +320,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				}
 
 				#bulk-action {
-					margin-left: 24px;
+					margin-bottom: 18px;
 				}
 
 				@media (min-width: 768px) {

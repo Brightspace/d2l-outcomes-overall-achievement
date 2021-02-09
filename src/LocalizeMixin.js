@@ -1,7 +1,9 @@
-import { LocalizeMixin as CoreLocalizeMixin } from '@brightspace-ui/core/mixins/localize-mixin';
+import { LocalizeMixin as CoreLocalizeMixin } from '@brightspace-ui/core/mixins/localize-mixin.js';
+import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 import { Consts } from './consts.js';
+import { dedupeMixin } from '@open-wc/dedupe-mixin';
 
-export const LocalizeMixin = (superclass) => class extends CoreLocalizeMixin(superclass) {
+const LocalizeMixinInternal = (superclass) => class extends CoreLocalizeMixin(RtlMixin(superclass)) {
 
 	static async getLocalizeResources(langs) {
 		let translations;
@@ -90,3 +92,5 @@ export const LocalizeMixin = (superclass) => class extends CoreLocalizeMixin(sup
 	}
 
 };
+
+export const LocalizeMixin = dedupeMixin(LocalizeMixinInternal);
