@@ -13,6 +13,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@brightspace-ui/core": "^1.113.0",
+    "@open-wc/dedupe-mixin": "^1.3.0",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware#semver:^1",
     "d2l-table": "github:BrightspaceUI/table#semver:^2",
     "d2l-telemetry-browser-client": "github:Brightspace/d2l-telemetry-browser-client#semver:^1",
