@@ -276,8 +276,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				#upper-controls-container {
 					border-spacing: 0px;
 					width: 60vw;
-					display:flex;
-					flex-direction:column;
+					display: flex;
+					flex-direction: column;
 				}
 
 				:host([dir="rtl"]) #search-input {
@@ -297,7 +297,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					border: 1px solid var(--d2l-color-gypsum);
 					color: var(--d2l-color-ferrite);
 					margin-bottom: 18px;
-					display:block;
+					display: block;
 				}
 
 				.msg-container
