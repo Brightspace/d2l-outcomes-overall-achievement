@@ -25,7 +25,7 @@
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -42,13 +42,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o1.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -65,13 +65,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o2.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -88,13 +88,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o3.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -111,13 +111,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o4.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -134,13 +134,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o5.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -157,13 +157,13 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o6.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
                 }
             ]
         },
@@ -180,13 +180,30 @@
                     "rel": [
                         "https://outcomes.api.brightspace.com/rels/outcome"
                     ],
-                    "href": "/data/outcomes/o7.json"
+                    "href": "/data/outcomes/non-existant.json"
                 },
                 {
                     "rel": [
                         "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
                     ],
-                    "href": "/data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                    "href": "/data/mastery-view-table/outcome-activity-collections/non-existant.json"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "href": "about:blank",
+            "name": "release-all",
+            "method": "POST",
+            "fields": [
+                {
+                    "class": [
+                        "required"
+                    ],
+                    "type": "text",
+                    "name": "action",
+                    "value": "release-all"
                 }
             ]
         }
@@ -197,13 +214,13 @@
                 "https://assessments.api.brightspace.com/rels/checkpoint-instance",
                 "self"
             ],
-            "href": "/data/mastery-view-table/class-overall-achievement/0learners.json"
+            "href": "/data/mastery-view-table/class-overall-achievement/7learners-partial-fail.json"
         },
         {
             "rel": [
                 "https://assessments.api.brightspace.com/rels/coa-classlist"
             ],
-            "href": "/data/mastery-view-table/coa-classlists/0learners.json"
+            "href": "/data/mastery-view-table/coa-classlists/7learners.json"
         },
         {
             "rel": [
