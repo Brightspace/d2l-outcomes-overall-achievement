@@ -154,7 +154,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	static get styles() {
 		return [
 			css`
-				#first-use-alert {
+				.d2l-alert-container {
 					padding-bottom: 18px;
 				}
 
@@ -817,9 +817,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	_renderErrorAlert() {
 		return html`
-			<d2l-alert type="error">
-				${this.localize('masteryViewTableEmptyError')}
-			</d2l-alert>
+			<div class="d2l-alert-container">
+				<d2l-alert type="error">
+					${this.localize('masteryViewTableEmptyError')}
+				</d2l-alert>
+			</div>
 		`;
 	}
 
@@ -829,7 +831,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			: this.localize('firstUseAlertToastMessageNone');
 
 		return html`
-			<div id="first-use-alert">
+			<div class="d2l-alert-container">
 				<d2l-alert has-close-button>
 					<div>${toastMessageText}</div>
 					<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
