@@ -1,0 +1,36 @@
+{
+    "class": [
+        "feedback-list",
+        "collection"
+    ],
+    "entities": [
+        {
+            "class": [
+                "richtext",
+                "feedback"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "text": "",
+                "html": "Showed no understanding in the course material. Needs more effort. D2L is a global software company with offices in the United States, Canada, Singapore, Australia, Europe, and Brazil. It is the developer of the Brightspace learning management system, which is a cloud-based software used by schools, higher education, and businesses for online and blended classroom learning."
+            }
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "up",
+                "https://user-progress.api.brightspace.com/rels/outcome-activity"
+            ],
+            "href": "unused"
+        },
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "data/demonstrations/dem1101/feedback.json"
+        }
+    ]
+} 

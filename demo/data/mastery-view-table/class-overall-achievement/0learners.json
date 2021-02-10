@@ -1,0 +1,221 @@
+{
+    "class": [
+        "checkpoint-instance"
+    ],
+    "properties": {
+        "Name": "Overall Achievement"
+    },
+    "entities": [
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o0.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o1.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o2.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o3.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o4.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o5.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o6.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "checkpoint-instance-item",
+                "outcome-checkpoint-item"
+            ],
+            "rel": [
+                "item"
+            ],
+            "links": [
+                {
+                    "rel": [
+                        "https://outcomes.api.brightspace.com/rels/outcome"
+                    ],
+                    "href": "data/outcomes/o7.json"
+                },
+                {
+                    "rel": [
+                        "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
+                    ],
+                    "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "https://assessments.api.brightspace.com/rels/checkpoint-instance",
+                "self"
+            ],
+            "href": "data/mastery-view-table/class-overall-achievement/0learners.json"
+        },
+        {
+            "rel": [
+                "https://assessments.api.brightspace.com/rels/coa-classlist"
+            ],
+            "href": "data/mastery-view-table/coa-classlists/0learners.json"
+        },
+        {
+            "rel": [
+                "calculation-method"
+            ],
+            "href": "data/calculation-methods/most-common.json"
+        },
+        {
+            "rel": [
+                "default-achievement-scale"
+            ],
+            "href": "data/loa/scale0.json"
+        }
+    ]
+}

@@ -1,0 +1,400 @@
+{
+    "class": [
+        "demonstration",
+        "assessed"
+    ],
+    "properties": {
+        "dateAssessed": "2020-03-04T00:00:00.000Z"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level0"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level0.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level1"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level1.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level",
+                "selected"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level2"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level2.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level3"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level3.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level4"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level4.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level5"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level5.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level6"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level6.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level7"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level7.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level8"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level8.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level9"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level9.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level10"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level10.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level11"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level11.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level12"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level12.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level13"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level13.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level14"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level14.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level15"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level15.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level16"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level16.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level17"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level17.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level18"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level18.json"
+                }
+            ]
+        },
+        {
+            "class": [
+                "demonstratable-level"
+            ],
+            "rel": [
+                "item"
+            ],
+            "properties": {
+                "levelId": "20lvl-level19"
+            },
+            "links": [
+                {
+                    "rel": [
+                        "https://achievements.api.brightspace.com/rels/level"
+                    ],
+                    "href": "data/levels/20lvl-level19.json"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "data/demonstrations/dem813.json"
+        }
+    ]
+}

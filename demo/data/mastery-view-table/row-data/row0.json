@@ -1,0 +1,286 @@
+{
+	"class": [
+		"mastery-view-row"
+	],
+	"entities": [
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 6,
+				"AssessedActivityCount": 6,
+				"IsOutdated": false
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl1.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o0.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 6,
+				"AssessedActivityCount": 6,
+				"IsOutdated": false
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl2-published.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o1.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 6,
+				"AssessedActivityCount": 4,
+				"IsOutdated": true
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl2.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o2.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 7,
+				"AssessedActivityCount": 7,
+				"IsOutdated": true
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl2-longname-override-olddate.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o3.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 3,
+				"AssessedActivityCount": 0,
+				"IsOutdated": false
+			},
+			"entities": [],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o4.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 3,
+				"AssessedActivityCount": 0,
+				"IsOutdated": false
+			},
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o5.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 3,
+				"AssessedActivityCount": 0,
+				"IsOutdated": false
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl3.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o6.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		},
+		{
+			"class": [
+				"mastery-view-cell"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"ActivityCount": 3,
+				"AssessedActivityCount": 0,
+				"IsOutdated": false
+			},
+			"entities": [
+				{
+					"rel": [
+						"item",
+						"checkpoint-demonstration"
+					],
+					"href": "data/mastery-view-table/demonstrations/dem-lvl1.json"
+				}
+			],
+			"links": [
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/outcome"
+					],
+					"href": "data/outcomes/o7.json"
+				},
+				{
+					"rel": [
+						"checkpoint-consistent-evaluation"
+					],
+					"href": "about:blank"
+				}
+			]
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "data/mastery-view-table/row-data/row0.json"
+		}
+	]
+}

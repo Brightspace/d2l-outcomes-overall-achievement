@@ -1,0 +1,46 @@
+{
+	"class": [
+		"achievement-scale"
+	],
+	"properties": {
+		"name": "3 Level Scale",
+		"isDefault": true
+	},
+	"entities": [
+		{
+			"class": [
+				"level-of-achievement"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "data/levels/3lvl-l1.json"
+		},
+		{
+			"class": [
+				"level-of-achievement"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "data/levels/3lvl-l2.json"
+		},
+		{
+			"class": [
+				"level-of-achievement"
+			],
+			"rel": [
+				"item"
+			],
+			"href": "data/levels/3lvl-l3.json"
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "data/loa/3lvl.json"
+		}
+	]
+}
