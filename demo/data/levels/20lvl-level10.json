@@ -1,0 +1,18 @@
+{
+    "class": [
+        "level-of-achievment"
+    ],
+    "properties": {
+        "color": "#bfff00",
+        "levelId": "20lvl-level10",
+        "name": "Level 11"
+    },
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "data/levels/20lvl-level10.json"
+        }
+    ]
+}
