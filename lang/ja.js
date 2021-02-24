@@ -9,7 +9,8 @@ export default {
 	evidence: "証明",
 	firstName: "名",
 	firstUseAlertSettingPageMessage: "方法の詳細を表示するか、［設定］で算定方法を変更します",
-	firstUseAlertToastMessage: "習得ビューは、方法として「最も一般的」を使用して自動的に算定されます",
+	firstUseAlertToastMessageNone: "習得ビューは自動的に計算されません",
+	firstUseAlertToastMessage: "習得ビューは、方法として「{calculationMethod}」を使用して自動的に算定されます",
 	goToNextPage: "テーブルの次のページに移動します。",
 	goToPreviousPage: "テーブルの前のページに移動します。",
 	goToUserAchievementSummaryPage: "スペースキーまたは Enter キーを押して、{name} さんの達成サマリーページを開きます。",
@@ -61,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numTotal} 件のアクティビティのうち {numAssessed} 件が評価されます",
 	trend: "傾向",
 	untitled: "無題",
-	viewCourseIntentList: "{outcome, select, competencies {コンピテンシ} expectations {期待} objectives {目的} outcomes {結果} standards {標準} other {標準}}ツールにコースインテントリストを表示"
+	viewCourseIntentList: "{outcomes, select, competencies {コンピテンシ} expectations {期待} objectives {目的} outcomes {結果} standards {標準} other {標準}}ツールにコースインテントリストを表示"
 };

@@ -9,7 +9,8 @@ export default {
 	evidence: "证明",
 	firstName: "名字",
 	firstUseAlertSettingPageMessage: "在设置中查看方法详细信息或更改计算方法",
-	firstUseAlertToastMessage: "“掌握情况”视图自动利用“最常见”方法进行计算",
+	firstUseAlertToastMessageNone: "“掌握情况”视图不会自动计算",
+	firstUseAlertToastMessage: "“掌握情况”视图自动利用“{calculationMethod}”方法进行计算",
 	goToNextPage: "前往表格中的下一页。",
 	goToPreviousPage: "前往表格中的上一页。",
 	goToUserAchievementSummaryPage: "按空格或回车键，打开 {name} 的成绩汇总页面。",
@@ -45,7 +46,7 @@ export default {
 	pageSelectOptionText: "第 {currentPage} 页，共 {pageCount} 页",
 	pageSizeSelectOptionText: "每页 {pageSize}",
 	percentLabel: "{percentage}%",
-	periodSeparator: "。",
+	periodSeparator: ".",
 	published: "已发布",
 	releaseAllBtn: "全部发布",
 	releaseAllTxt: "是否发布课程中所有学员的整体成绩？",
@@ -61,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numTotal} 个活动中有 {numAssessed} 个活动已评估",
 	trend: "趋势",
 	untitled: "无标题",
-	viewCourseIntentList: "在 {outcome, select, competencies {能力} expectations {预期} objectives {目标} outcomes {成果} standards {标准} other {标准}} 工具中查看课程目的列表"
+	viewCourseIntentList: "在 {outcomes, select, competencies {能力} expectations {预期} objectives {目标} outcomes {成果} standards {标准} other {标准}} 工具中查看课程目的列表"
 };

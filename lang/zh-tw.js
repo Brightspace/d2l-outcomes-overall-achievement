@@ -9,7 +9,8 @@ export default {
 	evidence: "證明",
 	firstName: "名字",
 	firstUseAlertSettingPageMessage: "在「設定」中檢視方法詳細資料或變更計算方法",
-	firstUseAlertToastMessage: "系統會自動使用「最常用」的方法計算「專精檢視」",
+	firstUseAlertToastMessageNone: "「專精檢視」不會自動計算",
+	firstUseAlertToastMessage: "系統會自動使用「{calculationMethod}」的方法計算「專精檢視」",
 	goToNextPage: "前往表格下一頁。",
 	goToPreviousPage: "前往表格上一頁。",
 	goToUserAchievementSummaryPage: "按下 Space 或 Enter 鍵以開啟 {name} 的達成摘要頁面。",
@@ -61,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "共有 {numTotal} 個活動，已評量其中的 {numAssessed} 個活動",
 	trend: "趨勢",
 	untitled: "未命名",
-	viewCourseIntentList: "在{outcome, select, competencies {能力} expectations {預期} objectives {目標} outcomes {成果} standards {標準} other {標準}}工具中檢視課程目的列表"
+	viewCourseIntentList: "在{outcomes, select, competencies {能力} expectations {預期} objectives {目標} outcomes {成果} standards {標準} other {標準}}工具中檢視課程目的列表"
 };

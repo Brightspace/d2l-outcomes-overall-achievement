@@ -9,7 +9,8 @@ export default {
 	evidence: "Kanıt",
 	firstName: "Adı",
 	firstUseAlertSettingPageMessage: "Yöntem ayrıntılarını görüntüleyin veya Ayarlar'dan hesaplama yöntemini değiştirin",
-	firstUseAlertToastMessage: "Kapsamlı Görünüm, \"En Yaygın\" yöntem kullanılarak otomatik olarak hesaplanır",
+	firstUseAlertToastMessageNone: "Kapsamlı görünüm otomatik olarak hesaplanmaz",
+	firstUseAlertToastMessage: "Kapsamlı görünüm, \"{calculationMethod}\" yöntemi kullanılarak otomatik olarak hesaplanır",
 	goToNextPage: "Tabloda bir sonraki sayfaya gidin.",
 	goToPreviousPage: "Tabloda bir önceki sayfaya gidin.",
 	goToUserAchievementSummaryPage: "{name} adlı kişinin başarı özeti sayfasını açmak için boşluk veya enter tuşuna basın.",
@@ -32,7 +33,7 @@ export default {
 	name: "Ad",
 	newPageSelectLiveText: "{pageNum} / {totalPages} sayfa seçildi.",
 	newPageSizeLiveText: "Sayfa başına {pageSize} satır görüntüleniyor.",
-	noAlignedOutcomes: "Uzmanlık Görünümünü kullanmak için etkinliğin düzenleme sayfasındaki ders etkinliklerini {outcome, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} ile uyumlu hale getirin.",
+	noAlignedOutcomes: "Uzmanlık Görünümünü kullanmak için etkinliğin düzenleme sayfasındaki ders etkinliklerini {outcomes, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} ile uyumlu hale getirin.",
 	noEnrolledLearners: "Derse kayıtlı öğrenci yok.",
 	noScaleInstructor: "Şunlara ulaşma konusundaki katılımcı ilerlemesini görmek için bir başarı ölçütü oluşturun ve seçin: {outcome, select, competencies {yeterlik} expectations {beklenti} objectives {hedef} outcomes {kazanım} standards {standart} other {standart}}.",
 	noScaleStudent: "{outcome, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} başarısı için bir ölçüt belirlenmedi.",
@@ -61,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numTotal} etkinlikten {numAssesed} tanesi değerlendirildi",
 	trend: "Eğilim",
 	untitled: "Adsız",
-	viewCourseIntentList: "{outcome, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} aracından ders amaç listesini görüntüleyin"
+	viewCourseIntentList: "{outcomes, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} aracından ders amaç listesini görüntüleyin"
 };
