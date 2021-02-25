@@ -62,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "Se evalúan {numAssessed} de {numTotal} actividades",
 	trend: "Tendencia",
 	untitled: "Sin título",
-	viewCourseIntentList: "Ver la lista de metas en la herramienta {outcomes, select, competencies {Competencias} expectations {Expectativas} objectives {Objetivos} outcomes {Resultados} standards {Estándares} other {Estándares}}"
+	viewCourseIntentList: "Ver la lista de metas en la herramienta {outcome, select, competencies {Competencias} expectations {Expectativas} objectives {Objetivos} outcomes {Resultados} standards {Estándares} other {Estándares}}"
 };

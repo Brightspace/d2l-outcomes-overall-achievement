@@ -13,7 +13,7 @@ export default {
 	firstUseAlertToastMessage: "Die Ansicht „Lernerfolg“ wird automatisch mit der Methode „{calculationMethod}“ berechnet",
 	goToNextPage: "Gehen Sie zur nächsten Seite in der Tabelle.",
 	goToPreviousPage: "Gehen Sie zur vorherigen Seite in der Tabelle.",
-	goToUserAchievementSummaryPage: "Drücken Sie die Leertaste oder Eingabetaste, um die Seite mit der Zusammenfassung der Lernerfolge von {Name} zu öffnen.",
+	goToUserAchievementSummaryPage: "Drücken Sie die Leertaste oder Eingabetaste, um die Seite mit der Zusammenfassung der Lernerfolge von {name} zu öffnen.",
 	headingDate: "Datum",
 	headingEvidence: "Nachweisname",
 	headingLoa: "Erreichte Stufe",
@@ -35,7 +35,7 @@ export default {
 	newPageSizeLiveText: "{pageSize} Zeilen pro Seite werden angezeigt.",
 	noAlignedOutcomes: "Um die Ansicht „Lernerfolge“ zu verwenden, gleichen Sie zunächst die {outcome, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Ziele} outcomes {Ergebnisse} standards {Standards} other {Standards}} auf der Bearbeitungsseite der Aktivität ab.",
 	noEnrolledLearners: "Keine angemeldeten Teilnehmer am Kurs.",
-	noScaleInstructor: "Um den Lernfortschritt beim Erreichen dieser {result, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Ziele} outcomes {Ergebnisse} standards {Standards} other {Standards}} anzuzeigen, erstellen Sie eine Erfolgsskala und wählen Sie sie aus.",
+	noScaleInstructor: "Um den Lernfortschritt beim Erreichen dieser {outcome, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Ziele} outcomes {Ergebnisse} standards {Standards} other {Standards}} anzuzeigen, erstellen Sie eine Erfolgsskala und wählen Sie sie aus.",
 	noScaleStudent: "Es wurde keine Skala festgelegt, um das Erreichen von {outcome, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Zielen} outcomes {Ergebnissen} standards {Standards} other {Standards}} zu messen.",
 	notAssessed: "Nicht bewertet",
 	notEvaluated: "Nicht bewertet",
@@ -62,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numAssessed} von {numTotal} Aktivitäten werden bewertet",
 	trend: "Trend",
 	untitled: "ohne Titel",
-	viewCourseIntentList: "Sehen Sie die Kurszielliste im {outcomes, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Ziele} outcomes {Ergebnisse} standards {Standards} other {Standards}}-Tool"
+	viewCourseIntentList: "Sehen Sie die Kurszielliste im {outcome, select, competencies {Kompetenzen} expectations {Erwartungen} objectives {Ziele} outcomes {Ergebnisse} standards {Standards} other {Standards}}-Tool"
 };

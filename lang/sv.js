@@ -35,7 +35,7 @@ export default {
 	newPageSizeLiveText: "{pageSize} rader per sida visas.",
 	noAlignedOutcomes: "Om du vill använda kompetensvyn börjar du med att justera {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}} efter kursaktiviteter på redigeringssidan för aktiviteten.",
 	noEnrolledLearners: "Det finns inga registrerade elever på kursen.",
-	noScaleInstructor: "För att se elevens framsteg mot dessa {outcome, select, competency {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}} skapar du och väljer en nivåskala.",
+	noScaleInstructor: "För att se elevens framsteg mot dessa {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}} skapar du och väljer en nivåskala.",
 	noScaleStudent: "Ingen skala har angetts för mätning av uppnådda {outcome, select, competencies {kompetenser} expectations {förväntningar} objectives {mål} outcomes {resultat} standards {standarder} other {standarder}}.",
 	notAssessed: "Inte bedömt",
 	notEvaluated: "Inte utvärderat",
