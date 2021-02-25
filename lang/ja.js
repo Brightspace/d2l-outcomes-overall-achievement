@@ -62,5 +62,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numTotal} 件のアクティビティのうち {numAssessed} 件が評価されます",
 	trend: "傾向",
 	untitled: "無題",
-	viewCourseIntentList: "{outcomes, select, competencies {コンピテンシ} expectations {期待} objectives {目的} outcomes {結果} standards {標準} other {標準}}ツールにコースインテントリストを表示"
+	viewCourseIntentList: "{outcome, select, competencies {コンピテンシ} expectations {期待} objectives {目的} outcomes {結果} standards {標準} other {標準}}ツールにコースインテントリストを表示"
 };
