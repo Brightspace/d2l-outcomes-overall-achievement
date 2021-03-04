@@ -8,7 +8,7 @@
     "lint:eslint": "eslint . --ext .js,.html",
     "format": "npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open"
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
