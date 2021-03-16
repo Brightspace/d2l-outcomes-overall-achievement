@@ -1116,7 +1116,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_renderUpperControls() {
-		if (!this._learnerRowsData || this._learnerRowsData.length === 0) {
+		if (this._learnerList.length === 0) {
 			return null;
 		}
 
