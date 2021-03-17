@@ -469,7 +469,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		if (changedProperties.has('_filteredLearnerList')) {
-			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 			this._updatePageCount();
 		}
 
@@ -626,7 +625,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	_goToPageNumber(newPage) {
 		this._currentPage = newPage;
 		var selector = this.shadowRoot.getElementById('page-select-menu');
-		selector.selectedIndex = newPage - 1;
+		if (selector) {
+			selector.selectedIndex = newPage - 1;
+		}
 		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
@@ -1115,7 +1116,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_renderUpperControls() {
-		if (!this._learnerRowsData || this._learnerRowsData.length === 0) {
+		if (this._learnerList.length === 0) {
 			return null;
 		}
 
