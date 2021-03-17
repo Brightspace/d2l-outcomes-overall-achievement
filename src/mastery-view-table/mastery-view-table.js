@@ -154,8 +154,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	static get styles() {
 		return [
 			css`
-				#first-use-alert {
-					margin-bottom: 18px;
+				.d2l-alert-container {
+					padding-bottom: 18px;
 				}
 
 				#scroll-wrapper {
@@ -276,14 +276,19 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				#upper-controls-container {
 					border-spacing: 0px;
 					width: 60vw;
+					display: flex;
+					flex-direction: column;
 				}
 
-				#search-publish-container {
-					margin-bottom: 18px;
+				:host([dir="rtl"]) #search-input {
+					margin-right: 0;
+					margin-left: 24px;
 				}
 
 				#search-input {
 					max-width: 270px;
+					margin-bottom: 18px;
+					margin-right: 24px;
 				}
 
 				.msg-container {
@@ -292,6 +297,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					border: 1px solid var(--d2l-color-gypsum);
 					color: var(--d2l-color-ferrite);
 					margin-bottom: 18px;
+					display: block;
 				}
 
 				.msg-container
@@ -314,7 +320,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				}
 
 				#bulk-action {
-					margin-left: 24px;
+					margin-bottom: 18px;
 				}
 
 				@media (min-width: 768px) {
@@ -463,7 +469,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		if (changedProperties.has('_filteredLearnerList')) {
-			this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 			this._updatePageCount();
 		}
 
@@ -620,7 +625,9 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	_goToPageNumber(newPage) {
 		this._currentPage = newPage;
 		var selector = this.shadowRoot.getElementById('page-select-menu');
-		selector.selectedIndex = newPage - 1;
+		if (selector) {
+			selector.selectedIndex = newPage - 1;
+		}
 		this._learnerRowsData = this._getLearnerRowsData(this._filteredLearnerList, this._currentPage, this._rowsPerPage);
 	}
 
@@ -661,6 +668,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		const outcomeHeadersData = [];
 		const bulkReleaseAction = entity.getBulkReleaseAction();
 		const bulkRetractAction = entity.getBulkRetractAction();
+
+		// Prime cache with achievement scale
+		entity.onDefaultScaleChanged(() => { /* Do nothing */ });
+
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
 		outcomeClassProgressEntities.map(outcomeProgressEntity => {
 			const activityCollectionHref = outcomeProgressEntity.getOutcomeActivityCollectionHref();
@@ -807,9 +818,11 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	_renderErrorAlert() {
 		return html`
-			<d2l-alert type="error">
-				${this.localize('masteryViewTableEmptyError')}
-			</d2l-alert>
+			<div class="d2l-alert-container">
+				<d2l-alert type="error">
+					${this.localize('masteryViewTableEmptyError')}
+				</d2l-alert>
+			</div>
 		`;
 	}
 
@@ -819,10 +832,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			: this.localize('firstUseAlertToastMessageNone');
 
 		return html`
-			<d2l-alert has-close-button id="first-use-alert">
-				<div>${toastMessageText}</div>
-				<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
-			</d2l-alert>
+			<div class="d2l-alert-container">
+				<d2l-alert has-close-button>
+					<div>${toastMessageText}</div>
+					<d2l-link small href=${mvSettingsLocation}>${this.localize('firstUseAlertSettingPageMessage')}</d2l-link>
+				</d2l-alert>
+			</div>
 		`;
 	}
 
@@ -1101,7 +1116,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_renderUpperControls() {
-		if (!this._learnerRowsData || this._learnerRowsData.length === 0) {
+		if (this._learnerList.length === 0) {
 			return null;
 		}
 

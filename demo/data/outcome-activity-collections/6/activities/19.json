@@ -1,0 +1,29 @@
+{
+    "class": [
+        "user-progress-outcome-activity"
+    ],
+    "properties": {
+        "type": "checkpoint-item",
+        "name": "Activity 20"
+    },
+    "entities": [
+        {
+            "class": [
+                "demonstration",
+                "assessed"
+            ],
+            "rel": [
+                "item"
+            ],
+            "href": "data/demonstrations/dem619.json"
+        }
+    ],
+    "links": [
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "data/outcome-activity-collections/6/activities/19.json"
+        }
+    ]
+}

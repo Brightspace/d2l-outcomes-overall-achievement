@@ -1,0 +1,31 @@
+{
+    "class": [
+        "outcome"
+    ],
+    "properties": {
+        "notation": "MCR3U.B2.1",
+        "altNotation": "",
+        "label": "Standard",
+        "listId": "",
+		"description": "distinguish exponential functions from linear and quadratic functions by making comparisons in a variety of ways (e.g., comparing rates of change using finite differences in tables of values; identifying a constant ratio in a table of values; inspecting graphs; comparing equations)",
+        "subjects": [
+            "Functions, University Preparation"
+        ],
+        "source": "asn"
+    },
+    "links": [
+        {
+            "rel": [
+                "about"
+            ],
+            "type": "text/html",
+            "href": "http://asn.desire2learn.com/resources/S2788207"
+        },
+        {
+            "rel": [
+                "self"
+            ],
+            "href": "data/outcomes/o3.json"
+        }
+    ]
+}

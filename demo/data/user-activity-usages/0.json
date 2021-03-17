@@ -1,0 +1,130 @@
+{
+	"class": [
+		"user-assignment-activity",
+		"activity"
+	],
+	"entities": [
+		{
+			"class": [
+				"assignment-submission-list"
+			],
+			"rel": [
+				"https://assignments.api.brightspace.com/rels/assignment-submission-list"
+			]
+		},
+		{
+			"class": [
+				"relative-uri"
+			],
+			"rel": [
+				"item",
+				"https://assessments.api.brightspace.com/rels/assessment-application"
+			],
+			"properties": {
+				"path": "/d2l/lms/dropbox/admin/mark/folder_user_mark.d2l?ou=123187&db=2680&d2l_itemId=30424&d2l_iterId=0&etid=2"
+			}
+		},
+		{
+			"class": [
+				"evaluation"
+			],
+			"rel": [
+				"https://api.brightspace.com/rels/evaluation"
+			],
+			"properties": {
+				"state": "Unevaluated"
+			}
+		},
+		{
+			"class": [
+				"completion",
+				"incomplete"
+			],
+			"rel": [
+				"item",
+				"https://activities.api.brightspace.com/rels/completion"
+			]
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/user-activity-usage",
+				"self"
+			],
+			"href": "data/user-activity-usages/0.json"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/activity-usage"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://api.brightspace.com/rels/user"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://api.brightspace.com/rels/organization"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/evaluation"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/associations"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://api.brightspace.com/rels/assignment"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/feedback"
+			],
+			"href": "unused"
+		},
+		{
+			"rel": [
+				"https://alignments.api.brightspace.com/rels/alignments"
+			],
+			"href": "unused"
+		}
+	],
+	"actions": [
+		{
+			"href": "https://1cfd0bde-9ff5-4554-b6ac-ae63a64ad683.activities.api.dev.brightspace.com/activities/6606_2000_2680/usages/123187/users/30424/associations",
+			"name": "query-associations",
+			"method": "GET",
+			"fields": [
+				{
+					"type": "text",
+					"name": "type"
+				}
+			]
+		},
+		{
+			"href": "https://1cfd0bde-9ff5-4554-b6ac-ae63a64ad683.activities.api.dev.brightspace.com/activities/6606_2000_2680/usages/123187/users/30424/associations",
+			"name": "query-associations",
+			"method": "GET",
+			"fields": [
+				{
+					"type": "text",
+					"name": "type"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,130 @@
+{
+	"class": [
+		"demonstration",
+		"assessed"
+	],
+	"rel": [
+		"item"
+	],
+	"properties": {
+		"dateAssessed": "2019-07-27T13:54:09.710Z"
+	},
+	"entities": [
+		{
+			"class": [
+				"demonstratable-level",
+				"selected"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"levelId": "level10"
+			},
+			"links": [
+				{
+					"rel": [
+						"https://achievements.api.brightspace.com/rels/level"
+					],
+					"href": "data/levels/level10.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"demonstratable-level"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"levelId": "level11"
+			},
+			"links": [
+				{
+					"rel": [
+						"https://achievements.api.brightspace.com/rels/level"
+					],
+					"href": "data/levels/level11.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"demonstratable-level"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"levelId": "level12"
+			},
+			"links": [
+				{
+					"rel": [
+						"https://achievements.api.brightspace.com/rels/level"
+					],
+					"href": "data/levels/level12.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"demonstratable-level"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"levelId": "level13"
+			},
+			"links": [
+				{
+					"rel": [
+						"https://achievements.api.brightspace.com/rels/level"
+					],
+					"href": "data/levels/level13.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"demonstratable-level"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"levelId": "level14"
+			},
+			"links": [
+				{
+					"rel": [
+						"https://achievements.api.brightspace.com/rels/level"
+					],
+					"href": "data/levels/level14.json"
+				}
+			]
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "data/demonstrations/dem1000.json"
+		},
+		{
+			"rel": [
+				"https://activities.api.brightspace.com/rels/user-activity-usage"
+			],
+			"href": "data/user-activity-usages/1000.json"
+		},
+		{
+			"rel": [
+				"https://user-progress.api.brightspace.com/rels/feedback"
+			],
+			"href": "data/demonstrations/dem1000/feedback.json"
+		}
+	]
+} 

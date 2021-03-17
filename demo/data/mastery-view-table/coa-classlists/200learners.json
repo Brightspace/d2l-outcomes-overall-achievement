@@ -1,0 +1,7616 @@
+{
+	"class": [
+		"collection",
+		"checkpoint-user"
+	],
+	"entities": [
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Bob",
+				"LastName": "Jenkins"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u0.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Jordan",
+				"LastName": "Vibe"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u1.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u1.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row1.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Matt",
+				"LastName": "Gross"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u2.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u2.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row2.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Johnson"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u3.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u3.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row3.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Aladeen",
+				"LastName": "Jones"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u4.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u4.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row4.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Richard",
+				"LastName": "Picks"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u5.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u5.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row5.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "Murray",
+				"LastName": "Gordon"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/u6.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u6.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row6.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		},
+		{
+			"class": [
+				"checkpoint-user"
+			],
+			"rel": [
+				"item"
+			],
+			"properties": {
+				"FirstName": "John",
+				"LastName": "Zeal"
+			},
+			"links": [
+				{
+					"rel": [
+						"user"
+					],
+					"href": "data/mastery-view-table/users/ufiller.json"
+				},
+				{
+					"rel": [
+						"https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+					],
+					"href": "data/mastery-view-table/user-progress-outcome-collections/upoc-ufiller.json"
+				},
+				{
+					"rel": [
+						"https://api.brightspace.com/rels/user-grades-view"
+					],
+					"href": "https://D2L.com"
+				},
+				{
+					"rel": [
+						"https://outcomes.api.brightspace.com/rels/row-data"
+					],
+					"href": "data/mastery-view-table/row-data/row0.json"
+				}
+			]
+		}
+	],
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "data/mastery-view-table/coa-classlists/200learners.json"
+		}
+	]
+}
