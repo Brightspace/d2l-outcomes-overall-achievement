@@ -319,7 +319,6 @@ export const d2lTableStyles = css`
 	d2l-table-wrapper[type="default"][sticky-headers] tbody tr:not([header]):not([selected]):first-child td,
 	d2l-table-wrapper[type="default"][sticky-headers] tbody tr:not([header]):not([selected]):first-child th  {
 		border-top: none;
-		border-bottom: none;
 	}
 	d2l-table-wrapper[type="default"][sticky-headers] .d2l-table > thead > tr[header] + tr:not([header])[selected] > td,
 	d2l-table-wrapper[type="default"][sticky-headers] .d2l-table > tbody > tr[header] + tr:not([header])[selected] > td,
