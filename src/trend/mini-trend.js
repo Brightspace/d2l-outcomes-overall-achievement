@@ -1,8 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TrendMixin } from './TrendMixin';
-import '@brightspace-ui/core/components/colors/colors.js';
-import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import { bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
+import '@brightspace-ui/core/components/colors/colors';
+import '@brightspace-ui/core/components/tooltip/tooltip';
 
 const BLOCK_SPACING = 2;
 const COMPONENT_HEIGHT = 36;
@@ -22,6 +23,7 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 	static get styles() {
 		return [
+			bodySmallStyles,
 			css`
 				:host {
 					--block-spacing: ${BLOCK_SPACING}px;
@@ -84,10 +86,6 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					width: 2px;
 				}
 
-				.empty-text {
-					@apply --d2l-body-small-text;
-				}
-
 				.screen-reader {
 					height: 1px;
 					left: -99999px;
@@ -136,7 +134,7 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		const trendItems = this._getTrendItems(trendDataTruncated);
 
 		if (this._isNotAssessed(trendDataTruncated)) {
-			return html`<div class="empty-text">${this.localize('notAssessed')}</div>`;
+			return html`<div class="d2l-body-small">${this.localize('notAssessed')}</div>`;
 		}
 
 		if (this.skeleton) {

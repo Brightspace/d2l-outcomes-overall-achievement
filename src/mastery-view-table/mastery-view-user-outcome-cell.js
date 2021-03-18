@@ -3,8 +3,9 @@ import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TelemetryMixin } from '../TelemetryMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import '@brightspace-ui/core/components/colors/colors.js';
-import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
+import '@brightspace-ui/core/components/colors/colors';
+import '@brightspace-ui/core/components/tooltip/tooltip';
 import 'd2l-table/d2l-table.js';
 import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
@@ -33,6 +34,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 	static get styles() {
 		return [
+			bodyCompactStyles,
 			css`
 				.cell-content-container:focus {
 					outline-color: var(--d2l-color-celestine);
@@ -73,7 +75,6 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				}
 
 				.assessment-level-label {
-					@apply --d2l-body-compact-text;
 					float: left;
 					white-space: nowrap;
 					overflow: hidden;
@@ -182,7 +183,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				</span>
 			</div>
 			<div class="assessment-label-container" aria-hidden="true">
-				<div class="assessment-level-label" title="${data.levelName}">
+				<div class="assessment-level-label d2l-body-compact" title="${data.levelName}">
 					${data.levelName}
 				</div>
 				${data.isManualOverride ? html`
