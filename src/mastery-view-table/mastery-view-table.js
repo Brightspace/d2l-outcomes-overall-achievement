@@ -158,24 +158,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					padding-bottom: 18px;
 				}
 
-				#scroll-wrapper {
-					--d2l-scroll-wrapper-h-scroll: {
-						border-left: 1px dashed var(--d2l-color-mica);
-						border-right: 1px dashed var(--d2l-color-mica);
-					};
-
-					--d2l-scroll-wrapper-left: {
-						border-left: none;
-					};
-
-					--d2l-scroll-wrapper-right: {
-						border-right: none;
-					};
-
-					--d2l-scroll-wrapper-border-color: var(--d2l-color-mica);
-					--d2l-scroll-wrapper-background-color: var(--d2l-color-regolith);
-				}
-
 				#no-outcomes-container {
 					width: 100%;
 					display: flex;
@@ -993,7 +975,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					</thead>
 					<tbody>
 						${this._renderTableBody(this._outcomeHeadersData, this._learnerRowsData)}
-					<tbody>
+					</tbody>
 				</table>
 			</d2l-table-wrapper>
 			${this._renderTableControls()}
