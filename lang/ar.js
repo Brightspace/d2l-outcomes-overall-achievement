@@ -41,7 +41,7 @@ export default {
 	notEvaluated: "لم يتم التقييم",
 	notPublished: "لم يتم النشر",
 	outcomeInfo: "{name}. {description}",
-	outOfDate: "قديم",
+	outOfDate: "قديمة",
 	page: "الصفحة:",
 	pageSelectOptionText: "{currentPage} من أصل {pageCount}",
 	pageSizeSelectOptionText: "{pageSize} لكل صفحة",
