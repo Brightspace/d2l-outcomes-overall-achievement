@@ -2,8 +2,8 @@
     "class": [
         "feedback-list",
         "collection"
-	],
-	"entities": [
+    ],
+    "entities": [
         {
             "class": [
                 "richtext",
@@ -33,4 +33,4 @@
             "href": "data/demonstrations/dem1005/feedback.json"
         }
     ]
-} 
+}

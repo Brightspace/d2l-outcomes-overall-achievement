@@ -44,7 +44,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					width: 9.9rem;
 					height: 3rem;
 				}
-				
+
 				.cell-content-container:not(.skeleton) {
 					cursor: pointer;
 				}

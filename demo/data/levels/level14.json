@@ -1,28 +1,28 @@
 {
-    "class": [
-        "level-of-achievement"
-    ],
-    "rel": [
-        "item"
-    ],
-    "properties": {
-        "color": "#99ddff",
-        "levelId": "level14",
-        "name": "Exceptional",
-        "sortOrder": 500
+  "class": [
+    "level-of-achievement"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "color": "#99ddff",
+    "levelId": "level14",
+    "name": "Exceptional",
+    "sortOrder": 500
+  },
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/levels/level14.json"
     },
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/levels/level14.json"
-        },
-        {
-            "rel": [
-                "achievement-scale"
-            ],
-            "href": "data/loa/scale0.json"
-        }
-    ]
+    {
+      "rel": [
+        "achievement-scale"
+      ],
+      "href": "data/loa/scale0.json"
+    }
+  ]
 }

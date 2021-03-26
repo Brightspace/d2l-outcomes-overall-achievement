@@ -74,14 +74,14 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					position: relative;
 					width: 2px;
 				}
-	
+
 				#grid {
 					float: left;
 					padding-top: var(--block-focus-height-increase);
 					position: relative;
 					width: 100%;
 				}
-	
+
 				.h-line {
 					background-color: var(--grid-color);
 					height: var(--grid-thickness);
@@ -135,13 +135,13 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				#scroll-button-right {
 					justify-content: flex-end;
 				}
-				
+
 				:host(:not([dir="rtl"])) #scroll-button-right,
 				:host([dir="rtl"]) #scroll-button-left {
 					background: linear-gradient(-90deg, white, transparent);
 					right: 0px;
 				}
-	
+
 				#data {
 					align-items: flex-end;
 					display: flex;
@@ -174,7 +174,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 				.grid-column.section:not(:first-of-type) {
 					border-inline-start: var(--grid-thickness) solid var(--grid-color);
 				}
-	
+
 				.trend-group {
 					align-items: center;
 					display: flex;
@@ -208,12 +208,12 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					background-color: var(--not-assessed-color);
 					height: var(--not-assessed-height);
 				}
-	
+
 				.trend-group .trend-block:first-of-type { /* Requires trend-blocks and not-assessed trend-blocks to be different element types */
 					border-top-left-radius: var(--border-radius);
 					border-top-right-radius: var(--border-radius);
 				}
-	
+
 				.trend-group .trend-block:last-of-type {
 					margin-bottom: 0px;
 				}
@@ -223,7 +223,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					cursor: pointer;
 					outline: none;
 				}
-				
+
 				.trend-group:not(.not-assessed):hover .trend-block,
 				.trend-group:not(.not-assessed):focus .trend-block,
 				.trend-group:not(.not-assessed):hover .trend-pin > *,
@@ -231,7 +231,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 					filter: brightness(120%);
 					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 				}
-	
+
 				.screen-reader {
 					height: 1px;
 					left: -99999px;
@@ -709,7 +709,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		const attempts = trendItem.attempts.map(attemptGroup => {
 			return html`
 				<div>
-					${this._hasMultipleAttempts(trendItem) ? html`<b>${this._getAttemptGroupLabel(attemptGroup.attempts)}</b>:` : null} 
+					${this._hasMultipleAttempts(trendItem) ? html`<b>${this._getAttemptGroupLabel(attemptGroup.attempts)}</b>:` : null}
 					${attemptGroup.name}
 				</div>
 			`;

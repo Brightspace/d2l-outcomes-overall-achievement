@@ -1,15 +1,15 @@
 {
-	"class": [
-		"user-activity-usage",
-		"checkpoint-item",
-		"activity"
-	],
-	"links": [
-		{
-			"rel": [
-				"checkpoint-consistent-evaluation"
-			],
-			"href": "https://google.com"
-		}
-	]
+  "class": [
+    "user-activity-usage",
+    "checkpoint-item",
+    "activity"
+  ],
+  "links": [
+    {
+      "rel": [
+        "checkpoint-consistent-evaluation"
+      ],
+      "href": "https://google.com"
+    }
+  ]
 }

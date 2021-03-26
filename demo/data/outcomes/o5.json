@@ -1,31 +1,31 @@
 {
-    "class": [
-        "outcome"
+  "class": [
+    "outcome"
+  ],
+  "properties": {
+    "notation": "MCR3U.B2.3",
+    "altNotation": "",
+    "label": "Standard",
+    "listId": "",
+    "description": "sketch graphs of y = af (k(x - d)) + c by applying one or more transformations x to the graph of f(x) = ax (a > 0, a ≠ 1), and state the domain and range of the transformed functions.",
+    "subjects": [
+      "Functions, University Preparation"
     ],
-    "properties": {
-        "notation": "MCR3U.B2.3",
-        "altNotation": "",
-        "label": "Standard",
-        "listId": "",
-		"description": "sketch graphs of y = af (k(x - d)) + c by applying one or more transformations x to the graph of f(x) = ax (a > 0, a ≠ 1), and state the domain and range of the transformed functions.",
-        "subjects": [
-            "Functions, University Preparation"
-        ],
-        "source": "asn"
+    "source": "asn"
+  },
+  "links": [
+    {
+      "rel": [
+        "about"
+      ],
+      "type": "text/html",
+      "href": "http://asn.desire2learn.com/resources/S2788207"
     },
-    "links": [
-        {
-            "rel": [
-                "about"
-            ],
-            "type": "text/html",
-            "href": "http://asn.desire2learn.com/resources/S2788207"
-        },
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcomes/o5.json"
-        }
-    ]
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcomes/o5.json"
+    }
+  ]
 }

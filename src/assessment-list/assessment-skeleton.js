@@ -16,13 +16,13 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 
 	static get styles() {
 		return [
-			css`			
+			css`
 				.skeleton-container {
 					display: flex;
 					height: 124px;
 					margin-bottom: 18px;
 				}
-				
+
 				.timeline {
 					flex-grow: 0;
 					flex-shrink: 0;
@@ -64,7 +64,7 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					height: 24px;
 					border-radius: 4px;
 				}
-				
+
 				.card-right {
 					flex-grow: 0;
 					flex-shrink: 0;
@@ -72,25 +72,25 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					width: 24px;
 					height: 24px;
 				}
-				
+
 				.card-left {
 					margin-top: 7px;
 					margin-right: 37px;
 					flex-grow: 1;
 					flex-shrink: 1;
 				}
-				
+
 				.card-top {
 					margin-bottom: 26px;
 					width: 38%;
 					height: 14px;
 					border-radius: 4px;
 				}
-				
+
 				.card-bottom {
 					display: flex;
 				}
-				
+
 				.mini-icon {
 					width: 15px;
 					height: 15px;
@@ -98,12 +98,12 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 					flex-shrink: 0;
 					border-radius: 4px;
 				}
-				
+
 				.lines {
 					flex-grow: 1;
 					flex-shrink: 1;
 				}
-				
+
 				.line {
 					width: 100%;
 					height: 10px;

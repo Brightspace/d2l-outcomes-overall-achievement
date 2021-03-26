@@ -16,19 +16,19 @@ class VisibilityHideIcon extends LitElement {
 				height: 11.9px;
 				width: 14px;
 			}
-			
+
 			.cls-1, .cls-3, .cls-4 {
 				fill: none;
 			}
-		
+
 			.cls-1 {
 				clip-rule: evenodd;
 			}
-		
+
 			.cls-2 {
 				clip-path: url(#clip-path);
 			}
-		
+
 			.cls-3 {
 				stroke: #6d7376;
 				stroke-width: 4px;

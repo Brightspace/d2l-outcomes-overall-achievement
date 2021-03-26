@@ -1,20 +1,20 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "rel": [
-        "item"
-    ],
-    "properties": {
-        "name": "a4",
-        "type": "Dropbox"
-    },
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/mastery-view-table/activities/a-unassessed.json"
-        }
-    ]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "name": "a4",
+    "type": "Dropbox"
+  },
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/activities/a-unassessed.json"
+    }
+  ]
 }

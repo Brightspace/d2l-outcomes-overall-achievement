@@ -30,7 +30,7 @@ class Diamond extends LitElement {
 				height="${computedWidth}"
 				viewBox="${computedWidth / -2} ${computedWidth / -2} ${computedWidth} ${computedWidth}"
 				>
-				<rect 
+				<rect
 					x="${computedEdgeWidth / -2}"
 					y="${computedEdgeWidth / -2}"
 					width="${computedEdgeWidth}"

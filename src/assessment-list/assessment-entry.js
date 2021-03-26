@@ -36,7 +36,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 			css`
 				#activity-name {
 					margin: 0;
-					display: inline-block; 
+					display: inline-block;
 					text-align: start;
 				}
 
@@ -72,7 +72,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 					transition: all 0.3s ease-out;
 					transition-delay: 0.05s;
 					cursor: pointer;
-				}	
+				}
 
 				#card-header {
 					align-items: flex-start;
@@ -104,7 +104,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 					display: flex;
 					flex-grow: 1;
 					flex-direction: column;
-					
+
 				}
 
 				.line {
@@ -129,7 +129,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 					margin: 0px 12px;
 					text-align: start;
 				}
-				
+
 				.timeline {
 					display: flex;
 					flex-direction: column;
@@ -152,7 +152,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 					#card-header {
 						flex-direction: column;
 					}
-					
+
 					#loa {
 						margin-top: 12px;
 					}
@@ -165,7 +165,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 						order: -1;
 					}
 				}
-				
+
 			`,
 			bodySmallStyles,
 			heading4Styles
@@ -225,7 +225,7 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 						${this._feedback && this._feedback.map(this._renderFeedback, this)}
 					</div>
 				</button>
-			</div>		
+			</div>
 		`;
 	}
 

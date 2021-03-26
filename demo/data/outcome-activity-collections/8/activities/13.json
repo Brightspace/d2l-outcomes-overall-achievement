@@ -1,39 +1,39 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "properties": {
-        "type": "Links",
-        "name": "Activity 14"
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "type": "Links",
+    "name": "Activity 14"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem813.json"
     },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem813.json"
-        },
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem813-1.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcome-activity-collections/8/activities/13.json"
-        }
-    ]
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem813-1.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/8/activities/13.json"
+    }
+  ]
 }

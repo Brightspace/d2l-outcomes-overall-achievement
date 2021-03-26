@@ -108,7 +108,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 						filter: brightness(120%);
 						outline: none;
 					}
-					
+
 					#container:not(.compact) #graph-container:focus .graph-bar,
 					#container:not(.compact) #graph-container:hover .graph-bar {
 						animation: raise 200ms ease-in;
@@ -262,7 +262,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 
 		return html`
 			<div
-				class="graph-bar" 
+				class="graph-bar"
 				style="background: ${levelData.color}; flex-grow: ${levelData.count};"
 			></div>
 		`;

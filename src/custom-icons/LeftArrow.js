@@ -17,7 +17,7 @@ class LeftArrowIcon extends LitElement {
 			:host {
 				display: flex;
 			}
-			
+
 			.icon-container {
 				padding-left: 6px;
 				padding-right: 6px;

@@ -213,7 +213,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					outline: 0;
 					text-decoration: underline;
 				}
-				
+
 				.learner-outcome-cell {
 					width: 9.9rem;
 				}
@@ -960,7 +960,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	_renderTable() {
 		if (this._learnerList.length === 0 || this._filteredLearnerList.length !== 0) {
 			return html`
-			<d2l-table-wrapper 
+			<d2l-table-wrapper
 				?sticky-headers=${this._stickyHeadersEnabled}
 				show-actions
 				type="default"

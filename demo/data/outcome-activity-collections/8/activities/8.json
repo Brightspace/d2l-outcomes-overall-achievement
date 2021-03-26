@@ -1,39 +1,39 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "properties": {
-        "type": "Discussions",
-        "name": "Activity 9"
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "type": "Discussions",
+    "name": "Activity 9"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem808.json"
     },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem808.json"
-        },
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem808-1.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcome-activity-collections/8/activities/8.json"
-        }
-    ]
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem808-1.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/8/activities/8.json"
+    }
+  ]
 }

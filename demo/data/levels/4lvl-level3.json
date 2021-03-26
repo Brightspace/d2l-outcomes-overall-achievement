@@ -1,18 +1,18 @@
 {
-    "class": [
-        "level-of-achievment"
-    ],
-    "properties": {
-        "color": "#88CC55",
-        "levelId": "4lvl-level3",
-        "name": "Level 4"
-    },
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/levels/4lvl-level3.json"
-        }
-    ]
+  "class": [
+    "level-of-achievment"
+  ],
+  "properties": {
+    "color": "#88CC55",
+    "levelId": "4lvl-level3",
+    "name": "Level 4"
+  },
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/levels/4lvl-level3.json"
+    }
+  ]
 }

@@ -82,7 +82,7 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 				#feedback-spacer {
 					width: 36px;
 				}
-				
+
 				.feedback-item {
 					display: flex;
 				}
@@ -165,11 +165,11 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 			<div id="card">
 				<div id="card-header">
 					<div id="header-left">
-						<d2l-icon icon="tier2:grade"></d2l-icon> 
+						<d2l-icon icon="tier2:grade"></d2l-icon>
 						<div id="card-info">
 							<div id="title">
 								<h4 class="d2l-heading-4" id="activity-name">${this.localizeActivityName(this._activityName)}</h4>
-								<div>${this._renderVisibilityIcon(this._published)}</div> 
+								<div>${this._renderVisibilityIcon(this._published)}</div>
 							</div>
 							${dateElement}
 						</div>
@@ -184,7 +184,7 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 					<div id="feedback-spacer"></div>
 					${this._feedback && this._feedback.map(this._renderFeedback.bind(this))}
 				</div>
-			</div>           
+			</div>
 		`;
 	}
 

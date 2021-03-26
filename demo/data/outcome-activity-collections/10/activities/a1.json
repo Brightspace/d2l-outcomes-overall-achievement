@@ -1,44 +1,44 @@
 {
-	"class": [
-		"user-progress-outcome-activity"
-	],
-	"rel": [
-		"item"
-	],
-	"properties": {
-		"name": "Quiz 2",
-		"type": "Quizzing"
-	},
-	"entities": [
-		{
-			"class": [
-				"demonstration",
-				"assessed"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/demonstrations/dem1002.json"
-		}
-	],
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/outcome-activity-collections/10/activities/a1.json"
-		},
-		{
-			"rel": [
-				"https://activities.api.brightspace.com/rels/user-activity-usage"
-			],
-			"href": "unused"
-		},
-		{
-			"rel": [
-				"https://user-progress.api.brightspace.com/rels/feedback"
-			],
-			"href": "unused"
-		}
-	]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "name": "Quiz 2",
+    "type": "Quizzing"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem1002.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/10/activities/a1.json"
+    },
+    {
+      "rel": [
+        "https://activities.api.brightspace.com/rels/user-activity-usage"
+      ],
+      "href": "unused"
+    },
+    {
+      "rel": [
+        "https://user-progress.api.brightspace.com/rels/feedback"
+      ],
+      "href": "unused"
+    }
+  ]
 }

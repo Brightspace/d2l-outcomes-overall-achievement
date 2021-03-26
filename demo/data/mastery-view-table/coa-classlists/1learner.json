@@ -1,54 +1,54 @@
 {
-    "class": [
-        "collection",
+  "class": [
+    "collection",
+    "checkpoint-user"
+  ],
+  "entities": [
+    {
+      "class": [
         "checkpoint-user"
-    ],
-    "entities": [
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "FirstName": "Bob",
+        "LastName": "Jenkins"
+      },
+      "links": [
         {
-            "class": [
-                "checkpoint-user"
-            ],
-            "rel": [
-                "item"
-            ],
-            "properties": {
-                "FirstName": "Bob",
-                "LastName": "Jenkins"
-            },
-            "links": [
-                {
-                    "rel": [
-                        "user"
-                    ],
-                    "href": "data/mastery-view-table/users/u0.json"
-                },
-                {
-                    "rel": [
-                        "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
-                    ],
-                    "href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
-                },
-                {
-                    "rel": [
-                        "https://api.brightspace.com/rels/user-grades-view"
-                    ],
-                    "href": "about:blank"
-                },
-                {
-                    "rel": [
-                        "https://outcomes.api.brightspace.com/rels/row-data"
-                    ],
-                    "href": "data/mastery-view-table/row-data/row0.json"
-                }
-            ]
-        }
-    ],
-    "links": [
+          "rel": [
+            "user"
+          ],
+          "href": "data/mastery-view-table/users/u0.json"
+        },
         {
-            "rel": [
-                "self"
-            ],
-            "href": "data/mastery-view-table/coa-classlists/7learners.json"
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/user-progress-checkpoint-outcomes"
+          ],
+          "href": "data/mastery-view-table/user-progress-outcome-collections/upoc-u0.json"
+        },
+        {
+          "rel": [
+            "https://api.brightspace.com/rels/user-grades-view"
+          ],
+          "href": "about:blank"
+        },
+        {
+          "rel": [
+            "https://outcomes.api.brightspace.com/rels/row-data"
+          ],
+          "href": "data/mastery-view-table/row-data/row0.json"
         }
-    ]
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/coa-classlists/7learners.json"
+    }
+  ]
 }

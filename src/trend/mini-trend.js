@@ -341,7 +341,7 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 		return html`
 			<d2l-tooltip for="group${index}" position="top" offset="${TOOLTIP_POINTER_SIZE + TOOLTIP_GAP}">
-				${assessment}	
+				${assessment}
 			</d2l-tooltip>
 		`;
 	}

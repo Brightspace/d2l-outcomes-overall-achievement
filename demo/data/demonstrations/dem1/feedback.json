@@ -1,36 +1,36 @@
 {
-    "class": [
-        "feedback-list",
-        "collection"
-    ],
-    "entities": [
-        {
-            "class": [
-                "richtext",
-                "feedback"
-            ],
-            "rel": [
-                "item"
-            ],
-            "properties": {
-                "text": "",
-                "html": "Good progress! You should practice more exercises for&nbsp;<b>Differential Equations</b>, see&nbsp;<a href=\"\">Chapter 2</a>"
-            }
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "up",
-                "https://user-progress.api.brightspace.com/rels/outcome-activity"
-            ],
-            "href": "unused"
-        },
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/demonstrations/dem1/feedback.json"
-        }
-    ]
+  "class": [
+    "feedback-list",
+    "collection"
+  ],
+  "entities": [
+    {
+      "class": [
+        "richtext",
+        "feedback"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "text": "",
+        "html": "Good progress! You should practice more exercises for&nbsp;<b>Differential Equations</b>, see&nbsp;<a href=\"\">Chapter 2</a>"
+      }
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "up",
+        "https://user-progress.api.brightspace.com/rels/outcome-activity"
+      ],
+      "href": "unused"
+    },
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/demonstrations/dem1/feedback.json"
+    }
+  ]
 }

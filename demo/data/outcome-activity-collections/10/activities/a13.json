@@ -1,51 +1,51 @@
 {
-	"class": [
-		"user-progress-outcome-activity"
-	],
-	"rel": [
-		"item"
-	],
-	"properties": {
-		"name": "Overall Achievement",
-		"type": "checkpoint-item"
-	},
-	"entities": [
-		{
-			"class": [
-				"demonstration",
-				"assessed",
-				"published"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/demonstrations/dem1006.json"
-		}
-	],
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/outcome-activity-collections/10/activities/a13.json"
-		},
-		{
-			"rel": [
-				"https://activities.api.brightspace.com/rels/user-activity-usage"
-			],
-			"href": "unused"
-		},
-		{
-			"rel": [
-				"https://user-progress.api.brightspace.com/rels/feedback"
-			],
-			"href": "unused"
-		},
-		{
-			"rel": [
-				"https://user-progress.api.brightspace.com/rels/submission-link"
-			],
-			"href": "unused"
-		}
-	]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "name": "Overall Achievement",
+    "type": "checkpoint-item"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed",
+        "published"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem1006.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/10/activities/a13.json"
+    },
+    {
+      "rel": [
+        "https://activities.api.brightspace.com/rels/user-activity-usage"
+      ],
+      "href": "unused"
+    },
+    {
+      "rel": [
+        "https://user-progress.api.brightspace.com/rels/feedback"
+      ],
+      "href": "unused"
+    },
+    {
+      "rel": [
+        "https://user-progress.api.brightspace.com/rels/submission-link"
+      ],
+      "href": "unused"
+    }
+  ]
 }

@@ -1,38 +1,38 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "rel": [
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "name": "Overall Achievement",
+    "type": "checkpoint-item"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
         "item"
-    ],
-    "properties": {
-        "name": "Overall Achievement",
-        "type": "checkpoint-item"
+      ],
+      "href": "data/mastery-view-table/demonstrations/dem-lvl3-override.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/activities/a-lvl3-oa-override.json"
     },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/mastery-view-table/demonstrations/dem-lvl3-override.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/mastery-view-table/activities/a-lvl3-oa-override.json"
-        },
-        {
-            "rel": [
-                "https://activities.api.brightspace.com/rels/user-activity-usage"
-            ],
-            "href": "data/mastery-view-table/user-activity-usages/uau0.json"
-        }
-    ]
+    {
+      "rel": [
+        "https://activities.api.brightspace.com/rels/user-activity-usage"
+      ],
+      "href": "data/mastery-view-table/user-activity-usages/uau0.json"
+    }
+  ]
 }

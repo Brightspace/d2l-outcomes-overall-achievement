@@ -1,85 +1,85 @@
 {
-	"class": [
-		"collection",
-		"user-progress-outcome-activities"
-	],
-	"entities": [
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a0.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a1.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a2.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a3.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a4.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a5.json"
-		},
-		{
-			"class": [
-				"user-progress-outcome-activity"
-			],
-			"rel": [
-				"item"
-			],
-			"href": "data/outcome-activity-collections/4/activities/a6.json"
-		}
-	],
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/outcome-activity-collections/4/activities.json"
-		},
-		{
-			"rel": [
-				"default-achievement-scale"
-			],
-			"href": "data/loa/2lvl.json"
-		}
-	]
+  "class": [
+    "collection",
+    "user-progress-outcome-activities"
+  ],
+  "entities": [
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a0.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a1.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a2.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a3.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a4.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a5.json"
+    },
+    {
+      "class": [
+        "user-progress-outcome-activity"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/outcome-activity-collections/4/activities/a6.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/4/activities.json"
+    },
+    {
+      "rel": [
+        "default-achievement-scale"
+      ],
+      "href": "data/loa/2lvl.json"
+    }
+  ]
 }

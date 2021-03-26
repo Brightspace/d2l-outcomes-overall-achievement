@@ -1,28 +1,28 @@
 {
-	"entities": [
-		{
-			"class": [
-				"first",
-				"name"
-			],
-			"rel": [
-				"https://api.brightspace.com/rels/first-name"
-			],
-			"properties": {
-				"name": "Exceptionally-lengthy-name-of-a"
-			}
-		},
-		{
-			"class": [
-				"last",
-				"name"
-			],
-			"rel": [
-				"https://api.brightspace.com/rels/last-name"
-			],
-			"properties": {
-				"name": "Learner-in-the-current-class-with-some-assigned-outcomes"
-			}
-		}
-	]
+  "entities": [
+    {
+      "class": [
+        "first",
+        "name"
+      ],
+      "rel": [
+        "https://api.brightspace.com/rels/first-name"
+      ],
+      "properties": {
+        "name": "Exceptionally-lengthy-name-of-a"
+      }
+    },
+    {
+      "class": [
+        "last",
+        "name"
+      ],
+      "rel": [
+        "https://api.brightspace.com/rels/last-name"
+      ],
+      "properties": {
+        "name": "Learner-in-the-current-class-with-some-assigned-outcomes"
+      }
+    }
+  ]
 }
