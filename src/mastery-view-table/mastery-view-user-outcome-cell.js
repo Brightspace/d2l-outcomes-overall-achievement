@@ -159,7 +159,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					tabindex="0"
 					aria-label="${this._getAriaText(null)}"
 				>
-					<div class="assessment-label-skeleton d2l-skeletize" />
+					<div class="assessment-label-skeleton d2l-skeletize"></div>
 				</div>
 			`;
 		}
@@ -196,11 +196,11 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				aria-hidden="true"
 				title="${data.published ? this.localize('published') : this.localize('notPublished')}"
 			>
-				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide />`}
+				${data.published ? html`<d2l-icon-visibility-show></d2l-icon-visibility-show>` : html`<d2l-icon-visibility-hide></d2l-icon-visibility-hide>`}
 			</div>
 			${data.outdated ? html`
 				<span aria-hidden="true" title="${this.localize('outOfDate')}">
-					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh" />
+					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
 				</span>
 			` : null}
 

@@ -895,7 +895,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 						token=${this.token}
 						outcome-href=${outcomeData.href}
 						._logger="${this._logger}"
-					/>
+					></d2l-mastery-view-user-outcome-cell>
 				</td>
 			`)}
 		</tr>
@@ -933,7 +933,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
 				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
-			/>
+			></d2l-mastery-view-outcome-header-cell>
 		</th>`;
 
 	}
@@ -1019,7 +1019,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 							@click=${this._onPreviousPageButtonClicked}
 							aria-label=${this.localize('goToPreviousPage')}
 						>
-							<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()} />
+							<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()}>
+							</d2l-icon-left-arrow>
 						</d2l-button-subtle>
 					</td>
 					<td class="page-label-container">
@@ -1029,7 +1030,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 						<select
 							id="page-select-menu"
 							class="d2l-input-select"
-							@change=${this._onPageSelectDropdownSelectionChanged}}
+							@change=${this._onPageSelectDropdownSelectionChanged}
 							aria-label=${this.localize('selectTablePage')}
 							aria-controls="new-page-select-live-text"
 						>
@@ -1044,14 +1045,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 							@click=${this._onNextPageButtonClicked}
 							aria-label=${this.localize('goToNextPage')}
 						>
-							<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()} />
+							<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()}>
+							</d2l-icon-right-arrow>
 						</d2l-button-subtle>
 					</td>
 					<td class="page-size-menu-container">
 						<select
 							id="page-size-menu"
 							class="d2l-input-select"
-							@change=${this._onPageSizeDropdownSelectionChanged}}
+							@change=${this._onPageSizeDropdownSelectionChanged}
 							aria-label=${this.localize('selectLearnersPerPage')}
 							aria-controls="new-page-size-live-text"
 						>
@@ -1066,13 +1068,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			id="new-page-select-live-text"
 			aria-live="polite"
 			aria-label=${this.localize('newPageSelectLiveText', 'pageNum', this._currentPage, 'totalPages', this._pageCount)}
-		/>
+		></div>
 		<div
 			role="region"
 			id="new-page-size-live-text"
 			aria-live="polite"
 			aria-label=${this.localize('newPageSizeLiveText', 'pageSize', this._rowsPerPage)}
-		/>
+		></div>
 		`;
 	}
 

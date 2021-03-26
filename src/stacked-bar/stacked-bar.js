@@ -272,7 +272,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 	_renderGraph() {
 		if (this.skeleton) {
 			return html`
-				<div class="graph-bar-skeleton d2l-skeletize" />
+				<div class="graph-bar-skeleton d2l-skeletize"></div>
 			`;
 		}
 
