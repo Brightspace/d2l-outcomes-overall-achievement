@@ -1,10 +1,7 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import '@brightspace-ui/core/components/icons/icon-custom.js';
 
 class RightArrowIcon extends LitElement {
-	static get is() {
-		return 'd2l-icon-right-arrow';
-	}
 
 	static get properties() {
 		return {
@@ -30,6 +27,8 @@ class RightArrowIcon extends LitElement {
 		`;
 	}
 
+	static get is() { return 'd2l-icon-right-arrow'; }
+
 	render() {
 		return this.hidden ? html`
 			<div class="empty-icon-container"></div>
@@ -41,6 +40,7 @@ class RightArrowIcon extends LitElement {
 			</div>
 		`;
 	}
+
 }
 
 customElements.define(RightArrowIcon.is, RightArrowIcon);

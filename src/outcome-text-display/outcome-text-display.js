@@ -1,15 +1,12 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
-import { heading3Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
+import { bodySmallStyles, heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import { OutcomeEntity } from '../entities/OutcomeEntity';
 import './outcome-text-skeleton.js';
 
 class OutcomeTextDisplay extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() {
-		return 'd2l-coa-outcome-text-display';
-	}
 
 	static get properties() {
 		return {
@@ -41,6 +38,8 @@ class OutcomeTextDisplay extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitE
 		this.skeleton = true;
 	}
 
+	static get is() { return 'd2l-coa-outcome-text-display'; }
+
 	render() {
 		return this.skeleton ? html`
 			<d2l-coa-outcome-text-skeleton>
@@ -65,6 +64,7 @@ class OutcomeTextDisplay extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitE
 			this.skeleton = false;
 		}
 	}
+
 }
 
 customElements.define(OutcomeTextDisplay.is, OutcomeTextDisplay);

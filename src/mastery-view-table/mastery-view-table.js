@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TelemetryMixin } from '../TelemetryMixin';
@@ -61,7 +61,7 @@ const _getOutcomePrefix = function(outcome) {
 
 	if (outcome.label && outcome.label.trim()) {
 		if (outcome.listId && outcome.listId.trim()) {
-			return outcome.label.trim() + ' ' + outcome.listId.trim();
+			return `${outcome.label.trim()} ${outcome.listId.trim()}`;
 		}
 		return outcome.label.trim();
 	}
@@ -98,7 +98,6 @@ const _compareOutcomes = function(a, b) {
 };
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitElement))) {
-	static get is() { return 'd2l-mastery-view-table'; }
 
 	static get properties() {
 		return {
@@ -372,6 +371,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._onResize = this._onResize.bind(this);
 	}
 
+	static get is() { return 'd2l-mastery-view-table'; }
+
 	connectedCallback() {
 		super.connectedCallback();
 
@@ -584,14 +585,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			displayText = firstName;
 		}
 		else if (firstLastDisplay) {
-			displayText = firstName + ' ' + lastName;
+			displayText = `${firstName} ${lastName}`;
 		}
 		else {
-			displayText = lastName + ', ' + firstName;
+			displayText = `${lastName}, ${firstName}`;
 		}
 
 		if (firstName && lastName) {
-			ariaText = firstName + ' ' + lastName;
+			ariaText = `${firstName} ${lastName}`;
 		}
 		else {
 			ariaText = displayText;
@@ -606,7 +607,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	_goToPageNumber(newPage) {
 		this._currentPage = newPage;
-		var selector = this.shadowRoot.getElementById('page-select-menu');
+		const selector = this.shadowRoot.getElementById('page-select-menu');
 		if (selector) {
 			selector.selectedIndex = newPage - 1;
 		}
@@ -754,13 +755,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_onPageSelectDropdownSelectionChanged() {
-		var selector = this.shadowRoot.getElementById('page-select-menu');
+		const selector = this.shadowRoot.getElementById('page-select-menu');
 		const newPageNumber = parseInt(selector.options[selector.selectedIndex].value);
 		this._goToPageNumber(newPageNumber);
 	}
 
 	_onPageSizeDropdownSelectionChanged() {
-		var selector = this.shadowRoot.getElementById('page-size-menu');
+		const selector = this.shadowRoot.getElementById('page-size-menu');
 		const newRowsPerPage = parseInt(selector.options[selector.selectedIndex].value);
 		this._rowsPerPage = newRowsPerPage;
 		this._updatePageCount();
@@ -875,7 +876,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	_renderLearnerRow(learnerData, outcomeHeaderData) {
 		const userNameText = this._getUserNameText(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 		if (outcomeHeaderData.length === 0 || !learnerData.rowDataHref) {
-			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', learnerData.firstName + ' ' + learnerData.lastName));
+			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', `${learnerData.firstName} ${learnerData.lastName}`));
 		}
 
 		return html`
@@ -995,7 +996,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			return null;
 		}
 		const pageSelectOptionTemplates = [];
-		for (var i = 1; i <= this._pageCount; i++) {
+		for (let i = 1; i <= this._pageCount; i++) {
 			pageSelectOptionTemplates.push(html`
 				<option value=${i}>
 					${this.localize('pageSelectOptionText', 'currentPage', i, 'pageCount', this._pageCount)}
@@ -1160,10 +1161,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				? bodyWidth - (bodyWidth * 0.02439 * 2)
 				: bodyWidth - 60;
 			if (header) {
-				header.style.width = bodyWidth + 'px';
+				header.style.width = `${bodyWidth}px`;
 			}
 			containers.forEach((container) => {
-				container.style.width = containerWidth + 'px';
+				container.style.width = `${containerWidth}px`;
 			});
 		});
 	}
@@ -1187,12 +1188,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			const rightLast = right.lastName || '';
 
 			if (byLastName) {
-				leftSortString = leftLast + '_' + leftFirst;
-				rightSortString = rightLast + '_' + rightFirst;
+				leftSortString = `${leftLast}_${leftFirst}`;
+				rightSortString = `${rightLast}_${rightFirst}`;
 			}
 			else {
-				leftSortString = leftFirst + '_' + leftLast;
-				rightSortString = rightFirst + '_' + rightLast;
+				leftSortString = `${leftFirst}_${leftLast}`;
+				rightSortString = `${rightFirst}_${rightLast}`;
 			}
 
 			if (descending) {

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
@@ -13,7 +13,6 @@ const excludedActivityTypes = [
 ];
 
 export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() { return 'd2l-coa-assessment-list'; }
 
 	static get properties() {
 		return {
@@ -45,6 +44,8 @@ export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(L
 		this._assessmentList = [];
 		this.skeleton = true;
 	}
+
+	static get is() { return 'd2l-coa-assessment-list'; }
 
 	render() {
 		if (this.skeleton) {

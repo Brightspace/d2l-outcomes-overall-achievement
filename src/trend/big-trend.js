@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TrendMixin } from './TrendMixin';
 import '@brightspace-ui/core/components/colors/colors';
@@ -24,8 +24,6 @@ const BarTypes = Object.freeze({
 });
 
 class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
-
-	static get is() { return 'd2l-coa-big-trend'; }
 
 	static get properties() {
 		return {
@@ -280,6 +278,8 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		super();
 		this.instructor = false;
 	}
+
+	static get is() { return 'd2l-coa-big-trend'; }
 
 	firstUpdated() {
 		this.scrollContainer = this.renderRoot.getElementById('scroll');
@@ -787,6 +787,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 		this.scrollContainer.scrollLeft = scrollMax * (this._isRtl() ? -1 : 1);
 	}
+
 }
 
 customElements.define(BigTrend.is, BigTrend);

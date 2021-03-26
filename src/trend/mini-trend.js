@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TrendMixin } from './TrendMixin';
 import { bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
@@ -19,7 +19,6 @@ const BarTypes = Object.freeze({
 });
 
 class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
-	static get is() { return 'd2l-coa-mini-trend'; }
 
 	static get styles() {
 		return [
@@ -128,6 +127,8 @@ class MiniTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 			super.styles
 		];
 	}
+
+	static get is() { return 'd2l-coa-mini-trend'; }
 
 	render() {
 		const trendDataTruncated = this._truncTrendData(this._trendData);

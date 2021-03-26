@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
@@ -16,9 +16,6 @@ import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity
 import { Consts } from '../consts';
 
 class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() {
-		return 'd2l-coa-primary-panel';
-	}
 
 	static get properties() {
 		return {
@@ -88,6 +85,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		this._checkpointHref = '';
 		this._checkpointPublished = false;
 	}
+
+	static get is() { return 'd2l-coa-primary-panel'; }
 
 	render() {
 
@@ -234,6 +233,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			});
 		}
 	}
+
 }
 
 customElements.define(PrimaryPanel.is, PrimaryPanel);

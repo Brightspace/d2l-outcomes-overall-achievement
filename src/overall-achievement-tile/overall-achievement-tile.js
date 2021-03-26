@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { heading4Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
+import { bodySmallStyles, heading4Styles } from '@brightspace-ui/core/components/typography/styles';
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
@@ -18,9 +18,6 @@ import '../custom-icons/visibility-show';
 import './overall-achievement-skeleton';
 
 class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() {
-		return 'd2l-coa-overall-achievement-tile';
-	}
 
 	static get properties() {
 		return {
@@ -149,6 +146,8 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 		this.skeleton = true;
 	}
 
+	static get is() { return 'd2l-coa-overall-achievement-tile'; }
+
 	render() {
 		const dateElement = this._accessDate && html`
 			<div id="date" class="d2l-body-small">${formatDate(this._accessDate, { format: 'short' })}</div>
@@ -256,6 +255,7 @@ class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 			<d2l-icon-visibility-hide id="visibility-icon"></d2l-icon-visibility-hide>
 		`;
 	}
+
 }
 
 customElements.define(OverallAchievementTile.is, OverallAchievementTile);

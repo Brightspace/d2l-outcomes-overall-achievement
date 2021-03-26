@@ -1,10 +1,9 @@
-import { html, css } from 'lit-element';
+import { css, html } from 'lit-element';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import { StackedBar } from '../stacked-bar/stacked-bar';
 
 export class MasteryViewOutcomeHeaderCell extends StackedBar {
-	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
 
 	static get properties() {
 		return {
@@ -162,6 +161,8 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		this.tooltipAlign = '';
 	}
 
+	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
+
 	render() {
 		const outcomeLabel = this.outcomeName && this.outcomeName.length ? html`${this.outcomeName}. ` : null;
 		return html`
@@ -190,11 +191,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	_getGraphLevelsLabel() {
-		var labelText = '';
+		let labelText = '';
 		this._histData.map((levelData) => {
 			const name = levelData.name;
 			const percentage = this._getLevelCountText(levelData);
-			labelText += this.localize('levelNamePercentLabel', 'name', name, 'percentage', percentage) + ' ';
+			labelText += `${this.localize('levelNamePercentLabel', 'name', name, 'percentage', percentage)} `;
 		});
 
 		return labelText;
@@ -233,6 +234,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		</tr>
 		`;
 	}
+
 }
 
 customElements.define(MasteryViewOutcomeHeaderCell.is, MasteryViewOutcomeHeaderCell);

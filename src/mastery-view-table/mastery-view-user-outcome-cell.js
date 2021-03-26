@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { TelemetryMixin } from '../TelemetryMixin';
@@ -19,7 +19,6 @@ const KEYCODES = {
 };
 
 export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(TelemetryMixin(LitElement)))) {
-	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
 
 	static get properties() {
 		return {
@@ -150,6 +149,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		this._setEntityType(MasteryViewRowEntity);
 	}
 
+	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
+
 	render() {
 		if (this.skeleton) {
 			return html`
@@ -219,7 +220,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			return this.localize('loadingOverallAchievement');
 		}
 
-		var assessmentInfo = '';
+		let assessmentInfo = '';
 		if (data.levelName === Consts.noCoaLevelName) {
 			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
 		}
@@ -339,6 +340,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			this._onClick();
 		}
 	}
+
 }
 
 customElements.define(MasteryViewUserOutcomeCell.is, MasteryViewUserOutcomeCell);

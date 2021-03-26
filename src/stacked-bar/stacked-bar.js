@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
@@ -9,7 +9,6 @@ import '@brightspace-ui/core/components/tooltip/tooltip.js';
 const unassessedColor = '#9ea5a9';
 
 export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
-	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	static get properties() {
 		return {
@@ -152,6 +151,8 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 		this._assessedCount = 0;
 		this.skeleton = true;
 	}
+
+	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	render() {
 		return html`
@@ -301,6 +302,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 			<div>${levelData.name}: ${this._getLevelCountText(levelData)}</div>
 		`;
 	}
+
 }
 
 customElements.define(StackedBar.is, StackedBar);

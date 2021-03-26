@@ -1,11 +1,11 @@
 import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
-import { LitElement, html, css } from 'lit-element';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { DemonstrationEntity } from '../entities/DemonstrationEntity';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { heading4Styles, bodySmallStyles } from '@brightspace-ui/core/components/typography/styles';
+import { bodySmallStyles, heading4Styles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/typography/typography';
 import '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/icons/icon';
@@ -15,7 +15,6 @@ import '../custom-icons/quote';
 import './assessment-skeleton';
 
 export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() { return 'd2l-coa-assessment-entry'; }
 
 	static get properties() {
 		return {
@@ -186,6 +185,8 @@ export class AssessmentEntry extends SkeletonMixin(EntityMixinLit(LocalizeMixin(
 		this._link = '';
 		this.skeleton = true;
 	}
+
+	static get is() { return 'd2l-coa-assessment-entry'; }
 
 	render() {
 		if (this.skeleton) {
