@@ -894,7 +894,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 						href=${learnerData.rowDataHref}
 						token=${this.token}
 						outcome-href=${outcomeData.href}
-						._logger="${this._logger}"
+						.logger="${this._logger}"
 					></d2l-mastery-view-user-outcome-cell>
 				</td>
 			`)}

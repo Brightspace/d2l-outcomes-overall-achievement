@@ -26,8 +26,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				attribute: 'outcome-href',
 				type: String
 			},
-			_cellData: Object,
-			_logger: ErrorLogger
+			logger: ErrorLogger,
+			_cellData: Object
 		};
 	}
 
@@ -171,8 +171,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			class="cell-content-container"
 			tabindex="0"
 			style="background-color:${data.levelColor}"
-			@click=${() => { this._onClick(); }}
-			@keydown=${(e) => { this._onKeyDown(e); }}
+			@click=${this._onClick}
+			@keydown=${this._onKeyDown}
 			aria-label="${this._getAriaText(data)}"
 		>
 			<div id="assessment-fraction-container" aria-hidden="true">
@@ -266,7 +266,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 	_onEntityChanged(entity, error) {
 		if (!entity) {
-			this._logger.logSirenError(this.href, 'GET', error);
+			this.logger.logSirenError(this.href, 'GET', error);
 			return;
 		}
 
@@ -294,7 +294,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					name = loa.getName();
 					color = loa.getColor();
 				}, error => {
-					this._logger.logSirenError(demonstratedLevel._levelHref(), 'GET', error);
+					this.logger.logSirenError(demonstratedLevel._levelHref(), 'GET', error);
 				});
 			}
 			demonstration.subEntitiesLoaded().then(() => {
@@ -312,7 +312,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		}, error => {
 			const demonstration = cellEntity._getCheckpointDemonstration() || {};
 			const href = (demonstration && demonstration.getSelfHref) ? demonstration.getSelfHref() : null;
-			this._logger.logSirenError(href, 'GET', error);
+			this.logger.logSirenError(href, 'GET', error);
 		});
 
 		entity.subEntitiesLoaded().then(() => {
