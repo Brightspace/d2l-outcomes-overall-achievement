@@ -14,7 +14,7 @@ export class BigTrendSkeleton extends SkeletonMixin(LitElement) {
 
 	static get styles() {
 		return [
-			css`			
+			css`
                 .d2l-skeletize {
                     height: 126px;
                 }

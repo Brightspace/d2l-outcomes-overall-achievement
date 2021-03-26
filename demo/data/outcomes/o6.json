@@ -1,31 +1,31 @@
 {
-    "class": [
-        "outcome"
+  "class": [
+    "outcome"
+  ],
+  "properties": {
+    "notation": "MCR3U.B2.4",
+    "altNotation": "",
+    "label": "Standard",
+    "listId": "",
+    "description": "determine, through investigation using technology, that the equation of a given exponential function can be expressed using different bases [e.g., f(x) = 9(x) can be expressed as f(x) = 3(2x)], and explain the connections between the equivalent forms in a variety of ways (e.g., comparing graphs; using transformations; using the exponent laws)",
+    "subjects": [
+      "Functions, University Preparation"
     ],
-    "properties": {
-        "notation": "MCR3U.B2.4",
-        "altNotation": "",
-        "label": "Standard",
-        "listId": "",
-		"description": "determine, through investigation using technology, that the equation of a given exponential function can be expressed using different bases [e.g., f(x) = 9(x) can be expressed as f(x) = 3(2x)], and explain the connections between the equivalent forms in a variety of ways (e.g., comparing graphs; using transformations; using the exponent laws)",
-        "subjects": [
-            "Functions, University Preparation"
-        ],
-        "source": "asn"
+    "source": "asn"
+  },
+  "links": [
+    {
+      "rel": [
+        "about"
+      ],
+      "type": "text/html",
+      "href": "http://asn.desire2learn.com/resources/S2788207"
     },
-    "links": [
-        {
-            "rel": [
-                "about"
-            ],
-            "type": "text/html",
-            "href": "http://asn.desire2learn.com/resources/S2788207"
-        },
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcomes/o6.json"
-        }
-    ]
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcomes/o6.json"
+    }
+  ]
 }

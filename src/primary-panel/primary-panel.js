@@ -104,8 +104,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			<d2l-coa-overall-achievement-skeleton>
 			</d2l-coa-overall-achievement-skeleton>
 		` : html`
-			<d2l-coa-overall-achievement-tile 
-				href="${this._checkpointHref}" 
+			<d2l-coa-overall-achievement-tile
+				href="${this._checkpointHref}"
 				.token="${this.token}"
 			></d2l-coa-overall-achievement-tile>
 		`;
@@ -153,7 +153,7 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			</d2l-coa-assessment-summary-skeleton>
 		` : html`
 			<d2l-coa-assessment-summary
-				href="${this._outcomeActivitiesHref}" 
+				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}">
 			</d2l-coa-assessment-summary>
 		`;

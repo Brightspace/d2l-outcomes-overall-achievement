@@ -116,9 +116,9 @@ export class AssessmentList extends SkeletonMixin(EntityMixinLit(LocalizeMixin(L
 		}
 
 		return html`
-			<d2l-coa-assessment-entry 
-				href="${entry.demonstrationHref}" 
-				.activity="${entry.activity}" 
+			<d2l-coa-assessment-entry
+				href="${entry.demonstrationHref}"
+				.activity="${entry.activity}"
 				.token="${this.token}">
 			</d2l-coa-assessment-entry>
 		`;

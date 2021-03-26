@@ -1,109 +1,109 @@
 {
-    "class": [
-        "achievement-scale"
-    ],
-    "properties": {
-        "name": "10lvl",
-        "isDefault": true
+  "class": [
+    "achievement-scale"
+  ],
+  "properties": {
+    "name": "10lvl",
+    "isDefault": true
+  },
+  "entities": [
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level0.json"
     },
-    "entities": [
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level0.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level1.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level2.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level3.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level4.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level5.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level6.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level7.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level8.json"
-        },
-        {
-            "class": [
-                "level-of-achievement"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/levels/10lvl-level9.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/loa/10lvl.json"
-        }
-    ]
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level1.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level2.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level3.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level4.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level5.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level6.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level7.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level8.json"
+    },
+    {
+      "class": [
+        "level-of-achievement"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/levels/10lvl-level9.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/loa/10lvl.json"
+    }
+  ]
 }

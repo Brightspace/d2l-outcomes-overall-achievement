@@ -1,28 +1,28 @@
 {
-	"entities": [
-		{
-			"class": [
-				"first",
-				"name"
-			],
-			"rel": [
-				"https://api.brightspace.com/rels/first-name"
-			],
-			"properties": {
-				"name": "Filler"
-			}
-		},
-		{
-			"class": [
-				"last",
-				"name"
-			],
-			"rel": [
-				"https://api.brightspace.com/rels/last-name"
-			],
-			"properties": {
-				"name": "User"
-			}
-		}
-	]
+  "entities": [
+    {
+      "class": [
+        "first",
+        "name"
+      ],
+      "rel": [
+        "https://api.brightspace.com/rels/first-name"
+      ],
+      "properties": {
+        "name": "Filler"
+      }
+    },
+    {
+      "class": [
+        "last",
+        "name"
+      ],
+      "rel": [
+        "https://api.brightspace.com/rels/last-name"
+      ],
+      "properties": {
+        "name": "User"
+      }
+    }
+  ]
 }

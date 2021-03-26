@@ -15,7 +15,7 @@ export class OutcomeTextSkeleton extends SkeletonMixin(LitElement) {
 
 	static get styles() {
 		return [
-			css`			
+			css`
 				#outcome-text-skeleton {
 					margin-top: 0px;
 					margin-bottom: 12px;

@@ -1,29 +1,29 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "properties": {
-        "type": "Quizzing",
-        "name": "Activity 14"
-    },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem613.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcome-activity-collections/6/activities/13.json"
-        }
-    ]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "type": "Quizzing",
+    "name": "Activity 14"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem613.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/6/activities/13.json"
+    }
+  ]
 }

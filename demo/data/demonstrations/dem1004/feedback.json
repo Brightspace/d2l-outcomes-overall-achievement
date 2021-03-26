@@ -1,21 +1,21 @@
 {
-    "class": [
-        "feedback-list",
-        "collection"
-    ],
-    "links": [
-        {
-            "rel": [
-                "up",
-                "https://user-progress.api.brightspace.com/rels/outcome-activity"
-            ],
-            "href": "unused"
-        },
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/demonstrations/dem1004/feedback.json"
-        }
-    ]
-} 
+  "class": [
+    "feedback-list",
+    "collection"
+  ],
+  "links": [
+    {
+      "rel": [
+        "up",
+        "https://user-progress.api.brightspace.com/rels/outcome-activity"
+      ],
+      "href": "unused"
+    },
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/demonstrations/dem1004/feedback.json"
+    }
+  ]
+}

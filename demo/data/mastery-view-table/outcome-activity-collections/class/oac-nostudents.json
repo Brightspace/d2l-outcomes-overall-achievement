@@ -1,20 +1,20 @@
 {
-	"class": [
-		"collection",
-		"user-progress-outcome-activities"
-	],
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
-		},
-		{
-			"rel": [
-				"default-achievement-scale"
-			],
-			"href": "data/loa/scale0.json"
-		}
-	]
+  "class": [
+    "collection",
+    "user-progress-outcome-activities"
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+    },
+    {
+      "rel": [
+        "default-achievement-scale"
+      ],
+      "href": "data/loa/scale0.json"
+    }
+  ]
 }

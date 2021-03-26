@@ -22,7 +22,7 @@ class RightArrowIcon extends LitElement {
 				padding-left: 6px;
 				padding-right: 6px;
 			}
-			
+
 			.empty-icon-container {
 				padding-left: 9px;
 				padding-right: 9px;

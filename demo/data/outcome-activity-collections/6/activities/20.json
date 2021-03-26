@@ -1,29 +1,29 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "properties": {
-        "type": "Chat",
-        "name": "Activity 21"
-    },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem620.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcome-activity-collections/6/activities/20.json"
-        }
-    ]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "type": "Chat",
+    "name": "Activity 21"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem620.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/6/activities/20.json"
+    }
+  ]
 }

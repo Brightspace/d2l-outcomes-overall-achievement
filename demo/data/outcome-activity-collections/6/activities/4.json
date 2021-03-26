@@ -1,29 +1,29 @@
 {
-    "class": [
-        "user-progress-outcome-activity"
-    ],
-    "properties": {
-        "type": "Dropbox",
-        "name": "Activity 5"
-    },
-    "entities": [
-        {
-            "class": [
-                "demonstration",
-                "assessed"
-            ],
-            "rel": [
-                "item"
-            ],
-            "href": "data/demonstrations/dem604.json"
-        }
-    ],
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcome-activity-collections/6/activities/4.json"
-        }
-    ]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "type": "Dropbox",
+    "name": "Activity 5"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstration",
+        "assessed"
+      ],
+      "rel": [
+        "item"
+      ],
+      "href": "data/demonstrations/dem604.json"
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/6/activities/4.json"
+    }
+  ]
 }

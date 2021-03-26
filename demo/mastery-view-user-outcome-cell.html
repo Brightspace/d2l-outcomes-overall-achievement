@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
-		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-		<script type="module">
-			import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
-			import '../src/mastery-view-table/mastery-view-user-outcome-cell.js';
-			import '@brightspace-ui/core/components/colors/colors.js';
-			import 'd2l-table/d2l-table.js';
-		</script>
-	</head>
-	<body unresolved>
-		<d2l-demo-page page-title="d2l-mastery-view-user-outcome-cell demo">
-			<h3>Level 1, fully assessed</h3>
-			<d2l-demo-snippet>
-				<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
-					<d2l-mastery-view-user-outcome-cell 
-						href="data/mastery-view-table/row-data/cell-demo-row.json"
-						token="abc123"
-						outcome-href="data/outcomes/o0.json"
-					></d2l-mastery-view-user-outcome-cell>
-				</div>
-			</d2l-demo-snippet>
-			<h3>Level 2, published, fully assessed</h3>
-			<d2l-demo-snippet>
-				<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
-					<d2l-mastery-view-user-outcome-cell 
-						href="data/mastery-view-table/row-data/cell-demo-row.json"
-						token="abc123"
-						outcome-href="data/outcomes/o1.json"
-					></d2l-mastery-view-user-outcome-cell>
-				</div>
-			</d2l-demo-snippet>
-			<h3>Level 2, outdated, some unassessed</h3>
-			<d2l-demo-snippet>
-				<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
-					<d2l-mastery-view-user-outcome-cell 
-						href="data/mastery-view-table/row-data/cell-demo-row.json"
-						token="abc123"
-						outcome-href="data/outcomes/o2.json"
-					></d2l-mastery-view-user-outcome-cell>
-				</div>
-			</d2l-demo-snippet>
-			<h3>Long level name, override, outdated</h3>
-			<d2l-demo-snippet>
-				<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
-					<d2l-mastery-view-user-outcome-cell 
-						href="data/mastery-view-table/row-data/cell-demo-row.json"
-						token="abc123"
-						outcome-href="data/outcomes/o3.json"
-					></d2l-mastery-view-user-outcome-cell>
-				</div>
-			</d2l-demo-snippet>
-			<h3>No overall assessment</h3>
-			<d2l-demo-snippet>
-				<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
-					<d2l-mastery-view-user-outcome-cell 
-						href="data/mastery-view-table/row-data/cell-demo-row.json"
-						token="abc123"
-						outcome-href="data/outcomes/o4.json"
-					></d2l-mastery-view-user-outcome-cell>
-				</div>
-			</d2l-demo-snippet>
-		</d2l-demo-page>
-	</body>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
+		import '../src/mastery-view-table/mastery-view-user-outcome-cell.js';
+		import '@brightspace-ui/core/components/colors/colors.js';
+		import 'd2l-table/d2l-table.js';
+	</script>
+</head>
+
+<body unresolved>
+	<d2l-demo-page page-title="d2l-mastery-view-user-outcome-cell demo">
+		<h3>Level 1, fully assessed</h3>
+		<d2l-demo-snippet>
+			<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
+				<d2l-mastery-view-user-outcome-cell
+					href="data/mastery-view-table/row-data/cell-demo-row.json"
+					token="abc123"
+					outcome-href="data/outcomes/o0.json"
+				></d2l-mastery-view-user-outcome-cell>
+			</div>
+		</d2l-demo-snippet>
+		<h3>Level 2, published, fully assessed</h3>
+		<d2l-demo-snippet>
+			<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
+				<d2l-mastery-view-user-outcome-cell
+					href="data/mastery-view-table/row-data/cell-demo-row.json"
+					token="abc123"
+					outcome-href="data/outcomes/o1.json"
+				></d2l-mastery-view-user-outcome-cell>
+			</div>
+		</d2l-demo-snippet>
+		<h3>Level 2, outdated, some unassessed</h3>
+		<d2l-demo-snippet>
+			<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
+				<d2l-mastery-view-user-outcome-cell
+					href="data/mastery-view-table/row-data/cell-demo-row.json"
+					token="abc123"
+					outcome-href="data/outcomes/o2.json"
+				></d2l-mastery-view-user-outcome-cell>
+			</div>
+		</d2l-demo-snippet>
+		<h3>Long level name, override, outdated</h3>
+		<d2l-demo-snippet>
+			<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
+				<d2l-mastery-view-user-outcome-cell
+					href="data/mastery-view-table/row-data/cell-demo-row.json"
+					token="abc123"
+					outcome-href="data/outcomes/o3.json"
+				></d2l-mastery-view-user-outcome-cell>
+			</div>
+		</d2l-demo-snippet>
+		<h3>No overall assessment</h3>
+		<d2l-demo-snippet>
+			<div style="width: 9.9rem; height: 3rem; border: 1px solid var(--d2l-table-border-color);">
+				<d2l-mastery-view-user-outcome-cell
+					href="data/mastery-view-table/row-data/cell-demo-row.json"
+					token="abc123"
+					outcome-href="data/outcomes/o4.json"
+				></d2l-mastery-view-user-outcome-cell>
+			</div>
+		</d2l-demo-snippet>
+	</d2l-demo-page>
+</body>
+
 </html>

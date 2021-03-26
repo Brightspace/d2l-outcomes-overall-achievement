@@ -1,18 +1,18 @@
 {
-	"class": [
-		"user-progress-outcome-activity"
-	],
-	"properties": {
-		"name": "Assignment 4",
-		"dueDate": "2037-12-04T00:04:00.000Z",
-		"type": "Dropbox"
-	},
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/outcome-activity-collections/5/activities/a3.json"
-		}
-	]
+  "class": [
+    "user-progress-outcome-activity"
+  ],
+  "properties": {
+    "name": "Assignment 4",
+    "dueDate": "2037-12-04T00:04:00.000Z",
+    "type": "Dropbox"
+  },
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcome-activity-collections/5/activities/a3.json"
+    }
+  ]
 }

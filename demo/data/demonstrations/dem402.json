@@ -1,64 +1,64 @@
 {
-	"class": [
-		"demonstration",
-		"assessed"
-	],
-	"properties": {
-		"dateAssessed": "2020-02-03T12:00:02.000Z"
-	},
-	"entities": [
-		{
-			"class": [
-				"demonstratable-level",
-				"selected"
-			],
-			"rel": [
-				"item"
-			],
-			"properties": {
-				"levelId": "2lvl-l1"
-			},
-			"links": [
-				{
-					"rel": [
-						"https://achievements.api.brightspace.com/rels/level"
-					],
-					"href": "data/levels/2lvl-l1.json"
-				}
-			]
-		},
-		{
-			"class": [
-				"demonstratable-level"
-			],
-			"rel": [
-				"item"
-			],
-			"properties": {
-				"levelId": "2lvl-l2"
-			},
-			"links": [
-				{
-					"rel": [
-						"https://achievements.api.brightspace.com/rels/level"
-					],
-					"href": "data/levels/2lvl-l2.json"
-				}
-			]
-		}
-	],
-	"links": [
-		{
-			"rel": [
-				"self"
-			],
-			"href": "data/demonstrations/dem402.json"
-		},
-		{
-			"rel": [
-				"https://activities.api.brightspace.com/rels/user-activity-usage"
-			],
-			"href": "data/user-activity-usages/402.json"
-		}
-	]
+  "class": [
+    "demonstration",
+    "assessed"
+  ],
+  "properties": {
+    "dateAssessed": "2020-02-03T12:00:02.000Z"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstratable-level",
+        "selected"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": "2lvl-l1"
+      },
+      "links": [
+        {
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/2lvl-l1.json"
+        }
+      ]
+    },
+    {
+      "class": [
+        "demonstratable-level"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": "2lvl-l2"
+      },
+      "links": [
+        {
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/2lvl-l2.json"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/demonstrations/dem402.json"
+    },
+    {
+      "rel": [
+        "https://activities.api.brightspace.com/rels/user-activity-usage"
+      ],
+      "href": "data/user-activity-usages/402.json"
+    }
+  ]
 }

@@ -1,31 +1,31 @@
 {
-    "class": [
-        "outcome"
+  "class": [
+    "outcome"
+  ],
+  "properties": {
+    "notation": "D2L.MBU.2",
+    "altNotation": "",
+    "label": "Standard",
+    "listId": "",
+    "description": "Know the partnerships involved in the development of the product",
+    "subjects": [
+      "Career Education"
     ],
-    "properties": {
-        "notation": "D2L.MBU.2",
-        "altNotation": "",
-        "label": "Standard",
-        "listId": "",
-        "description": "Know the partnerships involved in the development of the product",
-        "subjects": [
-            "Career Education"
-        ],
-        "source": "asn"
+    "source": "asn"
+  },
+  "links": [
+    {
+      "rel": [
+        "about"
+      ],
+      "type": "text/html",
+      "href": "http://asn.desire2learn.com/resources/S2788207"
     },
-    "links": [
-        {
-            "rel": [
-                "about"
-            ],
-            "type": "text/html",
-            "href": "http://asn.desire2learn.com/resources/S2788207"
-        },
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/outcomes/o1.json"
-        }
-    ]
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/outcomes/o1.json"
+    }
+  ]
 }

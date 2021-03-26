@@ -1,28 +1,28 @@
 {
-    "class": [
-        "level-of-achievement"
-    ],
-    "rel": [
-        "item"
-    ],
-    "properties": {
-        "color": "#b6d7a8",
-        "levelId": "level2",
-        "name": "Level 3",
-        "sortOrder": 300
+  "class": [
+    "level-of-achievement"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "color": "#b6d7a8",
+    "levelId": "level2",
+    "name": "Level 3",
+    "sortOrder": 300
+  },
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/levels/level2.json"
     },
-    "links": [
-        {
-            "rel": [
-                "self"
-            ],
-            "href": "data/levels/level2.json"
-        },
-        {
-            "rel": [
-                "achievement-scale"
-            ],
-            "href": "data/loa/scale0.json"
-        }
-    ]
+    {
+      "rel": [
+        "achievement-scale"
+      ],
+      "href": "data/loa/scale0.json"
+    }
+  ]
 }

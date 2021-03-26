@@ -1,93 +1,93 @@
 {
-    "class": [
-        "demonstration",
-        "assessed",
-        "published"
-    ],
-    "rel": [
+  "class": [
+    "demonstration",
+    "assessed",
+    "published"
+  ],
+  "rel": [
+    "item"
+  ],
+  "properties": {
+    "dateAssessed": "2020-06-09T12:51:00.623Z"
+  },
+  "entities": [
+    {
+      "class": [
+        "demonstratable-level",
+        "selected"
+      ],
+      "rel": [
         "item"
-    ],
-    "properties": {
-        "dateAssessed": "2020-06-09T12:51:00.623Z"
+      ],
+      "properties": {
+        "levelId": "level0"
+      },
+      "links": [
+        {
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/level0.json"
+        }
+      ]
     },
-    "entities": [
+    {
+      "class": [
+        "demonstratable-level"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": "level1"
+      },
+      "links": [
         {
-            "class": [
-                "demonstratable-level",
-                "selected"
-            ],
-            "rel": [
-                "item"
-            ],
-            "properties": {
-                "levelId": "level0"
-            },
-            "links": [
-                {
-                    "rel": [
-                        "https://achievements.api.brightspace.com/rels/level"
-                    ],
-                    "href": "data/levels/level0.json"
-                }
-            ]
-        },
-        {
-            "class": [
-                "demonstratable-level"
-            ],
-            "rel": [
-                "item"
-            ],
-            "properties": {
-                "levelId": "level1"
-            },
-            "links": [
-                {
-                    "rel": [
-                        "https://achievements.api.brightspace.com/rels/level"
-                    ],
-                    "href": "data/levels/level1.json"
-                }
-            ]
-        },
-        {
-            "class": [
-                "demonstratable-level"
-            ],
-            "rel": [
-                "item"
-            ],
-            "properties": {
-                "levelId": "level2"
-            },
-            "links": [
-                {
-                    "rel": [
-                        "https://achievements.api.brightspace.com/rels/level"
-                    ],
-                    "href": "data/levels/level2.json"
-                }
-            ]
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/level1.json"
         }
-    ],
-    "links": [
+      ]
+    },
+    {
+      "class": [
+        "demonstratable-level"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": "level2"
+      },
+      "links": [
         {
-            "rel": [
-                "self"
-            ],
-            "href": "data/demonstrations/dem0.json"
-        },
-        {
-            "rel": [
-                "https://activities.api.brightspace.com/rels/user-activity-usage"
-            ],
-            "href": "data/user-activity-usages/0.json"
-        },
-        {
-            "rel": [
-                "https://user-progress.api.brightspace.com/rels/feedback"
-            ],
-            "href": "data/demonstrations/dem0/feedback.json"
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/level2.json"
         }
-    ]
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/demonstrations/dem0.json"
+    },
+    {
+      "rel": [
+        "https://activities.api.brightspace.com/rels/user-activity-usage"
+      ],
+      "href": "data/user-activity-usages/0.json"
+    },
+    {
+      "rel": [
+        "https://user-progress.api.brightspace.com/rels/feedback"
+      ],
+      "href": "data/demonstrations/dem0/feedback.json"
+    }
+  ]
 }

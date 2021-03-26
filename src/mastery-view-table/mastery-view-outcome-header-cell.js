@@ -26,7 +26,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	static get styles() {
 		return [
 			super.styles,
-			css`				
+			css`
 				#cell-content-container:focus {
 					outline-color: var(--d2l-color-celestine);
 				}
@@ -115,12 +115,12 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 				.color-patch {
 					margin-right: 0.35rem;
-				}				
+				}
 
 				:host([dir="rtl"]) .color-patch {
 					margin-left: 0.35rem;
 					margin-right: 0;
-				}				
+				}
 
 				td {
 					padding-bottom: 0.15rem;
@@ -129,7 +129,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					font-size: 0.7rem;
 					line-height: 0.7rem;
 				}
-				
+
 				.tooltip-level-dist-table {
 					max-width: 10.8rem;
 				}
@@ -211,7 +211,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		<tr class="tooltip-line-container">
 			<td>
 				<svg class="color-patch" width="18" height="12" aria-hidden>
-					<rect 
+					<rect
 						x="1"
 						y="1"
 						rx="5"

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
-		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-		<script type="module">
-			import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
-			import '../src/outcome-text-display/outcome-text-display.js';
-		</script>
-	</head>
-	<body unresolved>
-		<d2l-demo-page page-title="d2l-coa-outcome-text-display demo">
-			<h2>Using Notation</h2>
-			<d2l-demo-snippet>
-				<d2l-coa-outcome-text-display
-					href="data/outcomes/o1.json"
-					token="abc123"
-				></d2l-coa-outcome-text-display>
-			</d2l-demo-snippet>
 
-			<h2>Using Altnotation</h2>
-			<d2l-demo-snippet>
-				<d2l-coa-outcome-text-display
-					href="data/outcomes/o2.json"
-					token="abc123"
-				></d2l-coa-outcome-text-display>
-			</d2l-demo-snippet>
-		</d2l-demo-page>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+	<script type="module">
+		import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
+		import '../src/outcome-text-display/outcome-text-display.js';
+	</script>
+</head>
+
+<body unresolved>
+	<d2l-demo-page page-title="d2l-coa-outcome-text-display demo">
+		<h2>Using Notation</h2>
+		<d2l-demo-snippet>
+			<d2l-coa-outcome-text-display
+				href="data/outcomes/o1.json"
+				token="abc123"
+			></d2l-coa-outcome-text-display>
+		</d2l-demo-snippet>
+
+		<h2>Using Altnotation</h2>
+		<d2l-demo-snippet>
+			<d2l-coa-outcome-text-display
+				href="data/outcomes/o2.json"
+				token="abc123"
+			></d2l-coa-outcome-text-display>
+		</d2l-demo-snippet>
+	</d2l-demo-page>
+</body>
+
 </html>
