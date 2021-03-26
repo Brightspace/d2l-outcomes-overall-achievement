@@ -187,18 +187,18 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 		`;
 	}
 
-	_close() {
-		this.dispatchEvent(new CustomEvent(
-			Consts.events.primaryPanelCloseClicked,
-			{ bubbles: true, composed: true }
-		));
-	}
-
 	set _entity(entity) {
 		if (this._entityHasChanged(entity)) {
 			this._onEntityChanged(entity);
 			super._entity = entity;
 		}
+	}
+
+	_close() {
+		this.dispatchEvent(new CustomEvent(
+			Consts.events.primaryPanelCloseClicked,
+			{ bubbles: true, composed: true }
+		));
 	}
 
 	_onEntityChanged(entity) {
