@@ -463,6 +463,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 	}
 
+	set _entity(entity) {
+		if (this._entityHasChanged(entity)) {
+			this._onEntityChanged(entity);
+			super._entity = entity;
+		}
+	}
+
 	_bulkButtonClick() {
 		this._showBulkActionDialog = true;
 	}
@@ -472,13 +479,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			this._logger.logSirenError(action.href, action.method, error);
 			throw error;
 		});
-	}
-
-	set _entity(entity) {
-		if (this._entityHasChanged(entity)) {
-			this._onEntityChanged(entity);
-			super._entity = entity;
-		}
 	}
 
 	_filterLearnerList(learnerList, searchTerm) {

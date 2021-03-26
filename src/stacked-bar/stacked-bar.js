@@ -169,6 +169,13 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
         `;
 	}
 
+	set _entity(entity) {
+		if (this._entityHasChanged(entity)) {
+			this._onEntityChanged(entity);
+			super._entity = entity;
+		}
+	}
+
 	_buildHistData(levels, demonstrations) {
 		levels.sort((left, right) => {
 			return left.getSortOrder() - right.getSortOrder();
@@ -197,13 +204,6 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 				name: this.localize('notEvaluated')
 			};
 			this._histData.push(unassessedData);
-		}
-	}
-
-	set _entity(entity) {
-		if (this._entityHasChanged(entity)) {
-			this._onEntityChanged(entity);
-			super._entity = entity;
 		}
 	}
 
