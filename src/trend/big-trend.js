@@ -395,8 +395,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		const levels = trendData.levels;
 		const maxLevel = this._getMaxLevelScore(levels);
 		const gridHeight = rowHeight - GRID_THICKNESS;
-
-		const gridData = Array.apply(null, { length: maxLevel + 1 }).map((v, i) => {
+		const gridData = Array(...new Array(maxLevel + 1)).map((v, i) => {
 			return {
 				size: (i === maxLevel
 					? FOOTER_HEIGHT
