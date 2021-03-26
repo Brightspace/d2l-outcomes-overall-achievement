@@ -1,10 +1,7 @@
-import { LitElement, html, css } from 'lit-element';
 import '@brightspace-ui/core/components/icons/icon-custom';
+import { css, html, LitElement } from 'lit-element';
 
 class VisibilityHideIcon extends LitElement {
-	static get is() {
-		return 'd2l-icon-visibility-hide';
-	}
 
 	static get styles() {
 		return css`
@@ -36,6 +33,8 @@ class VisibilityHideIcon extends LitElement {
 		`;
 	}
 
+	static get is() { return 'd2l-icon-visibility-hide'; }
+
 	render() {
 		return html`
 			<d2l-icon-custom>
@@ -54,6 +53,7 @@ class VisibilityHideIcon extends LitElement {
 			</d2l-icon-custom>
 		`;
 	}
+
 }
 
 customElements.define(VisibilityHideIcon.is, VisibilityHideIcon);

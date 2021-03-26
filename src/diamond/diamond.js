@@ -1,7 +1,6 @@
-import { LitElement, html } from 'lit-element';
+import { html, LitElement } from 'lit-element';
 
 class Diamond extends LitElement {
-	static get is() { return 'd2l-coa-diamond'; }
 
 	static get properties() {
 		return {
@@ -10,6 +9,8 @@ class Diamond extends LitElement {
 			width: { type: Number }
 		};
 	}
+
+	static get is() { return 'd2l-coa-diamond'; }
 
 	render() {
 		let computedEdgeWidth, computedWidth;
@@ -41,6 +42,7 @@ class Diamond extends LitElement {
 			</svg>
 		`;
 	}
+
 }
 
 customElements.define(Diamond.is, Diamond);

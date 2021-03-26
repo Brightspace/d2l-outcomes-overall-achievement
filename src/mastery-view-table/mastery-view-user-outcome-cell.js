@@ -1,17 +1,17 @@
-import { LitElement, html, css } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TelemetryMixin } from '../TelemetryMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/tooltip/tooltip';
 import 'd2l-table/d2l-table.js';
-import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
+import { css, html, LitElement } from 'lit-element';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 import { Consts } from '../consts';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { ErrorLogger } from '../ErrorLogger.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
+import { TelemetryMixin } from '../TelemetryMixin';
 
 const KEYCODES = {
 	ENTER: 13,
@@ -19,7 +19,6 @@ const KEYCODES = {
 };
 
 export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(TelemetryMixin(LitElement)))) {
-	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
 
 	static get properties() {
 		return {
@@ -27,8 +26,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				attribute: 'outcome-href',
 				type: String
 			},
-			_cellData: Object,
-			_logger: ErrorLogger
+			logger: ErrorLogger,
+			_cellData: Object
 		};
 	}
 
@@ -150,6 +149,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		this._setEntityType(MasteryViewRowEntity);
 	}
 
+	static get is() { return 'd2l-mastery-view-user-outcome-cell'; }
+
 	render() {
 		if (this.skeleton) {
 			return html`
@@ -158,7 +159,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					tabindex="0"
 					aria-label="${this._getAriaText(null)}"
 				>
-					<div class="assessment-label-skeleton d2l-skeletize" />
+					<div class="assessment-label-skeleton d2l-skeletize"></div>
 				</div>
 			`;
 		}
@@ -170,8 +171,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			class="cell-content-container"
 			tabindex="0"
 			style="background-color:${data.levelColor}"
-			@click=${() => { this._onClick(); }}
-			@keydown=${(e) => { this._onKeyDown(e); }}
+			@click=${this._onClick}
+			@keydown=${this._onKeyDown}
 			aria-label="${this._getAriaText(data)}"
 		>
 			<div id="assessment-fraction-container" aria-hidden="true">
@@ -195,11 +196,11 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				aria-hidden="true"
 				title="${data.published ? this.localize('published') : this.localize('notPublished')}"
 			>
-				${data.published ? html`<d2l-icon-visibility-show />` : html`<d2l-icon-visibility-hide />`}
+				${data.published ? html`<d2l-icon-visibility-show></d2l-icon-visibility-show>` : html`<d2l-icon-visibility-hide></d2l-icon-visibility-hide>`}
 			</div>
 			${data.outdated ? html`
 				<span aria-hidden="true" title="${this.localize('outOfDate')}">
-					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh" />
+					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
 				</span>
 			` : null}
 
@@ -219,7 +220,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			return this.localize('loadingOverallAchievement');
 		}
 
-		var assessmentInfo = '';
+		let assessmentInfo = '';
 		if (data.levelName === Consts.noCoaLevelName) {
 			assessmentInfo += this.localize('notEvaluated') + this.localize('commaSeparator');
 		}
@@ -265,7 +266,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 	_onEntityChanged(entity, error) {
 		if (!entity) {
-			this._logger.logSirenError(this.href, 'GET', error);
+			this.logger.logSirenError(this.href, 'GET', error);
 			return;
 		}
 
@@ -293,7 +294,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					name = loa.getName();
 					color = loa.getColor();
 				}, error => {
-					this._logger.logSirenError(demonstratedLevel._levelHref(), 'GET', error);
+					this.logger.logSirenError(demonstratedLevel._levelHref(), 'GET', error);
 				});
 			}
 			demonstration.subEntitiesLoaded().then(() => {
@@ -311,7 +312,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		}, error => {
 			const demonstration = cellEntity._getCheckpointDemonstration() || {};
 			const href = (demonstration && demonstration.getSelfHref) ? demonstration.getSelfHref() : null;
-			this._logger.logSirenError(href, 'GET', error);
+			this.logger.logSirenError(href, 'GET', error);
 		});
 
 		entity.subEntitiesLoaded().then(() => {
@@ -339,6 +340,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			this._onClick();
 		}
 	}
+
 }
 
 customElements.define(MasteryViewUserOutcomeCell.is, MasteryViewUserOutcomeCell);

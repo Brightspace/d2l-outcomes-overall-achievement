@@ -1,12 +1,12 @@
-import { LitElement, html, css } from 'lit-element';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TrendMixin } from './TrendMixin';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/tooltip/tooltip';
-import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
-import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
 import './big-trend-skeleton';
+import { css, html, LitElement } from 'lit-element';
+import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
+import { TrendMixin } from './TrendMixin';
 
 const COMPONENT_HEIGHT = 120;
 const DIAMOND_SIZE = 18;
@@ -24,8 +24,6 @@ const BarTypes = Object.freeze({
 });
 
 class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
-
-	static get is() { return 'd2l-coa-big-trend'; }
 
 	static get properties() {
 		return {
@@ -281,6 +279,8 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		this.instructor = false;
 	}
 
+	static get is() { return 'd2l-coa-big-trend'; }
+
 	firstUpdated() {
 		this.scrollContainer = this.renderRoot.getElementById('scroll');
 		this.scrollButtonLeft = this.renderRoot.getElementById('scroll-button-left');
@@ -395,8 +395,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 		const levels = trendData.levels;
 		const maxLevel = this._getMaxLevelScore(levels);
 		const gridHeight = rowHeight - GRID_THICKNESS;
-
-		const gridData = Array.apply(null, { length: maxLevel + 1 }).map((v, i) => {
+		const gridData = Array(...new Array(maxLevel + 1)).map((v, i) => {
 			return {
 				size: (i === maxLevel
 					? FOOTER_HEIGHT
@@ -787,6 +786,7 @@ class BigTrend extends TrendMixin(LocalizeMixin(LitElement)) {
 
 		this.scrollContainer.scrollLeft = scrollMax * (this._isRtl() ? -1 : 1);
 	}
+
 }
 
 customElements.define(BigTrend.is, BigTrend);

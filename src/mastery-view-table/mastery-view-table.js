@@ -1,41 +1,35 @@
-import { LitElement, html, css } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TelemetryMixin } from '../TelemetryMixin';
-import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
-import './mastery-view-user-outcome-cell.js';
-import './mastery-view-outcome-header-cell.js';
-import { ifDefined } from 'lit-html/directives/if-defined';
-import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
-import { ErrorLogger } from '../ErrorLogger.js';
-
-import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
-import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
-import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
-import { announce } from '@brightspace-ui/core/helpers/announce.js';
-import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
-
-import '../custom-icons/LeftArrow.js';
-import '../custom-icons/RightArrow.js';
-
-import 'd2l-table/d2l-table.js';
-import 'd2l-table/d2l-scroll-wrapper.js';
-
-import '@brightspace-ui/core/components/alert/alert.js';
 import '@brightspace-ui/core/components/alert/alert-toast.js';
-import '@brightspace-ui/core/components/typography/typography.js';
-import '@brightspace-ui/core/components/button/button.js';
+import '@brightspace-ui/core/components/alert/alert.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
-import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
+import '@brightspace-ui/core/components/button/button.js';
 import '@brightspace-ui/core/components/colors/colors.js';
+import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
+import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/inputs/input-search.js';
-import '@brightspace-ui/core/components/icons/icon.js';
-import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
-
-import Images from '../images/images.js';
+import '@brightspace-ui/core/components/typography/typography.js';
+import 'd2l-table/d2l-scroll-wrapper.js';
+import 'd2l-table/d2l-table.js';
+import '../custom-icons/LeftArrow.js';
+import '../custom-icons/RightArrow.js';
+import './mastery-view-outcome-header-cell.js';
+import './mastery-view-user-outcome-cell.js';
+import { css, html, LitElement } from 'lit-element';
+import { announce } from '@brightspace-ui/core/helpers/announce.js';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
+import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
 import { Consts } from '../consts';
+import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { ErrorLogger } from '../ErrorLogger.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
+import Images from '../images/images.js';
+import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
+import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+import { TelemetryMixin } from '../TelemetryMixin';
 
 const BULK_RELEASE_ACTION = 'release';
 const BULK_RETRACT_ACTION = 'retract';
@@ -61,7 +55,7 @@ const _getOutcomePrefix = function(outcome) {
 
 	if (outcome.label && outcome.label.trim()) {
 		if (outcome.listId && outcome.listId.trim()) {
-			return outcome.label.trim() + ' ' + outcome.listId.trim();
+			return `${outcome.label.trim()} ${outcome.listId.trim()}`;
 		}
 		return outcome.label.trim();
 	}
@@ -98,7 +92,6 @@ const _compareOutcomes = function(a, b) {
 };
 
 class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitElement))) {
-	static get is() { return 'd2l-mastery-view-table'; }
 
 	static get properties() {
 		return {
@@ -372,6 +365,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._onResize = this._onResize.bind(this);
 	}
 
+	static get is() { return 'd2l-mastery-view-table'; }
+
 	connectedCallback() {
 		super.connectedCallback();
 
@@ -584,14 +579,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			displayText = firstName;
 		}
 		else if (firstLastDisplay) {
-			displayText = firstName + ' ' + lastName;
+			displayText = `${firstName} ${lastName}`;
 		}
 		else {
-			displayText = lastName + ', ' + firstName;
+			displayText = `${lastName}, ${firstName}`;
 		}
 
 		if (firstName && lastName) {
-			ariaText = firstName + ' ' + lastName;
+			ariaText = `${firstName} ${lastName}`;
 		}
 		else {
 			ariaText = displayText;
@@ -606,7 +601,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 	_goToPageNumber(newPage) {
 		this._currentPage = newPage;
-		var selector = this.shadowRoot.getElementById('page-select-menu');
+		const selector = this.shadowRoot.getElementById('page-select-menu');
 		if (selector) {
 			selector.selectedIndex = newPage - 1;
 		}
@@ -754,13 +749,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_onPageSelectDropdownSelectionChanged() {
-		var selector = this.shadowRoot.getElementById('page-select-menu');
+		const selector = this.shadowRoot.getElementById('page-select-menu');
 		const newPageNumber = parseInt(selector.options[selector.selectedIndex].value);
 		this._goToPageNumber(newPageNumber);
 	}
 
 	_onPageSizeDropdownSelectionChanged() {
-		var selector = this.shadowRoot.getElementById('page-size-menu');
+		const selector = this.shadowRoot.getElementById('page-size-menu');
 		const newRowsPerPage = parseInt(selector.options[selector.selectedIndex].value);
 		this._rowsPerPage = newRowsPerPage;
 		this._updatePageCount();
@@ -875,7 +870,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	_renderLearnerRow(learnerData, outcomeHeaderData) {
 		const userNameText = this._getUserNameText(learnerData.firstName, learnerData.lastName, this._nameFirstLastFormat);
 		if (outcomeHeaderData.length === 0 || !learnerData.rowDataHref) {
-			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', learnerData.firstName + ' ' + learnerData.lastName));
+			return this._renderNoLearnerState(this.localize('learnerHasNoData', 'username', `${learnerData.firstName} ${learnerData.lastName}`));
 		}
 
 		return html`
@@ -899,8 +894,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 						href=${learnerData.rowDataHref}
 						token=${this.token}
 						outcome-href=${outcomeData.href}
-						._logger="${this._logger}"
-					/>
+						.logger="${this._logger}"
+					></d2l-mastery-view-user-outcome-cell>
 				</td>
 			`)}
 		</tr>
@@ -938,7 +933,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
 				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
-			/>
+			></d2l-mastery-view-outcome-header-cell>
 		</th>`;
 
 	}
@@ -995,7 +990,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			return null;
 		}
 		const pageSelectOptionTemplates = [];
-		for (var i = 1; i <= this._pageCount; i++) {
+		for (let i = 1; i <= this._pageCount; i++) {
 			pageSelectOptionTemplates.push(html`
 				<option value=${i}>
 					${this.localize('pageSelectOptionText', 'currentPage', i, 'pageCount', this._pageCount)}
@@ -1024,7 +1019,8 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 							@click=${this._onPreviousPageButtonClicked}
 							aria-label=${this.localize('goToPreviousPage')}
 						>
-							<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()} />
+							<d2l-icon-left-arrow ?hidden=${!this._shouldShowPrevPageButton()}>
+							</d2l-icon-left-arrow>
 						</d2l-button-subtle>
 					</td>
 					<td class="page-label-container">
@@ -1034,7 +1030,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 						<select
 							id="page-select-menu"
 							class="d2l-input-select"
-							@change=${this._onPageSelectDropdownSelectionChanged}}
+							@change=${this._onPageSelectDropdownSelectionChanged}
 							aria-label=${this.localize('selectTablePage')}
 							aria-controls="new-page-select-live-text"
 						>
@@ -1049,14 +1045,15 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 							@click=${this._onNextPageButtonClicked}
 							aria-label=${this.localize('goToNextPage')}
 						>
-							<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()} />
+							<d2l-icon-right-arrow ?hidden=${!this._shouldShowNextPageButton()}>
+							</d2l-icon-right-arrow>
 						</d2l-button-subtle>
 					</td>
 					<td class="page-size-menu-container">
 						<select
 							id="page-size-menu"
 							class="d2l-input-select"
-							@change=${this._onPageSizeDropdownSelectionChanged}}
+							@change=${this._onPageSizeDropdownSelectionChanged}
 							aria-label=${this.localize('selectLearnersPerPage')}
 							aria-controls="new-page-size-live-text"
 						>
@@ -1071,13 +1068,13 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			id="new-page-select-live-text"
 			aria-live="polite"
 			aria-label=${this.localize('newPageSelectLiveText', 'pageNum', this._currentPage, 'totalPages', this._pageCount)}
-		/>
+		></div>
 		<div
 			role="region"
 			id="new-page-size-live-text"
 			aria-live="polite"
 			aria-label=${this.localize('newPageSizeLiveText', 'pageSize', this._rowsPerPage)}
-		/>
+		></div>
 		`;
 	}
 
@@ -1160,10 +1157,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				? bodyWidth - (bodyWidth * 0.02439 * 2)
 				: bodyWidth - 60;
 			if (header) {
-				header.style.width = bodyWidth + 'px';
+				header.style.width = `${bodyWidth}px`;
 			}
 			containers.forEach((container) => {
-				container.style.width = containerWidth + 'px';
+				container.style.width = `${containerWidth}px`;
 			});
 		});
 	}
@@ -1187,12 +1184,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			const rightLast = right.lastName || '';
 
 			if (byLastName) {
-				leftSortString = leftLast + '_' + leftFirst;
-				rightSortString = rightLast + '_' + rightFirst;
+				leftSortString = `${leftLast}_${leftFirst}`;
+				rightSortString = `${rightLast}_${rightFirst}`;
 			}
 			else {
-				leftSortString = leftFirst + '_' + leftLast;
-				rightSortString = rightFirst + '_' + rightLast;
+				leftSortString = `${leftFirst}_${leftLast}`;
+				rightSortString = `${rightFirst}_${rightLast}`;
 			}
 
 			if (descending) {

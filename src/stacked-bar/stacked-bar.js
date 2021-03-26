@@ -1,15 +1,14 @@
-import { LitElement, html, css } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import { css, html, LitElement } from 'lit-element';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 const unassessedColor = '#9ea5a9';
 
 export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
-	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	static get properties() {
 		return {
@@ -153,6 +152,8 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 		this.skeleton = true;
 	}
 
+	static get is() { return 'd2l-coa-stacked-bar'; }
+
 	render() {
 		return html`
 			<div id="container" class="${this._getContainerClass(this.compact)}">
@@ -271,7 +272,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 	_renderGraph() {
 		if (this.skeleton) {
 			return html`
-				<div class="graph-bar-skeleton d2l-skeletize" />
+				<div class="graph-bar-skeleton d2l-skeletize"></div>
 			`;
 		}
 
@@ -301,6 +302,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 			<div>${levelData.name}: ${this._getLevelCountText(levelData)}</div>
 		`;
 	}
+
 }
 
 customElements.define(StackedBar.is, StackedBar);

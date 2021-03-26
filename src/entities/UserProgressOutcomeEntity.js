@@ -1,6 +1,6 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
-import { OutcomeEntity } from './OutcomeEntity';
 import { OutcomeActivityCollectionEntity } from './OutcomeActivityCollectionEntity';
+import { OutcomeEntity } from './OutcomeEntity';
 
 export class UserProgressOutcomeEntity extends Entity {
 	static get class() { return 'user-progress-outcome'; }

@@ -1,5 +1,5 @@
-import { Entity } from 'siren-sdk/src/es6/Entity';
 import { DemonstrationEntity } from './DemonstrationEntity';
+import { Entity } from 'siren-sdk/src/es6/Entity';
 import { UserActivityUsageEntity } from './UserActivityUsageEntity';
 
 export class OutcomeActivityEntity extends Entity {

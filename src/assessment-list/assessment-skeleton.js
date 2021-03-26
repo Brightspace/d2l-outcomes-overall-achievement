@@ -1,14 +1,10 @@
-import { LitElement, html, css } from 'lit-element';
+import '@brightspace-ui/core/components/colors/colors';
+import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import '@brightspace-ui/core/components/colors/colors';
 
 export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-
-	static get is() {
-		return 'd2l-coa-assessment-skeleton';
-	}
 
 	static get properties() {
 		return {};
@@ -125,6 +121,8 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 		this.skeleton = true;
 	}
 
+	static get is() { return 'd2l-coa-assessment-skeleton'; }
+
 	render() {
 		return html`
 			<div class="skeleton-container">
@@ -154,6 +152,7 @@ export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMix
 			</div>
 		`;
 	}
+
 }
 
 customElements.define(AssessmentSkeleton.is, AssessmentSkeleton);

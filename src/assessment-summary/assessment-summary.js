@@ -1,18 +1,17 @@
-import { LitElement, html, css } from 'lit-element';
-import { labelStyles } from '@brightspace-ui/core/components/typography/styles';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import '../stacked-bar/stacked-bar';
 import './assessment-summary-skeleton.js';
+import { css, html, LitElement } from 'lit-element';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { labelStyles } from '@brightspace-ui/core/components/typography/styles';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 const excludedActivityTypes = [
 	'checkpoint-item'
 ];
 
 class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
-	static get is() { return 'd2l-coa-assessment-summary'; }
 
 	static get properties() {
 		return {
@@ -49,6 +48,8 @@ class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitEl
 		this.skeleton = true;
 	}
 
+	static get is() { return 'd2l-coa-assessment-summary'; }
+
 	render() {
 		if (this.skeleton) {
 			return html`
@@ -77,7 +78,7 @@ class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitEl
 			super._entity = entity;
 		}
 	}
-	//
+
 	_onEntityChanged(entity) {
 		if (entity) {
 			const demonstrations = [];
@@ -99,6 +100,7 @@ class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitEl
 			});
 		}
 	}
+
 }
 
 customElements.define(AssessmentSummary.is, AssessmentSummary);

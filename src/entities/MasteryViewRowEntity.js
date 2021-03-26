@@ -1,6 +1,6 @@
+import { DemonstrationEntity } from './DemonstrationEntity';
 import { Entity } from 'siren-sdk/src/es6/Entity';
 import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
-import { DemonstrationEntity } from './DemonstrationEntity';
 
 class MasteryViewCellEntity extends SelflessEntity {
 

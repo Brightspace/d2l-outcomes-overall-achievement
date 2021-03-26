@@ -1,5 +1,5 @@
-import { Entity } from 'siren-sdk/src/es6/Entity';
 import { AchievementLevelEntity } from './AchievementLevelEntity';
+import { Entity } from 'siren-sdk/src/es6/Entity';
 
 export class AchievementScaleEntity extends Entity {
 	onLevelChanged(onChange) {
