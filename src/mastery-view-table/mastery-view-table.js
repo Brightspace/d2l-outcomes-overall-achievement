@@ -1,41 +1,35 @@
-import { css, html, LitElement } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TelemetryMixin } from '../TelemetryMixin';
-import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
-import './mastery-view-user-outcome-cell.js';
-import './mastery-view-outcome-header-cell.js';
-import { ifDefined } from 'lit-html/directives/if-defined';
-import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
-import { ErrorLogger } from '../ErrorLogger.js';
-
-import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
-import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
-import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
-import { announce } from '@brightspace-ui/core/helpers/announce.js';
-import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
-
-import '../custom-icons/LeftArrow.js';
-import '../custom-icons/RightArrow.js';
-
-import 'd2l-table/d2l-table.js';
-import 'd2l-table/d2l-scroll-wrapper.js';
-
-import '@brightspace-ui/core/components/alert/alert.js';
 import '@brightspace-ui/core/components/alert/alert-toast.js';
-import '@brightspace-ui/core/components/typography/typography.js';
-import '@brightspace-ui/core/components/button/button.js';
+import '@brightspace-ui/core/components/alert/alert.js';
 import '@brightspace-ui/core/components/button/button-subtle.js';
-import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
+import '@brightspace-ui/core/components/button/button.js';
 import '@brightspace-ui/core/components/colors/colors.js';
+import '@brightspace-ui/core/components/dialog/dialog-confirm.js';
+import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/inputs/input-search.js';
-import '@brightspace-ui/core/components/icons/icon.js';
-import '@brightspace-ui/core/components/link/link.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
-
-import Images from '../images/images.js';
+import '@brightspace-ui/core/components/typography/typography.js';
+import 'd2l-table/d2l-scroll-wrapper.js';
+import 'd2l-table/d2l-table.js';
+import '../custom-icons/LeftArrow.js';
+import '../custom-icons/RightArrow.js';
+import './mastery-view-outcome-header-cell.js';
+import './mastery-view-user-outcome-cell.js';
+import { css, html, LitElement } from 'lit-element';
+import { announce } from '@brightspace-ui/core/helpers/announce.js';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
+import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
 import { Consts } from '../consts';
+import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { ErrorLogger } from '../ErrorLogger.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
+import Images from '../images/images.js';
+import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
+import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+import { TelemetryMixin } from '../TelemetryMixin';
 
 const BULK_RELEASE_ACTION = 'release';
 const BULK_RETRACT_ACTION = 'retract';

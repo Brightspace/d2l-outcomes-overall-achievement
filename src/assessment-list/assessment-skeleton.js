@@ -1,8 +1,8 @@
+import '@brightspace-ui/core/components/colors/colors';
 import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import '@brightspace-ui/core/components/colors/colors';
 
 export class AssessmentSkeleton extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 

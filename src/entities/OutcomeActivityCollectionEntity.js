@@ -1,5 +1,5 @@
-import { Entity } from 'siren-sdk/src/es6/Entity';
 import { AchievementScaleEntity } from './AchievementScaleEntity';
+import { Entity } from 'siren-sdk/src/es6/Entity';
 import { OutcomeActivityEntity } from './OutcomeActivityEntity';
 
 export class OutcomeActivityCollectionEntity extends Entity {

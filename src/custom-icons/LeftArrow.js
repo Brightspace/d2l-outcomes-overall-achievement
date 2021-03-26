@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit-element';
 import '@brightspace-ui/core/components/icons/icon-custom.js';
+import { css, html, LitElement } from 'lit-element';
 
 class LeftArrowIcon extends LitElement {
 

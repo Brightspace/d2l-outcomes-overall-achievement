@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit-element';
 import '@brightspace-ui/core/components/icons/icon-custom';
+import { css, html, LitElement } from 'lit-element';
 
 class VisibilityShowIcon extends LitElement {
 

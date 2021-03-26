@@ -1,12 +1,12 @@
-import { css, html, LitElement } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/typography/typography';
 import './assessment-entry';
 import './assessment-skeleton';
+import { css, html, LitElement } from 'lit-element';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
+import { UserProgressOutcomeEntity } from '../entities/UserProgressOutcomeEntity';
 
 const excludedActivityTypes = [
 	'checkpoint-item'

@@ -1,11 +1,3 @@
-import { css, html, LitElement } from 'lit-element';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { bodySmallStyles, heading4Styles } from '@brightspace-ui/core/components/typography/styles';
-import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { OutcomeActivityEntity } from '../entities/OutcomeActivityEntity';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/icons/icon-custom';
@@ -16,6 +8,14 @@ import '../custom-icons/quote';
 import '../custom-icons/visibility-hide';
 import '../custom-icons/visibility-show';
 import './overall-achievement-skeleton';
+import { bodySmallStyles, heading4Styles } from '@brightspace-ui/core/components/typography/styles';
+import { css, html, LitElement } from 'lit-element';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { OutcomeActivityEntity } from '../entities/OutcomeActivityEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
 class OverallAchievementTile extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 

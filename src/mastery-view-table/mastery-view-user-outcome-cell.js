@@ -1,17 +1,17 @@
-import { css, html, LitElement } from 'lit-element';
-import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TelemetryMixin } from '../TelemetryMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/tooltip/tooltip';
 import 'd2l-table/d2l-table.js';
-import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
+import { css, html, LitElement } from 'lit-element';
+import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 import { Consts } from '../consts';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { ErrorLogger } from '../ErrorLogger.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
+import { TelemetryMixin } from '../TelemetryMixin';
 
 const KEYCODES = {
 	ENTER: 13,

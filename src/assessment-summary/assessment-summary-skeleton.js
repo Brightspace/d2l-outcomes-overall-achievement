@@ -1,7 +1,7 @@
-import { css, html, LitElement } from 'lit-element';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { labelStyles } from '@brightspace-ui/core/components/typography/styles';
 import '@brightspace-ui/core/components/colors/colors';
+import { css, html, LitElement } from 'lit-element';
+import { labelStyles } from '@brightspace-ui/core/components/typography/styles';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 export class AssessmentSummarySkeleton extends SkeletonMixin(LitElement) {
 

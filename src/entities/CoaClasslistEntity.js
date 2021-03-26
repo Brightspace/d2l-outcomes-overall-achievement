@@ -1,6 +1,6 @@
 import { Entity } from 'siren-sdk/src/es6/Entity';
-import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { MasteryViewRowEntity } from './MasteryViewRowEntity';
+import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { UserEntity } from './UserEntity';
 import { UserProgressOutcomeCollectionEntity } from './UserProgressOutcomeCollectionEntity';
 

@@ -1,9 +1,9 @@
-import { Entity } from 'siren-sdk/src/es6/Entity';
-import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 import { AchievementScaleEntity } from './AchievementScaleEntity';
-import { CoaClasslistEntity } from './CoaClasslistEntity.js';
-import { OutcomeEntity } from './OutcomeEntity.js';
 import { CalculationMethodEntity } from './CalculationMethodEntity';
+import { CoaClasslistEntity } from './CoaClasslistEntity.js';
+import { Entity } from 'siren-sdk/src/es6/Entity';
+import { OutcomeEntity } from './OutcomeEntity.js';
+import { SelflessEntity } from 'siren-sdk/src/es6/SelflessEntity';
 
 class OutcomeClassProgressEntity extends SelflessEntity {
 

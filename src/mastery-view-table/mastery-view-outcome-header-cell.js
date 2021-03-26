@@ -1,6 +1,6 @@
-import { css, html } from 'lit-element';
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import { css, html } from 'lit-element';
 import { StackedBar } from '../stacked-bar/stacked-bar';
 
 export class MasteryViewOutcomeHeaderCell extends StackedBar {

@@ -1,12 +1,12 @@
-import { css, html, LitElement } from 'lit-element';
-import { LocalizeMixin } from '../LocalizeMixin';
-import { TrendMixin } from './TrendMixin';
 import '@brightspace-ui/core/components/colors/colors';
 import '@brightspace-ui/core/components/icons/icon';
 import '@brightspace-ui/core/components/tooltip/tooltip';
-import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
-import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
 import './big-trend-skeleton';
+import { css, html, LitElement } from 'lit-element';
+import { formatDate } from '@brightspace-ui/intl/lib/dateTime.js';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { ResizeObserver } from 'd2l-resize-aware/resize-observer-module';
+import { TrendMixin } from './TrendMixin';
 
 const COMPONENT_HEIGHT = 120;
 const DIAMOND_SIZE = 18;

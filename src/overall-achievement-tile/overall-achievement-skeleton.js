@@ -1,6 +1,6 @@
+import '@brightspace-ui/core/components/colors/colors';
 import { css, html, LitElement } from 'lit-element';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import '@brightspace-ui/core/components/colors/colors';
 
 export class OverallAchievementSkeleton extends SkeletonMixin(LitElement) {
 

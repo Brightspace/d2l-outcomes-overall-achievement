@@ -1,10 +1,10 @@
+import './outcome-text-skeleton.js';
+import { bodySmallStyles, heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import { css, html, LitElement } from 'lit-element';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
-import { bodySmallStyles, heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import { OutcomeEntity } from '../entities/OutcomeEntity';
-import './outcome-text-skeleton.js';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 class OutcomeTextDisplay extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement))) {
 

@@ -1,7 +1,7 @@
+import '@brightspace-ui/core/components/colors/colors';
+import { bodySmallStyles, heading3Styles } from '@brightspace-ui/core/components/typography/styles';
 import { css, html, LitElement } from 'lit-element';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-import { bodySmallStyles, heading3Styles } from '@brightspace-ui/core/components/typography/styles';
-import '@brightspace-ui/core/components/colors/colors';
 
 export class OutcomeTextSkeleton extends SkeletonMixin(LitElement) {
 

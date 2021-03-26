@@ -1,10 +1,10 @@
+import '@brightspace-ui/core/components/colors/colors.js';
+import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import { css, html, LitElement } from 'lit-element';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
-import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
-import '@brightspace-ui/core/components/colors/colors.js';
-import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 const unassessedColor = '#9ea5a9';
 
