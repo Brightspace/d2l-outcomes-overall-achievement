@@ -65,8 +65,8 @@ class AssessmentSummary extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitEl
 			<d2l-coa-stacked-bar
 				id="chart"
 				href="${this.href}"
-				.token="${this.token}"
 				excluded-types=${JSON.stringify(excludedActivityTypes)}
+				.token="${this.token}"
 				?skeleton=${this.skeleton}
 			></d2l-coa-stacked-bar>
         `;

@@ -135,8 +135,8 @@ class PrimaryPanel extends SkeletonMixin(EntityMixinLit(LocalizeMixin(LitElement
 			<d2l-coa-big-trend
 				href="${this._outcomeActivitiesHref}"
 				.token="${this.token}"
-				instructor="${this.instructor}"
 				outcome-term="${this.outcomeTerm}"
+				?instructor="${this.instructor}"
 				?hide-unpublished-coa="${this.hideUnpublishedCoa}"
 			></d2l-coa-big-trend>
 		`;
