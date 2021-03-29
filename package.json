@@ -1,6 +1,6 @@
 {
   "name": "d2l-outcomes-overall-achievement",
-  "version": "1.1.59",
+  "version": "1.1.60",
   "description": "A collection of components related to outcomes COA (Course Overall Achievement)",
   "repository": "https://github.com/Brightspace/d2l-outcomes-overall-achievement.git",
   "scripts": {
@@ -15,7 +15,7 @@
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "dependencies": {
-    "@brightspace-ui/core": "^1.113.0",
+    "@brightspace-ui/core": "^1.124.0",
     "@open-wc/dedupe-mixin": "^1",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware#semver:^1",
     "d2l-table": "github:BrightspaceUI/table#semver:^2",
