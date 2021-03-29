@@ -1,5 +1,5 @@
 import { Consts } from './consts.js';
-import { dedupeMixin } from '@open-wc/dedupe-mixin.js';
+import { dedupeMixin } from '@open-wc/dedupe-mixin';
 import { LocalizeDynamicMixin } from '@brightspace-ui/core/mixins/localize-dynamic-mixin.js';
 import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 
