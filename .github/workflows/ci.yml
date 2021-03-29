@@ -30,6 +30,8 @@ jobs:
         run: npm ci
       - name: Lint (JavaScript)
         run: npm run lint:eslint
+      - name: Lint (Lit)
+        run: npm run lint:lit
   check-licenses:
     name: Check Licenses
     timeout-minutes: 5

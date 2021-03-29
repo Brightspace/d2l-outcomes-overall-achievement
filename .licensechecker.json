@@ -3,6 +3,7 @@
     "d2l"
   ],
   "manualOverrides": {
+    "glob-to-regexp@0.3.0": "BSD-2-Clause",
     "valid-url@^1.0.9": "MIT"
   }
 }
