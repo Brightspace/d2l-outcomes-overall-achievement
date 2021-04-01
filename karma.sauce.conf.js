@@ -44,7 +44,7 @@ module.exports = config => {
 				nodeResolve: true
 			},
 			sauceLabs: {
-				testName: 'Outcomes Level of Achievement Unit Tests',
+				testName: 'Outcomes Overall Achievement Unit Tests',
 				idleTimeout: 500
 			},
 			customLaunchers: customLaunchers,
