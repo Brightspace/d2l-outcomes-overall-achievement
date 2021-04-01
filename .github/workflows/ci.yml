@@ -8,6 +8,33 @@ on:
 env:
   NODE_VERSION: 14 # Latest LTS
 jobs:
+  test:
+    name: Test
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: Brightspace/third-party-actions@actions/checkout
+      - name: Set up node
+        uses: Brightspace/third-party-actions@actions/setup-node
+        with:
+          node-version: ${{env.NODE_VERSION}}
+      - name: Set up cache
+        uses: Brightspace/third-party-actions@actions/cache
+        id: cache
+        with:
+          path: '**/node_modules'
+          key: npm-${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Test
+        run: |
+          npm i karma-sauce-launcher@2 --no-save
+          npx karma start karma.sauce.conf.js
+        env:
+          SAUCE_USERNAME: Desire2Learn
+          SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY_DESIRE2LEARN}}
   lint:
     name: Lint
     timeout-minutes: 5

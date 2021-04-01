@@ -7,9 +7,11 @@
     "license-check": "d2l-license-checker",
     "lint": "npm run lint:eslint && npm run lint:lit",
     "lint:eslint": "eslint . --ext .js,.html",
-    "lint:lit": "lit-analyzer src/**/*.js --strict --rules.no-complex-attribute-binding warn",
+    "lint:lit": "lit-analyzer {src,test}/**/*.js --strict --rules.no-complex-attribute-binding warn",
     "format": "npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
+    "test": "npm run lint && npm run test:headless",
+    "test:headless": "karma start",
     "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks"
   },
   "author": "D2L Corporation",
@@ -26,14 +28,20 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7",
+    "@open-wc/testing": "^2",
+    "@open-wc/testing-karma": "^4",
     "@webcomponents/webcomponentsjs": "^2",
     "d2l-license-checker": "^3",
+    "deepmerge": "^4",
     "es-dev-server": "^2",
     "eslint": "^7",
     "eslint-config-brightspace": "^0.14",
+    "eslint-plugin-chai-friendly": "^0.6",
     "eslint-plugin-html": "^6",
     "eslint-plugin-lit": "^1",
+    "eslint-plugin-mocha": "^8",
     "eslint-plugin-sort-class-members": "^1",
-    "lit-analyzer": "^1"
+    "lit-analyzer": "^1",
+    "mocha": "^8"
   }
 }
