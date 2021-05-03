@@ -213,7 +213,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 				#no-learners-cell {
 					border-radius: 0;
-					border-bottom: 1px solid var(--d2l-table-border-color);
+					border-bottom: 1px solid var(--d2l-color-mica);
 				}
 
 				.no-learners-label {
