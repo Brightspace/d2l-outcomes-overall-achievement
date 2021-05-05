@@ -49,6 +49,26 @@
           "href": "data/levels/level1.json"
         }
       ]
+    },
+    {
+      "class": [
+        "demonstratable-level",
+        "selected"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": "level2"
+      },
+      "links": [
+        {
+          "rel": [
+            "https://achievements.api.brightspace.com/rels/level"
+          ],
+          "href": "data/levels/level2.json"
+        }
+      ]
     }
   ],
   "links": [
