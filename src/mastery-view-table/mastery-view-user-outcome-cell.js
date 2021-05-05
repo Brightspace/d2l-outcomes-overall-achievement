@@ -329,7 +329,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 	}
 
 	_renderAssessmentFraction(data) {
-		if (!data || !data.totalAssessments && !data.totalEvaluatedAssessments) {
+		if (!data || !Number.isInteger(data.totalAssessments) || !Number.isInteger(data.totalEvaluatedAssessments)) {
 			return;
 		}
 
