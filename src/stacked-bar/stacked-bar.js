@@ -167,6 +167,14 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 
 	static get is() { return 'd2l-coa-stacked-bar'; }
 
+	shouldUpdate(changedProperties) {
+		if (!this.disableGraph) {
+			return super.shouldUpdate(changedProperties);
+		}
+
+		return true;
+	}
+
 	render() {
 		if (this.disableGraph) {
 			return;
