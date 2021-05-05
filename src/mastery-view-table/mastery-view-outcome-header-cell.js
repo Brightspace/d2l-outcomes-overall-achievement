@@ -202,6 +202,31 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		return this.localize('percentLabel', 'percentage', String(percentage));
 	}
 
+	_renderGraphContainer() {
+		if (this.disableGraph) {
+			return;
+		}
+
+		return html`
+			<div id="graph-container">
+				${this._renderGraph()}
+			</div>
+		`;
+	}
+
+	_renderGraphToolTipSection() {
+		if (this.disableGraph) {
+			return;
+		}
+
+		return html`
+			<table id="tooltip-level-dist-table" aria-hidden="true">
+				${this._histData.map(this._renderTooltipLine.bind(this))}
+			</table>
+			<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
+		`;
+	}
+
 	_renderTooltipLine(levelData) {
 		return html`
 		<tr class="tooltip-line-container">
@@ -227,31 +252,6 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				<div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div>
 			</td>
 		</tr>
-		`;
-	}
-
-	_renderGraphContainer() {
-		if (this.disableGraph) {
-			return;
-		}
-
-		return html`
-			<div id="graph-container">
-				${this._renderGraph()}
-			</div>
-		`;
-	};
-
-	_renderGraphToolTipSection() {
-		if (this.disableGraph) {
-			return;
-		}
-
-		return html`
-			<table id="tooltip-level-dist-table" aria-hidden="true">
-				${this._histData.map(this._renderTooltipLine.bind(this))}
-			</table>
-			<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
 		`;
 	}
 
