@@ -49,45 +49,41 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 				}
 
 				#assessment-fraction-container {
-					line-height: 0.6rem;
+					position: relative;
 				}
 
 				#assessment-fraction {
-					display: inline-block;
-					padding-left: 0.3rem;
-					padding-top: 0.3rem;
-					padding-right: 0.3rem;
+					position: absolute;
 					font-family: 'Lato', sans-serif;
 					font-size: 0.6rem;
-					color: var(--d2l-color-tungsten)
+					color: var(--d2l-color-tungsten);
+					line-height: 1.25rem;
+					padding-left: 0.3rem;
 				}
 
 				.assessment-label-container {
-					display: inline-block;
-					padding-left: 1.5rem;
-					padding-bottom: 0.4rem;
+					display: flex;
+					align-items:center;
 				}
 
-				:host([dir="rtl"]) .assessment-label-container {
-					padding-right: 1.5rem;
+				:host([dir="rtl"]) #assessment-fraction {
+					padding-right: 0.3rem;
 					padding-left: 0;
 				}
 
 				.assessment-level-label {
-					float: left;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					max-width: 5rem;
-					line-height: 1.2rem;
+					display: block;
 				}
 
 				.assessment-label-skeleton {
 					width: 4.8rem;
 					height: 1rem;
 					margin-left: 1.5rem;
-					margin-top: 1rem;
-					float: left;
+					margin-right: 1.5rem;
 				}
 
 				.d2l-skeletize {
@@ -95,48 +91,47 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 					z-index: 0;
 				}
 
-				:host([dir="rtl"]) .assessment-label-skeleton {
-					margin-left: 0rem;
-					margin-right: 1.5rem;
-					float: right;
-				}
-
-				:host([dir="rtl"]) .assessment-level-label {
-					float: right;
+				.skeleton {
+					display: flex;
+					align-items: center;
 				}
 
 				.cell-content-container:hover .assessment-level-label {
 					text-decoration: underline;
 				}
 
-				:host([dir="rtl"]) .override-indicator {
-					float: right;
+				.assessment-info-container {
+					display: flex;
+					align-items: center;
+					height: 100%;
 				}
 
-				.assessment-outdated-icon {
-					display: inline-block;
-					float: right;
-					padding-right: 0.3rem;
-					padding-top: 0.15rem;
-				}
-
-				:host([dir="rtl"]) .assessment-outdated-icon {
-					float: left;
-					padding-left: 0.3rem;
-					padding-right: 0;
-				}
-
-				.assessment-publish-status-icon {
-					display: inline-block;
-					float: right;
+				.assessment-info-container > div {
+					padding-left: 1.5rem;
 					padding-right: 0.45rem;
-					padding-top: 0.3rem;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
 				}
 
-				:host([dir="rtl"]) .assessment-publish-status-icon {
-					float: left;
+				:host([dir="rtl"]) .assessment-info-container > div {
 					padding-left: 0.45rem;
-					padding-right: 0;
+					padding-right: 1.5rem;
+				}
+
+				.assessment-icon-container {
+					display: flex;
+					align-items: center;
+				}
+
+				.assessment-icon-container > div {
+					padding-left: 0.3rem;
+				}
+
+				:host([dir="rtl"]) .assessment-icon-container > div {
+					padding-right: 0.3rem;
+					padding-left: 0;
 				}
 			`,
 			super.styles
@@ -175,35 +170,27 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			@keydown=${this._onKeyDown}
 			aria-label="${this._getAriaText(data)}"
 		>
-			<div id="assessment-fraction-container" aria-hidden="true">
-				<span
-					id="assessment-fraction"
-					title=${this._getTooltipText(data.totalAssessments, data.totalEvaluatedAssessments)}
-				>
-					${data.totalEvaluatedAssessments}/${data.totalAssessments}
-				</span>
-			</div>
-			<div class="assessment-label-container" aria-hidden="true">
-				<div class="assessment-level-label d2l-body-compact" title="${data.levelName}">
-					${data.levelName}
+			${this._renderAssessmentFraction(data)}
+			<div class="assessment-info-container" aria-hidden="true">
+				<div aria-hidden="true">
+					<div class="assessment-label-container" aria-hidden="true">
+						<div class="assessment-level-label d2l-body-compact" title="${data.levelName}">
+							${data.levelName}
+						</div>
+						${this._renderOverrideIndicator(data)}
+					</div>
+					<div class="assessment-icon-container">
+						${this._renderAssessmentOutdatedIcon(data)}
+						<div
+							class="assessment-publish-status-icon"
+							aria-hidden="true"
+							title="${data.published ? this.localize('published') : this.localize('notPublished')}"
+						>
+							${data.published ? html`<d2l-icon-visibility-show></d2l-icon-visibility-show>` : html`<d2l-icon-visibility-hide></d2l-icon-visibility-hide>`}
+						</div>
+					</div>
 				</div>
-				${data.isManualOverride ? html`
-					<span class="override-indicator" title="${this.localize('manualOverride')}"><b>*</b></span>
-				` : null}
 			</div>
-			<div
-				class="assessment-publish-status-icon"
-				aria-hidden="true"
-				title="${data.published ? this.localize('published') : this.localize('notPublished')}"
-			>
-				${data.published ? html`<d2l-icon-visibility-show></d2l-icon-visibility-show>` : html`<d2l-icon-visibility-hide></d2l-icon-visibility-hide>`}
-			</div>
-			${data.outdated ? html`
-				<span aria-hidden="true" title="${this.localize('outOfDate')}">
-					<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
-				</span>
-			` : null}
-
 		</div>
 		`;
 	}
@@ -339,6 +326,47 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 		if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACE) {
 			this._onClick();
 		}
+	}
+
+	_renderAssessmentFraction(data) {
+		if (!data || !data.totalAssessments && !data.totalEvaluatedAssessments) {
+			return;
+		}
+
+		return html`
+			<div id="assessment-fraction-container" aria-hidden="true">
+				<span
+					id="assessment-fraction"
+					title=${this._getTooltipText(data.totalAssessments, data.totalEvaluatedAssessments)}
+				>
+					${data.totalEvaluatedAssessments}/${data.totalAssessments}
+				</span>
+			</div>
+		`;
+	}
+
+	_renderAssessmentOutdatedIcon(data) {
+		if (!data || !data.outdated) {
+			return;
+		}
+
+		return html`
+			<div aria-hidden="true" title="${this.localize('outOfDate')}">
+				<d2l-icon class="assessment-outdated-icon" icon="tier1:refresh"></d2l-icon>
+			</div>
+		`;
+	}
+
+	_renderOverrideIndicator(data) {
+		if (!data || !data.isManualOverride) {
+			return;
+		}
+
+		return html`
+			<span class="override-indicator" title="${this.localize('manualOverride')}">
+				<b>*</b>
+			</span>
+		`;
 	}
 
 }

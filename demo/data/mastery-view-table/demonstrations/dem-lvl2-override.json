@@ -8,7 +8,7 @@
     "item"
   ],
   "properties": {
-    "dateAssessed": "2020-04-09T12:51:00.623Z"
+    "dateAssessed": "2020-06-09T12:51:00.623Z"
   },
   "entities": [
     {
@@ -33,27 +33,27 @@
     {
       "class": [
         "demonstratable-level",
-        "selected",
         "suggested"
       ],
       "rel": [
         "item"
       ],
       "properties": {
-        "levelId": "level1-long-name"
+        "levelId": "level1"
       },
       "links": [
         {
           "rel": [
             "https://achievements.api.brightspace.com/rels/level"
           ],
-          "href": "data/levels/level1-long-name.json"
+          "href": "data/levels/level1.json"
         }
       ]
     },
     {
       "class": [
-        "demonstratable-level"
+        "demonstratable-level",
+        "selected"
       ],
       "rel": [
         "item"
@@ -76,7 +76,7 @@
       "rel": [
         "self"
       ],
-      "href": "data/mastery-view-table/demonstrations/dem-lvl2-longname-override-olddate.json"
+      "href": "data/mastery-view-table/demonstrations/dem-lvl3-override.json"
     }
   ]
 }

@@ -2,7 +2,8 @@
     "class": [
         "demonstration",
         "assessed",
-        "published"
+        "published",
+        "mastery-override"
     ],
     "rel": [
         "item"
