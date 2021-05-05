@@ -32,6 +32,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 				#cell-content-container {
 					width: 9.9rem;
+					padding-bottom: 0.45rem;
 				}
 
 				.outcome-name-description {
@@ -57,7 +58,6 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 					height: 0.6rem;
 					width: 8.7rem;
 					padding-top: 0.3rem;
-					padding-bottom: 0.45rem;
 					padding-left: 0.6rem;
 					padding-right: 0.45rem;
 				}
@@ -94,11 +94,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				}
 
 				#tooltip-outcome-info {
-					margin-bottom: 0.3rem;
 					width: 11rem;
 				}
 
 				#tooltip-level-dist-table {
+					margin-top: 0.3rem;
 					max-width: 11rem;
 				}
 
@@ -170,9 +170,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			<div class="outcome-name-description">
 				<b>${outcomeLabel}</b>${this.outcomeDescription}
 			</div>
-			<div id="graph-container">
-				${this._renderGraph()}
-			</div>
+			${this._renderGraphContainer()}
 			<d2l-tooltip
 				id="tooltip"
 				for="cell-content-container"
@@ -180,10 +178,7 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				align="${this.tooltipAlign}"
 			>
 				<div id="tooltip-outcome-info" aria-hidden="true">${outcomeLabel}${this.outcomeDescription}</div>
-				<table id="tooltip-level-dist-table" aria-hidden="true">
-					${this._histData.map(this._renderTooltipLine.bind(this))}
-				</table>
-				<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
+				${this._renderGraphToolTipSection()}
 			</d2l-tooltip>
 
 		</div>
@@ -232,6 +227,31 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				<div class="tooltip-percent-label">${this._getLevelCountText(levelData)}</div>
 			</td>
 		</tr>
+		`;
+	}
+
+	_renderGraphContainer() {
+		if (this.disableGraph) {
+			return;
+		}
+
+		return html`
+			<div id="graph-container">
+				${this._renderGraph()}
+			</div>
+		`;
+	};
+
+	_renderGraphToolTipSection() {
+		if (this.disableGraph) {
+			return;
+		}
+
+		return html`
+			<table id="tooltip-level-dist-table" aria-hidden="true">
+				${this._histData.map(this._renderTooltipLine.bind(this))}
+			</table>
+			<div id="tooltip-aria-label" aria-label="${this._getGraphLevelsLabel()}"></div>
 		`;
 	}
 

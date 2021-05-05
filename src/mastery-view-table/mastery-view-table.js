@@ -119,6 +119,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				type: String,
 				attribute: 'telemetry-endpoint'
 			},
+			disableGraph: {
+				attribute: 'disable-graph',
+				type: Boolean
+			},
 			_calculationMethod: { attribute: false },
 			_logger: { attribute: false },
 			_learnerList: { attribute: false },
@@ -333,6 +337,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		super();
 		this._setEntityType(ClassOverallAchievementEntity);
 
+		this.disableGraph = this.disableGraph || false;
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
@@ -932,6 +937,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				outcome-description="${ifDefined(outcomeData.description)}"
 				tooltip-align="${tooltipAlign}"
 				display-unassessed
+				?disable-graph=${this.disableGraph}
 				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
 			></d2l-mastery-view-outcome-header-cell>
 		</th>`;
