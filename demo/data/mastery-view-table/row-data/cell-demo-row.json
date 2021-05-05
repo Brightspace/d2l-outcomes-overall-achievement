@@ -174,6 +174,65 @@
           "href": "about:blank"
         }
       ]
+    },
+    {
+      "class": [
+        "mastery-view-cell"
+      ],
+      "rel": [
+        "item"
+      ],
+      "entities": [],
+      "links": [
+        {
+          "rel": [
+            "https://outcomes.api.brightspace.com/rels/outcome"
+          ],
+          "href": "data/outcomes/o5.json"
+        },
+        {
+          "rel": [
+            "checkpoint-consistent-evaluation"
+          ],
+          "href": "about:blank"
+        }
+      ]
+    },
+    {
+      "class": [
+        "mastery-view-cell"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "ActivityCount": 3,
+        "AssessedActivityCount": 0,
+        "IsOutdated": false
+      },
+      "entities": [
+        {
+          "rel": [
+            "item",
+            "checkpoint-demonstration"
+          ],
+          "href": "data/mastery-view-table/demonstrations/dem-lvl2-override.json"
+        }
+      ],
+      "links": [
+        {
+          "rel": [
+            "https://outcomes.api.brightspace.com/rels/outcome"
+          ],
+          "href": "data/outcomes/o6.json"
+        },
+        {
+          "rel": [
+            "checkpoint-consistent-evaluation"
+          ],
+          "href": "about:blank"
+        }
+      ]
     }
   ],
   "links": [
