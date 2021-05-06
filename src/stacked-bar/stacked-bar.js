@@ -13,8 +13,18 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 	static get properties() {
 		return {
 			compact: { type: Boolean },
-			excludedTypes: { attribute: 'excluded-types', type: Array },
-			displayUnassessed: { attribute: 'display-unassessed', type: Boolean },
+			excludedTypes: {
+				attribute: 'excluded-types',
+				type: Array
+			},
+			displayUnassessed: {
+				attribute: 'display-unassessed',
+				type: Boolean
+			},
+			disableGraph: {
+				attribute: 'disable-graph',
+				type: Boolean
+			},
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
 			_totalCount: { attribute: false },
@@ -142,19 +152,26 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 
 	constructor() {
 		super();
-		this._setEntityType(OutcomeActivityCollectionEntity);
-
+		this.disableGraph = this.disableGraph || false;
 		this.compact = this.compact || false;
 		this.excludedTypes = this.excludedTypes || [];
 		this._histData = [];
 		this._totalCount = 0;
 		this._assessedCount = 0;
 		this.skeleton = true;
+
+		if (!this.disableGraph) {
+			this._setEntityType(OutcomeActivityCollectionEntity);
+		}
 	}
 
 	static get is() { return 'd2l-coa-stacked-bar'; }
 
 	render() {
+		if (this.disableGraph) {
+			return;
+		}
+
 		return html`
 			<div id="container" class="${this._getContainerClass(this.compact)}">
 				<div id="graph-container" tabindex="0" aria-labelledby="tooltip">
@@ -168,6 +185,14 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 				</ul>
 			</div>
         `;
+	}
+
+	shouldUpdate(changedProperties) {
+		if (!this.disableGraph) {
+			return super.shouldUpdate(changedProperties);
+		}
+
+		return true;
 	}
 
 	set _entity(entity) {
