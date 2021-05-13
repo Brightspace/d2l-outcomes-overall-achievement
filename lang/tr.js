@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Anonim Kullanıcı",
 	ascending: "Artan",
@@ -59,7 +61,7 @@ export default {
 	selectTablePage: "Tabloda belirli bir sayfa seçin.",
 	toastReleased: "Genel başarılar tüm öğrenciler için yayınlandı",
 	toastRetracted: "Genel başarılar tüm öğrenciler için geri alındı",
-	tooltipUserOutcomeAssessments: "{numTotal} etkinlikten {numAssesed} tanesi değerlendirildi",
+	tooltipUserOutcomeAssessments: "{numTotal} etkinlikten {numAssessed} tanesi değerlendirildi",
 	trend: "Eğilim",
 	untitled: "Adsız",
 	viewCourseIntentList: "{outcome, select, competencies {yeterlikler} expectations {beklentiler} objectives {hedefler} outcomes {kazanımlar} standards {standartlar} other {standartlar}} aracından ders amaç listesini görüntüleyin"

@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Anonym bruger",
 	ascending: "Stigende",
@@ -45,7 +47,7 @@ export default {
 	page: "Side:",
 	pageSelectOptionText: "{currentPage} af {pageCount}",
 	pageSizeSelectOptionText: "{pageSize} pr. side",
-	percentLabel: "{Percentage} %",
+	percentLabel: "{percentage} %",
 	periodSeparator: ".",
 	published: "Udgivet",
 	releaseAllBtn: "Udgiv alle",
@@ -59,7 +61,7 @@ export default {
 	selectTablePage: "Vælg en bestemt side i tabellen.",
 	toastReleased: "Samlede resultater udgivet for alle elever",
 	toastRetracted: "Samlede resultater trukket tilbage for alle elever",
-	tooltipUserOutcomeAssessments: "{numAssesed} ud af {numTotal} aktiviteter vurderes",
+	tooltipUserOutcomeAssessments: "{numAssessed} ud af {numTotal} aktiviteter vurderes",
 	trend: "Tendens",
 	untitled: "Unavngivet",
 	viewCourseIntentList: "Se listen over kursusformål i værktøjet {outcome, select, competencies {Kompetencer} expectations {Forventninger} objectives {Mål} outcomes {Resultater} standards {Standarder} other {Standarder}}"

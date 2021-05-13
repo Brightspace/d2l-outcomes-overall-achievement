@@ -5,9 +5,10 @@
   "repository": "https://github.com/Brightspace/d2l-outcomes-overall-achievement.git",
   "scripts": {
     "license-check": "d2l-license-checker",
-    "lint": "npm run lint:eslint && npm run lint:lit",
+    "lint": "npm run lint:eslint && npm run lint:lit && npm run lint:lang",
     "lint:eslint": "eslint . --ext .js,.html",
     "lint:lit": "lit-analyzer {src,test}/**/*.js --strict --rules.no-complex-attribute-binding warn",
+    "lint:lang": "mfv -e",
     "format": "npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
     "test": "npm run lint && npm run test:headless",
@@ -42,6 +43,7 @@
     "eslint-plugin-mocha": "^8",
     "eslint-plugin-sort-class-members": "^1",
     "lit-analyzer": "^1",
+    "messageformat-validator": "^1",
     "mocha": "^8"
   }
 }

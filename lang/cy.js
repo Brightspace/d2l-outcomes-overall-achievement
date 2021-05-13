@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Defnyddwyr Anhysbys",
 	ascending: "Esgynnol",
@@ -33,10 +35,10 @@ export default {
 	name: "Enw",
 	newPageSelectLiveText: "Tudalen {pageNum} o {totalPages} wedi’i dewis.",
 	newPageSizeLiveText: "Wrthi’n dangos {pageSize} o resi'r dudalen.",
-	noAlignedOutcomes: "I ddefnyddio'r Gwedd Feistrolaeth, dechreuwch ag alinio {outcome, select, cymwyseddau {competencies} disgwyliadau {expectations} amcanion {objectives} canlyniadau {outcomes} safonau {standards} arall {standards}}",
+	noAlignedOutcomes: "I ddefnyddio'r Gwedd Feistrolaeth, dechreuwch ag alinio {outcome, select, competencies {cymwyseddau} expectations {disgwyliadau} objectives {amcanion} outcomes {canlyniadau} standards {safonau} other {safonau}}",
 	noEnrolledLearners: "Dim dysgwyr cofrestredig yn y cwrs.",
-	noScaleInstructor: "I weld cynnydd y dysgwr tuag at gyflawni’r {outcome, select, cymwyseddau {competency} disgwyliadau {expectation} amcanion {objective} canlyniadau {outcome} safonau {standard} arall {standard}} hwn, crëwch a dewiswch raddfa cyflawni.",
-	noScaleStudent: "Does dim graddfa wedi cael ei gosod i fesur cyrhaeddiad {outcome, select, competencies {competencies} expectations {expectations} objectives {objectives} outcomes {outcomes} standards {standards} other {standards}}.",
+	noScaleInstructor: "I weld cynnydd y dysgwr tuag at gyflawni’r {outcome, select, competencies {cymwyseddau} expectations {disgwyliadau} objectives {amcanion} outcomes {canlyniadau} standards {safonau} other {safonau}} hwn, crëwch a dewiswch raddfa cyflawni.",
+	noScaleStudent: "Does dim graddfa wedi cael ei gosod i fesur cyrhaeddiad {outcome, select, competencies {cymwyseddau} expectations {disgwyliadau} objectives {amcanion} outcomes {canlyniadau} standards {safonau} other {safonau}}.",
 	notAssessed: "Heb ei asesu",
 	notEvaluated: "Heb ei werthuso",
 	notPublished: "Heb ei gyhoeddi",

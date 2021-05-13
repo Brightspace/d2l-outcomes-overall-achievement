@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "익명 사용자",
 	ascending: "오름차순",
@@ -18,10 +20,10 @@ export default {
 	headingEvidence: "근거 이름",
 	headingLoa: "성취 수준",
 	headingTotalAssessments: "종합 평가: {num}",
-	indexedAttempt: "{Num}번 시도",
+	indexedAttempt: "{num}번 시도",
 	labelOverallAchievement: "전체 성취도",
 	lastName: "성",
-	learnerHasNoData: "{Username}님의 전체 성취도 데이터가 없습니다.",
+	learnerHasNoData: "{username}님의 전체 성취도 데이터가 없습니다.",
 	learnerSortButtonDescription: "사용자 {newSortKey}{newSortDirection}으(로) 테이블 행을 정렬하려면 선택하십시오. 현재 정렬 순서는 {currentSortKey}{currentSortDirection}입니다.",
 	levelNamePercentLabel: "{name}: {percentage}.",
 	loadingOverallAchievement: "전체 성취도 로드.",
@@ -33,10 +35,10 @@ export default {
 	name: "이름",
 	newPageSelectLiveText: "선택한 {totalPages}의 {pageNum} 페이지.",
 	newPageSizeLiveText: "페이지당 {pageSize} 표시.",
-	noAlignedOutcomes: "숙련도 보기를 사용하려면 먼저 {outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}}을(를) 활동 편집 페이지의 강의 활동에 맞게 정렬하십시오.",
+	noAlignedOutcomes: "숙련도 보기를 사용하려면 먼저 {outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}을(를) 활동 편집 페이지의 강의 활동에 맞게 정렬하십시오.",
 	noEnrolledLearners: "강의에 등록한 학습자 없음",
 	noScaleInstructor: "이 {outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}을(를) 성취하기 위해 학습자 진행 상황을 보려면, 성취 척도를 생성하고 선택합니다.",
-	noScaleStudent: "{outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}}에 대한 성취를 측정하기 위해 어떠한 척도도 설정되지 않았습니다.",
+	noScaleStudent: "{outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}에 대한 성취를 측정하기 위해 어떠한 척도도 설정되지 않았습니다.",
 	notAssessed: "평가되지 않음",
 	notEvaluated: "평가되지 않음",
 	notPublished: "게시되지 않음",
@@ -62,5 +64,5 @@ export default {
 	tooltipUserOutcomeAssessments: "{numTotal}개 활동 중 {numAssessed}개가 평가됩니다.",
 	trend: "추세",
 	untitled: "제목 없음",
-	viewCourseIntentList: "{outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}}} 도구에서 강의 인텐트 목록 보기"
+	viewCourseIntentList: "{outcome, select, competencies {역량} expectations {기대} objectives {목표} outcomes {결과} standards {표준} other {표준}} 도구에서 강의 인텐트 목록 보기"
 };
