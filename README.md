@@ -4,32 +4,6 @@
 
 A collection of components related to outcomes COA (Course Overall Achievement)
 
-## Prerequisites
-
-- NPM (Installs with [NodeJS](https://nodejs.org))
-
-## Setup
-
-Run `npm i` in project root directory
-
-## Version Bump
-
-Run `npm version --no-git-tag-version [major | minor | patch]` in project
-root directory, selecting the appropriate version increase type. This will bump
-the version in both `package.json` and `package-lock.json` and leave it in your
-working changes.
-
-## Formatting
-
-To deal with pedantic issues that will not pass linting you can run `npm run
-format`. This will run the various linters in fix mode to help get rid of
-issues.
-
-## Component Demos
-
-To view component demos, run `npm start`. A page should be launched with links
-to specific component demos.
-
 ## Components
 
 - [Assessment List](#assessment-list)
@@ -42,8 +16,6 @@ to specific component demos.
 - [Overall Achievement Tile](#overall-achievement-tile)
 - [Primary Panel](#primary-panel)
 - [Stacked Bar](#stacked-bar)
-
----
 
 ### Assessment List
 
@@ -61,8 +33,6 @@ user/outcome/course tripplet (excluding Checkpoint activities).
 - `href` - Hypermedia URL for a collection entity of `user-progress-outcome`
 - `token` - Auth token
 
----
-
 ### Assessment Summary
 
 A summary of all current assessments for a particular user/outcome/course
@@ -79,8 +49,6 @@ tripplet (excluding Checkpoint activities).
 - `href` - Hypermedia URL for a collection entity of
 `user-progress-outcome-activities`
 - `token` - Auth token
-
----
 
 ### Big Trend
 
@@ -104,8 +72,6 @@ outcomes. Accepted values are: `competencies`, `expectations`, `objectives`,
 user is an instructor. Used to display language better suited to the user's
 role.
 
----
-
 ### Diamond
 
 #### Usage
@@ -125,8 +91,6 @@ Requires either `edge-width` or `width` attribute to be provided, but not both
 - `width` - Used to size the diamond by its overall container width
 (number of pixels)
 
----
-
 ### Mastery View Table
 
 A table displaying the overall outcome levels of achievement of each user in the
@@ -142,8 +106,6 @@ course, plus class-level outcome achievement distribution
 
 - `href` - Hypermedia URL for a `class-overall-achievement` entity
 - `token` - Auth token
-
----
 
 ### Mini Trend
 
@@ -161,8 +123,6 @@ a course.
 - `href` - Hypermedia URL for an `user-progress-outcome-activity` entity
 - `token` - Auth token
 
----
-
 ### Outcome Text Display
 
 Text display of outcome details.
@@ -177,8 +137,6 @@ Text display of outcome details.
 
 - `href` - Hypermedia URL for an `outcome` entity
 - `token` - Auth token
-
----
 
 ### Overall Achievement Tile
 
@@ -195,8 +153,6 @@ Outcome Checkpoint.
 
 - `href` - Hypermedia URL for a `user-progress-outcome-activity` entity
 - `token` - Auth token
-
----
 
 ### Primary Panel
 
@@ -219,8 +175,6 @@ Displayed when there are no aligned outcomes in the course.
 outcomes. Accepted values are: `competencies`, `expectations`, `objectives`,
 `outcomes` and `standards`. Default value is `standards`
 
----
-
 ### Stacked Bar
 
 A visual representation of the number of each level achieved on a particular
@@ -241,6 +195,62 @@ user/outcome/course tripplet.
 displayed in "compact mode" (does not show table on mobile displays)
 - `excluded-types` - **[Optional]** JSON array of Activity types to be excluded
 from the graph
+
+## Developing
+
+After cloning the repo, run `npm install` to install dependencies.
+
+### Running the Demos
+
+Start local dev server that hosts the demo pages.
+
+```sh
+npm start
+```
+
+### Linting
+
+```sh
+# eslint, lit-analyzer and messageformat-validator
+npm run lint
+
+# eslint only
+npm run lint:eslint
+
+# lit-analyzer only
+npm run lint:lit
+
+# messageformat-validator only
+npm run lint:lang
+```
+
+### Formatting
+
+```sh
+# eslint
+npm run format
+
+# eslint only
+npm run format:eslint
+```
+
+### Testing
+
+```sh
+# lint and unit tests
+npm test
+
+# unit tests
+npm run test:headless
+```
+
+### Versioning & Releasing
+
+Run `npm version --no-git-tag-version [major | minor | patch]` in project
+root directory, selecting the appropriate version increase type. This will bump
+the version in both `package.json` and `package-lock.json` and leave it in your
+working changes. Once checking this in and it being merged to `master` create
+a GitHub release matching the version in the `package.json`.
 
 <!-- links -->
 [CI Badge]: https://github.com/Brightspace/d2l-outcomes-overall-achievement/workflows/CI/badge.svg?branch=master
