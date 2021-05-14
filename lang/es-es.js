@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Usuario anónimo",
 	ascending: "Ascendente",

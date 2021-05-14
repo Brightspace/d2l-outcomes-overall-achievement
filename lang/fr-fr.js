@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Utilisateur anonyme",
 	ascending: "Ordre croissant",
@@ -31,7 +33,7 @@ export default {
 	masteryViewUserOutcomeScreenReaderText: "{assessmentInfo}. Appuyez sur la touche Espace ou Entrée pour ouvrir la page d’évaluation.",
 	miniTrendScreenReaderText: "Évalué {numAssessed} {numAssessed, plural, =1 {time} other {times}} : {levelNames}",
 	name: "Nom",
-	newPageSelectLiveText: "Page {pagenum} sur {totalPages} sélectionnée.",
+	newPageSelectLiveText: "Page {pageNum} sur {totalPages} sélectionnée.",
 	newPageSizeLiveText: "Affichage de {pageSize} lignes par page.",
 	noAlignedOutcomes: "Pour utiliser la vue Maîtrise, commencez par aligner les {outcome, select, competencies {compétences} expectations {attentes} objectives {objectifs} outcomes {résultats} standards {normes} other {normes}} sur les activités du cours depuis la page de modification de l’activité.",
 	noEnrolledLearners: "Aucun apprenant inscrit au cours.",

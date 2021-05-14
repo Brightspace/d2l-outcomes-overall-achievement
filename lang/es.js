@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Usuario anónimo",
 	ascending: "Ascendente",
@@ -35,7 +37,7 @@ export default {
 	newPageSizeLiveText: "Se muestran {pageSize} filas por página.",
 	noAlignedOutcomes: "Para utilizar la Vista de maestría, comience alineando {outcome, select, competencies {competencias} expectations {expectativas} objectives {objetivos} outcomes {resultados} standards {estándares} other {estándares}} a las actividades del curso en la página de edición de la actividad.",
 	noEnrolledLearners: "No hay estudiantes inscritos en el curso.",
-	noScaleInstructor: "Con el fin de ver el progreso del estudiante para lograr este {outcome, select, competency {competencia} expectations {expectativas} objectives {objetivos} outcomes {resultados} standards {estándares} other {estándares}}, cree y seleccione una escala de logros.",
+	noScaleInstructor: "Con el fin de ver el progreso del estudiante para lograr este {outcome, select, competencies {competencia} expectations {expectativas} objectives {objetivos} outcomes {resultados} standards {estándares} other {estándares}}, cree y seleccione una escala de logros.",
 	noScaleStudent: "No se ha establecido ninguna escala para medir el logro de {outcome, select, competencies {competencias} expectations {expectativas} objectives {objetivos} outcomes {resultados} standards {estándares} other {estándares}}.",
 	notAssessed: "Sin evaluación",
 	notEvaluated: "No evaluado",

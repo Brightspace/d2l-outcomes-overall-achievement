@@ -1,3 +1,5 @@
+/* eslint quotes: 0 */
+
 export default {
 	anonymousUser: "Anonymer Benutzer",
 	ascending: "Aufsteigend",
@@ -52,7 +54,7 @@ export default {
 	releaseAllTxt: "Gesamtleistung für alle Lernenden im Kurs veröffentlichen?",
 	retractAllBtn: "Alles zurückziehen",
 	retractAllTxt: "Gesamtleistung für alle Lernende im Kurs zurückziehen?",
-	searchResults: "{numResults} Suche {numResults, plural, =1 {Ergebnis} other {Ergebnisse}} für „{searchterm}“",
+	searchResults: "{numResults} Suche {numResults, plural, =1 {Ergebnis} other {Ergebnisse}}",
 	searchUsersLabel: "Nach Benutzern suchen",
 	searchUsersPlaceholder: "Nach Benutzern suchen...",
 	selectLearnersPerPage: "Wählen Sie, wie viele Zeilen auf jeder Seite der Tabelle angezeigt werden sollen.",
