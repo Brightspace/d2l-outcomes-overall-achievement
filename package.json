@@ -11,9 +11,10 @@
     "lint:lang": "mfv -e",
     "format": "npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks",
     "test": "npm run lint && npm run test:headless",
     "test:headless": "karma start",
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks"
+    "test:headless:watch": "karma start --auto-watch=true --single-run=false"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
