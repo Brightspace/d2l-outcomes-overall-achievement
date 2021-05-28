@@ -9,8 +9,9 @@
     "lint:eslint": "eslint . --ext .js,.html",
     "lint:lit": "lit-analyzer {src,test}/**/*.js --strict --rules.no-complex-attribute-binding warn",
     "lint:lang": "mfv -e",
-    "format": "npm run format:eslint",
+    "format": "npm run format:lang && npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
+    "format:lang": "mfv remove-extraneous && mfv add-missing",
     "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks",
     "test": "npm run lint && npm run test:headless",
     "test:headless": "karma start",
@@ -44,7 +45,7 @@
     "eslint-plugin-mocha": "^8",
     "eslint-plugin-sort-class-members": "^1",
     "lit-analyzer": "^1",
-    "messageformat-validator": "^1",
+    "messageformat-validator": "github:bearfriend/messageformat-validator",
     "mocha": "^8"
   }
 }

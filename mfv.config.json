@@ -1,5 +1,5 @@
 {
   "path": "lang/",
   "source": "en",
-  "format": "js"
+  "format": "js-quoted"
 }
