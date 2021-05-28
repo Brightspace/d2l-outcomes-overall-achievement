@@ -20,7 +20,7 @@
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "dependencies": {
-    "@brightspace-ui/core": "^1.124.0",
+    "@brightspace-ui/core": "^1.136.4",
     "@open-wc/dedupe-mixin": "^1",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware#semver:^1",
     "d2l-table": "github:BrightspaceUI/table#semver:^2",
