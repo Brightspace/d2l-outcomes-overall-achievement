@@ -12,15 +12,15 @@
     "format": "npm run format:lang && npm run format:eslint",
     "format:eslint": "npm run lint:eslint -- --fix",
     "format:lang": "mfv remove-extraneous && mfv add-missing",
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --watch --open --preserve-symlinks",
+    "start": "web-dev-server --config wds.config.mjs",
     "test": "npm run lint && npm run test:headless",
-    "test:headless": "karma start",
-    "test:headless:watch": "karma start --auto-watch=true --single-run=false"
+    "test:headless": "web-test-runner --config wtr.config.mjs",
+    "test:headless:watch": "web-test-runner --config wtr.config.mjs --watch"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "dependencies": {
-    "@brightspace-ui/core": "^1.136.4",
+    "@brightspace-ui/core": "^1.136",
     "@open-wc/dedupe-mixin": "^1",
     "d2l-resize-aware": "github:BrightspaceUI/resize-aware#semver:^1",
     "d2l-table": "github:BrightspaceUI/table#semver:^2",
@@ -30,13 +30,13 @@
     "siren-sdk": "github:BrightspaceHypermediaComponents/siren-sdk#semver:^1"
   },
   "devDependencies": {
+    "@babel/core": "^7",
     "@babel/eslint-parser": "^7",
     "@open-wc/testing": "^2",
-    "@open-wc/testing-karma": "^4",
+    "@web/dev-server": "^0.1",
+    "@web/test-runner": "^0.13",
     "@webcomponents/webcomponentsjs": "^2",
     "d2l-license-checker": "^3",
-    "deepmerge": "^4",
-    "es-dev-server": "^2",
     "eslint": "^7",
     "eslint-config-brightspace": "^0.14",
     "eslint-plugin-chai-friendly": "^0.7",

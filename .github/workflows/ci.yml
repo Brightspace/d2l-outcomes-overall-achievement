@@ -30,8 +30,8 @@ jobs:
         run: npm ci
       - name: Test
         run: |
-          npm i karma-sauce-launcher@2 --no-save
-          npx karma start karma.sauce.conf.js
+          npm i @web/test-runner-saucelabs --no-save
+          npx web-test-runner --config wtr.sauce.config.mjs
         env:
           SAUCE_USERNAME: Desire2Learn
           SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY_DESIRE2LEARN}}
