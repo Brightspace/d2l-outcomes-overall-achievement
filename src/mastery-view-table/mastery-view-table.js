@@ -180,6 +180,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				.outcome-column-head {
 					vertical-align: bottom;
 					width: 9.9rem;
+					z-index: 1;
 				}
 
 				.learner-name-container {
@@ -896,7 +897,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		return html`
-		<th scope="col" class="outcome-column-head" style="padding: 0">
+		<th scope="col" class="outcome-column-head" style="line-height: 1rem; padding: 0;">
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
