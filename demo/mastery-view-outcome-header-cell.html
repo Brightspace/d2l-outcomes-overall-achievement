@@ -8,18 +8,25 @@
 	<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
 	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 	<script type="module">
-		import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
-		import '../src/mastery-view-table/mastery-view-outcome-header-cell.js';
 		import '@brightspace-ui/core/components/colors/colors.js';
-		import 'd2l-table/d2l-table.js';
+		import '@brightspace-ui/core/components/demo/demo-page.js';
+		import '../src/mastery-view-table/mastery-view-outcome-header-cell.js';
 	</script>
+	<style>
+		.table-cell {
+			border: 1px solid var(--d2l-color-mica);
+			font-size: 0.7rem;
+			line-height: 1rem;
+			width: 9.9rem;
+		}
+	</style>
 </head>
 
 <body unresolved>
 	<d2l-demo-page page-title="d2l-mastery-view-outcome-header-cell demo">
 		<h3>3 levels</h3>
 		<d2l-demo-snippet>
-			<div style="width: 9.9rem; border: 1px solid var(--d2l-table-border-color); font-size:0.7rem; line-height:1rem;">
+			<div class="table-cell">
 				<d2l-mastery-view-outcome-header-cell
 					href="data/mastery-view-table/outcome-activity-collections/class/oac-full.json"
 					token="abc123"
@@ -31,7 +38,7 @@
 		</d2l-demo-snippet>
 		<h3>3 levels with unassessed items</h3>
 		<d2l-demo-snippet>
-			<div style="width: 9.9rem; border: 1px solid var(--d2l-table-border-color); font-size:0.7rem; line-height:1rem;">
+			<div class="table-cell">
 				<d2l-mastery-view-outcome-header-cell
 					href="data/mastery-view-table/outcome-activity-collections/class/oac-partial.json"
 					token="abc123"
@@ -44,7 +51,7 @@
 
 		<h3>3 levels, no assessments</h3>
 		<d2l-demo-snippet>
-			<div style="width: 9.9rem; border: 1px solid var(--d2l-table-border-color); font-size:0.7rem; line-height:1rem;">
+			<div class="table-cell">
 				<d2l-mastery-view-outcome-header-cell
 					href="data/mastery-view-table/outcome-activity-collections/class/oac-noneassessed.json"
 					token="abc123"
@@ -56,7 +63,7 @@
 		</d2l-demo-snippet>
 		<h3>3 levels, no students to assess</h3>
 		<d2l-demo-snippet>
-			<div style="width: 9.9rem; border: 1px solid var(--d2l-table-border-color); font-size:0.7rem; line-height:1rem;">
+			<div class="table-cell">
 				<d2l-mastery-view-outcome-header-cell
 					href="data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
 					token="abc123"
@@ -68,7 +75,7 @@
 		</d2l-demo-snippet>
 		<h3>Graph hidden</h3>
 		<d2l-demo-snippet>
-			<div style="width: 9.9rem; border: 1px solid var(--d2l-table-border-color); font-size:0.7rem; line-height:1rem;">
+			<div class="table-cell">
 				<d2l-mastery-view-outcome-header-cell
 					href="data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
 					token="abc123"
