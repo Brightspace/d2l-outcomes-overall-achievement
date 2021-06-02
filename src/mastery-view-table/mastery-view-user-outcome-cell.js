@@ -1,6 +1,5 @@
-import '@brightspace-ui/core/components/colors/colors';
-import '@brightspace-ui/core/components/tooltip/tooltip';
-import 'd2l-table/d2l-table.js';
+import '@brightspace-ui/core/components/colors/colors.js';
+import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import '../custom-icons/visibility-hide.js';
 import '../custom-icons/visibility-show.js';
 import { css, html, LitElement } from 'lit-element';

@@ -8,9 +8,8 @@ import '@brightspace-ui/core/components/icons/icon.js';
 import '@brightspace-ui/core/components/inputs/input-checkbox.js';
 import '@brightspace-ui/core/components/inputs/input-search.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
+import '@brightspace-ui/core/components/table/table-col-sort-button.js';
 import '@brightspace-ui/core/components/typography/typography.js';
-import 'd2l-table/d2l-scroll-wrapper.js';
-import 'd2l-table/d2l-table.js';
 import '../custom-icons/LeftArrow.js';
 import '../custom-icons/RightArrow.js';
 import './mastery-view-outcome-header-cell.js';
@@ -20,7 +19,6 @@ import { announce } from '@brightspace-ui/core/helpers/announce.js';
 import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/styles';
 import { ClassOverallAchievementEntity } from '../entities/ClassOverallAchievementEntity.js';
 import { Consts } from '../consts';
-import { d2lTableStyles } from '../custom-styles/d2l-table-styles';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { ErrorLogger } from '../ErrorLogger.js';
 import { ifDefined } from 'lit-html/directives/if-defined';
@@ -29,6 +27,7 @@ import { linkStyles } from '@brightspace-ui/core/components/link/link.js';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { performSirenAction } from 'siren-sdk/src/es6/SirenAction.js';
 import { selectStyles } from '@brightspace-ui/core/components/inputs/input-select-styles.js';
+import { tableStyles } from '@brightspace-ui/core/components/table/table-wrapper.js';
 import { TelemetryMixin } from '../TelemetryMixin';
 
 const BULK_RELEASE_ACTION = 'release';
@@ -178,20 +177,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					max-width: 100%;
 				}
 
-				.learner-column-head {
-					padding: 0rem 0.8rem;
-					min-width: 9.9rem;
-					max-width: 25.6rem;
-				}
-
 				.outcome-column-head {
 					vertical-align: bottom;
 					width: 9.9rem;
-				}
-
-				.learner-name-cell {
-					height: 3rem;
-					max-width: 25.6rem;
+					z-index: 1;
 				}
 
 				.learner-name-container {
@@ -199,30 +188,14 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				}
 
 				.learner-name-label {
-					padding: 0rem 0.8rem;
 					line-height: 3rem;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}
 
-				.learner-name-label:focus {
-					outline: 0;
-					text-decoration: underline;
-				}
-
 				.learner-outcome-cell {
 					width: 9.9rem;
-				}
-
-				#no-learners-cell {
-					border-radius: 0;
-					border-bottom: 1px solid var(--d2l-color-mica);
-				}
-
-				.no-learners-label {
-					padding: 0rem 0.8rem;
-					line-height: 3rem;
 				}
 
 				#pagination-controls-container {
@@ -326,7 +299,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 					}
 				}
 			`,
-			d2lTableStyles,
+			tableStyles,
 			linkStyles,
 			selectStyles,
 			bodyCompactStyles
@@ -848,10 +821,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		return html`
-			<th sticky>
-			<div class="learner-column-head">
-				${cellContent}
-			</div></th>
+			<th sticky style="min-width: 9.9rem; max-width: 25.6rem; padding-top: 0; padding-bottom: 0;">${cellContent}</th>
 		`;
 	}
 
@@ -880,7 +850,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 
 		return html`
 		<tr>
-			<th scope="row" sticky class="learner-name-cell">
+			<th scope="row" sticky style="padding-top: 0; padding-bottom: 0">
 				<div class="learner-name-container">
 					<a
 						href="${learnerData.gradesPageHref}"
@@ -894,7 +864,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				</div>
 			</th>
 			${outcomeHeaderData.map(outcomeData => html`
-				<td role="cell" class="learner-outcome-cell">
+				<td role="cell" class="learner-outcome-cell" style="padding: 0">
 					<d2l-mastery-view-user-outcome-cell
 						href=${learnerData.rowDataHref}
 						token=${this.token}
@@ -912,9 +882,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		const colSpan = this._outcomeHeadersData.length + 1;
 		return html`
 			<tr>
-				<td id="no-learners-cell" colspan="${colSpan}">
-					<div class="no-learners-label">${rowText}</div>
-				</td>
+				<td colspan="${colSpan}">${rowText}</td>
 			</tr>
 		`;
 	}
@@ -929,7 +897,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		}
 
 		return html`
-		<th scope="col" class="outcome-column-head">
+		<th scope="col" class="outcome-column-head" style="line-height: 1rem; padding: 0;">
 			<d2l-mastery-view-outcome-header-cell
 				href="${outcomeData.activityCollectionHref}"
 				token="${this.token}"
@@ -963,7 +931,6 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 			return html`
 			<d2l-table-wrapper
 				?sticky-headers=${this._stickyHeadersEnabled}
-				show-actions
 				type="default"
 			>
 				<table

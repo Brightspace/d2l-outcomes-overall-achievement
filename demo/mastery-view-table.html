@@ -1,131 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="UTF-8">
+		<script>
+			const rtl = (window.location.search.indexOf('dir=rtl') !== -1);
+			if (rtl) document.documentElement.setAttribute('dir', 'rtl');
+		</script>
+		<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+		<script type="module">
+			import '@brightspace-ui/core/components/demo/demo-page.js';
+			import '@brightspace-ui/core/components/switch/switch.js';
+			import '../src/mastery-view-table/mastery-view-table.js';
+		</script>
+		<style>
+			html, d2l-demo-page {
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body unresolved>
+		<d2l-demo-page page-title="d2l-mastery-view-table demo">
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/node_modules/@brightspace-ui/core/components/demo/styles.css" type="text/css">
-	<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-	<script type="module">
-		import '/node_modules/@brightspace-ui/core/components/demo/demo-page.js';
-		import '../src/mastery-view-table/mastery-view-table.js';
-		import '/node_modules/@brightspace-ui/core/components/colors/colors.js';
-	</script>
-	<style>
-		d2l-demo-snippet {
-			border: 0;
-			box-shadow: none;
-			background-color: var(--d2l-color-sylvite);
-		}
+			<d2l-switch id="rtl-switch" text="RTL"></d2l-switch>
 
-		d2l-demo-snippet>div {
-			padding-right: 1rem;
-			max-width: 80vw;
-		}
-	</style>
-</head>
+			<h3>7 learners</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/7learners.json"
+				token="abc123"
+			></d2l-mastery-view-table>
 
-<body unresolved>
-	<d2l-demo-page page-title="d2l-mastery-view-table demo">
-		<h3>7 learners</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/7learners.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>200 learners</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/200learners.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>Learners with first use</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/7learners.json"
-					token="abc123"
-					show-first-use
-					setting-page-link="https://www.google.ca/"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>1 enrolled student</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/1learner.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>Histogram disabled</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/7learners.json"
-					token="abc123"
-					disable-graph
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>No enrolled students</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/0learners.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>No enrolled students with first use</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/0learners.json"
-					token="abc123"
-					show-first-use
-					setting-page-link="https://www.google.ca/"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>No aligned outcomes</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/no-outcomes.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>Error State</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/non-existant.json"
-					token="abc123"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-		<h3>Error State with first use</h3>
-		<d2l-demo-snippet code-view-hidden no-padding>
-			<div>
-				<d2l-mastery-view-table
-					href="data/mastery-view-table/class-overall-achievement/non-existant.json"
-					token="abc123"
-					show-first-use
-					setting-page-link="https://www.google.ca/"
-				></d2l-mastery-view-table>
-			</div>
-		</d2l-demo-snippet>
-	</d2l-demo-page>
-</body>
+			<h3>200 learners</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/200learners.json"
+				token="abc123"
+			></d2l-mastery-view-table>
 
+			<h3>Learners with first use</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/7learners.json"
+				token="abc123"
+				show-first-use
+				setting-page-link="https://www.google.ca/"
+			></d2l-mastery-view-table>
+
+			<h3>1 enrolled student</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/1learner.json"
+				token="abc123"
+			></d2l-mastery-view-table>
+
+			<h3>Histogram disabled</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/7learners.json"
+				token="abc123"
+				disable-graph
+			></d2l-mastery-view-table>
+
+			<h3>No enrolled students</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/0learners.json"
+				token="abc123"
+			></d2l-mastery-view-table>
+
+			<h3>No enrolled students with first use</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/0learners.json"
+				token="abc123"
+				show-first-use
+				setting-page-link="https://www.google.ca/"
+			></d2l-mastery-view-table>
+
+			<h3>No aligned outcomes</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/no-outcomes.json"
+				token="abc123"
+			></d2l-mastery-view-table>
+
+			<h3>Error State</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/non-existant.json"
+				token="abc123"
+			></d2l-mastery-view-table>
+
+			<h3>Error State with first use</h3>
+			<d2l-mastery-view-table
+				href="data/mastery-view-table/class-overall-achievement/non-existant.json"
+				token="abc123"
+				show-first-use
+				setting-page-link="https://www.google.ca/"
+			></d2l-mastery-view-table>
+
+		</d2l-demo-page>
+		<script>
+			const rtlSwitch = document.getElementById('rtl-switch');
+			rtlSwitch.on = new URL(document.location).searchParams.get('dir') === 'rtl';
+			rtlSwitch.addEventListener('change', (e) => {
+				const url = new URL(document.location);
+				url.searchParams.set('dir', e.target.on ? 'rtl' : 'ltr');
+				document.location.href = url.toString();
+			});
+		</script>
+	</body>
 </html>
