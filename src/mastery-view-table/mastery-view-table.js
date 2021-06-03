@@ -904,12 +904,10 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				outcome-name="${ifDefined(outcomeData.name)}"
 				outcome-description="${ifDefined(outcomeData.description)}"
 				tooltip-align="${tooltipAlign}"
-				display-unassessed
 				?disable-graph=${this.disableGraph}
 				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
 			></d2l-mastery-view-outcome-header-cell>
 		</th>`;
-
 	}
 
 	_renderSearchMessage() {

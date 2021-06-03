@@ -1,9 +1,13 @@
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
-import { css, html } from 'lit-element';
-import { StackedBar } from '../stacked-bar/stacked-bar';
+import { css, html, LitElement } from 'lit-element';
+import { Consts } from '../consts.js';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
-export class MasteryViewOutcomeHeaderCell extends StackedBar {
+export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
 
 	static get properties() {
 		return {
@@ -18,7 +22,14 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			tooltipAlign: {
 				type: String,
 				attribute: 'tooltip-align'
-			}
+			},
+			disableGraph: {
+				attribute: 'disable-graph',
+				type: Boolean
+			},
+			_histData: { attribute: false },
+			_assessedCount: { attribute: false },
+			_totalCount: { attribute: false },
 		};
 	}
 
@@ -69,6 +80,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 				.graph-bar {
 					margin-right: 0.1rem;
+				}
+
+				:host([dir="rtl"]) .graph-bar {
+					margin-right: 0;
+					margin-left: 0.1rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:first-child {
@@ -152,6 +168,46 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				:host([dir="rtl"]) .tooltip-percent-label {
 					text-align: right;
 				}
+
+				.graph-bar-skeleton {
+					border-radius: 4px 4px 4px 4px;
+					flex-grow: 1;
+				}
+
+				.empty-bar {
+					background: var(--d2l-color-mica);
+					flex-grow: 1;
+				}
+
+				@media (pointer: fine) {
+					:host(:not([skeleton])) #cell-content-container:focus .graph-bar,
+					:host(:not([skeleton])) #cell-content-container:hover .graph-bar {
+						filter: brightness(120%);
+						outline: none;
+					}
+
+					#cell-content-container:focus .graph-bar,
+					#cell-content-container:hover .graph-bar {
+						animation: raise 200ms ease-in;
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+					}
+				}
+
+				@keyframes raise {
+					0% {
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0);
+						top: 0;
+					}
+
+					100% {
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+						top: -2px;
+					}
+				}
+
+				[hidden] {
+					display: none !important;
+				}
 			`
 		];
 	}
@@ -159,6 +215,15 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	constructor() {
 		super();
 		this.tooltipAlign = '';
+		this.disableGraph = this.disableGraph || false;
+		this._histData = [];
+		this._totalCount = 0;
+		this._assessedCount = 0;
+		this.skeleton = true;
+
+		if (!this.disableGraph) {
+			this._setEntityType(OutcomeActivityCollectionEntity);
+		}
 	}
 
 	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
@@ -185,6 +250,50 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		`;
 	}
 
+	shouldUpdate(changedProperties) {
+		if (!this.disableGraph) {
+			return super.shouldUpdate(changedProperties);
+		}
+
+		return true;
+	}
+
+	set _entity(entity) {
+		if (this._entityHasChanged(entity)) {
+			this._onEntityChanged(entity);
+			super._entity = entity;
+		}
+	}
+
+	_buildHistData(levels, demonstrations) {
+		levels.sort((left, right) => {
+			return left.getSortOrder() - right.getSortOrder();
+		});
+
+		const levelMap = levels.reduce((acc, level) => {
+			acc[level.getLevelId()] = {
+				color: level.getColor(),
+				count: 0,
+				name: level.getName()
+			};
+			return acc;
+		}, {});
+		for (const href in demonstrations) {
+			const demonstratedLevel = demonstrations[href];
+			if (levelMap[demonstratedLevel]) {
+				levelMap[demonstratedLevel].count++;
+			}
+		}
+
+		this._histData = Object.values(levelMap);
+		const unassessedData = {
+			color: Consts.unassessedColor,
+			count: this._totalCount - this._assessedCount,
+			name: this.localize('notEvaluated')
+		};
+		this._histData.push(unassessedData);
+	}
+
 	_getGraphLevelsLabel() {
 		let labelText = '';
 		this._histData.map((levelData) => {
@@ -197,9 +306,62 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	_getLevelCountText(levelData) {
-		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
+		const displayCount = this._totalCount;
 		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
 		return this.localize('percentLabel', 'percentage', String(percentage));
+	}
+
+	_onEntityChanged(entity) {
+		if (entity) {
+			const demonstrations = {};
+			entity.onActivityChanged(activity => {
+				activity.onAssessedDemonstrationChanged(demonstration => {
+					const demonstrationHref = demonstration.getSelfHref();
+					const demonstratedLevel = demonstration.getDemonstratedLevel();
+					const levelId = demonstratedLevel.getLevelId();
+					if (levelId && demonstrationHref) {
+						demonstrations[demonstrationHref] = levelId;
+					}
+				});
+			});
+
+			const levels = [];
+			entity.onDefaultScaleChanged(scale => {
+				scale.onLevelChanged(level => levels.push(level));
+			});
+
+			entity.subEntitiesLoaded().then(() => {
+				this._assessedCount = Object.keys(demonstrations).length;
+				this._totalCount = entity.getOutcomeActivities().length;
+				this._buildHistData(levels, demonstrations);
+				this.skeleton = false;
+			});
+		}
+	}
+
+	_renderBar(levelData) {
+		if (!levelData || !levelData.count) {
+			return null;
+		}
+
+		return html`
+			<div
+				class="graph-bar"
+				style="background: ${levelData.color}; flex-grow: ${levelData.count}"
+			></div>
+		`;
+	}
+
+	_renderGraph() {
+		if (this.skeleton) {
+			return html`<div class="graph-bar-skeleton d2l-skeletize"></div>`;
+		}
+
+		if (this._totalCount === 0) {
+			return html`<div class="graph-bar empty-bar"></div>`;
+		}
+
+		return this._histData.map(this._renderBar.bind(this));
 	}
 
 	_renderGraphContainer() {
