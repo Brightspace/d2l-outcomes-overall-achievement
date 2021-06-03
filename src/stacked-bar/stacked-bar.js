@@ -1,12 +1,11 @@
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
 import { css, html, LitElement } from 'lit-element';
+import { Consts } from '../consts.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
-
-const unassessedColor = '#9ea5a9';
 
 export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
 
@@ -225,7 +224,7 @@ export class StackedBar extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitEl
 		this._histData = Object.values(levelMap);
 		if (this.displayUnassessed) {
 			const unassessedData = {
-				color: unassessedColor,
+				color: Consts.unassessedColor,
 				count: this._totalCount - this._assessedCount,
 				name: this.localize('notEvaluated')
 			};
