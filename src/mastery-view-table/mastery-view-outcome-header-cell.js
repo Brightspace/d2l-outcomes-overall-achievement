@@ -34,7 +34,7 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 			},
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
-			_totalCount: { attribute: false },
+			_totalCount: { attribute: false }
 		};
 	}
 
@@ -267,11 +267,11 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 	}
 
 	shouldUpdate(changedProperties) {
-		if (!this.disableGraph) {
-			return super.shouldUpdate(changedProperties);
+		if (this.disableGraph) {
+			return true;
 		}
 
-		return true;
+		return super.shouldUpdate(changedProperties);
 	}
 
 	set _entity(entity) {
@@ -353,8 +353,8 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 	}
 
 	_getLevelCountText(levelData) {
-		const displayCount = this._totalCount;
-		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
+		const totalCount = this._totalCount || 1;
+		const percentage = Math.floor(100.0 * levelData.count / totalCount);
 
 		return this.localize('percentLabel', 'percentage', percentage);
 	}
