@@ -5,6 +5,7 @@ import { Consts } from '../consts.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { OutcomeLevelDistributionEntity } from '../entities/OutcomeLevelDistributionEntity';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
 export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
@@ -24,8 +25,12 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 				attribute: 'tooltip-align'
 			},
 			disableGraph: {
-				attribute: 'disable-graph',
-				type: Boolean
+				type: Boolean,
+				attribute: 'disable-graph'
+			},
+			useAlternateGraphCall: {
+				type: Boolean,
+				attribute: 'use-alternate-graph-call'
 			},
 			_histData: { attribute: false },
 			_assessedCount: { attribute: false },
@@ -216,17 +221,28 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 		super();
 		this.tooltipAlign = '';
 		this.disableGraph = this.disableGraph || false;
+		this.useAlternateGraphCall = this.useAlternateGraphCall || false;
 		this._histData = [];
 		this._totalCount = 0;
 		this._assessedCount = 0;
 		this.skeleton = true;
-
-		if (!this.disableGraph) {
-			this._setEntityType(OutcomeActivityCollectionEntity);
-		}
 	}
 
 	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
+
+	connectedCallback() {
+		super.connectedCallback();
+
+		if (this.disableGraph) {
+			return;
+		}
+
+		if (!this.useAlternateGraphCall) {
+			this._setEntityType(OutcomeActivityCollectionEntity);
+		} else {
+			this._setEntityType(OutcomeLevelDistributionEntity);
+		}
+	}
 
 	render() {
 		const outcomeLabel = this.outcomeName && this.outcomeName.length ? html`${this.outcomeName}. ` : null;
@@ -265,7 +281,38 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 		}
 	}
 
-	_buildHistData(levels, demonstrations) {
+	_buildHistDataCounts(levels, counts) {
+		levels.sort((left, right) => {
+			return left.getSortOrder() - right.getSortOrder();
+		});
+
+		counts = new Map(counts.map(
+			key => [key.getLevelId(), key.getCount()])
+		);
+
+		for (const level of levels) {
+			const levelId = level.getLevelId();
+			const count = counts.get(levelId) || 0;
+
+			this._histData.push({
+				name: level.getName(),
+				color: level.getColor(),
+				count
+			});
+			this._totalCount += count;
+		}
+
+		const count = counts.get(null) || 0;
+
+		this._histData.push({
+			name: this.localize('notEvaluated'),
+			color: Consts.unassessedColor,
+			count
+		});
+		this._totalCount += count;
+	}
+
+	_buildHistDataDemonstrations(levels, demonstrations) {
 		levels.sort((left, right) => {
 			return left.getSortOrder() - right.getSortOrder();
 		});
@@ -308,12 +355,18 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 	_getLevelCountText(levelData) {
 		const displayCount = this._totalCount;
 		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
-		return this.localize('percentLabel', 'percentage', String(percentage));
+
+		return this.localize('percentLabel', 'percentage', percentage);
 	}
 
 	_onEntityChanged(entity) {
-		if (entity) {
+		if (!entity) {
+			return;
+		}
+
+		if (this._entityType === OutcomeActivityCollectionEntity) {
 			const demonstrations = {};
+
 			entity.onActivityChanged(activity => {
 				activity.onAssessedDemonstrationChanged(demonstration => {
 					const demonstrationHref = demonstration.getSelfHref();
@@ -326,14 +379,30 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 			});
 
 			const levels = [];
+
+			entity.onDefaultScaleChanged(scale => {
+				scale.onLevelChanged(level => levels.push(level));
+			});
+			entity.subEntitiesLoaded().then(() => {
+				this._assessedCount = Object.keys(demonstrations).length;
+				this._totalCount = entity.getOutcomeActivities().length;
+
+				this._buildHistDataDemonstrations(levels, demonstrations);
+
+				this.skeleton = false;
+			});
+		} else if (this._entityType === OutcomeLevelDistributionEntity) {
+			const levels = [];
+
 			entity.onDefaultScaleChanged(scale => {
 				scale.onLevelChanged(level => levels.push(level));
 			});
 
+			const counts = entity.getCounts();
+
 			entity.subEntitiesLoaded().then(() => {
-				this._assessedCount = Object.keys(demonstrations).length;
-				this._totalCount = entity.getOutcomeActivities().length;
-				this._buildHistData(levels, demonstrations);
+				this._buildHistDataCounts(levels, counts);
+
 				this.skeleton = false;
 			});
 		}

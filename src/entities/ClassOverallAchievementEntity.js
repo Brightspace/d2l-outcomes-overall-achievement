@@ -11,7 +11,8 @@ class OutcomeClassProgressEntity extends SelflessEntity {
 	static get links() {
 		return {
 			outcomeRel: 'https://outcomes.api.brightspace.com/rels/outcome',
-			outcomeActivityCollectionRel: 'https://user-progress.api.brightspace.com/rels/checkpoint-class-progress'
+			outcomeActivityCollectionRel: 'https://user-progress.api.brightspace.com/rels/checkpoint-class-progress',
+			outcomeLevelDistibutionRel: 'https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution'
 		};
 	}
 
@@ -20,6 +21,13 @@ class OutcomeClassProgressEntity extends SelflessEntity {
 			return;
 		}
 		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeActivityCollectionRel).href;
+	}
+
+	getOutcomeLevelDistributionHref() {
+		if (!this._entity || !this._entity.hasLinkByRel(OutcomeClassProgressEntity.links.outcomeLevelDistibutionRel)) {
+			return;
+		}
+		return this._entity.getLinkByRel(OutcomeClassProgressEntity.links.outcomeLevelDistibutionRel).href;
 	}
 
 	onOutcomeChanged(onChange) {

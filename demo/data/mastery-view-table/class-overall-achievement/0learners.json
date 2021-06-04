@@ -26,6 +26,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -49,6 +55,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -72,6 +84,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -95,6 +113,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -118,6 +142,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -141,6 +171,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -164,6 +200,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     },
@@ -187,6 +229,12 @@
             "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress"
           ],
           "href": "data/mastery-view-table/outcome-activity-collections/class/oac-nostudents.json"
+        },
+        {
+          "rel": [
+            "https://user-progress.api.brightspace.com/rels/checkpoint-class-progress-loa-level-distribution"
+          ],
+          "href": "data/mastery-view-table/outcome-level-distributions/oac-nostudents.json"
         }
       ]
     }

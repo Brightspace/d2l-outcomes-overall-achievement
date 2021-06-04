@@ -119,8 +119,12 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				attribute: 'telemetry-endpoint'
 			},
 			disableGraph: {
-				attribute: 'disable-graph',
-				type: Boolean
+				type: Boolean,
+				attribute: 'disable-graph'
+			},
+			useAlternateGraphCall: {
+				type: Boolean,
+				attribute: 'use-alternate-graph-call'
 			},
 			_calculationMethod: { attribute: false },
 			_logger: { attribute: false },
@@ -311,6 +315,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		this._setEntityType(ClassOverallAchievementEntity);
 
 		this.disableGraph = this.disableGraph || false;
+		this.useAlternateGraphCall = this.useAlternateGraphCall || false;
 		this._outcomeHeadersData = [];
 		this._learnerRowsData = [];
 		this._learnerList = [];
@@ -630,6 +635,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 		const outcomeClassProgressEntities = entity.getOutcomeClassProgressItems();
 		outcomeClassProgressEntities.map(outcomeProgressEntity => {
 			const activityCollectionHref = outcomeProgressEntity.getOutcomeActivityCollectionHref();
+			const outcomeLevelDistributionHref = outcomeProgressEntity.getOutcomeLevelDistributionHref();
 			outcomeProgressEntity.onOutcomeChanged(outcome => {
 				if (!outcome) {
 					return;
@@ -638,6 +644,7 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 				const outcomeData = {
 					href: outcome.getSelfHref(),
 					activityCollectionHref: activityCollectionHref,
+					outcomeLevelDistributionHref: outcomeLevelDistributionHref,
 					name: outcome.getNotation(),
 					description: outcome.getDescription(),
 					prefix: _getOutcomePrefix(outcome._entity.properties)
@@ -888,26 +895,34 @@ class MasteryViewTable extends EntityMixinLit(LocalizeMixin(TelemetryMixin(LitEl
 	}
 
 	_renderOutcomeColumnHead(outcomeData, index) {
-		let tooltipAlign = 'center';
+		let tooltipAlign;
+
 		if (index === 0) {
 			tooltipAlign = 'start';
-		}
-		else if (index === this._outcomeHeadersData.length - 1) {
+		} else if (index === this._outcomeHeadersData.length - 1) {
 			tooltipAlign = 'end';
+		} else {
+			tooltipAlign = 'center';
 		}
 
+		const headerCellHref = this.useAlternateGraphCall ?
+			outcomeData.outcomeLevelDistributionHref :
+			outcomeData.activityCollectionHref;
+
 		return html`
-		<th scope="col" class="outcome-column-head" style="line-height: 1rem; padding: 0;">
-			<d2l-mastery-view-outcome-header-cell
-				href="${outcomeData.activityCollectionHref}"
-				token="${this.token}"
-				outcome-name="${ifDefined(outcomeData.name)}"
-				outcome-description="${ifDefined(outcomeData.description)}"
-				tooltip-align="${tooltipAlign}"
-				?disable-graph=${this.disableGraph}
-				aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
-			></d2l-mastery-view-outcome-header-cell>
-		</th>`;
+			<th scope="col" class="outcome-column-head" style="line-height: 1rem; padding: 0;">
+				<d2l-mastery-view-outcome-header-cell
+					href="${headerCellHref}"
+					token="${this.token}"
+					outcome-name="${ifDefined(outcomeData.name)}"
+					outcome-description="${ifDefined(outcomeData.description)}"
+					tooltip-align="${tooltipAlign}"
+					?disable-graph=${this.disableGraph}
+					?use-alternate-graph-call=${this.useAlternateGraphCall}
+					aria-label="${this.localize('outcomeInfo', 'name', outcomeData.name, 'description', outcomeData.description)}"
+				></d2l-mastery-view-outcome-header-cell>
+			</th>
+		`;
 	}
 
 	_renderSearchMessage() {

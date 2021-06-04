@@ -1,0 +1,57 @@
+{
+  "class": [
+    "class-progress-loa-level-distribution"
+  ],
+  "entities": [
+    {
+      "class": [
+        "class-progress-loa-level-count"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "LevelId": "level0",
+        "Count": 5
+      }
+    },
+    {
+      "class": [
+        "class-progress-loa-level-count"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "LevelId": "level1",
+        "Count": 10
+      }
+    },
+    {
+      "class": [
+        "class-progress-loa-level-count"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "LevelId": null,
+        "Count": 15
+      }
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/outcome-level-distributions/oac-partial.json"
+    },
+    {
+      "rel": [
+        "default-achievement-scale"
+      ],
+      "href": "data/loa/scale0.json"
+    }
+  ]
+}
