@@ -7,11 +7,11 @@ export class OutcomeLevelCountEntity extends SelflessEntity {
 	static get class() { return 'class-progress-loa-level-count'; }
 
 	getCount() {
-		return this._entity && this._entity.properties && this._entity.properties.Count;
+		return this._entity && this._entity.properties && this._entity.properties.count;
 	}
 
 	getLevelId() {
-		return this._entity && this._entity.properties && this._entity.properties.LevelId;
+		return this._entity && this._entity.properties && this._entity.properties.levelId;
 	}
 
 }
