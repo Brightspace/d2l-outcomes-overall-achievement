@@ -290,11 +290,13 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 			key => [key.getLevelId(), key.getCount()])
 		);
 
+		const histData = [];
+
 		for (const level of levels) {
 			const levelId = level.getLevelId();
 			const count = counts.get(levelId) || 0;
 
-			this._histData.push({
+			histData.push({
 				name: level.getName(),
 				color: level.getColor(),
 				count
@@ -304,11 +306,13 @@ export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(En
 
 		const count = counts.get(null) || 0;
 
-		this._histData.push({
+		histData.push({
 			name: this.localize('notEvaluated'),
 			color: Consts.unassessedColor,
 			count
 		});
+
+		this._histData = histData;
 		this._totalCount += count;
 	}
 
