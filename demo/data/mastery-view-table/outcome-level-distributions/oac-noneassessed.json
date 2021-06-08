@@ -11,8 +11,8 @@
         "item"
       ],
       "properties": {
-        "LevelId": null,
-        "Count": 30
+        "levelId": null,
+        "count": 30
       }
     }
   ],

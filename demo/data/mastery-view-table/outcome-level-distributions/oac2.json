@@ -11,8 +11,8 @@
         "item"
       ],
       "properties": {
-        "LevelId": "level0",
-        "Count": 10
+        "levelId": "level0",
+        "count": 10
       }
     },
     {
@@ -23,8 +23,8 @@
         "item"
       ],
       "properties": {
-        "LevelId": "level1",
-        "Count": 2
+        "levelId": "level1",
+        "count": 2
       }
     },
     {
@@ -35,8 +35,8 @@
         "item"
       ],
       "properties": {
-        "LevelId": "level2",
-        "Count": 17
+        "levelId": "level2",
+        "count": 17
       }
     },
     {
@@ -47,8 +47,8 @@
         "item"
       ],
       "properties": {
-        "LevelId": null,
-        "Count": 1
+        "levelId": null,
+        "count": 1
       }
     }
   ],
