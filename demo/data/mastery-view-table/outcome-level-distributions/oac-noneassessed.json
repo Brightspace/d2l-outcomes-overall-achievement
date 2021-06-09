@@ -1,0 +1,33 @@
+{
+  "class": [
+    "class-progress-loa-level-distribution"
+  ],
+  "entities": [
+    {
+      "class": [
+        "class-progress-loa-level-count"
+      ],
+      "rel": [
+        "item"
+      ],
+      "properties": {
+        "levelId": null,
+        "count": 30
+      }
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "data/mastery-view-table/outcome-level-distributions/oac-noneassessed.json"
+    },
+    {
+      "rel": [
+        "default-achievement-scale"
+      ],
+      "href": "data/loa/scale0.json"
+    }
+  ]
+}

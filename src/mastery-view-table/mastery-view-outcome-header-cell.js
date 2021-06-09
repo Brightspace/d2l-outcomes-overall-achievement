@@ -1,9 +1,14 @@
 import '@brightspace-ui/core/components/colors/colors.js';
 import '@brightspace-ui/core/components/tooltip/tooltip.js';
-import { css, html } from 'lit-element';
-import { StackedBar } from '../stacked-bar/stacked-bar';
+import { css, html, LitElement } from 'lit-element';
+import { Consts } from '../consts.js';
+import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
+import { LocalizeMixin } from '../LocalizeMixin';
+import { OutcomeActivityCollectionEntity } from '../entities/OutcomeActivityCollectionEntity';
+import { OutcomeLevelDistributionEntity } from '../entities/OutcomeLevelDistributionEntity';
+import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
 
-export class MasteryViewOutcomeHeaderCell extends StackedBar {
+export class MasteryViewOutcomeHeaderCell extends SkeletonMixin(LocalizeMixin(EntityMixinLit(LitElement))) {
 
 	static get properties() {
 		return {
@@ -18,7 +23,18 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 			tooltipAlign: {
 				type: String,
 				attribute: 'tooltip-align'
-			}
+			},
+			disableGraph: {
+				type: Boolean,
+				attribute: 'disable-graph'
+			},
+			useAlternateGraphCall: {
+				type: Boolean,
+				attribute: 'use-alternate-graph-call'
+			},
+			_histData: { attribute: false },
+			_assessedCount: { attribute: false },
+			_totalCount: { attribute: false }
 		};
 	}
 
@@ -69,6 +85,11 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 
 				.graph-bar {
 					margin-right: 0.1rem;
+				}
+
+				:host([dir="rtl"]) .graph-bar {
+					margin-right: 0;
+					margin-left: 0.1rem;
 				}
 
 				:host(:not([dir="rtl"])) .graph-bar:first-child {
@@ -152,6 +173,46 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 				:host([dir="rtl"]) .tooltip-percent-label {
 					text-align: right;
 				}
+
+				.graph-bar-skeleton {
+					border-radius: 4px 4px 4px 4px;
+					flex-grow: 1;
+				}
+
+				.empty-bar {
+					background: var(--d2l-color-mica);
+					flex-grow: 1;
+				}
+
+				@media (pointer: fine) {
+					:host(:not([skeleton])) #cell-content-container:focus .graph-bar,
+					:host(:not([skeleton])) #cell-content-container:hover .graph-bar {
+						filter: brightness(120%);
+						outline: none;
+					}
+
+					#cell-content-container:focus .graph-bar,
+					#cell-content-container:hover .graph-bar {
+						animation: raise 200ms ease-in;
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+					}
+				}
+
+				@keyframes raise {
+					0% {
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0);
+						top: 0;
+					}
+
+					100% {
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+						top: -2px;
+					}
+				}
+
+				[hidden] {
+					display: none !important;
+				}
 			`
 		];
 	}
@@ -159,9 +220,29 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	constructor() {
 		super();
 		this.tooltipAlign = '';
+		this.disableGraph = this.disableGraph || false;
+		this.useAlternateGraphCall = this.useAlternateGraphCall || false;
+		this._histData = [];
+		this._totalCount = 0;
+		this._assessedCount = 0;
+		this.skeleton = true;
 	}
 
 	static get is() { return 'd2l-mastery-view-outcome-header-cell'; }
+
+	connectedCallback() {
+		super.connectedCallback();
+
+		if (this.disableGraph) {
+			return;
+		}
+
+		if (!this.useAlternateGraphCall) {
+			this._setEntityType(OutcomeActivityCollectionEntity);
+		} else {
+			this._setEntityType(OutcomeLevelDistributionEntity);
+		}
+	}
 
 	render() {
 		const outcomeLabel = this.outcomeName && this.outcomeName.length ? html`${this.outcomeName}. ` : null;
@@ -185,6 +266,85 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 		`;
 	}
 
+	shouldUpdate(changedProperties) {
+		if (this.disableGraph) {
+			return true;
+		}
+
+		return super.shouldUpdate(changedProperties);
+	}
+
+	set _entity(entity) {
+		if (this._entityHasChanged(entity)) {
+			this._onEntityChanged(entity);
+			super._entity = entity;
+		}
+	}
+
+	_buildHistDataCounts(levels, counts) {
+		levels.sort((left, right) => {
+			return left.getSortOrder() - right.getSortOrder();
+		});
+
+		counts = new Map(counts.map(
+			key => [key.getLevelId(), key.getCount()])
+		);
+
+		const histData = [];
+
+		for (const level of levels) {
+			const levelId = level.getLevelId();
+			const count = counts.get(levelId) || 0;
+
+			histData.push({
+				name: level.getName(),
+				color: level.getColor(),
+				count
+			});
+			this._totalCount += count;
+		}
+
+		const count = counts.get(null) || 0;
+
+		histData.push({
+			name: this.localize('notEvaluated'),
+			color: Consts.unassessedColor,
+			count
+		});
+
+		this._histData = histData;
+		this._totalCount += count;
+	}
+
+	_buildHistDataDemonstrations(levels, demonstrations) {
+		levels.sort((left, right) => {
+			return left.getSortOrder() - right.getSortOrder();
+		});
+
+		const levelMap = levels.reduce((acc, level) => {
+			acc[level.getLevelId()] = {
+				color: level.getColor(),
+				count: 0,
+				name: level.getName()
+			};
+			return acc;
+		}, {});
+		for (const href in demonstrations) {
+			const demonstratedLevel = demonstrations[href];
+			if (levelMap[demonstratedLevel]) {
+				levelMap[demonstratedLevel].count++;
+			}
+		}
+
+		this._histData = Object.values(levelMap);
+		const unassessedData = {
+			color: Consts.unassessedColor,
+			count: this._totalCount - this._assessedCount,
+			name: this.localize('notEvaluated')
+		};
+		this._histData.push(unassessedData);
+	}
+
 	_getGraphLevelsLabel() {
 		let labelText = '';
 		this._histData.map((levelData) => {
@@ -197,9 +357,84 @@ export class MasteryViewOutcomeHeaderCell extends StackedBar {
 	}
 
 	_getLevelCountText(levelData) {
-		const displayCount = (this.displayUnassessed ? this._totalCount : this._assessedCount);
-		const percentage = Math.floor(100.0 * levelData.count / (displayCount || 1));
-		return this.localize('percentLabel', 'percentage', String(percentage));
+		const totalCount = this._totalCount || 1;
+		const percentage = Math.floor(100.0 * levelData.count / totalCount);
+
+		return this.localize('percentLabel', 'percentage', percentage);
+	}
+
+	_onEntityChanged(entity) {
+		if (!entity) {
+			return;
+		}
+
+		if (this._entityType === OutcomeActivityCollectionEntity) {
+			const demonstrations = {};
+
+			entity.onActivityChanged(activity => {
+				activity.onAssessedDemonstrationChanged(demonstration => {
+					const demonstrationHref = demonstration.getSelfHref();
+					const demonstratedLevel = demonstration.getDemonstratedLevel();
+					const levelId = demonstratedLevel.getLevelId();
+					if (levelId && demonstrationHref) {
+						demonstrations[demonstrationHref] = levelId;
+					}
+				});
+			});
+
+			const levels = [];
+
+			entity.onDefaultScaleChanged(scale => {
+				scale.onLevelChanged(level => levels.push(level));
+			});
+			entity.subEntitiesLoaded().then(() => {
+				this._assessedCount = Object.keys(demonstrations).length;
+				this._totalCount = entity.getOutcomeActivities().length;
+
+				this._buildHistDataDemonstrations(levels, demonstrations);
+
+				this.skeleton = false;
+			});
+		} else if (this._entityType === OutcomeLevelDistributionEntity) {
+			const levels = [];
+
+			entity.onDefaultScaleChanged(scale => {
+				scale.onLevelChanged(level => levels.push(level));
+			});
+
+			const counts = entity.getCounts();
+
+			entity.subEntitiesLoaded().then(() => {
+				this._buildHistDataCounts(levels, counts);
+
+				this.skeleton = false;
+			});
+		}
+	}
+
+	_renderBar(levelData) {
+		if (!levelData || !levelData.count) {
+			return null;
+		}
+
+		return html`
+			<div
+				class="graph-bar"
+				style="background: ${levelData.color}; flex-grow: ${levelData.count}"
+			></div>
+		`;
+	}
+
+	_renderGraph() {
+		if (this.skeleton) {
+			return html`<div class="graph-bar-skeleton d2l-skeletize"></div>`;
+		}
+
+		if (this._totalCount === 0) {
+			return html`<div class="graph-bar empty-bar"></div>`;
+		}
+
+		return this._histData.map(this._renderBar.bind(this));
 	}
 
 	_renderGraphContainer() {
