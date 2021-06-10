@@ -33,7 +33,7 @@
     "@open-wc/testing": "^2",
     "@open-wc/testing-karma": "^4",
     "@webcomponents/webcomponentsjs": "^2",
-    "d2l-license-checker": "^3",
+    "d2l-license-checker": "^4",
     "deepmerge": "^4",
     "es-dev-server": "^2",
     "eslint": "^7",
@@ -45,6 +45,6 @@
     "eslint-plugin-sort-class-members": "^1",
     "lit-analyzer": "^1",
     "messageformat-validator": "github:bearfriend/messageformat-validator",
-    "mocha": "^8"
+    "mocha": "^9"
   }
 }
