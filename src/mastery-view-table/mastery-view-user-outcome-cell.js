@@ -258,6 +258,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 		const cellEntity = entity.getCells().find(cell => cell.getOutcomeHref() === this.outcomeHref);
 		if (!cellEntity) {
+			this._cellData = {};
+			this.skeleton = true;
 			return;
 		}
 
