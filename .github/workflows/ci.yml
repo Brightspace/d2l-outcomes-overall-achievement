@@ -64,7 +64,7 @@ jobs:
       - name: Lint (JavaScript)
         run: npm run lint:eslint
       - name: Lint (Lit)
-        run: npm run lint:lit
+        run: npm run lint:lit -- --quiet
       - name: Lint (Languages)
         run: npm run lint:lang
   check-licenses:
