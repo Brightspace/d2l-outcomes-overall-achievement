@@ -7,7 +7,7 @@ import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/st
 import { Consts } from '../consts';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { ErrorLogger } from '../ErrorLogger.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
