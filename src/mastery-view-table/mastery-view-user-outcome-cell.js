@@ -7,6 +7,7 @@ import { bodyCompactStyles } from '@brightspace-ui/core/components/typography/st
 import { Consts } from '../consts';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { ErrorLogger } from '../ErrorLogger.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
 import { LocalizeMixin } from '../LocalizeMixin';
 import { MasteryViewRowEntity } from '../entities/MasteryViewRowEntity';
 import { SkeletonMixin } from '@brightspace-ui/core/components/skeleton/skeleton-mixin.js';
@@ -173,7 +174,7 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 			<div class="assessment-info-container" aria-hidden="true">
 				<div aria-hidden="true">
 					<div class="assessment-label-container" aria-hidden="true">
-						<div class="assessment-level-label d2l-body-compact" title="${data.levelName}">
+						<div class="assessment-level-label d2l-body-compact" title="${ifDefined(data.levelName)}">
 							${data.levelName}
 						</div>
 						${this._renderOverrideIndicator(data)}
@@ -258,6 +259,8 @@ export class MasteryViewUserOutcomeCell extends SkeletonMixin(LocalizeMixin(Enti
 
 		const cellEntity = entity.getCells().find(cell => cell.getOutcomeHref() === this.outcomeHref);
 		if (!cellEntity) {
+			this._cellData = {};
+			this.skeleton = true;
 			return;
 		}
 
