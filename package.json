@@ -4,7 +4,7 @@
   "description": "A collection of components related to outcomes COA (Course Overall Achievement)",
   "repository": "https://github.com/Brightspace/d2l-outcomes-overall-achievement.git",
   "scripts": {
-    "license-check": "d2l-license-checker",
+    "license-check": "d2l-license-checker -p",
     "lint": "npm run lint:eslint && npm run lint:lit && npm run lint:lang",
     "lint:eslint": "eslint . --ext .js,.html",
     "lint:lit": "lit-analyzer {src,test}/**/*.js --strict --rules.no-complex-attribute-binding warn",
