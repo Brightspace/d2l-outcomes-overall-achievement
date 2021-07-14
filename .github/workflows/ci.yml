@@ -1,10 +1,7 @@
 name: CI
-on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - release/*
+on: pull_request
+permissions:
+  contents: read
 env:
   NODE_VERSION: 14 # Latest LTS
 jobs:
@@ -31,11 +28,11 @@ jobs:
       - name: Test
         run: |
           if ${{env.SAUCE_ACCESS_KEY != ''}}; then
-            echo "Running full test suite"
+            echo 'Running full test suite'
             npm i karma-sauce-launcher@2 --no-save
             npm run test:headless -- karma.sauce.conf.js
           else
-            echo "Running minimal test suite"
+            echo 'Running minimal test suite'
             npm run test:headless
           fi
         env:
