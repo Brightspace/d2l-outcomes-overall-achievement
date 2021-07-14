@@ -1,7 +1,5 @@
 # d2l-outcomes-overall-achievement
 
-[![CI][CI Badge]][CI Workflows]
-
 A collection of components related to outcomes COA (Course Overall Achievement)
 
 ## Components
@@ -300,7 +298,3 @@ Regular expressions are complicated, but this essentially means branch names sho
 
 - `1.15.x` for patch releases on top of the `1.15` release (after version `1.16` exists)
 - `2.x` for feature releases on top of the `2` release (after version `3` exists)
-
-<!-- links -->
-[CI Badge]: https://github.com/Brightspace/d2l-outcomes-overall-achievement/workflows/CI/badge.svg?branch=master
-[CI Workflows]: https://github.com/Brightspace/d2l-outcomes-overall-achievement/actions?query=workflow%3ACI+branch%3Amaster
