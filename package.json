@@ -29,6 +29,7 @@
     "siren-sdk": "github:BrightspaceHypermediaComponents/siren-sdk#semver:^1"
   },
   "devDependencies": {
+    "@babel/core": "^7",
     "@babel/eslint-parser": "^7",
     "@open-wc/testing": "^2",
     "@open-wc/testing-karma": "^4",
