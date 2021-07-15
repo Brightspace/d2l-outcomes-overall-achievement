@@ -1,7 +1,5 @@
 {
-  "env": {
-    "mocha": true
-  },
+  "extends": "brightspace/open-wc-testing-config",
   "plugins": [
     "mocha",
     "chai-friendly"
