@@ -29,7 +29,7 @@ jobs:
         run: |
           if ${{env.SAUCE_ACCESS_KEY != ''}}; then
             echo 'Running full test suite'
-            npm i karma-sauce-launcher@2 --no-save
+            npm i karma-sauce-launcher@4 --no-save
             npm run test:headless -- karma.sauce.conf.js
           else
             echo 'Running minimal test suite'
